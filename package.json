@@ -1,0 +1,207 @@
+{
+  "name": "@opentiny/vue-renderless",
+  "version": "3.4.4",
+  "description": "@opentiny/vue-renderless",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "vue",
+    "Tiny"
+  ],
+  "author": "Tiny Team",
+  "license": "MIT",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "create:ui": "node build/create-ui.js",
+    "build": "babel --config-file ./build/babel.config.json src --out-dir dist",
+    "build:all": "npm run lint && npm run clean && npm run build && npm run build:version",
+    "build:version": "node build/build-version.js",
+    "release": "node build/release.js",
+    "format": "prettier --write src/**/* build/*.js ",
+    "lint": "eslint src/**/* build/*.js  --quiet",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.2",
+    "xss": "1.0.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.5.5",
+    "eslint": "^8.25.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.1.0 ",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "fs-extra": "^10.1.0",
+    "prettier": "2.8.0",
+    "rimraf": "^3.0.2",
+    "babel-eslint": "^10.1.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "glob": "^8.0.3",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
+    "rules": {
+      "no-debugger": "off",
+      "no-var": "error",
+      "no-tabs": "error",
+      "no-trailing-spaces": "error",
+      "no-mixed-spaces-and-tabs": "error",
+      "no-undef": "error",
+      "no-extra-semi": "error",
+      "no-empty": "error",
+      "no-console": "off",
+      "semi": [
+        2,
+        "never"
+      ],
+      "indent": [
+        "warn",
+        2
+      ],
+      "max-len": [
+        "warn",
+        {
+          "code": 160
+        }
+      ],
+      "function-paren-newline": [
+        "warn",
+        "multiline"
+      ],
+      "object-property-newline": [
+        "warn",
+        {
+          "allowAllPropertiesOnSameLine": true
+        }
+      ],
+      "newline-per-chained-call": [
+        "warn",
+        {
+          "ignoreChainWithDepth": 4
+        }
+      ],
+      "curly": "error",
+      "comma-dangle": [
+        "off",
+        "always-multiline"
+      ],
+      "semi-style": [
+        "warn",
+        "last"
+      ],
+      "max-lines": [
+        "error",
+        2000
+      ],
+      "max-lines-per-function": [
+        "error",
+        50
+      ],
+      "complexity": [
+        "error",
+        20
+      ],
+      "max-depth": [
+        "warn",
+        4
+      ],
+      "max-nested-callbacks": [
+        "error",
+        4
+      ],
+      "no-multi-assign": "error",
+      "no-undef-init": "warn",
+      "no-shadow": "warn",
+      "max-params": [
+        "warn",
+        5
+      ],
+      "no-param-reassign": "warn",
+      "prefer-rest-params": "warn",
+      "prefer-arrow-callback": "error",
+      "arrow-body-style": [
+        "warn",
+        "as-needed"
+      ],
+      "no-this-before-super": "error",
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "prefer-template": "warn",
+      "no-multi-str": "warn",
+      "object-shorthand": "warn",
+      "dot-notation": "error",
+      "accessor-pairs": "error",
+      "no-prototype-builtins": "error",
+      "guard-for-in": "error",
+      "eqeqeq": "warn",
+      "no-negated-condition": "warn",
+      "default-case": "error",
+      "no-fallthrough": "error",
+      "no-case-declarations": "error",
+      "no-unsafe-finally": "error",
+      "no-eval": "error",
+      "no-with": "error",
+      "no-implicit-coercion": [
+        "error",
+        {
+          "allow": [
+            "!!",
+            "~"
+          ]
+        }
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "parser": "babel-eslint"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,vue}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

@@ -1,0 +1,34 @@
+/**
+* Copyright (c) 2022 - present TinyVue Authors.
+* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+*
+* Use of this source code is governed by an MIT-style license.
+*
+* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+*
+*/
+
+export const visibleHandle = (emit) => () => {
+  emit('update:visible', false)
+  emit('close', false)
+}
+
+export const watchVisible = ({ emit, props, state }) => (value) => {
+  state.active = props.modelValue
+
+  setTimeout(() => {
+    value ? (state.toggle = true) : (state.toggle = false)
+  }, 0)
+
+  emit('update:visible', value)
+}
+
+export const menuHandle = ({ emit, state }) => (item) => {
+  state.active = item.id
+
+  emit('update:visible', false)
+  emit('update:modelValue', item.id)
+  emit('click', item)
+}
