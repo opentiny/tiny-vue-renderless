@@ -10,34 +10,26 @@ const logger = () => {}
  * 根据运行上下文获取路径（运行时打包用）
  * @returns 文件绝对路径
  */
-const resolveCwd = (...args) => {
-  return path.join(process.cwd(), ...args)
-}
+const resolveCwd = (...args) => path.join(process.cwd(), ...args)
 
 /**
  * 获取模板替换路径（动态）
  * @param {String} posixPath 路径
  * @returns 文件绝对路径
  */
-const assetsPath = (posixPath) => {
-  return path.posix.join('static', posixPath)
-}
+const assetsPath = (posixPath) => path.posix.join('static', posixPath)
 
 /**
  * 根据运行上下文获取，当前运行组件的名称
  * @returns 当前运行组件目录名称
  */
-const getComponentName = () => {
-  return process.cwd().split(path.sep).pop()
-}
+const getComponentName = () => process.cwd().split(path.sep).pop()
 
 /**
  * 获取当前上下文的路径
  * @returns 文件绝对路径
  */
-const pathJoin = (...args) => {
-  return path.join(__dirname, ...args)
-}
+const pathJoin = (...args) => path.join(__dirname, ...args)
 
 /**
  * 获取用户输入命令参数
@@ -69,11 +61,7 @@ const execCmd = (cmdStr) => {
  * @param {String} str 字符串
  * @returns 字符串
  */
-const capitalize = (str) => {
-  return typeof str === 'string'
-    ? str.slice(0, 1).toUpperCase() + str.slice(1)
-    : str
-}
+const capitalize = (str) => (typeof str === 'string' ? str.slice(0, 1).toUpperCase() + str.slice(1) : str)
 
 /**
  * @description 将驼峰字符串转化为以指定字符分割的小写字符串
@@ -84,18 +72,20 @@ const capitalize = (str) => {
  * @param splitChar 分隔符
  */
 const kebabCase = ({ str, splitChar = '-' }) => {
-  if (!str || typeof str !== 'string') return str
+  if (!str || typeof str !== 'string') {
+    return str
+  }
 
   return str
     .split('')
     .map((char, index) => {
       const charCod = char.charCodeAt(0)
 
-      if (charCod < 65 || charCod > 122) return char
+      if (charCod < 65 || charCod > 122) {
+        return char
+      }
 
-      return (charCod >= 65 && charCod) <= 90
-        ? (index !== 0 ? splitChar : '') + char.toLowerCase()
-        : char
+      return (charCod >= 65 && charCod) <= 90 ? (index !== 0 ? splitChar : '') + char.toLowerCase() : char
     })
     .join('')
 }
@@ -104,11 +94,7 @@ const kebabCase = ({ str, splitChar = '-' }) => {
  * 根据文件路径判断是否为文件，未创建的文件路径
  * @param {String} pathLink 文件路径
  */
-const isVirtualFile = (pathLink) => {
-  return ['.js', '.css', '.json', '.vue', '.log', '.md'].some(
-    (item) => pathLink.lastIndexOf(item) > pathLink.length - 5
-  )
-}
+const isVirtualFile = (pathLink) => ['.js', '.css', '.json', '.vue', '.log', '.md'].some((item) => pathLink.lastIndexOf(item) > pathLink.length - 5)
 
 /**
  * 根据文件 url 创建对应的文件夹
@@ -154,11 +140,11 @@ const rmdirAll = (targetDir) => {
  * @param {Function} callback 遍历回调
  */
 const walkFileTree = ({ dirPath, isDeep = false, callback }) => {
-  if (!dirPath || typeof callback !== 'function') return
+  if (!dirPath || typeof callback !== 'function') {
+    return
+  }
 
-  const dirs = fs.readdirSync(
-    path.isAbsolute(dirPath) ? dirPath : path.join(__dirname, dirPath)
-  )
+  const dirs = fs.readdirSync(path.isAbsolute(dirPath) ? dirPath : path.join(__dirname, dirPath))
 
   if (Array.isArray(dirs) && dirs.length > 0) {
     dirs.forEach((file) => {
@@ -214,8 +200,8 @@ const logRed = (str) => {
  * @param {String} str 格式字符
  * @param {Object} options 格式字符
  */
-const prettierFormat = ({ str, options = {} }) => {
-  return require('prettier').format(str, {
+const prettierFormat = ({ str, options = {} }) =>
+  require('prettier').format(str, {
     printWidth: 100,
     jsxBracketSameLine: false,
     tabWidth: 2,
@@ -227,7 +213,6 @@ const prettierFormat = ({ str, options = {} }) => {
     parser: 'babel',
     ...options
   })
-}
 
 module.exports = {
   logRed,

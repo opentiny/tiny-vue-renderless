@@ -17,10 +17,7 @@ const createRenderLessIndex = ({ libName }) => {
   `
   const output = utils.prettierFormat({ str: template })
 
-  writeFileSync(
-    utils.mkdirByPathSync(utils.pathJoin('..', 'src', libName, 'index.js')),
-    output
-  )
+  writeFileSync(utils.mkdirByPathSync(utils.pathJoin('..', 'src', libName, 'index.js')), output)
 }
 
 /**
@@ -62,10 +59,7 @@ const createRenderLessValue = ({ libName }) => {
     options: { printWidth: 1000 }
   })
 
-  writeFileSync(
-    utils.mkdirByPathSync(utils.pathJoin('..', 'src', libName, 'vue.js')),
-    output
-  )
+  writeFileSync(utils.mkdirByPathSync(utils.pathJoin('..', 'src', libName, 'vue.js')), output)
 }
 
 if (args.length > 0) {
