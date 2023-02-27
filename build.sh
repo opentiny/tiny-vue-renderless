@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ ! $version ];
 then npm version 0.1.0-`date "+%Y%m%d%H%M%S"`; 
-else npm version ${version}; 
+else npm version $version; 
 fi
 
 npm install 

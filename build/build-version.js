@@ -8,20 +8,14 @@ const utils = require('./utils')
 
 const RUNTIME_VERSION = 'process.env.RUNTIME_VERSION'
 const BASE_RUNTIME_PATH = path.join(__dirname, '..', 'dist', 'common')
-const RENDERLESS_VERSION = fs.readJsonSync(
-  path.join(__dirname, '../package.json')
-).version
-
-;['index.js', 'runtime.js'].forEach((fileName) => {
+const RENDERLESS_VERSION = fs.readJsonSync(path.join(__dirname, '../package.json')).version;
+['index.js', 'runtime.js'].forEach((fileName) => {
   const fullPath = path.join(BASE_RUNTIME_PATH, fileName)
 
   if (fs.existsSync(fullPath)) {
     let scriptContent = fs.readFileSync(fullPath).toString('UTF-8')
 
-    scriptContent = scriptContent.replace(
-      RUNTIME_VERSION,
-      `'${RENDERLESS_VERSION}'`
-    )
+    scriptContent = scriptContent.replace(RUNTIME_VERSION, `'${RENDERLESS_VERSION}'`)
 
     fs.writeFileSync(fullPath, scriptContent)
   }
