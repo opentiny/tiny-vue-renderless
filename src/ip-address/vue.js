@@ -1,14 +1,14 @@
 /**
-* Copyright (c) 2022 - present TinyVue Authors.
-* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
-*
-* Use of this source code is governed by an MIT-style license.
-*
-* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
-* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
-* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
-*
-*/
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
 
 import {
   isIP6,
@@ -66,9 +66,9 @@ const initApi = ({ state, api, dispatch, handleValue, emit, broadcast, parent, c
       state
     }),
     keyup: keyup({ api, props, parent }),
-    change: change({ api, emit, props }),
+    change: change({ api, emit }),
     keydown: keydown({ api, props, state }),
-    inputEvent: inputEvent({ api, emit, props })
+    inputEvent: inputEvent({ api, emit, props, componentName, eventName: eventName.change })
   })
 }
 
@@ -106,10 +106,10 @@ export const useHandleValue = ({ componentName, dispatch, eventName, props, reac
 
 export const renderless = (props, { reactive, toRefs, watch, inject, computed }, { $prefix, emit, parent, broadcast, dispatch }) => {
   const api = {}
-  const componentName = `${$prefix}FormItem`
+  const componentName = `FormItem`
   const eventName = {
-    change: `${$prefix}.form.change`,
-    blur: `${$prefix}.form.blur`
+    change: `form.change`,
+    blur: `form.blur`
   }
 
   parent.tinyForm = parent.tinyForm || inject('form', null)
