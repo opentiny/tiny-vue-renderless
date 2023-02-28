@@ -200,7 +200,7 @@ export const computedDecimalStyle = ({ props, state }) => {
   let fontSize = ''
 
   if (props.disabled) {
-    width = `${props.modelValue * 100 - Math.floor(props.modelValue) * 100 < 50 ? 0 : 50}%`
+    width = `${props.modelValue * 100 - Math.floor(props.modelValue) * 100 < 50 ? 0 : 100}%`
   } else if (props.allowHalf) {
     const reactSize = props.size ? Math.ceil(parseInt(props.size) / 2) + 'px' : '6px'
 
