@@ -12,12 +12,12 @@
 
 import {
   created,
-  _loadPickerData,
-  _wheelChanged,
+  loadPickerData,
+  wheelChanged,
   changeWheelItemStyle,
-  _loadWheels,
-  _createWheelHasFooter,
-  _createWheelNoFooter,
+  loadWheels,
+  createWheelHasFooter,
+  createWheelNoFooter,
   wheelsTo,
   refreshWheel,
   dealWheels,
@@ -27,19 +27,19 @@ import {
 export const api = [
   'state',
   'created',
-  '_loadPickerData',
-  '_wheelChanged',
+  'loadPickerData',
+  'wheelChanged',
   'changeWheelItemStyle',
-  '_loadWheels',
-  '_createWheelHasFooter',
-  '_createWheelNoFooter',
+  'loadWheels',
+  'createWheelHasFooter',
+  'createWheelNoFooter',
   'wheelsTo',
   'refreshWheel',
   'dealWheels',
   'clickWheelItem',
 ]
 
-const initState = ({ reactive }) => {
+const initState = (reactive) => {
   const state = reactive({
     dataSource: [],
     defaultSelectedIndexs: [],
@@ -54,16 +54,16 @@ const initState = ({ reactive }) => {
 const initApi = ({ api, props, state, emit, nextTick, refs, BScroll }) => {
   Object.assign(api, {
     state,
-    created: created({ api }),
-    _loadPickerData: _loadPickerData({ props, state }),
-    _wheelChanged: _wheelChanged({ api, state }),
-    changeWheelItemStyle: changeWheelItemStyle({ state }),
-    _loadWheels: _loadWheels({ api, props, state, nextTick, refs }),
-    _createWheelHasFooter: _createWheelHasFooter({ api, state, emit, BScroll }),
-    _createWheelNoFooter: _createWheelNoFooter({ api, state, BScroll }),
+    created: created(api),
+    loadPickerData: loadPickerData({ props, state }),
+    wheelChanged: wheelChanged({ api, state }),
+    changeWheelItemStyle: changeWheelItemStyle(state),
+    loadWheels: loadWheels({ api, props, state, nextTick, refs }),
+    createWheelHasFooter: createWheelHasFooter({ api, state, emit, BScroll }),
+    createWheelNoFooter: createWheelNoFooter({ api, state, BScroll }),
     wheelsTo: wheelsTo({ api, state, nextTick }),
-    refreshWheel: refreshWheel({ nextTick }),
-    dealWheels: dealWheels({ state, nextTick }),
+    refreshWheel: refreshWheel(nextTick),
+    dealWheels: dealWheels(state),
     clickWheelItem: clickWheelItem({ api, state, emit }),
   })
 }
@@ -72,9 +72,9 @@ const initWatch = ({ watch, api, props, state, nextTick }) => {
   watch(
     () => props.defaultSelectedIndexs,
     () => {
-      api.dealWheels({ state })
+      api.dealWheels(state)
       nextTick(() => {
-        api.created({ api })
+        api.created(api)
       })
     }
   )
@@ -82,14 +82,14 @@ const initWatch = ({ watch, api, props, state, nextTick }) => {
 
 export const renderless = (props, { onMounted, reactive, watch }, { emit, nextTick, refs }, { BScroll }) => {
   const api = {}
-  const state = initState({ reactive })
+  const state = initState(reactive)
 
   initApi({ api, props, state, emit, nextTick, refs, BScroll })
 
   initWatch({ watch, api, props, state, nextTick })
 
   onMounted(() => {
-    api.created({ api })
+    api.created(api)
   })
 
   return api

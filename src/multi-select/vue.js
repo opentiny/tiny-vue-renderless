@@ -17,7 +17,7 @@ import {
   reset,
   wheelChange,
   clickWheelItem,
-  _loadDefault
+  loadDefault
 } from './index'
 
 export const api = [
@@ -28,10 +28,10 @@ export const api = [
   'reset',
   'wheelChange',
   'clickWheelItem',
-  '_loadDefault'
+  'loadDefault'
 ]
 
-const initState = ({ reactive }) => {
+const initState = (reactive) => {
   const state = reactive({
     dataSource: [],
     wheelData: [],
@@ -56,9 +56,9 @@ const initApi = ({ api, props, state, emit, nextTick, refs }) => {
     handleClick: handleClick({ api, props, state }),
     confirm: confirm({ state, emit }),
     reset: reset({ api, props, state, emit }),
-    wheelChange: wheelChange({ state }),
+    wheelChange: wheelChange(state),
     clickWheelItem: clickWheelItem({ state, emit }),
-    _loadDefault: _loadDefault({ props, state }),
+    loadDefault: loadDefault({ props, state }),
   })
 }
 
@@ -79,7 +79,7 @@ const initWatch = ({ watch, props, state, refs, nextTick }) => {
 
 export const renderless = (props, { onMounted, reactive, watch }, { emit, nextTick, refs }) => {
   const api = {}
-  const state = initState({ reactive })
+  const state = initState(reactive)
 
   initApi({ api, props, state, emit, nextTick, refs })
 

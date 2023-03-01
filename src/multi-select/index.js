@@ -27,19 +27,22 @@ export const created = ({ props, state, refs, nextTick }) => () => {
 export const handleClick = ({ api, props, state }) => (value) => {
   state.wheelData = props.dataSource[value]?.children
   if (state.headerIndex === -1) {
+
     // 首次点击
     state.showWheel = true
     state.headerIndex = value
     state.headerInfo[value] = getNewHeaderInfo(state.headerInfo, value, true)
-    state.defaultSelectedIndexs = state.defaultSelectedArray[value] ?? api._loadDefault(value)
+    state.defaultSelectedIndexs = state.defaultSelectedArray[value] ?? api.loadDefault(value)
   } else if (state.headerIndex !== value) {
+
     // 切换
     state.showWheel = true
     state.headerInfo[state.headerIndex] = getNewHeaderInfo(state.headerInfo, state.headerIndex, false) // 上一个
     state.headerIndex = value
     state.headerInfo[value] = getNewHeaderInfo(state.headerInfo, value, true)
-    state.defaultSelectedIndexs = state.defaultSelectedArray[value] ?? api._loadDefault(value) // 下一个
+    state.defaultSelectedIndexs = state.defaultSelectedArray[value] ?? api.loadDefault(value) // 下一个
   } else {
+
     // 收起与展开
     state.showWheel = !state.showWheel
     const { isUP } = state.headerInfo[value]
@@ -58,18 +61,19 @@ export const confirm = ({ state, emit }) => () => {
 
 export const reset = ({ api, props, state, emit }) => () => {
   state.headerInfo[state.headerIndex] = { isSelected: false, title: '', isUP: false }
-  state.defaultSelectedIndexs = props.defaultSelectedArray[state.headerIndex] ?? api._loadDefault(state.headerIndex)
+  state.defaultSelectedIndexs = props.defaultSelectedArray[state.headerIndex] ?? api.loadDefault(state.headerIndex)
   state.defaultSelectedArray[state.headerIndex] = state.defaultSelectedIndexs
   emit('reset', state.headerIndex)
   state.showWheel = false
 }
 
-export const wheelChange = ({ state }) => (indexs) => {
+export const wheelChange = (state) => (indexs) => {
   state.defaultSelectedIndexs = indexs
 }
 
 export const clickWheelItem = ({ state, emit }) => (indexs, text) => {
   if (indexs.length === 0) {
+
     // 反选
     state.defaultSelectedIndexs = [-1]
     state.headerInfo[state.headerIndex] = { isSelected: false, title: '', isUP: false }
@@ -87,9 +91,11 @@ export const getWheelLevelItems = (wheelData, newIndexs) => {
   const level_n = getNextLevel([], wheelData, newIndexs, 0)
   let wheelLevelItems = []
   if (level_n.length === 0) {
+
     // 单列
     wheelLevelItems = [level_1]
   } else {
+
     // 多列
     wheelLevelItems = [level_1, ...level_n]
   }
@@ -117,10 +123,11 @@ export const getWheelLevelText = (wheelLevelItems, selectedIndexs) => {
   return selectedLabels.join(' ')
 }
 
-export const _loadDefault = ({ props, state }) => (value) => {
+export const loadDefault = ({ props, state }) => (value) => {
   const current = props.defaultSelectedArray[value] ?? []
   let defaultSelectedIndexs = []
   if (state.dataSource[state.headerIndex]?.hasFooter) {
+
     // 有确认，重置按钮。此情况不可点击，可滚动，且初始化默认选中每列第一个
     const defaultL = current.length
     const dataSL = getMaxFloor(state.wheelData)
@@ -130,6 +137,7 @@ export const _loadDefault = ({ props, state }) => (value) => {
       defaultSelectedIndexs = current.slice(0, dataSL)
     }
   } else {
+
     // 无确认，重置按钮。此情况默认为单列，可点击，且初始化默认不选中
     defaultSelectedIndexs = current.length > 0 ? current : [-1]
   }
@@ -189,20 +197,25 @@ export const getEl = (node) => {
 
 export const getLabelsStyle = (state) => {
   const over25Labels = state.labelLevelsInfo.filter((i) => i && !i.isOver25)
-  let widthInfo = over25Labels // 不超过总宽度25%的头部下拉项
+
+  // 不超过总宽度25%的头部下拉项
+  let widthInfo = over25Labels
   const len = state.dataSource.length
   if (len >= 4) {
     return getStyleConfig(state.labelLevelsInfo, { width: `${((1 / len) * 100).toFixed(2)}%` })
   }
   if (!widthInfo.length || widthInfo.length === state.labelLevelsInfo.length) {
+
     // 所有下拉项同时不超过或者超过25%宽度
     return getStyleConfig(state.labelLevelsInfo, { maxWidth: `${((1 / len) * 100).toFixed(2)}%` })
   }
   let fillArr
   if (widthInfo.length === 1) {
+
     // 一个不超出25%
     fillArr = getFillArray(state, widthInfo, `37.5%`)
   } else if (widthInfo.length === 2) {
+
     // 两个不超出25%
     fillArr = getFillArray(state, widthInfo, `50%`)
   }
@@ -221,8 +234,12 @@ export const getStyleConfig = (data, style) => {
 }
 
 export const getFillArray = (state, widthInfo, maxWidth) => {
-  const labelIndexArr = state.labelLevelsInfo.map((_, idx) => idx) // 头部下拉项索引集合
-  const mapWidthInfoArr = widthInfo.map((i) => i.idx) // 头部下拉项宽度超过25%索引集合
+
+  // 头部下拉项索引集合
+  const labelIndexArr = state.labelLevelsInfo.map((_, idx) => idx)
+
+  // 头部下拉项宽度超过25%索引集合
+  const mapWidthInfoArr = widthInfo.map((i) => i.idx)
   return labelIndexArr
     .filter((i) => mapWidthInfoArr.indexOf(i) === -1)
     .map((i) => {

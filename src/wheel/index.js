@@ -12,24 +12,26 @@
 
 import { cloneDeep } from '@opentiny/vue-renderless/chart-core/deps/utils'
 
-export const created = ({ api }) => () => {
-  api._loadPickerData()
-  api._loadWheels()
+export const created = (api) => () => {
+  api.loadPickerData()
+  api.loadWheels()
 }
 
 /**
  * @description 初始化组装数据
  */
 
-export const _loadPickerData = ({ props, state }) => () => {
+export const loadPickerData = ({ props, state }) => () => {
   state.dataSource = cloneDeep(props.dataSource)
   state.defaultSelectedIndexs = cloneDeep(props.defaultSelectedIndexs)
   const level_1 = state.dataSource.map(({ label }) => ({ label }))
   const level_n = getNextLevel([], state.dataSource, state.defaultSelectedIndexs, 0)
   if (level_n.length === 0) {
+
     // 单列
     state.pickerData = [level_1]
   } else {
+
     // 多列
     state.pickerData = [level_1, ...level_n]
   }
@@ -61,8 +63,9 @@ export const getNextLevel = (levelItems, children, nextIndexs, start) => {
  * @returns 组装后的数据
  */
 
-export const _wheelChanged = ({ api, state }) => (newIndexs, oldIndexs) => {
+export const wheelChanged = ({ api, state }) => (newIndexs, oldIndexs) => {
   if (newIndexs.length > 1) {
+
     // 多列
     newIndexs.forEach((ii, ri) => {
       if (newIndexs[ri] !== oldIndexs[ri] && ri !== newIndexs.length - 1) {
@@ -101,29 +104,29 @@ export const wheelsTo = ({ api, state, nextTick }) => (indexs) => {
   })
 }
 
-export const refreshWheel = ({ nextTick }) => (wheel) => {
+export const refreshWheel = (nextTick) => (wheel) => {
   nextTick(() => {
     wheel.refresh()
   })
 }
 
-export const _loadWheels = ({ api, props, state, nextTick, refs }) => (wheel) => {
+export const loadWheels = ({ api, props, state, nextTick, refs }) => (wheel) => {
   if (state.wheels.length === 0) {
     nextTick(() => {
       state.wheels = []
       const { wheelWrapper } = refs
       if (props.hasFooter) {
         for (let i = 0; i < state.pickerData.length; i++) {
-          api._createWheelHasFooter(wheelWrapper, i)
+          api.createWheelHasFooter(wheelWrapper, i)
         }
       } else {
-        api._createWheelNoFooter(wheelWrapper)
+        api.createWheelNoFooter(wheelWrapper)
       }
     })
   }
 }
 
-export const _createWheelHasFooter = ({ api, state, emit, BScroll }) => (wheelWrapper, i) => {
+export const createWheelHasFooter = ({ api, state, emit, BScroll }) => (wheelWrapper, i) => {
   const wheels = state.wheels
   if (!wheels[i]) {
     wheels[i] = state.wheels[i] = new BScroll(wheelWrapper.children[i], {
@@ -137,13 +140,14 @@ export const _createWheelHasFooter = ({ api, state, emit, BScroll }) => (wheelWr
     state.prevSelectedIndexs = state.defaultSelectedIndexs
     wheels[i].on('wheelIndexChanged', () => {
       const currentSelectedIndex = wheels[i].getSelectedIndex()
+
       // 从滚动的当前列往后，默认都滚动到每列的首个元素
       let currentSelectedIndexs = [
         ...state.prevSelectedIndexs.slice(0, i),
         currentSelectedIndex,
         ...new Array(state.defaultSelectedIndexs.length - i - 1).fill(0)
       ]
-      api._wheelChanged(currentSelectedIndexs, state.prevSelectedIndexs)
+      api.wheelChanged(currentSelectedIndexs, state.prevSelectedIndexs)
       state.prevSelectedIndexs = currentSelectedIndexs
       const selectedLabels = []
       state.pickerData.forEach((data, i) => {
@@ -162,7 +166,7 @@ export const _createWheelHasFooter = ({ api, state, emit, BScroll }) => (wheelWr
   return wheels[i]
 }
 
-export const _createWheelNoFooter = ({ api, state, BScroll }) => (wheelWrapper) => {
+export const createWheelNoFooter = ({ api, state, BScroll }) => (wheelWrapper) => {
   const wheels = state.wheels
   if (!wheels[0]) {
     wheels[0] = state.wheels[0] = new BScroll(wheelWrapper.children[0], {
@@ -177,7 +181,7 @@ export const _createWheelNoFooter = ({ api, state, BScroll }) => (wheelWrapper) 
   return wheels[0]
 }
 
-export const changeWheelItemStyle = ({ state }) => (pickerData, currentSelectedIndexs) => {
+export const changeWheelItemStyle = (state) => (pickerData, currentSelectedIndexs) => {
   pickerData.forEach((item, index) => {
     state.pickerData[index] = item.map((rItem, i) => {
       rItem.selected = i === currentSelectedIndexs[index]
@@ -186,7 +190,7 @@ export const changeWheelItemStyle = ({ state }) => (pickerData, currentSelectedI
   })
 }
 
-export const dealWheels = ({ state }) => () => {
+export const dealWheels = (state) => () => {
   state.wheels.forEach(wheel => {
     wheel.destroy()
   })
@@ -203,6 +207,7 @@ export const clickWheelItem = ({ api, state, emit }) => (index) => {
     const selectedLabel = rItem?.label
     emit('clickWheelItem', [index], selectedLabel)
   } else {
+
     // 反选
     emit('clickWheelItem', [], '')
   }
