@@ -1,14 +1,14 @@
 /**
-* Copyright (c) 2022 - present TinyVue Authors.
-* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
-*
-* Use of this source code is governed by an MIT-style license.
-*
-* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
-* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
-* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
-*
-*/
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
 
 import { KEY_CODE, IPTHRESHOLD } from '@opentiny/vue-renderless/common'
 
@@ -113,7 +113,7 @@ export const select = ({ emit, parent, state }) => ({ index, event }) => {
   activeEvent({ emit, parent, state, index, event, type: 'select' })
 }
 
-export const inputEvent = ({ api, emit, props }) => ({ item, index }) => {
+export const inputEvent = ({ api, componentName, emit, eventName, props }) => ({ item, index }) => {
   const val = item.value.trim()
   let value = ''
 
@@ -130,6 +130,7 @@ export const inputEvent = ({ api, emit, props }) => ({ item, index }) => {
   value = api.getValue()
 
   emit('update:modelValue', value, index)
+  api.dispatch(componentName, eventName, [value])
 }
 
 export const change = ({ api, emit }) => () => {
@@ -146,7 +147,7 @@ export const blur = ({ api, componentName, emit, eventName, props, state }) => (
   }
 
   emit('blur', item.value, index)
-  api.dispatch(componentName, eventName)
+  api.dispatch(componentName, eventName, [item.value])
 }
 
 export const keyup = ({ api, props }) => ({ item, index, event }) => {
