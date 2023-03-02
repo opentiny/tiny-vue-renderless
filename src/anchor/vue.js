@@ -6,33 +6,31 @@
 *
 * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
 * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
-* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICElinksMapNSES FOR MORE DETAILS.
 *
 */
 
-import debounce from '@opentiny/vue-renderless/common/deps/debounce'
-import { mounted, updated, unmounted, debounceMouseScroll, getContainer, linkClick } from './index'
+import { mounted, updated, unmounted, getContainer, linkClick, onItersectionObserver } from './index'
 
-export const api = ['state', 'debounceMouseScroll', 'getContainer', 'linkClick']
+export const api = ['state', 'getContainer', 'linkClick', 'onItersectionObserver']
 
-export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive }, { vm }) => {
+export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive }, { vm, emit }) => {
   const api = {}
   const state = reactive({
     currentLink: '',
-    scrollEvent: null,
-    isScrolling: false,
-    linkList: [],
-    delay: 200
+    observerLinks: {},
+    intersectionObserver: null,
+    scrollContainer: null
   })
 
   Object.assign(api, {
     state,
-    mounted: mounted({ vm, props, state, api }),
+    mounted: mounted({ vm, state, api }),
     updated: updated({ state, api }),
-    unmounted: unmounted({ state, api }),
-    debounceMouseScroll: debounce(state.delay, debounceMouseScroll({ vm, state, api })),
+    unmounted: unmounted({ state }),
     getContainer: getContainer({ props }),
-    linkClick: linkClick({ state, vm })
+    linkClick: linkClick({ state, vm, emit, props }),
+    onItersectionObserver: onItersectionObserver({ vm, state, props })
   })
 
   onMounted(api.mounted)
@@ -41,4 +39,3 @@ export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive 
 
   return api
 }
-

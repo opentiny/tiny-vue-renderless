@@ -10,16 +10,8 @@
 *
 */
 
-import { addClass, on, off } from '@opentiny/vue-renderless/common/deps/dom'
+import { addClass, removeClass } from '@opentiny/vue-renderless/common/deps/dom'
 
-const setLinkList = ({ props, state }) => {
-  JSON.stringify(props.links, (key, val) => {
-    if (key === 'link' && typeof val === 'string') {
-      state.linkList = [...state.linkList, val]
-    }
-    return val
-  })
-}
 
 const setFixAnchor = ({ vm }) => {
   const { anchorRef } = vm.$refs
@@ -29,7 +21,28 @@ const setFixAnchor = ({ vm }) => {
   }
 }
 
-const getScreenHeight = () => window.screen.height
+const setMarkClass = ({ state, props }) => {
+  const { scrollContainer } = state
+  const { markClass } = props
+  const activeContentEl = scrollContainer.querySelector(`${state.currentLink}`)
+  if (markClass) {
+    addClass(activeContentEl, markClass)
+    setTimeout(() => {
+      removeClass(activeContentEl, markClass)
+    }, 1000)
+  }
+}
+
+const setScrollContainer = ({ state, api, cb = null }) => {
+  const currentContainer = api.getContainer()
+  const { scrollContainer } = state
+  if (scrollContainer !== currentContainer) {
+    removeClass(scrollContainer, 'anchor-scroll-container')
+    state.scrollContainer = currentContainer
+    addClass(currentContainer, 'anchor-scroll-container')
+    cb && cb()
+  }
+}
 
 const updateSkidPosition = ({ vm, state }) => {
   const activeEl = document.querySelector(`a[href='${state.currentLink}']`)
@@ -55,70 +68,83 @@ const updateSkidPosition = ({ vm, state }) => {
   }
 }
 
-const getCurrentAnchor = ({ vm, state, currentLink }) => {
-  state.currentLink = currentLink.link
+const getCurrentAnchor = ({ vm, state, link }) => {
+  state.currentLink = link
   updateSkidPosition({ vm, state })
 }
 
-export const getContainer = ({ props }) => () => props.setContainer || window.document || window
+const addObserver = ({ props, state }) => {
+  const { links } = props
+  const { intersectionObserver } = state
+  const observer = (list) => {
+    list.forEach(item => {
+      const link = item.link
+      if (item.children) {
+        observer(item.children)
+      } else {
+        const linkEl = document.querySelector(link)
+        linkEl && intersectionObserver.observe(linkEl)
+      }
+    })
+  }
+  observer(links)
 
-export const mounted = ({ vm, props, state, api }) => () => {
-  state.scrollContainer = api.getContainer()
-  setLinkList({ props, state })
+}
+
+
+export const getContainer = ({ props }) => () => props.containerId ? document.querySelector(props.containerId) : document.body
+
+export const mounted = ({ vm, state, api }) => () => {
+  setScrollContainer({ state, api })
   setFixAnchor({ vm })
-  state.scrollEvent = on(state.scrollContainer, 'scroll', api.debounceMouseScroll)
-  api.debounceMouseScroll()
+  api.onItersectionObserver()
 }
 
 export const updated = ({ state, api }) => () => {
-  if (state.scrollEvent) {
-    const currentContainer = api.getContainer()
-    if (state.scrollContainer !== currentContainer) {
-      state.scrollEvent = off(state.scrollContainer, 'scroll', api.debounceMouseScroll)
-      state.scrollContainer = currentContainer
-      state.scrollEvent = on(state.scrollContainer, 'scroll', api.debounceMouseScroll)
-      api.debounceMouseScroll()
-    }
-  }
+  const cb = api.onItersectionObserver
+  setScrollContainer({ state, api, cb })
 }
 
-export const unmounted = ({ state, api }) => () => {
-  state.scrollEvent = off(state.scrollContainer, 'scroll', api.debounceMouseScroll)
+export const unmounted = ({ state }) => () => {
+  const { intersectionObserver } = state
+  intersectionObserver.disconnect()
 }
 
-export const debounceMouseScroll = ({ vm, state }) => () => {
-  if (state.isScrolling) {
-    state.isScrolling = false
-    return
-  }
+export const onItersectionObserver = ({ vm, state, props }) => () => {
 
-  let currentLink = null
-  let visibleArea = getScreenHeight() / 3
-  const linkListPosition = []
-  state.linkList.forEach(link => {
-    const linkEl = document.querySelector(link)
-    const { top, bottom } = linkEl.getBoundingClientRect()
-    linkListPosition.push({
-      link,
-      top,
-      bottom
+  state.intersectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(item => {
+      const key = item.target.id
+      state.observerLinks[key] = item
     })
-  })
-  currentLink = linkListPosition[0]
-  for (let i = 1; i < linkListPosition.length; i++) {
-    if (linkListPosition[i].top <= visibleArea && linkListPosition[i].bottom >= visibleArea) {
-      currentLink = linkListPosition[i]
-    }
-  }
 
-  getCurrentAnchor({ vm, state, currentLink })
+    for (let item of Object.values(state.observerLinks)) {
+      if (item.isIntersecting && item.intersectionRatio > 0) {
+        const link = `#${item.target.id}`
+        getCurrentAnchor({ vm, state, link })
+        break
+      }
+    }
+  })
+
+  addObserver({ props, state })
 }
 
-export const linkClick = ({ state, vm }) => (e, item) => {
-  if (state.isScrolling) {
-    return
-  }
-  state.currentLink = item.link
+
+export const linkClick = ({ state, vm, emit, props }) => (e, item) => {
+  const { link, title } = item
+  const emitLink = { link, title }
+  emit('linkClick', e, emitLink)
+
+  const { scrollContainer } = state
+  state.currentLink = link
   updateSkidPosition({ vm, state })
-  state.isScrolling = true
+  setMarkClass({ state, props })
+
+  if (scrollContainer !== document.body) {
+    const linkEl = scrollContainer.querySelector(item.link)
+    const top = linkEl.offsetTop
+    const param = { top, left: 0, behavior: 'smooth' }
+    scrollContainer.scrollTo(param)
+  }
 }
