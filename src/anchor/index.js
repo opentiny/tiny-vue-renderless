@@ -37,9 +37,9 @@ const setScrollContainer = ({ state, api, cb = null }) => {
   const currentContainer = api.getContainer()
   const { scrollContainer } = state
   if (scrollContainer !== currentContainer) {
-    removeClass(scrollContainer, 'anchor-scroll-container')
+    removeClass(scrollContainer, 'tiny-anchor-scroll-container')
     state.scrollContainer = currentContainer
-    addClass(currentContainer, 'anchor-scroll-container')
+    addClass(currentContainer, 'tiny-anchor-scroll-container')
     cb && cb()
   }
 }
@@ -91,6 +91,14 @@ const addObserver = ({ props, state }) => {
 
 }
 
+const setCurrentHash = (state) => {
+  if (state.currentHash !== location.hash) {
+    state.currentHash = location.hash
+    return true
+  }
+  return false
+}
+
 
 export const getContainer = ({ props }) => () => props.containerId ? document.querySelector(props.containerId) : document.body
 
@@ -98,6 +106,7 @@ export const mounted = ({ vm, state, api }) => () => {
   setScrollContainer({ state, api })
   setFixAnchor({ vm })
   api.onItersectionObserver()
+  setCurrentHash(state)
 }
 
 export const updated = ({ state, api }) => () => {
@@ -136,12 +145,13 @@ export const linkClick = ({ state, vm, emit, props }) => (e, item) => {
   const emitLink = { link, title }
   emit('linkClick', e, emitLink)
 
+  const isChangeHash = setCurrentHash(state)
   const { scrollContainer } = state
   state.currentLink = link
   updateSkidPosition({ vm, state })
   setMarkClass({ state, props })
 
-  if (scrollContainer !== document.body) {
+  if (scrollContainer !== document.body && !isChangeHash) {
     const linkEl = scrollContainer.querySelector(item.link)
     const top = linkEl.offsetTop
     const param = { top, left: 0, behavior: 'smooth' }

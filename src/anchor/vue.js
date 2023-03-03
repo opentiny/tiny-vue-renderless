@@ -20,7 +20,8 @@ export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive 
     currentLink: '',
     observerLinks: {},
     intersectionObserver: null,
-    scrollContainer: null
+    scrollContainer: null,
+    currentHash: ''
   })
 
   Object.assign(api, {
