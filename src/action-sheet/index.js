@@ -10,7 +10,47 @@
 *
 */
 
-export const visibleHandle = (emit) => () => {
+export const setSheetStyle = ({ state, props }) => () => {
+  if (props.isContent) {
+
+    // 展示在视图中间
+    state.sheetMaskStyle = {
+      'position': 'absolute',
+    }
+    state.sheetContentStyle = {
+      'position': 'absolute',
+      'max-height': props.height,
+    }
+  } else {
+
+    // 固定在页面底部
+    state.sheetMaskStyle = {
+      'position': 'fixed',
+    }
+    state.sheetContentStyle = {
+      'position': 'fixed',
+      'max-height': props.height,
+    }
+  }
+
+}
+
+export const initScrollMenu = ({ state, nextTick, refs, BScroll }) => () => {
+  nextTick(() => {
+    const { scrollMenu } = refs
+    if (!state.scroll) {
+      state.scroll = new BScroll(scrollMenu, {
+        probeType: 3,
+        click: true
+      })
+    } else {
+      state.scroll.refresh()
+    }
+  })
+}
+
+export const visibleHandle = ({ emit, state }) => () => {
+  state.scroll = null
   emit('update:visible', false)
   emit('close', false)
 }
@@ -27,7 +67,7 @@ export const watchVisible = ({ emit, props, state }) => (value) => {
 
 export const menuHandle = ({ emit, state }) => (item) => {
   state.active = item.id
-
+  state.scroll = null
   emit('update:visible', false)
   emit('update:modelValue', item.id)
   emit('click', item)
