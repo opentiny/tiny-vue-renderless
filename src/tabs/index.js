@@ -59,7 +59,7 @@ export const calcMorePanes = ({ parent, props, state }) => () => {
   const tabs = el.querySelectorAll('.tiny-tabs__item')
 
   if (tabs && tabs.length) {
-    const tabsHeaderWidth = el.querySelector('.tiny-tabs__nav-scroll').clientWidth - 76
+    const tabsHeaderWidth = el.querySelector('.tiny-tabs__nav-scroll').clientWidth + 15
     let tabsAllWidth = 0
 
     for (let i = 0, length = tabs.length; i < length; i++) {
