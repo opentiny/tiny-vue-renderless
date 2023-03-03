@@ -31,7 +31,7 @@ export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive 
     unmounted: unmounted({ state }),
     getContainer: getContainer({ props }),
     linkClick: linkClick({ state, vm, emit, props }),
-    onItersectionObserver: onItersectionObserver({ vm, state, props })
+    onItersectionObserver: onItersectionObserver({ vm, state, props, emit })
   })
 
   onMounted(api.mounted)

@@ -44,13 +44,15 @@ const setScrollContainer = ({ state, api, cb = null }) => {
   }
 }
 
-const updateSkidPosition = ({ vm, state }) => {
-  const activeEl = document.querySelector(`a[href='${state.currentLink}']`)
+const updateSkidPosition = ({ vm, state, emit }) => {
+  const { currentLink } = state
+  const activeEl = document.querySelector(`a[href='${currentLink}']`)
   const { skidRef, maskRef, anchorRef } = vm.$refs
 
   if (!activeEl || !anchorRef) {
     return
   }
+  emit('onChange', currentLink)
 
   const { offsetHeight, offsetWidth } = activeEl
   const { top: linkTitleClientTop, left: linkTitleClientLeft } = activeEl.getBoundingClientRect()
@@ -68,9 +70,10 @@ const updateSkidPosition = ({ vm, state }) => {
   }
 }
 
-const getCurrentAnchor = ({ vm, state, link }) => {
+const getCurrentAnchor = ({ vm, state, link, emit }) => {
+  if (state.currentLink === link) { return }
   state.currentLink = link
-  updateSkidPosition({ vm, state })
+  updateSkidPosition({ vm, state, emit })
 }
 
 const addObserver = ({ props, state }) => {
@@ -119,7 +122,7 @@ export const unmounted = ({ state }) => () => {
   intersectionObserver.disconnect()
 }
 
-export const onItersectionObserver = ({ vm, state, props }) => () => {
+export const onItersectionObserver = ({ vm, state, props, emit }) => () => {
 
   state.intersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(item => {
@@ -130,7 +133,7 @@ export const onItersectionObserver = ({ vm, state, props }) => () => {
     for (let item of Object.values(state.observerLinks)) {
       if (item.isIntersecting && item.intersectionRatio > 0) {
         const link = `#${item.target.id}`
-        getCurrentAnchor({ vm, state, link })
+        getCurrentAnchor({ vm, state, link, emit })
         break
       }
     }
@@ -148,7 +151,7 @@ export const linkClick = ({ state, vm, emit, props }) => (e, item) => {
   const isChangeHash = setCurrentHash(state)
   const { scrollContainer } = state
   state.currentLink = link
-  updateSkidPosition({ vm, state })
+  updateSkidPosition({ vm, state, emit })
   setMarkClass({ state, props })
 
   if (scrollContainer !== document.body && !isChangeHash) {
