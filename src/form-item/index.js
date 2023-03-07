@@ -47,6 +47,26 @@ export const computedLabelStyle = ({ props, state }) => () => {
   return result
 }
 
+export const computedValueStyle = ({ props, state }) => () => {
+  const result = {}
+  
+  if (state.form.labelPosition === POSITION.Top) {
+    return result.width = `100%`
+  }
+  
+  const labelWidth = props.labelWidth || state.form.labelWidth
+
+  if (labelWidth) {
+    if (labelWidth === 'auto') {
+      result.width = labelWidth
+    } else {
+      result.width = `calc(100% - ${labelWidth})`
+    }
+  }
+
+  return result
+}
+
 export const computedContentStyle = ({ props, state }) => () => {
   const result = {}
   const label = props.label
