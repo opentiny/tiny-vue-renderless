@@ -71,10 +71,12 @@ export const hide = ({ api, props, state }) => () => {
   )
 }
 
-export const handleClick = ({ api, props, state }) => () => {
+export const handleClick = ({ api, props, state,emit }) => () => {
   if (props.disabled) {
     return
   }
+
+  emit('handle-click',state.visible)
 
   state.visible ? api.hide() : api.show()
 }
