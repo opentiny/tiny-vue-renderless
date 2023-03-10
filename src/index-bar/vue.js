@@ -49,6 +49,10 @@ export const renderless = (props, { computed, reactive, onMounted, onUpdated, wa
     window.addEventListener('scroll', api.handleScroll)
   })
 
+  onUnmounted(() => {
+    window.removeEventListener('scroll', api.handleScroll)
+  })
+
   watch(
     () => state.index,
     (value, oldValue) => {
