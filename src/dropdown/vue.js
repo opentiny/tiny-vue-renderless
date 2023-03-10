@@ -56,7 +56,7 @@ export const renderless = (props, { reactive, watch, provide, onMounted }, { emi
     show: show({ props, state }),
     hide: hide({ api, props, state }),
     mounted: mounted({ api, vm }),
-    handleClick: handleClick({ api, props, state }),
+    handleClick: handleClick({ api, props, state,emit }),
     handleTriggerKeyDown: handleTriggerKeyDown({ api, state }),
     handleItemKeyDown: handleItemKeyDown({ api, props, state }),
     resetTabindex: resetTabindex({ api }),
