@@ -11,7 +11,7 @@
 */
 
 export const setSheetStyle = ({ state, props }) => () => {
-  if (props.isContent) {
+  if (props.contentPosition) {
 
     // 展示在视图中间
     state.sheetMaskStyle = {

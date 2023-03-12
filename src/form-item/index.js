@@ -67,33 +67,6 @@ export const computedValueStyle = ({ props, state }) => () => {
   return result
 }
 
-export const computedContentStyle = ({ props, state }) => () => {
-  const result = {}
-  const label = props.label
-
-  if (state.form.labelPosition === POSITION.Top || state.form.inline) {
-    return result
-  }
-
-  if (!label && !props.labelWidth && state.isNested) {
-    return result
-  }
-
-  const labelWidth = props.labelWidth || state.form.labelWidth
-
-  if (labelWidth === 'auto') {
-    if (props.labelWidth === 'auto') {
-      result.marginLeft = state.computedLabelWidth
-    } else if (state.form.labelWidth === 'auto') {
-      result.marginLeft = state.formInstance.state.autoLabelWidth
-    }
-  } else {
-    result.marginLeft = labelWidth
-  }
-
-  return result
-}
-
 export const computedForm = ({ constants, instance, state }) => () => {
   const { FORM_NAME, FORM_ITEM_NAME } = constants
   let parent = instance.$parent
