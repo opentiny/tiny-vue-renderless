@@ -19,10 +19,14 @@ export const toggle = ({ emit, props, state }) => (event) => {
     return false
   }
 
-  state.currentValue = state.currentValue === props.trueValue ? props.falseValue : props.trueValue
+  const change = () => {
+    state.currentValue = state.currentValue === props.trueValue ? props.falseValue : props.trueValue
 
-  emit('update:modelValue', state.currentValue)
-  emit('change', state.currentValue)
+    emit('update:modelValue', state.currentValue)
+    emit('change', state.currentValue)
+  }
+
+  props.beforeChange ? props.beforeChange(change) : change()
 }
 
 export const computedWarpClasses = ({ prefixCls, props, state }) => () => [
