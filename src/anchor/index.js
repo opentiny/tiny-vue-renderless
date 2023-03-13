@@ -14,10 +14,10 @@ import { addClass, removeClass } from '@opentiny/vue-renderless/common/deps/dom'
 
 
 const setFixAnchor = ({ vm }) => {
-  const { anchorRef } = vm.$refs
-  if (anchorRef) {
-    anchorRef.style.position = 'fixed'
-    anchorRef.style.top = anchorRef.offsetTop
+  const { fixRef } = vm.$refs
+  if (fixRef) {
+    fixRef.style.position = 'fixed'
+    fixRef.style.top = fixRef.offsetTop
   }
 }
 
@@ -46,7 +46,7 @@ const setScrollContainer = ({ state, api, cb = null }) => {
 
 const updateSkidPosition = ({ vm, state, emit }) => {
   const { currentLink } = state
-  const activeEl = document.querySelector(`a[href='${currentLink}']`)
+  const activeEl = vm.$refs[currentLink]
   const { skidRef, maskRef, anchorRef } = vm.$refs
 
   if (!activeEl || !anchorRef) {
