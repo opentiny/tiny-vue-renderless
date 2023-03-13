@@ -26,44 +26,52 @@ export const toggle = ({ state, api }) => (value) => {
 }
 
 export const request = ({ props, state, vm, sf, api }) => () => {
-  if (state.isPageOnly) {
-    state.isFullscreen = true
+  const change = () => {
+    if (state.isPageOnly) {
+      state.isFullscreen = true
 
-    api.onChangeFullscreen()
-    off(document, 'keyup', api.keypressCallback)
-    on(document, 'keyup', api.keypressCallback)
-  } else {
-    sf.off('change', api.fullScreenCallback)
-    sf.on('change', api.fullScreenCallback)
-    sf.request(props.teleport ? document.body : vm.$el)
+      api.onChangeFullscreen()
+      off(document, 'keyup', api.keypressCallback)
+      on(document, 'keyup', api.keypressCallback)
+    } else {
+      sf.off('change', api.fullScreenCallback)
+      sf.on('change', api.fullScreenCallback)
+      sf.request(props.teleport ? document.body : vm.$el)
+    }
+    if (props.teleport) {
+      // teleport：将目标元素挪到body下，并在原地留一个标记用于还原
+      if (vm.$el.parentNode === document.body) {
+        return
+      }
+
+      state.__parentNode = vm.$el.parentNode
+      state.__token = document.createComment('fullscreen-token')
+      state.__parentNode.insertBefore(state.__token, vm.$el)
+
+      document.body.appendChild(vm.$el)
+    }
   }
-  if (props.teleport) {
-    // teleport：将目标元素挪到body下，并在原地留一个标记用于还原
-    if (vm.$el.parentNode === document.body) {
+
+  props.beforeChange ? props.beforeChange(change) : change()
+}
+
+export const exit = ({ state, api, sf, props }) => () => {
+  const change = () => {
+    if (!state.isFullscreen) {
       return
     }
 
-    state.__parentNode = vm.$el.parentNode
-    state.__token = document.createComment('fullscreen-token')
-    state.__parentNode.insertBefore(state.__token, vm.$el)
+    if (state.isPageOnly) {
+      state.isFullscreen = false
 
-    document.body.appendChild(vm.$el)
-  }
-}
-
-export const exit = ({ state, api, sf }) => () => {
-  if (!state.isFullscreen) {
-    return
+      api.onChangeFullscreen()
+      off(document, 'keyup', api.keypressCallback)
+    } else {
+      sf.exit()
+    }
   }
 
-  if (state.isPageOnly) {
-    state.isFullscreen = false
-
-    api.onChangeFullscreen()
-    off(document, 'keyup', api.keypressCallback)
-  } else {
-    sf.exit()
-  }
+  props.beforeChange ? props.beforeChange(change) : change()
 }
 
 export const shadeClick = ({ props, vm, api }) => (e) => {

@@ -31,7 +31,7 @@ export const renderless = (props, { reactive, computed, watch }, { vm, emit }) =
     state,
     getState: getState(state),
     enter: enter(api),
-    exit: exit({ state, api, sf }),
+    exit: exit({ state, api, sf, props }),
     toggle: toggle({ state, api }),
     keypressCallback: keypressCallback(api),
     shadeClick: shadeClick({ props, vm, api }),
