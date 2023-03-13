@@ -14,7 +14,7 @@ import { mounted, updated, unmounted, getContainer, linkClick, onItersectionObse
 
 export const api = ['state', 'getContainer', 'linkClick', 'onItersectionObserver']
 
-export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive }, { emit }) => {
+export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive }, { vm, emit }) => {
   const api = {}
   const state = reactive({
     currentLink: '',
@@ -26,12 +26,12 @@ export const renderless = (props, { onMounted, onUnmounted, onUpdated, reactive 
 
   Object.assign(api, {
     state,
-    mounted: mounted({ state, api }),
+    mounted: mounted({ vm, state, api }),
     updated: updated({ state, api }),
     unmounted: unmounted({ state }),
     getContainer: getContainer({ props }),
-    linkClick: linkClick({ state, emit, props }),
-    onItersectionObserver: onItersectionObserver({ state, props, emit })
+    linkClick: linkClick({ state, vm, emit, props }),
+    onItersectionObserver: onItersectionObserver({ vm, state, props, emit })
   })
 
   onMounted(api.mounted)
