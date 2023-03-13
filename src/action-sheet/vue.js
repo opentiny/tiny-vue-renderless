@@ -10,24 +10,37 @@
 *
 */
 
-import { visibleHandle, watchVisible, menuHandle } from './index'
+import { setSheetStyle, initScrollMenu, visibleHandle, watchVisible, menuHandle } from './index'
 
-export const api = ['state', 'visibleHandle', 'menuHandle']
+export const api = ['state', 'setSheetStyle', 'initScrollMenu', 'visibleHandle', 'menuHandle']
 
-export const renderless = (props, { reactive, watch }, { emit }) => {
+export const renderless = (props, { reactive, watch }, { emit, nextTick, refs }, { BScroll }) => {
   const api = {}
   const state = reactive({
     toggle: false,
-    active: null
+    active: null,
+    sheetMaskStyle: {},
+    sheetContentStyle: {},
+    scroll: null,
   })
 
-  watch(() => props.visible, api.watchVisible)
+  watch(() => props.visible,
+    (value) => {
+      if (value) {
+        api.setSheetStyle({ state, props })
+        api.initScrollMenu({ state, nextTick, refs, BScroll })
+      }
+      api.watchVisible(value)
+    },
+  )
 
   Object.assign(api, {
     state,
+    setSheetStyle: setSheetStyle({ state, props }),
+    initScrollMenu: initScrollMenu({ state, nextTick, refs, BScroll }),
+    visibleHandle: visibleHandle({ emit, state }),
+    watchVisible: watchVisible({ emit, props, state }),
     menuHandle: menuHandle({ state, emit }),
-    visibleHandle: visibleHandle(emit),
-    watchVisible: watchVisible({ emit, props, state })
   })
 
   return api
