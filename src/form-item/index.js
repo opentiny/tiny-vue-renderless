@@ -67,7 +67,6 @@ export const computedValueStyle = ({ props, state }) => () => {
   return result
 }
 
-
 export const computedContentStyle = ({ props, state }) => () => {
   const result = {}
   const label = props.label
