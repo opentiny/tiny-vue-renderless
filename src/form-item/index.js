@@ -51,7 +51,7 @@ export const computedValueStyle = ({ props, state }) => () => {
   const result = {}
   
   if (state.form.labelPosition === POSITION.Top) {
-    return result.width = `100%`
+    return result.width = '100%'
   }
   
   const labelWidth = props.labelWidth || state.form.labelWidth
