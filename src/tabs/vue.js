@@ -12,6 +12,7 @@
 
 import {
   calcMorePanes,
+  calcExpandPanes,
   calcPaneInstances,
   handleTabClick,
   handleTabAdd,
@@ -50,7 +51,8 @@ const initState = ({ reactive, props }) =>
     deltaY: 0,
     offsetX: 0,
     offsetY: 0,
-    direction: ''
+    direction: '',
+    expandPanesWidth: ''
   })
 
 const initWatcher = ({ watch, props, api, state, nextTick, refs }) => {
@@ -91,11 +93,12 @@ export const renderless = (props, { onMounted, onUpdated, provide, reactive, wat
     changeDirection: changeDirection({ props, state }),
     changeCurrentName: changeCurrentName({ emit, state }),
     calcMorePanes: calcMorePanes({ parent, props, state }),
+    calcExpandPanes: calcExpandPanes({ parent, props, state }),
     calcPaneInstances: calcPaneInstances({ constants, parent, state, childrenHandler }),
     handleTabDragStart: handleTabDragStart({ emit }),
     handleTabDragOver: handleTabDragOver({ emit }),
     handleTabDragEnd: handleTabDragEnd({ state, emit }),
-    handleTabClick: handleTabClick({ api, emit }),
+    handleTabClick: handleTabClick({ api, emit, props, refs }),
     setCurrentName: setCurrentName({ api, props, refs, state }),
     created: created({ api, parent, state })
   })
@@ -113,11 +116,13 @@ export const renderless = (props, { onMounted, onUpdated, provide, reactive, wat
   onMounted(() => {
     api.calcPaneInstances()
     api.calcMorePanes()
+    api.calcExpandPanes()
   })
 
   onUpdated(() => {
     api.calcPaneInstances()
     api.calcMorePanes()
+    api.calcExpandPanes()
   })
 
   return api

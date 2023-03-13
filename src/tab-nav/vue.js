@@ -21,6 +21,9 @@ import {
   scrollIntoView,
   mounted,
   moreTabShow,
+  expandTabShow,
+  expandTabHide,
+  computedHeaderStyle,
   beforeUnmount,
   scrollPrev,
   scrollNext,
@@ -39,6 +42,9 @@ export const api = [
   'scrollToActiveTab',
   'scrollIntoView',
   'moreTabShow',
+  'expandTabShow',
+  'expandTabHide',
+  'computedHeaderStyle',
   'swiperHandle'
 ]
 
@@ -47,14 +53,16 @@ export const renderless = (props, { computed, inject, onBeforeUnmount, onMounted
   const state = reactive({
     navOffset: 0,
     lineOffset: 0,
-    lineWidth: 0,
     scrollable: false,
     isFocus: false,
     focusable: false,
     showMoreItem: false,
     isActive: false,
     showMoreTabs: props.showMoreTabs,
-    mode: props._mode || parent.$mode || (tinyMode ? tinyMode.value : 'pc'),
+    showExpandItem: false,
+    showExpandTabs: props.showExpandTabs,
+    expandHeaderStyle: {},
+    mode: props._mode || parent.$mode || (tinyMode ? tinyMode : 'pc'),
     rootTabs: inject('rootTabs'),
     sizeName: computed(() => api.computedSizeName(state)),
     navStyle: computed(() => api.computedNavStyle(state))
@@ -64,13 +72,16 @@ export const renderless = (props, { computed, inject, onBeforeUnmount, onMounted
     setFocus: setFocus(state),
     removeFocus: removeFocus(state),
     moreTabShow: moreTabShow(state),
+    expandTabShow: expandTabShow({ api, state }),
+    expandTabHide: expandTabHide(state),
     scrollPrev: scrollPrev({ refs, state }),
     scrollNext: scrollNext({ refs, state }),
     windowBlurHandler: windowBlurHandler(state),
     windowFocusHandler: windowFocusHandler(state),
     visibilityChangeHandler: visibilityChangeHandler(state),
     scrollToActiveTab: scrollToActiveTab({ props, parent, refs, state }),
-    scrollIntoView: scrollIntoView({ props, parent, refs, state })
+    scrollIntoView: scrollIntoView({ props, parent, refs, state }),
+    computedHeaderStyle: computedHeaderStyle({ refs, state })
   })
 
   Object.assign(api, { updated: updated({ api, props, refs, state }), changeTab: changeTab(api) })

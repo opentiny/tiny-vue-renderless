@@ -75,7 +75,19 @@ export const calcMorePanes = ({ parent, props, state }) => () => {
   }
 }
 
-export const handleTabClick = ({ api, emit }) => (pane, tabName, event) => {
+export const calcExpandPanes = ({ parent, props, state }) => () => {
+  if (!props.showExpandTabs) {
+    return
+  }
+  const el = parent.$el
+  const tabsHeader = el.querySelector('.tiny-mobile-tabs__header')
+
+  if (tabsHeader) {
+    state.expandPanesWidth = tabsHeader.clientWidth
+  }
+}
+
+export const handleTabClick = ({ api, emit, props, refs }) => (pane, tabName, event) => {
   if (pane.disabled) {
     return
   }
@@ -83,6 +95,11 @@ export const handleTabClick = ({ api, emit }) => (pane, tabName, event) => {
   api.setCurrentName(tabName)
 
   emit('click', pane, event)
+
+  if (props.showExpandTabs) {
+    refs.nav && refs.nav.expandTabHide()
+  }
+  
 }
 
 export const handleTabRemove = (emit) => (pane, event) => {

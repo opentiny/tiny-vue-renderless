@@ -21,7 +21,6 @@ export const computedNavStyle = (state) => {
   if (state.mode === 'mobile') {
     return {
       transform: `translate${dir}(${state.lineOffset}px) translate${dir}(-50%)`,
-      width: `${state.lineWidth}px`
     }
   } else {
     return {
@@ -71,8 +70,7 @@ export const updated = ({ api, refs, state }) => () => {
         const line = item.querySelector('.tiny-mobile-tabs__name')
 
         state.isActive = true
-        state.lineWidth = line.offsetWidth
-        state.lineOffset = item.offsetLeft + item.offsetWidth / 2
+        state.lineOffset = item.offsetLeft + item.offsetWidth / 2 
       }
     })
   }
@@ -260,6 +258,7 @@ export const removeFocus = (state) => () => {
   state.isFocus = true
 }
 
+// pc-展示更多的功能
 export const moreTabShow = (state) => () => {
   if (state.showMoreItem) {
     state.showMoreItem = false
@@ -267,3 +266,23 @@ export const moreTabShow = (state) => () => {
     state.showMoreItem = true
   }
 }
+
+// mobile-展示展开选项的功能
+export const expandTabShow = ({ api, state }) => () => {
+  state.showExpandItem = !state.showExpandItem
+  if (state.showExpandItem) {
+    api.computedHeaderStyle()
+  }
+}
+
+export const expandTabHide = (state) => () => state.showExpandItem = false
+
+
+export const computedHeaderStyle = ({ refs, state }) => () => {
+
+  if (refs.nav) {
+    state.expandHeaderStyle[state.sizeName] = refs.nav[`offset${capitalize(state.sizeName)}`] + 'px'
+  }
+
+ return state.expandHeaderStyle
+} 
