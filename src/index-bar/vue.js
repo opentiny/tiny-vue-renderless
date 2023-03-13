@@ -23,7 +23,7 @@ export const api = [
   'handleIndexClick'
 ]
 
-export const renderless = (props, { computed, reactive, onMounted, onUpdated, watch }, { emit, parent, refs }) => {
+export const renderless = (props, { computed, reactive, onMounted, onUnmounted, onUpdated, watch }, { emit, parent, refs }) => {
   const state = reactive({
     index: 0,
     childrenAnchor: [],
