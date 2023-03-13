@@ -13,11 +13,12 @@
 import { addClass, removeClass } from '@opentiny/vue-renderless/common/deps/dom'
 
 
-const setFixAnchor = ({ vm }) => {
-  const { anchorRef } = vm.$refs
-  if (anchorRef) {
-    anchorRef.style.position = 'fixed'
-    anchorRef.style.top = anchorRef.offsetTop
+const setFixAnchor = () => {
+  const fixElList = document.querySelectorAll('.tiny-anchor__affix')
+  if (fixElList.length >= 1) {
+    fixElList.forEach(fixRef => {
+      !fixRef.style.top && (fixRef.style.top = fixRef.offsetTop)
+    })
   }
 }
 
@@ -44,25 +45,20 @@ const setScrollContainer = ({ state, api, cb = null }) => {
   }
 }
 
-const updateSkidPosition = ({ vm, state, emit }) => {
-  const { currentLink } = state
-  const activeEl = document.querySelector(`a[href='${currentLink}']`)
-  const { skidRef, maskRef, anchorRef } = vm.$refs
-
-  if (!activeEl || !anchorRef) {
-    return
-  }
-  emit('onChange', currentLink)
-
+const forEachUpdateNode = ({ skidRef, currentLink }) => {
+  const anchorRef = skidRef.parentNode.parentNode
+  const { top: anchorClientTop, left: anchorClientLeft } = anchorRef.getBoundingClientRect()
+  const activeEl = anchorRef.querySelector(`a[href='${currentLink}']`)
+  const maskRef = anchorRef.querySelector('.tiny-anchor-link-mask')
   const { offsetHeight, offsetWidth } = activeEl
   const { top: linkTitleClientTop, left: linkTitleClientLeft } = activeEl.getBoundingClientRect()
-  const { top: anchorClientTop, left: anchorClientLeft } = anchorRef.getBoundingClientRect()
-
   const offsetTop = linkTitleClientTop - anchorClientTop
   const offsetLeft = linkTitleClientLeft - anchorClientLeft
-  addClass(skidRef, 'tiny-anchor-orbit-skid--active')
-  skidRef.style.top = `${offsetTop}px`
-  skidRef.style.height = `${offsetHeight}px`
+  if (skidRef) {
+    addClass(skidRef, 'tiny-anchor-orbit-skid--active')
+    skidRef.style.top = `${offsetTop}px`
+    skidRef.style.height = `${offsetHeight}px`
+  }
   if (maskRef) {
     maskRef.style.top = `${offsetTop}px`
     maskRef.style.height = `${offsetHeight}px`
@@ -70,10 +66,27 @@ const updateSkidPosition = ({ vm, state, emit }) => {
   }
 }
 
-const getCurrentAnchor = ({ vm, state, link, emit }) => {
+const updateSkidPosition = ({ state, emit }) => {
+  const { currentLink } = state
+  const activeEl = document.querySelector(`a[href='${currentLink}']`)
+  const skidElList = document.querySelectorAll('.tiny-anchor-orbit-skid')
+
+  if (!activeEl) {
+    return
+  }
+  emit('onChange', currentLink)
+
+  if (skidElList && skidElList.length >= 1) {
+    skidElList.forEach(skidRef => {
+      forEachUpdateNode({ skidRef, currentLink })
+    })
+  }
+}
+
+const getCurrentAnchor = ({ state, link, emit }) => {
   if (state.currentLink === link) { return }
   state.currentLink = link
-  updateSkidPosition({ vm, state, emit })
+  updateSkidPosition({ state, emit })
 }
 
 const addObserver = ({ props, state }) => {
@@ -105,9 +118,9 @@ const setCurrentHash = (state) => {
 
 export const getContainer = ({ props }) => () => props.containerId ? document.querySelector(props.containerId) : document.body
 
-export const mounted = ({ vm, state, api }) => () => {
+export const mounted = ({ state, api }) => () => {
   setScrollContainer({ state, api })
-  setFixAnchor({ vm })
+  setFixAnchor()
   api.onItersectionObserver()
   setCurrentHash(state)
 }
@@ -122,7 +135,7 @@ export const unmounted = ({ state }) => () => {
   intersectionObserver.disconnect()
 }
 
-export const onItersectionObserver = ({ vm, state, props, emit }) => () => {
+export const onItersectionObserver = ({ state, props, emit }) => () => {
 
   state.intersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(item => {
@@ -133,7 +146,7 @@ export const onItersectionObserver = ({ vm, state, props, emit }) => () => {
     for (let item of Object.values(state.observerLinks)) {
       if (item.isIntersecting && item.intersectionRatio > 0) {
         const link = `#${item.target.id}`
-        getCurrentAnchor({ vm, state, link, emit })
+        getCurrentAnchor({ state, link, emit })
         break
       }
     }
@@ -143,7 +156,7 @@ export const onItersectionObserver = ({ vm, state, props, emit }) => () => {
 }
 
 
-export const linkClick = ({ state, vm, emit, props }) => (e, item) => {
+export const linkClick = ({ state, emit, props }) => (e, item) => {
   const { link, title } = item
   const emitLink = { link, title }
   emit('linkClick', e, emitLink)
@@ -151,7 +164,7 @@ export const linkClick = ({ state, vm, emit, props }) => (e, item) => {
   const isChangeHash = setCurrentHash(state)
   const { scrollContainer } = state
   state.currentLink = link
-  updateSkidPosition({ vm, state, emit })
+  updateSkidPosition({ state, emit })
   setMarkClass({ state, props })
 
   if (scrollContainer !== document.body && !isChangeHash) {
