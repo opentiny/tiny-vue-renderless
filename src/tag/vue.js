@@ -15,6 +15,6 @@ import { handleClose, handleClick } from './index'
 export const api = ['handleClose', 'handleClick']
 
 export const renderless = (props, hooks, { emit, parent }) => ({
-  handleClose: handleClose(emit),
+  handleClose: handleClose({ emit, props }),
   handleClick: handleClick({ emit, parent })
 })
