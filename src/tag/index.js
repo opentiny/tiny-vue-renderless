@@ -10,9 +10,11 @@
 *
 */
 
-export const handleClose = (emit) => (event) => {
+export const handleClose = ({ emit, props }) => (event) => {
   event.stopPropagation()
-  emit('close', event)
+
+  const close = () => emit('close', event)
+  props.beforeDelete ? props.beforeDelete(close) : close()
 }
 
 export const handleClick = ({ emit, parent }) => (event) => {
