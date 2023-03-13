@@ -16,7 +16,6 @@ import { addClass, removeClass } from '@opentiny/vue-renderless/common/deps/dom'
 const setFixAnchor = ({ vm }) => {
   const { fixRef } = vm.$refs
   if (fixRef) {
-    fixRef.style.position = 'fixed'
     fixRef.style.top = fixRef.offsetTop
   }
 }
