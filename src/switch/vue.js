@@ -42,7 +42,7 @@ export const renderless = (props, { computed, watch, reactive, inject }, { paren
   watch(
     () => props.modelValue,
     (value) => {
-      state.currentValue = value
+      state.currentValue = (typeof props.falseValue !== 'boolean' || typeof props.trueValue !== 'boolean') ? value : Boolean(value)
     },
     { immediate: true }
   )
