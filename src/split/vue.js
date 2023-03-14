@@ -19,11 +19,12 @@ import {
   handleMove,
   handleUp,
   handleMousedown,
-  computeOffset
+  computeOffset,
+  handleCollapse
 } from './index'
 import { on, off } from '@opentiny/vue-renderless/common/deps/dom'
 
-export const api = ['state', 'handleMousedown']
+export const api = ['state', 'handleMousedown', 'handleCollapse']
 
 export const useOffset = ({ nextTick, props, refs, constants, hooks }) => {
   const api = {}
@@ -71,6 +72,7 @@ export const renderless = (props, hooks, { refs, nextTick, emit, constants }) =>
     computedrightBottomMin: computed(() => api.getComputedThresholdValue('rightBottomMin')),
     wrapperClasses: computed(() => [state.prefix, `${state.prefix}-wrapper`, state.isMoving ? 'no-select' : '']),
     paneClasses: computed(() => [`${state.prefix}-pane`, { [`${state.prefix}-pane-moving`]: state.isMoving }]),
+    collapsed: false,
     ...getUseOffset.state
   })
 
@@ -83,6 +85,7 @@ export const renderless = (props, hooks, { refs, nextTick, emit, constants }) =>
     getAnotherOffset: getAnotherOffset({ refs, state }),
     handleMove: handleMove({ api, emit, props, refs, state }),
     handleMousedown: handleMousedown({ api, emit, on, props, state }),
+    handleCollapse: handleCollapse({ emit, state }),
     getComputedThresholdValue: getComputedThresholdValue({
       api,
       props,
