@@ -10,45 +10,45 @@
 *
 */
 
-import { mountedHandler, beforeUnmountHandler, watchModelValue, onTouchstart, onTouchmove, onTouchend } from './index'
+import { mountedHandler, beforeUnmountHandler, handlerModelValue, onTouchstart, onTouchmove, onTouchend, initPullRefresh, clearPullRefresh } from './index'
 
 export const api = ['state']
 
-export const renderless = (props, { computed, onMounted, reactive, watch, onBeforeUnmount }, { refs, emit }) => {
+export const renderless = (props, { computed, onMounted, reactive, onBeforeUnmount }, { t, refs }) => {
   const api = {}
   const state = reactive({
-    replaces: '',
-    styleObj: {},
+    pullUpReplaces: '',
+    pullDownReplaces: '',
+    refreshStyle: {},
     translate3d: 0,
     draggposition: 0,
-    value: props.modelValue,
-    checkStatus: false,
-    headHeight: props.headHeight,
-    pullingText: props.pullingText,
-    loosingText: props.loosingText,
-    successText: props.successText,
+    pullUpLoading: false,
+    pullDownLoading: false,
+    loosingText: '',
+    successText: '',
+    failedText: '',
+    pullUp: null,
+    pullDown: null,
     successDuration: props.successDuration,
-    animationDuration: props.animationDuration,
-    disabled: computed(() => props.disabled)
+    animationDuration: props.animationDuration
   })
 
   Object.assign(api, {
     state,
-    onTouchstart: onTouchstart({ state }),
-    onTouchmove: onTouchmove({ refs, state }),
-    onTouchend: onTouchend({ emit, props, state }),
-    mountedHandler: mountedHandler({ api, refs, state }),
-    beforeUnmountHandler: beforeUnmountHandler({ api, refs })
+    onTouchstart: onTouchstart(state),
+    onTouchmove: onTouchmove(state),
+    onTouchend: onTouchend({ api, props, state }),
+    mountedHandler: mountedHandler({ api, refs }),
+    beforeUnmountHandler: beforeUnmountHandler({ api, refs }),
+    handlerModelValue: handlerModelValue({ api, state }),
+    initPullRefresh: initPullRefresh({ t, props, state }),
+    clearPullRefresh: clearPullRefresh(state),
   })
 
-  watch(
-    () => props.modelValue,
-    (value) => {
-      watchModelValue({ value, state })
-    }
-  )
-
-  onMounted(api.mountedHandler)
+  onMounted(()=> {
+    api.mountedHandler({ api, refs, state })
+    api.initPullRefresh({ t, props, state })
+  })
   onBeforeUnmount(api.beforeUnmountHandler)
 
   return api
