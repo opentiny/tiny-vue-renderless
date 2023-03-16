@@ -176,7 +176,7 @@ export const keyup = ({ api, props }) => ({ item, index, event }) => {
   }
 }
 
-const checkError1 = ({ Tab, Space, NumpadDecimal, NumpadComma, keyCode, value }) => [Tab, Space, NumpadDecimal, NumpadComma].indexOf(keyCode) > -1 && value
+const checkError1 = ({ Space, NumpadDecimal, NumpadComma, keyCode, value }) => [Space, NumpadDecimal, NumpadComma].indexOf(keyCode) > -1 && value
 
 // NEXT 屏蔽选中时，替换值大于255
 const checkError2 = (newValue) => newValue && (isNaN(newValue) || newValue > IPTHRESHOLD.Max)
@@ -191,10 +191,10 @@ const checkError4 = ({ isfilterKeyCodes, isSelected, value, key }) => !isfilterK
 const checkError5 = ({ key, isfilterKeyCodes, value, ctrlKey, keyCode, KeyV }) => isNaN(key) && !isfilterKeyCodes && !(!value && ctrlKey && keyCode === KeyV)
 
 const isError = ({ key, value, isSelected, isfilterKeyCodes, ctrlKey, keyCode, newValue }) => {
-  const { Tab, Space, NumpadDecimal, NumpadComma, KeyV } = KEY_CODE
+  const { Space, NumpadDecimal, NumpadComma, KeyV } = KEY_CODE
 
   return (
-    checkError1({ Tab, Space, NumpadDecimal, NumpadComma, keyCode, value }) ||
+    checkError1({ Space, NumpadDecimal, NumpadComma, keyCode, value }) ||
     checkError2(newValue) ||
     checkError3({ isfilterKeyCodes, isSelected, value }) ||
     checkError4({ isfilterKeyCodes, isSelected, value, key }) ||
