@@ -76,6 +76,8 @@ export const handleUp = ({ api, emit, off, state }) => () => {
 }
 
 export const handleMousedown = ({ api, emit, on, props, state }) => (event) => {
+  if (state.collapsed) return
+
   state.initOffset = state.isHorizontal ? event.pageX : event.pageY
   state.oldOffset = props.modelValue
   state.isMoving = true
@@ -100,4 +102,9 @@ export const computeOffset = ({ api, nextTick, props, refs, state }) => () => {
   } else {
     state.offset = (props.modelValue * 10000) / 100
   }
+}
+
+export const handleCollapse = ({ emit, state }) => () => {
+  state.collapsed = !state.collapsed
+  emit('collapsedChange', state.collapsed)
 }
