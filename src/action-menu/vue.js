@@ -10,16 +10,16 @@
  *
  */
 
-import { handleMoreClick, handleItemClick } from './index'
+import { handleMoreClick, handleItemClick ,visibleChange} from './index'
 
-export const api = ['state', 'handleMoreClick', 'handleItemClick']
+export const api = ['state', 'handleMoreClick', 'handleItemClick','visibleChange']
 
-export const renderless = (props, { computed, reactive }, { emit }) => {
+export const renderless = (props, { computed, reactive }, { emit,nextTick }) => {
   const api = {
     handleMoreClick: handleMoreClick(emit),
-    handleItemClick: handleItemClick(emit)
+    handleItemClick: handleItemClick(emit),
+    visibleChange: visibleChange(emit)
   }
-
   const state = reactive({
     visibleOptions: computed(() => props.options.slice(0, props.maxShowNum)),
     moreOptions: computed(() => props.options.slice(props.maxShowNum)),

@@ -17,3 +17,7 @@ export const handleMoreClick = (emit) => () => {
 export const handleItemClick = (emit) => (data) => {
   emit('item-click', data)
 }
+
+export const visibleChange = (emit)=>(status)=>{
+  emit('visible-change',status)
+}
