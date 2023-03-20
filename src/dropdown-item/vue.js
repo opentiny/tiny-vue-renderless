@@ -93,10 +93,13 @@ const initApi = ({ api, state, emit, props, parent, dispatch, vm }) => {
   })
 }
 
-export const renderless = (props, { computed, reactive, watch, inject }, { parent, emit, vm, dispatch }) => {
+export const renderless = (props, { computed, reactive, watch, inject }, { parent, emit, vm, dispatch, mode }) => {
   const api = {}
   const dropdownMenu = inject('dropdownMenu', null)
 
+  if (mode === 'mobile') {
+    dropdownMenu.state.children = [...dropdownMenu.state.children, vm]
+  }
   parent = parent.$parent
 
   const state = initState({ reactive, computed, api, props, parent, dropdownMenu })
