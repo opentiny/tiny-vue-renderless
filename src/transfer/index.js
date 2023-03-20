@@ -106,69 +106,77 @@ export const onTargetCheckedChange = ({ emit, state }) => (val, movedKeys) => {
 }
 
 export const addToLeft = ({ emit, props, state }) => (value) => {
-  state.isToLeft = true
+  const change = () => {
+    state.isToLeft = true
 
-  let currentValue = props.modelValue.slice()
+    let currentValue = props.modelValue.slice()
 
-  if (value === 'all') {
-    state.rightChecked = state.rightData.map((item) => item[props.props.key])
+    if (value === 'all') {
+      state.rightChecked = state.rightData.map((item) => item[props.props.key])
+    }
+
+    state.rightChecked.forEach((item) => {
+      const index = currentValue.indexOf(item)
+
+      if (index > -1) {
+        currentValue.splice(index, 1)
+      }
+    })
+
+    state.rightChecked = state.rightChecked.slice(0)
+
+    emit('update:modelValue', currentValue)
+    emit('change', currentValue, 'left', state.rightChecked)
   }
 
-  state.rightChecked.forEach((item) => {
-    const index = currentValue.indexOf(item)
-
-    if (index > -1) {
-      currentValue.splice(index, 1)
-    }
-  })
-
-  state.rightChecked = state.rightChecked.slice(0)
-
-  emit('update:modelValue', currentValue)
-  emit('change', currentValue, 'left', state.rightChecked)
+  props.beforeTransfer ? props.beforeTransfer(change) : change()
 }
 
 export const addToRight = ({ emit, refs, props, state, Tree }) => (value) => {
-  state.isToLeft = false
+  const change = () => {
+    state.isToLeft = false
 
-  let currentValue = props.modelValue.slice()
-  const itemsToBeMoved = []
-  const key = props.props.key
+    let currentValue = props.modelValue.slice()
+    const itemsToBeMoved = []
+    const key = props.props.key
 
-  if (props.render && props.render.plugin.name === Tree) {
-    if (!props.treeOp.checkStrictly) {
-      currentValue = refs.leftPanel.$refs.plugin.getCheckedKeys()
+    if (props.render && props.render.plugin.name === Tree) {
+      if (!props.treeOp.checkStrictly) {
+        currentValue = refs.leftPanel.$refs.plugin.getCheckedKeys()
+      } else {
+        state.leftChecked.forEach((item) => currentValue.indexOf(item) === -1 && currentValue.push(item))
+      }
     } else {
-      state.leftChecked.forEach((item) => currentValue.indexOf(item) === -1 && currentValue.push(item))
+      if (value === 'all') {
+        state.leftData.forEach((item) => {
+          const itemKey = item[key]
+
+          if (props.modelValue.indexOf(itemKey) === -1) {
+            itemsToBeMoved.push(itemKey)
+          }
+        })
+
+        state.leftChecked = itemsToBeMoved.slice()
+      } else {
+        props.data.forEach((item) => {
+          const itemKey = item[key]
+
+          if (state.leftChecked.indexOf(itemKey) > -1 && props.modelValue.indexOf(itemKey) === -1) {
+            itemsToBeMoved.push(itemKey)
+          }
+        })
+      }
+
+      currentValue = props.targetOrder === 'unshift' ? itemsToBeMoved.concat(currentValue) : currentValue.concat(itemsToBeMoved)
     }
-  } else {
-    if (value === 'all') {
-      state.leftData.forEach((item) => {
-        const itemKey = item[key]
 
-        if (props.modelValue.indexOf(itemKey) === -1) {
-          itemsToBeMoved.push(itemKey)
-        }
-      })
+    state.rightDisabled = false
 
-      state.leftChecked = itemsToBeMoved.slice()
-    } else {
-      props.data.forEach((item) => {
-        const itemKey = item[key]
-
-        if (state.leftChecked.indexOf(itemKey) > -1 && props.modelValue.indexOf(itemKey) === -1) {
-          itemsToBeMoved.push(itemKey)
-        }
-      })
-    }
-
-    currentValue = props.targetOrder === 'unshift' ? itemsToBeMoved.concat(currentValue) : currentValue.concat(itemsToBeMoved)
+    emit('update:modelValue', currentValue)
+    emit('change', currentValue, 'right', state.leftChecked)
   }
 
-  state.rightDisabled = false
-
-  emit('update:modelValue', currentValue)
-  emit('change', currentValue, 'right', state.leftChecked)
+  props.beforeTransfer ? props.beforeTransfer(change) : change()
 }
 
 export const clearQuery = (refs) => (which) => {
