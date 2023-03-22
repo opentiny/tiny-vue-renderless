@@ -1,16 +1,24 @@
 {
   "name": "@opentiny/vue-renderless",
-  "version": "3.4.0",
-  "description": "@opentiny/vue-renderless",
+  "version": "3.6.0",
+  "description": "An enterprise-class UI component library, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.",
+  "homepage": "https://opentiny.design/tiny-vue",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/opentiny/tiny-vue-renderless"
   },
   "keywords": [
     "vue",
-    "Tiny"
+    "vue3",
+    "frontend",
+    "component-library",
+    "components",
+    "vue-components",
+    "opentiny",
+    "renderless-components",
+    "headless-components"
   ],
-  "author": "Tiny Team",
+  "author": "OpenTiny Team",
   "license": "MIT",
   "sideEffects": false,
   "scripts": {

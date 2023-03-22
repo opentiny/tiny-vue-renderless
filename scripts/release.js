@@ -6,6 +6,8 @@ const source = 'dist'
 
 fs.copyFileSync('package.json', source + '/package.json')
 
+fs.copyFileSync('README.md', source + '/README.md')
+
 execSync('npm pack', { cwd: source })
 
 fs.readdirSync(source).forEach((item) => {
