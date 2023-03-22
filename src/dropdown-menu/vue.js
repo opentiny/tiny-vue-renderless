@@ -16,8 +16,8 @@ export const api = ['state', 'toggleItem', 'updateOffset', 'clickOutside', 'doDe
 
 export const renderless = (props, hooks, instance) => {
   const api = {}
-  const { reactive } = hooks
-  const { refs, nextTick, mode } = instance
+  const { reactive, provide } = hooks
+  const { refs, nextTick, mode, vm } = instance
   const state = reactive({
     offset: 0,
     scroller: null,
@@ -27,6 +27,7 @@ export const renderless = (props, hooks, instance) => {
   })
 
   if (mode === 'mobile') {
+    provide('dropdownMenu', vm)
     nextTick(() => {
       state.scroller = getScroller(refs.menu)
     })
