@@ -24,7 +24,7 @@ export const created = (api) => () => {
 export const loadPickerData = ({ props, state }) => () => {
   state.dataSource = cloneDeep(props.dataSource)
   state.defaultSelectedIndexs = cloneDeep(props.defaultSelectedIndexs)
-  const level_1 = state.dataSource.map(({ label }) => ({ label }))
+  const level_1 = state.dataSource
   const level_n = getNextLevel([], state.dataSource, state.defaultSelectedIndexs, 0)
   if (level_n.length === 0) {
 
@@ -110,7 +110,7 @@ export const refreshWheel = (nextTick) => (wheel) => {
   })
 }
 
-export const loadWheels = ({ api, props, state, nextTick, refs }) => (wheel) => {
+export const loadWheels = ({ api, props, state, nextTick, refs }) => () => {
   if (state.wheels.length === 0) {
     nextTick(() => {
       state.wheels = []
@@ -149,14 +149,7 @@ export const createWheelHasFooter = ({ api, state, emit, BScroll }) => (wheelWra
       ]
       api.wheelChanged(currentSelectedIndexs, state.prevSelectedIndexs)
       state.prevSelectedIndexs = currentSelectedIndexs
-      const selectedLabels = []
-      state.pickerData.forEach((data, i) => {
-        const index = currentSelectedIndexs[i]
-        if (data[index]?.label) {
-          selectedLabels.push(data[index]?.label)
-        }
-      })
-      emit('change', currentSelectedIndexs, selectedLabels.join(' '))
+      emit('change', currentSelectedIndexs)
     })
     api.wheelsTo(state.defaultSelectedIndexs)
     api.changeWheelItemStyle(state.pickerData, state.defaultSelectedIndexs)
@@ -205,11 +198,11 @@ export const clickWheelItem = ({ api, state, emit }) => (index) => {
   const rItem = state.pickerData[0][index]
   if (state.defaultSelectedIndexs[0] !== index) {
     const selectedLabel = rItem?.label
-    emit('clickWheelItem', [index], selectedLabel)
+    emit('clickWheelItem', [index], selectedLabel, rItem)
   } else {
 
     // 反选
-    emit('clickWheelItem', [], '')
+    emit('clickWheelItem', [], '', [])
   }
 }
 
