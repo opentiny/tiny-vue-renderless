@@ -78,15 +78,15 @@ const getCurrentAnchor = ({ vm, state, link, emit }) => {
 
 const addObserver = ({ props, state }) => {
   const { links } = props
-  const { intersectionObserver } = state
+  const { intersectionObserver, expandLink } = state
   const observer = (list) => {
     list.forEach(item => {
       const link = item.link
+      expandLink[link] = item
+      const linkEl = document.querySelector(link)
+      linkEl && intersectionObserver.observe(linkEl)
       if (item.children) {
         observer(item.children)
-      } else {
-        const linkEl = document.querySelector(link)
-        linkEl && intersectionObserver.observe(linkEl)
       }
     })
   }
@@ -123,18 +123,26 @@ export const unmounted = ({ state }) => () => {
 }
 
 export const onItersectionObserver = ({ vm, state, props, emit }) => () => {
-
+  const { expandLink, scrollContainer } = state
+  const containerTop = scrollContainer.getBoundingClientRect().top + 10
   state.intersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(item => {
       const key = item.target.id
       state.observerLinks[key] = item
     })
 
-    for (let item of Object.values(state.observerLinks)) {
-      if (item.isIntersecting && item.intersectionRatio > 0) {
-        const link = `#${item.target.id}`
-        getCurrentAnchor({ vm, state, link, emit })
-        break
+    for (let key in state.observerLinks) {
+      if (Object.prototype.hasOwnProperty.call(state.observerLinks, key)) {
+        const item = state.observerLinks[key]
+        if (item.isIntersecting && item.intersectionRatio >= 0 && item.target.getBoundingClientRect().top < containerTop) {
+          const link = `#${item.target.id}`
+          if (!expandLink[link].children) {
+            getCurrentAnchor({ vm, state, link, emit })
+            break
+          } else {
+            getCurrentAnchor({ vm, state, link, emit })
+          }
+        }
       }
     }
   })
