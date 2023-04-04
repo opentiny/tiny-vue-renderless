@@ -161,7 +161,7 @@ export const keyup = ({ api, props }) => ({ item, index, event }) => {
       return false
     }
 
-    if ([KEY_CODE.Tab, KEY_CODE.Space, KEY_CODE.NumpadDecimal, KEY_CODE.NumpadComma].indexOf(keyCode) > -1 && value) {
+    if ([KEY_CODE.Space, KEY_CODE.NumpadDecimal, KEY_CODE.NumpadComma].indexOf(keyCode) > -1 && value) {
       api.select({ index: nextIndex })
       return false
     }
