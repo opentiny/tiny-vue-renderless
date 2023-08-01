@@ -1,14 +1,14 @@
 /**
-* Copyright (c) 2022 - present TinyVue Authors.
-* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
-*
-* Use of this source code is governed by an MIT-style license.
-*
-* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
-* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
-* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
-*
-*/
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
 
 import { isSame } from '@opentiny/vue-renderless/common/type'
 
@@ -314,4 +314,40 @@ export const watchFormSelect = ({ emit, props, state }) => (value) => {
 export const hasSelection = (api) => () => {
   const input = api.getInput()
   return input && input.selectionStart !== input.selectionEnd
+}
+
+export const handleEnterDisplayOnlyContent = ({ state, props }) => ($event, type) => {
+  const target = $event.target
+
+  if (target && (target.scrollWidth > target.offsetWidth || (type === 'textarea' && target.scrollHeight > target.offsetHeight))) {
+    state.displayOnlyTooltip = props.displayContent || state.nativeInputValue
+  }
+}
+
+export const hiddenPassword = ({ state, props }) => () => {
+  let str = ''
+  const password = props.displayOnlyContent || state.nativeInputValue
+
+  for (let i = 0; i < password.length; i++) {
+    str += '*'
+  }
+
+  return str
+}
+
+export const dispatchDisplayedValue = ({ state, props, dispatch, api }) => () => {
+  if (state.isDisplayOnly) {
+    dispatch('FormItem', 'displayed-value-changed', {
+      type: props.type || 'text',
+      val: api.getDisplayedValue()
+    })
+  }
+}
+
+export const getDisplayedValue = ({ state, props }) => () => {
+  if (props.type === 'password') {
+    return state.hiddenPassword || '-'
+  } else {
+    return props.displayOnlyContent || state.nativeInputValue || '-'
+  }
 }
