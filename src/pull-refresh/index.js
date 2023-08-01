@@ -37,15 +37,20 @@ export const onTouchstart = (state) => (event) => {
   state.draggposition = event.touches[0].clientY
 }
 
-export const onTouchmove = (state) => (event) => {
+export const onTouchmove = ({ props, state }) => (event) => {
 
   if (event.touches[0].clientY < state.draggposition) {
 
     // 上拉刷新
     if (!state.pullUp.pullUpDisabled) {
-      state.translate3d = (event.touches[0].clientY - state.draggposition) / 2
-      state.pullUpReplaces = Math.abs(state.translate3d) >  state.pullUp.footHeight ? state.loosingText : state.pullUp.pullingUpText
-      state.pullDownReplaces =''
+
+      // 没有更多了
+      if (props.hasMore) {
+
+        state.translate3d = (event.touches[0].clientY - state.draggposition) / 2
+        state.pullUpReplaces = Math.abs(state.translate3d) >  state.pullUp.footHeight ? state.loosingText : state.pullUp.pullingUpText
+        state.pullDownReplaces = ''
+      }
     }
     
   } else {

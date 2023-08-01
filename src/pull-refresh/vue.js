@@ -14,7 +14,7 @@ import { mountedHandler, beforeUnmountHandler, handlerModelValue, onTouchstart, 
 
 export const api = ['state']
 
-export const renderless = (props, { computed, onMounted, reactive, onBeforeUnmount }, { t, refs }) => {
+export const renderless = (props, { watch, onMounted, reactive, onBeforeUnmount }, { t, refs }) => {
   const api = {}
   const state = reactive({
     pullUpReplaces: '',
@@ -27,6 +27,7 @@ export const renderless = (props, { computed, onMounted, reactive, onBeforeUnmou
     loosingText: '',
     successText: '',
     failedText: '',
+    noMoreText: '',
     pullUp: null,
     pullDown: null,
     successDuration: props.successDuration,
@@ -36,7 +37,7 @@ export const renderless = (props, { computed, onMounted, reactive, onBeforeUnmou
   Object.assign(api, {
     state,
     onTouchstart: onTouchstart(state),
-    onTouchmove: onTouchmove(state),
+    onTouchmove: onTouchmove({ props, state }),
     onTouchend: onTouchend({ api, props, state }),
     mountedHandler: mountedHandler({ api, refs }),
     beforeUnmountHandler: beforeUnmountHandler({ api, refs }),
@@ -44,6 +45,18 @@ export const renderless = (props, { computed, onMounted, reactive, onBeforeUnmou
     initPullRefresh: initPullRefresh({ t, props, state }),
     clearPullRefresh: clearPullRefresh(state),
   })
+
+  watch(
+    () => props.hasMore,
+    (value) => {
+      if (!value) {
+
+        // 没有更多了
+        state.noMoreText = t('ui.pullRefresh.noMore')
+        api.clearPullRefresh()
+      }
+    },
+  )
 
   onMounted(()=> {
     api.mountedHandler({ api, refs, state })

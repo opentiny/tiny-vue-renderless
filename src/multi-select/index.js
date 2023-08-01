@@ -52,10 +52,10 @@ export const handleClick = ({ api, props, state }) => (value) => {
 
 export const confirm = ({ state, emit }) => () => {
   const wheelLevelItems = getWheelLevelItems(state.wheelData, state.defaultSelectedIndexs)
-  const wheelLevelText = getWheelLevelText(wheelLevelItems, state.defaultSelectedIndexs)
-  state.headerInfo[state.headerIndex] = { isSelected: true, title: wheelLevelText, isUP: false }
+  const { selectedLabels, selectedItems } = getSelected(wheelLevelItems, state.defaultSelectedIndexs)
+  state.headerInfo[state.headerIndex] = { isSelected: true, title: selectedLabels, isUP: false }
   state.defaultSelectedArray[state.headerIndex] = state.defaultSelectedIndexs
-  emit('confirm', state.defaultSelectedIndexs, wheelLevelText)
+  emit('confirm', selectedItems, state.headerIndex, state.defaultSelectedIndexs)
   state.showWheel = false
 }
 
@@ -63,7 +63,7 @@ export const reset = ({ api, props, state, emit }) => () => {
   state.headerInfo[state.headerIndex] = { isSelected: false, title: '', isUP: false }
   state.defaultSelectedIndexs = props.defaultSelectedArray[state.headerIndex] ?? api.loadDefault(state.headerIndex)
   state.defaultSelectedArray[state.headerIndex] = state.defaultSelectedIndexs
-  emit('reset', state.headerIndex)
+  emit('reset', [], state.headerIndex, state.defaultSelectedIndexs)
   state.showWheel = false
 }
 
@@ -71,7 +71,7 @@ export const wheelChange = (state) => (indexs) => {
   state.defaultSelectedIndexs = indexs
 }
 
-export const clickWheelItem = ({ state, emit }) => (indexs, text) => {
+export const clickWheelItem = ({ state, emit }) => (indexs, text, item) => {
   if (indexs.length === 0) {
 
     // 反选
@@ -82,12 +82,12 @@ export const clickWheelItem = ({ state, emit }) => (indexs, text) => {
     state.headerInfo[state.headerIndex] = { isSelected: true, title: text, isUP: false }
   }
   state.defaultSelectedArray[state.headerIndex] = state.defaultSelectedIndexs
-  emit('confirm', indexs, text)
+  emit('confirm', item, state.headerIndex, indexs)
   state.showWheel = false
 }
 
 export const getWheelLevelItems = (wheelData, newIndexs) => {
-  const level_1 = wheelData.map(({ label }) => ({ label }))
+  const level_1 = wheelData
   const level_n = getNextLevel([], wheelData, newIndexs, 0)
   let wheelLevelItems = []
   if (level_n.length === 0) {
@@ -112,15 +112,16 @@ export const getNextLevel = (levelItems, children, nextIndexs, start) => {
   }
 }
 
-export const getWheelLevelText = (wheelLevelItems, selectedIndexs) => {
-  const selectedLabels = []
+export const getSelected = (wheelLevelItems, selectedIndexs) => {
+  const selectedItems = []
   wheelLevelItems.forEach((levelItem, i) => {
     const index = selectedIndexs[i]
-    if (levelItem[index]?.label) {
-      selectedLabels.push(levelItem[index]?.label)
+    if (levelItem[index]) {
+      selectedItems.push(levelItem[index])
     }
   });
-  return selectedLabels.join(' ')
+  const selectedLabels = selectedItems.map(item => item?.label).join(' ')
+  return { selectedLabels, selectedItems }
 }
 
 export const loadDefault = ({ props, state }) => (value) => {
