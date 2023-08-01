@@ -300,41 +300,49 @@ const getResultOfSetSelected = ({ props, isGrid, isTree, api }) => {
   return result
 }
 
-export const setSelected = ({ api, constants, nextTick, props, refs, state }) => () => {
+export const setGridOrTreeSelected = ({ props, state, vm, isTree, api }) => () => {
+  if (!props.modelValue) {
+    state.selectedLabel = ''
+    state.selected = {}
+    state.currentKey = ''
+    vm.$refs.selectGrid && vm.$refs.selectGrid.clearRadioRow()
+    vm.$refs.selectTree && vm.$refs.selectTree.setCurrentKey && vm.$refs.selectTree.setCurrentKey(null)
+    return
+  }
+
+  const isRemote = state.filterOrSearch && props.remote && typeof props.remoteMethod === 'function'
+  const nestdata = isRemote ? state.remoteData : isTree ? api.getTreeData(state.treeData) : state.gridData
+  const data = find(nestdata, (item) => props.modelValue == item[props.valueField])
+
+  if (isEmptyObject(data)) {
+    return
+  }
+
+  const obj = { ...data }
+  const label = data[props.textField]
+  
+  obj.currentLabel = label
+  state.selectedLabel = label
+  state.selected = obj
+  state.currentKey = data[props.valueField]
+}
+
+export const setSelected = ({ api, constants, nextTick, props, vm, state }) => () => {
   const isTree = props.renderType === constants.TYPE.Tree
   const isGrid = props.renderType === constants.TYPE.Grid
 
   if (!props.multiple) {
     if (isGrid || isTree) {
-      if (!props.modelValue) {
-        state.selectedLabel = ''
-        state.selected = {}
-        state.currentKey = ''
-        refs.selectGrid && refs.selectGrid.clearRadioRow()
-        refs.selectTree && refs.selectTree.setCurrentKey && refs.selectTree.setCurrentKey(null)
-        return
-      }
-
-      const isRemote = state.filterOrSearch && props.remote && typeof props.remoteMethod === 'function'
-      const nestdata = isRemote ? state.remoteData : isTree ? api.getTreeData(state.treeData) : state.gridData
-      const data = find(nestdata, (item) => props.modelValue == item[props.valueField])
-
-      if (isEmptyObject(data)) {
-        return
-      }
-
-      const obj = { ...data }
-      const label = data[props.textField]
-      obj.currentLabel = label
-      state.selectedLabel = label
-      state.selected = obj
-      state.currentKey = data[props.valueField]
+      setGridOrTreeSelected({ props, state, vm, isTree, api })
     } else {
       const option = getOptionOfSetSelected({ api, props })
       nextTick(() => {
         state.selected = option
         state.selectedLabel = option.state.currentLabel || option.currentLabel
-        props.filterable && (state.query = state.selectedLabel)
+
+        if (state.filterOrSearch && !props.shape && !props.allowCreate) {
+          state.query = state.selectedLabel
+        }
       })
     }
 
@@ -345,7 +353,7 @@ export const setSelected = ({ api, constants, nextTick, props, refs, state }) =>
 
   state.selectCls = result.length ? (result.length === state.options.length ? 'checked-sur' : 'halfselect') : 'check'
   state.selected = result
-  refs.selectTree && refs.selectTree.setCheckedNodes && refs.selectTree.setCheckedNodes(state.selected)
+  vm.$refs.selectTree && vm.$refs.selectTree.setCheckedNodes && vm.$refs.selectTree.setCheckedNodes(state.selected)
   state.tips = state.selected.map((item) => (item.state ? item.state.currentLabel : item.currentLabel)).join(',')
 
   nextTick(api.resetInputHeight)
@@ -529,8 +537,8 @@ export const resetInputHeight = ({ constants, nextTick, props, refs, state }) =>
     }
 
     const inputChildNodes = refs.reference.$el.childNodes
-    const inputContainer = [].filter.call(inputChildNodes,(item)=>hasClass(item,'tiny-input-display-only'))[0]
-    const input = inputContainer&&inputContainer.querySelector('input')
+    const inputContainer = [].filter.call(inputChildNodes, (item) => hasClass(item, 'tiny-input-display-only'))[0]
+    const input = inputContainer && inputContainer.querySelector('input')
     const tags = refs.tags
 
     if (!input) {
