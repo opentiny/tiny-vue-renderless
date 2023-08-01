@@ -1,14 +1,14 @@
 /**
-* Copyright (c) 2022 - present TinyVue Authors.
-* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
-*
-* Use of this source code is governed by an MIT-style license.
-*
-* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
-* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
-* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
-*
-*/
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
 
 import {
   blur,
@@ -34,7 +34,11 @@ import {
   handlePasswordVisible,
   handleCompositionStart,
   handleCompositionUpdate,
-  hasSelection
+  hasSelection,
+  handleEnterDisplayOnlyContent,
+  hiddenPassword,
+  dispatchDisplayedValue,
+  getDisplayedValue
 } from './index'
 import useStorageBox from '@opentiny/vue-renderless/tall-storage/vue-storage-box'
 
@@ -66,7 +70,9 @@ export const api = [
   'selectedMemory',
   'storageData',
   'isMemoryStorage',
-  'hasSelection'
+  'hasSelection',
+  'handleEnterDisplayOnlyContent',
+  'hiddenPassword'
 ]
 
 const initState = ({ reactive, computed, mode, props, parent, constants }) => {
@@ -105,7 +111,12 @@ const initState = ({ reactive, computed, mode, props, parent, constants }) => {
         !state.inputDisabled &&
         !props.readonly &&
         !props.showPassword
-    )
+    ),
+    isDisplayOnly: computed(
+      () => (props.displayOnly || (parent.tinyForm || {}).displayOnly) && ['text', 'textarea', 'password', 'number'].includes(props.type)
+    ),
+    displayOnlyTooltip: '',
+    hiddenPassword: computed(() => api.hiddenPassword())
   })
 
   return state
@@ -125,7 +136,9 @@ const initApi = ({ api, state, dispatch, broadcast, emit, refs, props, CLASS_PRE
     getSuffixVisible: getSuffixVisible({ parent, props, state }),
     calculateNodeStyling: calculateNodeStyling(),
     handleCompositionStart: handleCompositionStart(state),
-    handleCompositionUpdate: handleCompositionUpdate(state)
+    handleCompositionUpdate: handleCompositionUpdate(state),
+    dispatchDisplayedValue: dispatchDisplayedValue({ state, props, dispatch, api }),
+    getDisplayedValue: getDisplayedValue({ state, props })
   })
 }
 
@@ -161,7 +174,9 @@ const mergeApi = ({ storages, api, componentName, props, emit, eventName, nextTi
     setNativeInputValue: setNativeInputValue({ api, state }),
     handleCompositionEnd: handleCompositionEnd({ api, state }),
     handlePasswordVisible: handlePasswordVisible({ api, nextTick, state }),
-    hasSelection: hasSelection(api)
+    hasSelection: hasSelection(api),
+    handleEnterDisplayOnlyContent: handleEnterDisplayOnlyContent({ state, props }),
+    hiddenPassword: hiddenPassword({ state, props })
   })
 }
 
@@ -202,6 +217,18 @@ const initWatch = ({ watch, state, api, props, nextTick, emit, componentName, ev
         api.setNativeInputValue()
         api.resizeTextarea()
         api.updateIconOffset()
+      })
+    }
+  )
+
+  watch(
+    () => state.isDisplayOnly,
+    () => {
+      nextTick(() => {
+        api.setNativeInputValue()
+        api.resizeTextarea()
+        api.updateIconOffset()
+        api.dispatchDisplayedValue()
       })
     }
   )
