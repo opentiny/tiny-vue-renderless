@@ -1,0 +1,18 @@
+{
+  "name": "@opentiny/solid-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/pc.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/renderless": "workspace:~",
+    "@opentiny/theme": "workspace:~",
+    "@opentiny/solid-common": "workspace:~",
+    "@opentiny/solid-icon": "workspace:~"
+  }
+}

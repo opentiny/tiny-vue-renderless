@@ -1,0 +1,44 @@
+{
+  "name": "@opentiny/cross-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "node setup.js",
+    "dev:home": "pnpm -C packages/home dev",
+    "dev:react": "pnpm -C packages/react dev",
+    "dev:solid": "pnpm -C packages/solid dev",
+    "dev:vue2": "pnpm -C packages/vue2 dev",
+    "dev:vue3": "pnpm -C packages/vue3 dev",
+    "dev:el": "pnpm -C packages/element-to-opentiny dev"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "overrides": {
+      "vue2": "npm:vue@2.6.14"
+    },
+    "packageExtensions": {
+      "vue-template-compiler@2.6.14": {
+        "peerDependencies": {
+          "vue": "2.6.14"
+        }
+      },
+      "@opentiny/vue-locale@2.9.0": {
+        "peerDependencies": {
+          "vue": "2.6.14"
+        }
+      },
+      "@opentiny/vue-common@2.9.0": {
+        "peerDependencies": {
+          "vue": "2.6.14"
+        }
+      }
+    }
+  }
+}

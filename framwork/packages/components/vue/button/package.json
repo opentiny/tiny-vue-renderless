@@ -1,0 +1,16 @@
+{
+  "name": "@opentiny/vue-button",
+  "version": "3.9.0",
+  "description": "",
+  "module": "index.js",
+  "sideEffects": false,
+  "type": "module",
+  "dependencies": {
+    "@opentiny/vue-common": "workspace:~",
+    "@opentiny/theme": "workspace:~",
+    "@opentiny/theme-mobile": "workspace:~",
+    "@opentiny/theme-watch": "workspace:~",
+    "@opentiny/renderless": "workspace:~"
+  },
+  "license": "MIT"
+}

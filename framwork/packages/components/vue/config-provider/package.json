@@ -1,0 +1,12 @@
+{
+  "name": "@opentiny/vue-config-provider",
+  "version": "3.9.0",
+  "main": "ndex.js",
+  "module": "index.js",
+  "sideEffects": false,
+  "type": "module",
+  "dependencies": {
+    "@opentiny/vue-common": "workspace:~"
+  },
+  "license": "MIT"
+}

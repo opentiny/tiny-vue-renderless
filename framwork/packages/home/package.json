@@ -1,0 +1,22 @@
+{
+  "name": "@opentiny/docs-home",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "wujie-vue3": "^1.0.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "vite": "^4.4.8"
+  },
+  "author": "",
+  "license": "ISC"
+}

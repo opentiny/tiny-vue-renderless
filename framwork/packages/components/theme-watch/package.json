@@ -1,0 +1,13 @@
+{
+  "name": "@opentiny/theme-watch",
+  "version": "3.9.0",
+  "description": "",
+  "sideEffects": false,
+  "dependencies": {
+    "less": "~4.1.3"
+  },
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  }
+}

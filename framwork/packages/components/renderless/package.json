@@ -1,0 +1,10 @@
+{
+  "name": "@opentiny/renderless",
+  "version": "3.9.0",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./src/*"
+  }
+}

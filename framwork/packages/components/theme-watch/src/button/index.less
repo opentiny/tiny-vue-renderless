@@ -1,0 +1,213 @@
+@import '../mixins/button.less';
+@import '../custom.less';
+@import './vars.less';
+
+@button-prefix-cls: ~'@{css-prefix}watch-button';
+@svg-prefix-cls: ~'@{css-prefix}svg';
+
+.@{button-prefix-cls} {
+  position: relative;
+  width: var(--ti-watch-button-height);
+  height: var(--ti-watch-button-height);
+  line-height: var(--ti-watch-button-height);
+  font-size: var(--ti-watch-button-font-size-default);
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  border-radius: 100%;
+  padding: 5px;
+  transition:
+    border 0.3s ease 0s,
+    color 0.3s ease 0s,
+    background 0.3s ease 0s;
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  user-select: none;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:active,
+  &.is-active {
+    &::before {
+      opacity: 0.1;
+    }
+  }
+
+  &.is-disabled,
+  &.is-disabled:active,
+  &.is-disabled.is-active {
+    cursor: not-allowed;
+    .button-color(var(--ti-watch-button-text-color-disabled),
+    var(--ti-watch-button-bg-color-disabled),
+      var(--ti-watch-button-bg-color-disabled));
+  }
+
+  .is-icon {
+    fill: var(--ti-watch-button-text-color-white);
+    font-size: var(--ti-watch-button-font-size-default);
+  }
+
+  &--default {
+    .button-color(var(--ti-watch-button-text-color-default),
+      var(--ti-watch-button-border-color),
+      var(--ti-watch-button-bg-color-default));
+
+    .is-icon {
+      fill: var(--ti-watch-button-text-color-default);
+    }
+
+    &.is-disabled .is-icon {
+      fill: var(--ti-watch-button-text-color-white);
+    }
+  }
+
+  &&--default {
+    &.is-loading svg {
+      fill: #666;
+    }
+  }
+
+  &--primary {
+    .button-type(var(--ti-watch-button-text-color-white),
+      var(--ti-watch-button-bg-color-primary));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-primary));
+    }
+  }
+
+  &--success {
+    .button-type(var(--ti-watch-button-text-color-white),
+      var(--ti-watch-button-bg-color-success));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-success));
+    }
+  }
+
+  &--warning {
+    .button-type(var(--ti-watch-button-text-color-white),
+      var(--ti-watch-button-bg-color-warning));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-warning));
+    }
+  }
+
+  &--danger {
+    .button-type(var(--ti-watch-button-text-color-white),
+      var(--ti-watch-button-bg-color-danger));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-danger));
+    }
+  }
+
+  &--info {
+    .button-type(var(--ti-watch-button-text-color-white),
+      var(--ti-watch-button-bg-color-info));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-info));
+    }
+  }
+
+  &--text {
+    .button-text(var(--ti-watch-button-text-color),
+      var(--ti-watch-button-text-color-hover),
+      var(--ti-watch-button-text-color-active),
+      var(--ti-watch-button-text-color-disabled));
+  }
+
+  &--secondary {
+    .button-type(var(--ti-watch-button-text-color-default),
+       var(--ti-watch-button-bg-color-secondary));
+
+    &.is-plain {
+      .button-plain(var(--ti-watch-button-bg-color-secondary));
+    }
+  }
+
+  &--default {
+    .button-color(var(--ti-watch-button-text-color-default),
+      var(--ti-watch-button-text-color-disabled),
+      var(--ti-watch-button-text-color-white));
+
+    &.is-disabled {
+      .button-color(var(--ti-watch-button-text-color-disabled),
+        var(--ti-watch-button-text-color-disabled),
+        var(--ti-watch-button-bg-color-white));
+    }
+  }
+
+  &--large {
+    padding: 0 20px;
+  }
+
+  &--medium {
+    padding: 0 16px;
+    line-height: 36px;
+
+    .button-size(var(--ti-watch-button-height-medium),
+      var(--ti-watch-button-font-size-medium,));
+  }
+
+  &--small {
+    padding: 0 12px;
+    line-height: 28px;
+
+    .button-size(var(--ti-watch-button-height-small),
+      var(--ti-watch-button-font-size-small));
+  }
+
+  &--mini {
+    padding: 0 8px;
+    line-height: 22px;
+
+    .button-size(var(--ti-watch-button-height-mini),
+      var(--ti-watch-button-font-size-mini));
+  }
+
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+
+    svg {
+      fill: var(--ti-watch-button-text-color-white);
+      font-size: var(--ti-watch-button-font-size-default);
+    }
+  }
+
+  &.is-round {
+    border-radius:100%;
+  }
+}
+
+.@{css-prefix-iconfont}-loading {
+  margin-right: 4px;
+  font-size: 16px;
+  line-height: 1;
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

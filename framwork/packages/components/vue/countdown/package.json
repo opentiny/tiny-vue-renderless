@@ -1,0 +1,14 @@
+{
+  "name": "@opentiny/vue-countdown",
+  "version": "3.9.0",
+  "description": "",
+  "module": "index.js",
+  "sideEffects": false,
+  "type": "module",
+  "dependencies": {
+    "@opentiny/vue-common": "workspace:~",
+    "@opentiny/theme": "workspace:~",
+    "@opentiny/renderless": "workspace:~"
+  },
+  "license": "MIT"
+}

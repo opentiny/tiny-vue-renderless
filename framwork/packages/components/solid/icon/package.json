@@ -1,0 +1,16 @@
+{
+  "name": "@opentiny/solid-icon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/solid-common": "workspace:~",
+    "@opentiny/vue-theme": "~3.9.0"
+  }
+}

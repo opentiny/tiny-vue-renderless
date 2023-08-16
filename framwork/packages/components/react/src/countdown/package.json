@@ -1,0 +1,17 @@
+{
+  "name": "@opentiny/react-countdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/pc.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/renderless": "workspace:~",
+    "@opentiny/theme": "workspace:~",
+    "@opentiny/react-common": "workspace:~"
+  }
+}
