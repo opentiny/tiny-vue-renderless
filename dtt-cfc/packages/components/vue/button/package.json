@@ -1,0 +1,17 @@
+{
+  "name": "@opentiny/vue-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/renderless": "workspace:^",
+    "@opentiny/vue-common": "^3.10.0",
+    "@opentiny/vue-theme": "^3.10.4",
+    "@opentiny/vue-theme-mobile": "^3.10.1"
+  }
+}

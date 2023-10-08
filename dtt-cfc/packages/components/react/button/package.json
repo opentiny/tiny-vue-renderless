@@ -1,0 +1,16 @@
+{
+  "name": "@opentiny/react-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/react-common": "workspace:^",
+    "@opentiny/renderless": "workspace:^",
+    "@opentiny/vue-theme": "^3.10.4"
+  }
+}

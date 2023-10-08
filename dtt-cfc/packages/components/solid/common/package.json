@@ -1,0 +1,15 @@
+{
+  "name": "@opentiny/solid-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentiny/vue-theme": "^3.10.4",
+    "solid-js": "^1.7.8"
+  }
+}
