@@ -1,0 +1,77 @@
+{
+  "dataHandler": null,
+  "list": [
+    {
+      "id": 436,
+      "name": "testTable",
+      "columns": [
+        {
+          "name": "name",
+          "title": "名字",
+          "field": "name",
+          "type": "string",
+          "format": {
+            "required": true,
+            "stringType": "",
+            "min": 0,
+            "max": 0,
+            "dateTime": false
+          }
+        },
+        {
+          "name": "age",
+          "title": "年龄",
+          "field": "age",
+          "type": "number",
+          "format": {
+            "required": true,
+            "stringType": "",
+            "min": 0,
+            "max": 150,
+            "dateTime": false
+          }
+        },
+        {
+          "name": "createdAt",
+          "title": "创建日期",
+          "field": "createdAt",
+          "type": "date",
+          "format": {
+            "required": true,
+            "stringType": "",
+            "min": 0,
+            "max": 0,
+            "dateTime": false
+          }
+        }
+      ],
+      "type": "array",
+      "data": [
+        {
+          "name": "user1",
+          "createdAt": "2023-03-10T16:00:00.000Z",
+          "_id": "0869c4a6",
+          "age": 25
+        },
+        {
+          "name": "user2",
+          "createdAt": "2023-02-28T16:00:00.000Z",
+          "_id": "075eb409",
+          "age": 30
+        },
+        {
+          "name": "user3",
+          "createdAt": "2023-03-16T16:00:00.000Z",
+          "_id": "ce414b0c",
+          "age": 35
+        },
+        {
+          "_id": "cbbe3b78",
+          "name": "user",
+          "createdAt": "2023-02-07T16:00:00.000Z",
+          "age": 64
+        }
+      ]
+    }
+  ]
+}
