@@ -1,0 +1,53 @@
+.DS_Store
+node_modules
+dist/
+dist2/
+dist2.7/
+dist3/
+dist-react/
+allDist/
+packages/**/runtime
+coverage/
+test-results
+
+**/lib/opentiny-vue
+
+
+# local env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.history
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+*.stackdump
+
+tgzs
+*.tgz
+
+
+packages/theme/scripts/theme.json
+packages/theme/scripts/theme-result.txt
+packages/theme/scripts/themeExcel.xlsx
+
+packages/theme/src/theme/*-theme/component.js
+
+pnpm-lock.yaml
+gulp/bundle.json
+
+# 本地构建的saas相关资源文件
+examples/sites/public/tiny-vue*.js
+examples/sites/public/tiny-vue*.mjs
+examples/sites/public/tailwind.css
+examples/sites/public/index.css

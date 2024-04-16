@@ -1,0 +1,13 @@
+{
+  "name": "@opentiny/build-cmds",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build2": "node ./build-ui.js -v 2",
+    "build3": "node ./build-ui.js -v 3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "vite": "5.1.6"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "vue2-adapter",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "sideEffects":false,
+  "devDependencies": {
+    "@vue/composition-api": "1.7.2",
+    "vue": "2.6.14"
+  }
+}

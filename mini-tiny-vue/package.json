@@ -1,0 +1,71 @@
+{
+  "name": "mini-tiny-vue",
+  "version": "3.14.0",
+  "private": true,
+  "packageManager": "pnpm@8.3.1",
+  "description": "An enterprise-class UI component library, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.",
+  "homepage": "https://opentiny.design/tiny-vue",
+  "keywords": [
+    "vue",
+    "vue3",
+    "frontend",
+    "component-library",
+    "components",
+    "vue-components",
+    "opentiny",
+    "renderless-components",
+    "headless-components"
+  ],
+  "author": "OpenTiny Team",
+  "license": "MIT",
+  "main": "packages/index.js",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=6.35"
+  },
+  "scripts": {
+    "dev2": "pnpm -C demos/vue2-app dev ",
+    "dev3": "pnpm -C demos/vue3-app dev ",
+    "build2": "pnpm -C internals/build-cmds build2",
+    "build3": "pnpm -C internals/build-cmds build3",
+    "build": "pnpm build2 && pnpm build3",
+
+    "build2_viteself": "pnpm -C internals/vue2-env build",
+    "build3_viteself": "pnpm -C internals/vue3-env build"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "pnpm": {
+    "overrides": {
+      "@vue/compiler-sfc@3": "3.3.9",
+      "@vue/runtime-core@3": "3.3.9",
+      "@vue/runtime-dom@3": "3.3.9",
+      "@vue/shared@3": "3.3.9",
+      "vue-template-compiler@2.6": "2.6.14",
+      "vue-template-compiler@2.7": "2.7.10",
+      "vue@2.6": "2.6.14",
+      "vue@2.7": "2.7.10",
+      "vue@3": "3.3.9",
+      "vue2": "npm:vue@2.6.14",
+      "vue2.7": "npm:vue@2.7.10",
+      "vue3": "npm:vue@3.3.9"
+    },
+    "packageExtensions": {
+      "vue-template-compiler@2.6.14": {
+        "peerDependencies": {
+          "vue": "2.6.14"
+        }
+      },
+      "vue-template-compiler@2.7.10": {
+        "peerDependencies": {
+          "vue": "2.7.10"
+        }
+      },
+      "@vue/composition-api": {
+        "peerDependencies": {
+          "vue": "2.6.14"
+        }
+      }
+    }
+  }
+}

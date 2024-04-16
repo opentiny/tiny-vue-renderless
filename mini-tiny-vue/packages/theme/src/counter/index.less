@@ -1,0 +1,33 @@
+@import '../custom.less';
+@import './vars.less';
+@counter-prefix-cls: ~'@{css-prefix}counter';
+
+.@{counter-prefix-cls} {
+  .component-css-vars-counter();
+
+  display: inline-flex;
+  width: var( --ti-counter-width);
+  text-align: center;
+
+  border: 1px solid var(--ti-counter-border-color);
+
+  &__control{
+    flex:1;
+    padding: 2px;
+    font-size: 14px;
+    color: var( --ti-counter-control-color);
+    background-color: var( --ti-counter-control-bg-color);
+    white-space:nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__value{
+    flex:2;
+    padding: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var( --ti-counter-value-color);
+    background-color: var( --ti-counter-value-bg-color);
+  }
+}

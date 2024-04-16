@@ -1,0 +1,36 @@
+@import '../custom.less';
+@import './vars.less';
+
+@mobile-button-prefix-cls: ~'@{css-prefix}button';
+
+.@{mobile-button-prefix-cls} {
+  .component-css-vars-mobile-button();
+
+  display: inline-block;
+  appearance: none;
+  outline: 0;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  color: var(--ti-mobile-button-text-color);
+  background: var(--ti-mobile-button-bg-color);
+  border: none;
+  border-radius: var(--ti-mobile-button-border-radius);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &.is-disabled {
+    color: var(--ti-mobile-button-disabled-text-color);
+    background: var(--ti-mobile-button-disabled-bg-color);
+  }
+
+  &.is-circle {
+    border-radius: var(--ti-mobile-button-circle-border-radius);
+    aspect-ratio: 1;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@opentiny/vue-common",
+  "private": true,
+  "version": "3.14.0",
+  "description": "An enterprise-class UI component library, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.",
+  "homepage": "https://opentiny.design/tiny-vue",
+  "keywords": [
+    "vue",
+    "vue3",
+    "frontend",
+    "component-library",
+    "components",
+    "vue-components",
+    "opentiny",
+    "renderless-components",
+    "headless-components"
+  ],
+  "author": "OpenTiny Team",
+  "license": "MIT",
+  "main": "src/index.js",
+  "sideEffects": false,
+  "type": "module",
+  "dependencies": {
+    "@opentiny/vue-theme": "workspace:~",
+    "@opentiny/vue-theme-mobile": "workspace:~",
+    "@opentiny/renderless": "workspace:~"
+  }
+}

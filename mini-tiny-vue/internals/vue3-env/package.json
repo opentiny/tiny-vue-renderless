@@ -1,0 +1,13 @@
+{
+  "name": "vue3-env",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "vite": "5.1.6"
+  }
+}

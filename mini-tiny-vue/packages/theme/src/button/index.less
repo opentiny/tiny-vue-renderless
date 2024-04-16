@@ -1,0 +1,36 @@
+@import '../custom.less';
+@import './vars.less';
+
+@button-prefix-cls: ~'@{css-prefix}button';
+
+.@{button-prefix-cls} {
+  .component-css-vars-button();
+
+  display: inline-block;
+  appearance: none;
+  outline: 0;
+  padding:4px 20px;
+  box-sizing: border-box;
+  color: var(--ti-button-text-color);
+  background: var(--ti-button-bg-color);
+  border:none;
+  border-radius: var(--ti-button-border-radius);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &.is-disabled{
+    color: var(--ti-button-disabled-text-color);
+    background: var(--ti-button-disabled-bg-color);
+  }
+
+  &.is-circle{
+    border-radius: var(--ti-button-circle-border-radius);
+    aspect-ratio: 1;
+  }
+}

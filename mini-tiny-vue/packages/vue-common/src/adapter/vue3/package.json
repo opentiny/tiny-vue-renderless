@@ -1,0 +1,12 @@
+{
+  "name": "vue3-adapter",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "sideEffects":false,
+  "devDependencies": {
+    "@vue/runtime-core": "3.3.9",
+    "vue": "3.3.9"
+  }
+}
