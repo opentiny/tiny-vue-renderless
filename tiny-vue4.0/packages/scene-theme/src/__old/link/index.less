@@ -1,0 +1,13 @@
+// link 只需要混入less的主题色，  下划线使用 .su-underline
+@import '../common/mixin.less';
+
+.sc-link {
+  .unbox-mixin();
+  .cursor-mixin(pointer);
+
+  each(@themeLesses, {
+    .text-color-mixin(@value);
+    .text-color-hover-mixin(@value);
+    .text-color-disabled-mixin(@value);
+  });
+}

@@ -1,0 +1,359 @@
+import { Meta } from "@storybook/blocks";
+
+import Github from "./assets/github.svg";
+import Discord from "./assets/discord.svg";
+import Youtube from "./assets/youtube.svg";
+import Tutorials from "./assets/tutorials.svg";
+import Styling from "./assets/styling.png";
+import Context from "./assets/context.png";
+import Assets from "./assets/assets.png";
+import Docs from "./assets/docs.png";
+import Share from "./assets/share.png";
+import FigmaPlugin from "./assets/figma-plugin.png";
+import Testing from "./assets/testing.png";
+import Accessibility from "./assets/accessibility.png";
+import Theming from "./assets/theming.png";
+import AddonLibrary from "./assets/addon-library.png";
+
+export const RightArrow = () => <svg 
+    viewBox="0 0 14 14" 
+    width="8px" 
+    height="14px" 
+    style={{ 
+      marginLeft: '4px',
+      display: 'inline-block',
+      shapeRendering: 'inherit',
+      verticalAlign: 'middle',
+      fill: 'currentColor',
+      'path fill': 'currentColor'
+    }}
+>
+  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
+</svg>
+
+<Meta title="TinyVue4 指南" />
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # 配置你的项目
+
+    由于 Storybook 与您的应用分开工作，因此您需要针对特定​​堆栈和设置对其进行配置。下面，探索使用流行框架和工具配置 Storybook 的指南。如果您遇到困难，请了解如何向我们的社区寻求帮助。
+  </div>
+  <div className="sb-section">
+    <div className="sb-section-item">
+      <img
+        src={Styling}
+        alt="A wall of logos representing different styling technologies"
+      />
+      <h4 className="sb-section-item-heading">添加样式和 CSS</h4>
+      <p className="sb-section-item-paragraph">与 Web 应用程序一样，在 Storybook 中包含 CSS 的方法有很多。详细了解如何在 Storybook 中设置样式。</p>
+      <a
+        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=vue"
+        target="_blank"
+      >了解更多<RightArrow /></a>
+    </div>
+    <div className="sb-section-item">
+      <img
+        src={Context}
+        alt="An abstraction representing the composition of data for a component"
+      />
+      <h4 className="sb-section-item-heading">提供上下文信息与MOCK数据</h4>
+      <p className="sb-section-item-paragraph">通常，当故事无法呈现时，这是因为您的组件需要特定的环境或上下文（例如主题提供程序）可用。</p>
+      <a
+        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=vue#context-for-mocking"
+        target="_blank"
+      >了解更多<RightArrow /></a>
+    </div>
+    <div className="sb-section-item">
+      <img src={Assets} alt="A representation of typography and image assets" />
+      <div>
+        <h4 className="sb-section-item-heading">加载资产和资源</h4>
+        <p className="sb-section-item-paragraph">要将静态文件（如字体）链接到您的项目和故事，请使用 staticDirs配置选项指定启动 Storybook 时要加载的文件夹。</p>
+        <a
+          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=vue"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # 更多的 Storybook 能力
+
+    现在您已经了解了基础知识，让我们探索 Storybook 的其他部分，以改善您的体验。此列表仅供您入门。您可以通过多种方式自定义 Storybook 以满足您的需求。
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-features-grid">
+      <div className="sb-grid-item">
+        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
+        <h4 className="sb-section-item-heading">自动文档</h4>
+        <p className="sb-section-item-paragraph">从您的组件和故事中自动生成生动、交互式的参考文档。</p>
+        <a
+          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=vue"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+      <div className="sb-grid-item">
+        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
+        <h4 className="sb-section-item-heading">发布至 Chromatic</h4>
+        <p className="sb-section-item-paragraph">发布您的故事书以供审查并与您的整个团队合作。</p>
+        <a
+          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=vue#publish-storybook-with-chromatic"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+      <div className="sb-grid-item">
+        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
+        <h4 className="sb-section-item-heading">Figma Plugin</h4>
+        <p className="sb-section-item-paragraph">将您的故事嵌入 Figma，以便在一个地方交叉引用设计和实时实现。</p>
+        <a
+          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=vue#embed-storybook-in-figma-with-the-plugin"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+      <div className="sb-grid-item">
+        <img src={Testing} alt="Screenshot of tests passing and failing" />
+        <h4 className="sb-section-item-heading">测试</h4>
+        <p className="sb-section-item-paragraph">使用故事来测试组件的所有变体，无论其多么复杂。</p>
+        <a
+          href="https://storybook.js.org/docs/writing-tests/?renderer=vue"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+      <div className="sb-grid-item">
+        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
+        <h4 className="sb-section-item-heading">无障碍设施</h4>
+        <p className="sb-section-item-paragraph">在开发过程中自动测试组件是否存在 a11y 问题。</p>
+        <a
+          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=vue"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+      <div className="sb-grid-item">
+        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
+        <h4 className="sb-section-item-heading">主题</h4>
+        <p className="sb-section-item-paragraph">主题 Storybook 的 UI 可根据您的项目进行个性化设置。</p>
+        <a
+          href="https://storybook.js.org/docs/configure/theming/?renderer=vue"
+          target="_blank"
+        >了解更多<RightArrow /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div className='sb-addon'>
+  <div className='sb-addon-text'>
+    <h4>其它addon</h4>
+    <p className="sb-section-item-paragraph">将您的工具与 Storybook 集成以连接工作流程。</p>
+    <a
+        href="https://storybook.js.org/addons/"
+        target="_blank"
+      >发现所有附加组件<RightArrow /></a>
+  </div>
+  <div className='sb-addon-img'>
+    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
+  </div>
+</div>
+
+<div className="sb-section sb-socials">
+    <div className="sb-section-item">
+      <img src={Github} alt="Github logo" className="sb-explore-image"/>
+      Join our contributors building the future of UI development.
+
+      <a
+        href="https://github.com/storybookjs/storybook"
+        target="_blank"
+      >Star on GitHub<RightArrow /></a>
+    </div>
+    <div className="sb-section-item">
+      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
+      <div>
+        Get support and chat with frontend developers.
+
+        <a
+          href="https://discord.gg/storybook"
+          target="_blank"
+        >Join Discord server<RightArrow /></a>
+      </div>
+    </div>
+    <div className="sb-section-item">
+      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
+      <div>
+        Watch tutorials, feature previews and interviews.
+
+        <a
+          href="https://www.youtube.com/@chromaticui"
+          target="_blank"
+        >Watch on YouTube<RightArrow /></a>
+      </div>
+    </div>
+    <div className="sb-section-item">
+      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
+      <p>Follow guided walkthroughs on for key workflows.</p>
+
+      <a
+          href="https://storybook.js.org/tutorials/"
+          target="_blank"
+        >Discover tutorials<RightArrow /></a>
+    </div>
+</div>
+
+<style>
+  {`
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+
+  .sb-section a:not(h1 a, h2 a, h3 a) {
+    font-size: 14px;
+  }
+
+  .sb-section-item, .sb-grid-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sb-section-item-heading {
+    padding-top: 20px !important;
+    padding-bottom: 5px !important;
+    margin: 0 !important;
+  }
+  .sb-section-item-paragraph {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .sb-chevron {
+    margin-left: 5px;
+  }
+
+  .sb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px 20px;
+  }
+
+  .sb-socials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sb-socials p {
+    margin-bottom: 10px;
+  }
+
+  .sb-explore-image {
+    max-height: 32px;
+    align-self: flex-start;
+  }
+
+  .sb-addon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #EEF3F8;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #EEF3F8;
+    height: 180px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  .sb-addon-text {
+    padding-left: 48px;
+    max-width: 240px;
+  }
+
+  .sb-addon-text h4 {
+    padding-top: 0px;
+  }
+
+  .sb-addon-img {
+    position: absolute;
+    left: 345px;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    overflow: hidden;
+  }
+
+  .sb-addon-img img {
+    width: 650px;
+    transform: rotate(-15deg);
+    margin-left: 40px;
+    margin-top: -72px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
+    backface-visibility: hidden;
+  }
+
+  @media screen and (max-width: 800px) {
+    .sb-addon-img {
+      left: 300px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .sb-section {
+      flex-direction: column;
+    }
+
+    .sb-features-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sb-socials {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sb-addon {
+      height: 280px;
+      align-items: flex-start;
+      padding-top: 32px;
+      overflow: hidden;
+    }
+
+    .sb-addon-text {
+      padding-left: 24px;
+    }
+
+    .sb-addon-img {
+      right: 0;
+      left: 0;
+      top: 130px;
+      bottom: 0;
+      overflow: hidden;
+      height: auto;
+      width: 124%;
+    }
+
+    .sb-addon-img img {
+      width: 1200px;
+      transform: rotate(-12deg);
+      margin-left: 0;
+      margin-top: 48px;
+      margin-bottom: -40px;
+      margin-left: -24px;
+    }
+  }
+  `}
+</style>

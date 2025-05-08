@@ -1,0 +1,39 @@
+{
+  "name": "@opentiny/vue-pc",
+  "version": "4.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build ",
+    "analyzer":"cross-env analyzer=true vite build "
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "vue": "catalog:",
+    "@opentiny/icons": "catalog:",
+    "@opentiny/scene-theme": "workspace:*",
+    "@opentiny/vue-pc": "workspace:*",
+    "@opentiny/vue-hooks": "workspace:*",
+    "@opentiny/vue-directives": "workspace:*",
+    "@opentiny/utils": "workspace:*",
+    "@floating-ui/dom": "catalog:"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "catalog:",
+    "vite-bundle-analyzer": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "jsdom": "catalog:",
+    "unocss": "catalog:",
+    "@unocss/preset-icons": "catalog:",
+    "cross-env": "catalog:"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,91 @@
+// 临时提供给demo用
+.loop-demo(@i) when (@i <= 800) {
+    .w-@{i} {
+      width: ~'@{i}px';
+    }
+    .h-@{i} {
+      height: ~'@{i}px';
+    }
+    .m-@{i} {
+      margin: ~'@{i}px';
+    }
+    .p-@{i} {
+      padding: ~'@{i}px';
+    }
+    .loop-demo(@i+2);
+  }
+  .loop-demo(10);
+  
+  body {
+    min-height: 200vh;
+  }
+  .demo-menu {
+    width: 120px;
+    position: fixed;
+    top: 40px;
+    left: calc(100vw - 220px);
+  
+    a {
+      color: cornflowerblue;
+    }
+    li{
+      margin-bottom: 12px;
+    }
+  }
+  
+  article {
+    margin: 20px;
+    font-size: 14px;
+  
+    h2 {
+      font-weight: bold;
+      font-size: 20px;
+      &::before{
+        content:'⭐'
+      }
+    }
+    p {
+      margin: 8px;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      text-indent: 1em;
+      margin-bottom: 12px;
+    }
+    h3 + div {
+      margin-bottom: 12px;
+    }
+  
+    // 自动提示 tooltip
+    [d]{
+      position: relative;
+    }
+    [d]::before {
+      content: attr(class);
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      transform: translate(-5px, -50%);
+  
+      left: 110%;
+  
+      white-space: pre;
+      font-size: 16px;
+      padding: 5px 10px;
+      background-color: rgba(18,26,44,0.8);
+      color: #fff;
+      border-radius: 20px;
+  
+      z-index:999;
+    }
+    [d]:hover::before{
+      visibility: visible;
+    }
+  }
+  
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }

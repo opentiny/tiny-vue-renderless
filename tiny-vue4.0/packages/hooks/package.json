@@ -1,0 +1,24 @@
+{
+  "name": "@opentiny/vue-hooks",
+  "version": "4.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "vue": "catalog:",
+    "@floating-ui/dom": "catalog:",
+    "@opentiny/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "jsdom": "catalog:",
+    "vitest": "catalog:",
+    "vite": "catalog:"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

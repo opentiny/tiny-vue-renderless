@@ -1,0 +1,23 @@
+{
+  "name": "@opentiny/utils",
+  "version": "4.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@vue/shared": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "jsdom": "catalog:",
+    "vitest": "catalog:",
+    "vite": "catalog:"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

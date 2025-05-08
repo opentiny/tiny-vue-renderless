@@ -1,0 +1,276 @@
+/**
+  * 通用变量， 其它规范只覆盖这些即可！
+ */
+:root {
+  // #region 文本色
+  --sv-text-color: #191919; // ⭐ 文本_重要色
+  --sv-text-disabled: #c2c2c2; // ⭐ 禁用文字
+  --sv-text-invalid: #f23030; // ⭐ 文本_校验提示色
+  --sv-text-hover: #1476ff;  // ⭐ 文本_悬浮
+  --sv-text-active: #084cac; // ⭐ 文本_激活按下
+
+  --sv-text-secondary: #595959; // 文本_次要色
+  --sv-text-link: #1476ff; // 文本-链接色
+  --sv-text-highlight: #1476ff; // 文本-搜索高亮色
+  --sv-text-placeholder: #808080; // 占位色
+  // #endregion
+
+  // #region 背景色
+  --sv-bg-color: #f5f5f5; // ⭐
+  --sv-bg-hover: #c2c2c2; // ⭐
+  --sv-bg-active: #c2c2c2; // ⭐
+  --sv-bg-disabled: #f0f0f0; // ⭐ 禁用背景色
+  --sv-bg-invalid: #feeaea; // ⭐ 校验失败背景色
+
+  --sv-bg-tooltip-light :#fff;  // 提示的light时，背景色
+
+  --sv-bg-mask: rgba(0, 0, 0, 0.3); // 单蒙层 30%
+  --sv-bg-mask2: rgba(0, 0, 0, 0.51); // 双蒙层 51%
+  // #endregion
+
+  // #region 边框/分割线
+  --sv-border-width: 1px; // ⭐
+  --sv-border-color: #c2c2c2; // ⭐ 正常
+  --sv-border-hover: #191919; // ⭐ hover
+  --sv-border-active: #191919; // ⭐ active
+  --sv-border-disabled: #dbdbdb; // ⭐ 禁用
+  --sv-border-invalid: #f23030; // ⭐ 校验色
+
+  // #endregion
+
+  // #region 圆角
+  --sv-br-xs: 2px; // ⭐
+  --sv-br-sm: 4px; // ⭐
+  --sv-br-md: 6px; // ⭐
+  --sv-br-lg: 8px; // ⭐
+  --sv-br-round: 9999px; // ⭐
+  //#endregion
+
+  // #region 阴影
+  --sv-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08); // ⭐ 正常阴影
+  --sv-shadow-hover: 0px 4px 16px 0px rgba(0, 0, 0, 0.08); // ⭐ 云规范没有，不代表其它没有
+  // #endregion
+
+  // #region 内边距
+  --sv-padx-xs: 6px; // ⭐ 接近于 tag
+  --sv-pady-xs: 0; // ⭐
+  --sv-padx-sm: 12px; // ⭐
+  --sv-pady-sm: 2px; // ⭐
+  --sv-padx-md: 16px; // ⭐ 接近 select
+  --sv-pady-md: 4px; // ⭐
+  --sv-padx-lg: 24px; // ⭐  接近卡片
+  --sv-pady-lg: 8px; // ⭐
+  //#endregion
+
+  // #region 字体/行高/字重
+  --sv-fs-xs: 12px; // ⭐
+  --sv-fs-sm: 12px; // ⭐
+  --sv-fs-md: 14px; // ⭐ 正常文本
+  --sv-fs-lg: 16px; // ⭐
+
+  --sv-line-height-xs: 18px; // ⭐
+  --sv-line-height-sm: 18px; // ⭐
+  --sv-line-height-md: 22px; // ⭐
+  --sv-line-height-lg: 24px; // ⭐
+
+  --sv-fw-normal: normal; // ⭐
+  --sv-fw-bold: bold; // ⭐
+  --sv-fw-thin: lighter; // 
+  // #endregion
+
+  //#region 仅图标场景/头像 显示一个带圆角或正圆,
+  --sv-icon-size-xs: 20px; // ⭐
+  --sv-icon-size-sm: 24px; // ⭐
+  --sv-icon-size-md: 32px; // ⭐
+  --sv-icon-size-lg: 40px; // ⭐
+
+  //#endregion
+
+  //#region  主题色
+  // dark   云规范中没有active色， 没有禁用主题色，不代表其它框架没有
+  --sv-border-color-dark: #191919;
+  --sv-text-color-dark: #fff;
+  --sv-bg-color-dark: #191919;
+
+  --sv-border-color-dark-hover: #595959;
+  --sv-text-color-dark-hover: #fff;
+  --sv-bg-color-dark-hover: #595959;
+
+  --sv-border-color-dark-active: #595959;
+  --sv-text-color-dark-active: #fff;
+  --sv-bg-color-dark-active: #595959;
+
+  --sv-border-color-dark-disabled: #f0f0f0;
+  --sv-text-color-dark-disabled: #c2c2c2;
+  --sv-bg-color-dark-disabled: #f0f0f0;
+  // brand
+  --sv-border-color-brand: #1476ff;
+  --sv-text-color-brand: #fff;
+  --sv-bg-color-brand: #1476ff;
+
+  --sv-border-color-brand-hover: #4191fa;
+  --sv-text-color-brand-hover: #fff;
+  --sv-bg-color-brand-hover: #4191fa;
+
+  --sv-border-color-brand-active: #4191fa;
+  --sv-text-color-brand-active: #fff;
+  --sv-bg-color-brand-active: #4191fa;
+
+  --sv-border-color-brand-disabled: #f0f0f0;
+  --sv-text-color-brand-disabled: #c2c2c2;
+  --sv-bg-color-brand-disabled: #f0f0f0;
+
+  // success
+  --sv-border-color-success: #5cb300;
+  --sv-text-color-success: #fff;
+  --sv-bg-color-success: #5cb300;
+
+  --sv-border-color-success-hover: #7dcc29;
+  --sv-text-color-success-hover: #fff;
+  --sv-bg-color-success-hover: #7dcc29;
+
+  --sv-border-color-success-active: #7dcc29;
+  --sv-text-color-success-active: #fff;
+  --sv-bg-color-success-active: #7dcc29;
+
+  --sv-border-color-success-disabled: #f0f0f0;
+  --sv-text-color-success-disabled: #c2c2c2;
+  --sv-bg-color-success-disabled: #f0f0f0;
+
+  // successless
+  --sv-border-color-successless: #5cb300;
+  --sv-text-color-successless: #5cb300;
+  --sv-bg-color-successless: #edf7df;
+
+  --sv-border-color-successless-hover: #7dcc29;
+  --sv-text-color-successless-hover: #5cb300;
+  --sv-bg-color-successless-hover: #edf7df;
+
+  --sv-border-color-successless-active: #7dcc29;
+  --sv-text-color-successless-active: #5cb300;
+  --sv-bg-color-successless-active: #edf7df;
+
+  --sv-border-color-successless-disabled: #f0f0f0;
+  --sv-text-color-successless-disabled: #c2c2c2;
+  --sv-bg-color-successless-disabled: #f0f0f0;
+
+  // info
+  --sv-border-color-info: #1476ff;
+  --sv-text-color-info: #fff;
+  --sv-bg-color-info: #1476ff;
+
+  --sv-border-color-info-hover: #4191fa;
+  --sv-text-color-info-hover: #fff;
+  --sv-bg-color-info-hover: #4191fa;
+
+  --sv-border-color-info-active: #4191fa;
+  --sv-text-color-info-active: #fff;
+  --sv-bg-color-info-active: #4191fa;
+
+  --sv-border-color-info-disabled: #f0f0f0;
+  --sv-text-color-info-disabled: #c2c2c2;
+  --sv-bg-color-info-disabled: #f0f0f0;
+
+  // infoless
+  --sv-border-color-infoless: #1476ff;
+  --sv-text-color-infoless: #1476ff;
+  --sv-bg-color-infoless: #f0f7ff;
+
+  --sv-border-color-infoless-hover: #4191fa;
+  --sv-text-color-infoless-hover: #1476ff;
+  --sv-bg-color-infoless-hover: #f0f7ff;
+
+  --sv-border-color-infoless-active: #4191fa;
+  --sv-text-color-infoless-active: #1476ff;
+  --sv-bg-color-infoless-active: #f0f7ff;
+
+  --sv-border-color-infoless-disabled: #f0f0f0;
+  --sv-text-color-infoless-disabled: #c2c2c2;
+  --sv-bg-color-infoless-disabled: #f0f0f0;
+
+  // warn
+  --sv-border-color-warn: #ff8800;
+  --sv-text-color-warn: #fff;
+  --sv-bg-color-warn: #ff8800;
+
+  --sv-border-color-warn-hover: #ff9a2e;
+  --sv-text-color-warn-hover: #fff;
+  --sv-bg-color-warn-hover: #ff9a2e;
+
+  --sv-border-color-warn-active: #ff9a2e;
+  --sv-text-color-warn-active: #fff;
+  --sv-bg-color-warn-active: #ff9a2e;
+
+  --sv-border-color-warn-disabled: #f0f0f0;
+  --sv-text-color-warn-disabled: #c2c2c2;
+  --sv-bg-color-warn-disabled: #f0f0f0;
+
+  // warnless
+  --sv-border-color-warnless: #ff8800;
+  --sv-text-color-warnless: #ff8800;
+  --sv-bg-color-warnless: #fff4e8;
+
+  --sv-border-color-warnless-hover: #ff9a2e;
+  --sv-text-color-warnless-hover: #ff8800;
+  --sv-bg-color-warnless-hover: #fff4e8;
+
+  --sv-border-color-warnless-active: #ff9a2e;
+  --sv-text-color-warnless-active: #ff8800;
+  --sv-bg-color-warnless-active: #fff4e8;
+
+  --sv-border-color-warnless-disabled: #f0f0f0;
+  --sv-text-color-warnless-disabled: #c2c2c2;
+  --sv-bg-color-warnless-disabled: #f0f0f0;
+
+  // error
+  --sv-border-color-error: #f23030;
+  --sv-text-color-error: #fff;
+  --sv-bg-color-error: #f23030;
+
+  --sv-border-color-error-hover: #f76360;
+  --sv-text-color-error-hover: #fff;
+  --sv-bg-color-error-hover: #f76360;
+
+  --sv-border-color-error-active: #f76360;
+  --sv-text-color-error-active: #fff;
+  --sv-bg-color-error-active: #f76360;
+
+  --sv-border-color-error-disabled: #f0f0f0;
+  --sv-text-color-error-disabled: #c2c2c2;
+  --sv-bg-color-error-disabled: #f0f0f0;
+
+  // errorless
+  --sv-border-color-errorless: #f23030;
+  --sv-text-color-errorless: #f23030;
+  --sv-bg-color-errorless: #fff1f0;
+
+  --sv-border-color-errorless-hover: #f76360;
+  --sv-text-color-errorless-hover: #f23030;
+  --sv-bg-color-errorless-hover: #fff1f0;
+
+  --sv-border-color-errorless-active: #f76360;
+  --sv-text-color-errorless-active: #f23030;
+  --sv-bg-color-errorless-active: #fff1f0;
+
+  --sv-border-color-errorless-disabled: #f0f0f0;
+  --sv-text-color-errorless-disabled: #c2c2c2;
+  --sv-bg-color-errorless-disabled: #f0f0f0;
+  //#endregion
+
+  //#region 动画时长
+  --sv-ani-time: 0.3s; // 比如select箭头翻转
+  //#endregion
+
+  // #region 波浪
+  --su-wave-light: #fafafa;
+  --su-wave-dark: #ebebeb;
+  --su-wave-time: 1.5s;
+  //#endregion
+
+  // #region 滚动条
+  --sv-scroll-thumb: #dbdbdb; // 滚动条滑块
+  --sv-scroll-track: #fff; // 滚动条轨道
+  --sv-scroll-width: thin;
+  --sv-scroll-width-legacy: 12px;
+  // #endregion
+}

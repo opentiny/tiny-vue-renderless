@@ -1,0 +1,297 @@
+@import './mixin.less';
+
+/** item 抽象类*/
+:root [class*='sc-'] {
+  // item的基础定义
+  --it-text: var(--sv-text-color);
+  --it-bg: var(--sv-bg-color);
+  --it-fs: var(--sv-fs-md);
+  --it-lh: var(--sv-line-height-md);
+  --it-fw: var(--sv-fw-normal);
+
+  --it-pad1: var(--sv-pady-md); // 细分四个值， 是给用户覆盖特殊场景的机会
+  --it-pad2: var(--sv-padx-md);
+  --it-pad3: var(--sv-pady-md);
+  --it-pad4: var(--sv-padx-md);
+
+  color: var(--it-text);
+  background-color: var(--it-bg);
+
+  font-size: var(--it-fs);
+  line-height: var(--it-lh);
+  font-weight: var(--it-fw);
+
+  padding: var(--it-pad1) var(--it-pad2) var(--it-pad3) var(--it-pad4);
+
+  // border 功能
+  &.sa-bd {
+    --it-bd: var(--sv-border-color);
+    --it-bd-width: var(--sv-border-width);
+    --it-bd-style: solid;
+
+    border-width: var(--it-bd-width);
+    border-style: var(--it-bd-style);
+    border-color: var(--it-bd);
+  }
+
+  // 圆角 & 大圆角
+  &.sa-br {
+    --it-br: var(--sv-br-md);
+
+    &.st-round {
+      --it-br-round: var(--sv-br-round);
+    }
+
+    border-radius: var(--it-br);
+
+    &.st-round {
+      border-radius: var(--it-br-round);
+    }
+  }
+
+  // 阴影
+  &.sa-shadow {
+    --it-shadow: var(--sv-shadow);
+
+    box-shadow: var(--it-shadow);
+  }
+
+  // TODO 尺寸   sa-size是否能省略
+  &.sa-size {
+    each(@sizeList, {
+        --it-pad1-@{value}: ~'var(--sv-pady-@{value})';
+        --it-pad2-@{value}: ~'var(--sv-padx-@{value})';
+        --it-pad3-@{value}: ~'var(--sv-pady-@{value})';
+        --it-pad4-@{value}: ~'var(--sv-padx-@{value})';
+
+        --it-fs-@{value}: ~'var(--sv-fs-@{value})';
+        --it-lh-@{value}: ~'var(--sv-line-height-@{value})';
+
+        &.sa-br {
+          --it-br-@{value}: ~'var(--sv-br-@{value})';
+        }
+
+        &.sa-icon {
+          --it-icon-@{value}: ~'var(--sv-icon-size-@{value})';
+        }
+      }
+
+    );
+
+    each(@sizeList, {
+        &.st-@{value} {
+          font-size: ~'var(--it-fs-@{value})';
+          line-height:~'var(--it-lh-@{value})';
+
+          padding-top: ~'var(--it-pad1-@{value})';
+          padding-right: ~'var(--it-pad2-@{value})';
+          padding-bottom: ~'var(--it-pad3-@{value})';
+          padding-left: ~'var(--it-pad4-@{value})';
+
+          &.sa-br {
+            border-radius: ~'var(--it-br-@{value})';
+          }
+
+          &.sa-icon {
+            width: ~'var(--it-icon-@{value})';
+          }
+        }
+      }
+
+    );
+  }
+
+  // 仅图标特性
+  &.sa-icon {
+    --it-icon-md: var(--sv-icon-size-md);
+
+    line-height: 1;
+    padding: 0;
+    font-size: var(--it-fs);
+    aspect-ratio: 1; // 压缩css体积
+    width: var(--it-icon-md);
+    height: auto;
+
+    > *:first-child {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+    }
+  }
+
+  // hover
+  &.sa-hov {
+    &.sa-bd {
+      --it-bd-hover: var(--sv-border-hover);
+    }
+
+    --it-text-hover: var(--sv-text-hover);
+    --it-bg-hover: var(--sv-bg-hover);
+
+    &.sa-shadow {
+      --it-shadow-hover: var(--sv-shadow-hover);
+    }
+
+    &:hover {
+      &.sa-bd {
+        border-color: var(--it-bd-hover);
+      }
+
+      color: var(--it-text-hover);
+      background-color: var(--it-bg-hover);
+    }
+
+    &.sa-shadow:hover {
+      box-shadow: var(--it-shadow-hover);
+    }
+  }
+
+  // active
+  &.sa-act.sa-act {
+    &.sa-bd {
+      --it-bd-active: var(--sv-border-active);
+    }
+
+    --it-text-active: var(--sv-text-active);
+    --it-bg-active: var(--sv-bg-active);
+
+    &.st-active,
+    &:active {
+      &.sa-bd {
+        border-color: var(--it-bd-active);
+      }
+
+      color: var(--it-text-active);
+      background-color: var(--it-bg-active);
+    }
+  }
+
+  // invalid
+  &.sa-invalid.sa-invalid.sa-invalid {
+    &.sa-bd {
+      --it-bd-invalid: var(--sv-border-invalid);
+    }
+
+    --it-text-invalid: var(--sv-text-invalid);
+    --it-bg-invalid: var(--sv-bg-invalid);
+
+    &.st-invalid,
+    &:invalid {
+      &.sa-bd {
+        border-color: var(--it-bd-invalid);
+      }
+
+      color: var(--it-text-invalid);
+      background-color: var(--it-bg-invalid);
+    }
+  }
+
+  // disabled
+  &.sa-dis.sa-dis.sa-dis.sa-dis {
+    &.sa-bd {
+      --it-bd-disabled: var(--sv-border-disabled);
+    }
+
+    --it-text-disabled: var(--sv-text-disabled);
+    --it-bg-disabled: var(--sv-bg-disabled);
+
+    &[disabled],
+    &:disabled,
+    &.st-disabled {
+      &.sa-bd {
+        border-color: var(--it-bd-disabled);
+      }
+
+      color: var(--it-text-disabled);
+      background-color: var(--it-bg-disabled);
+    }
+  }
+
+  // theme
+  &.sa-theme {
+    each(@themeList, {
+        &.sa-bd {
+          --it-bd-@{value}: ~'var(--sv-border-color-@{value})';
+        }
+
+        --it-text-@{value}: ~'var(--sv-text-color-@{value})';
+        --it-bg-@{value}: ~'var(--sv-bg-color-@{value})';
+
+        &.sa-hov {
+          &.sa-bd {
+            --it-bd-@{value}-hover: ~'var(--sv-border-color-@{value}-hover)';
+          }
+
+          --it-text-@{value}-hover: ~'var(--sv-text-color-@{value}-hover)';
+          --it-bg-@{value}-hover: ~'var(--sv-bg-color-@{value}-hover)';
+        }
+
+        &.sa-act {
+          &.sa-bd {
+            --it-bd-@{value}-active: ~'var(--sv-border-color-@{value}-active)';
+          }
+
+          --it-text-@{value}-active: ~'var(--sv-text-color-@{value}-active)';
+          --it-bg-@{value}-active: ~'var(--sv-bg-color-@{value}-active)';
+        }
+
+        &.sa-dis {
+          &.sa-bd {
+            --it-bd-@{value}-disabled: ~'var(--sv-border-color-@{value}-disabled)';
+          }
+
+          --it-text-@{value}-disabled: ~'var(--sv-text-color-@{value}-disabled)';
+          --it-bg-@{value}-disabled: ~'var(--sv-bg-color-@{value}-disabled)';
+        }
+      }
+
+    );
+
+    each(@themeList, {
+        &.st-@{value} {
+          &.sa-bd {
+            border-color: ~'var(--it-bd-@{value})';
+          }
+
+          color: ~'var(--it-text-@{value})';
+          background-color: ~'var(--it-bg-@{value})';
+        }
+
+        &.st-@{value}.sa-hov:hover {
+          &.sa-bd {
+            border-color: ~'var(--it-bd-@{value}-hover)';
+          }
+
+          color: ~'var(--it-text-@{value}-hover)';
+          background-color: ~'var(--it-bg-@{value}-hover)';
+        }
+
+        &.st-@{value}.sa-act.sa-act {
+          &.st-active &:active {
+            &.sa-bd {
+              border-color: ~'var(--it-bd-@{value}-active)';
+            }
+
+            color: ~'var(--it-text-@{value}-active)';
+            background-color: ~'var(--it-bg-@{value}-active)';
+          }
+        }
+
+        &.st-@{value}.sa-dis.sa-dis.sa-dis.sa-dis {
+
+          &[disabled],
+          &:disabled,
+          &.st-disabled {
+            &.sa-bd {
+              border-color: ~'var(--it-bd-@{value}-disabled)';
+            }
+
+            color: ~'var(--it-text-@{value}-disabled)';
+            background-color: ~'var(--it-bg-@{value}-disabled)';
+          }
+        }
+      }
+
+    );
+  }
+}

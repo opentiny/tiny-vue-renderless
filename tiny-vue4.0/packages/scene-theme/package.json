@@ -1,0 +1,24 @@
+{
+  "name": "@opentiny/scene-theme",
+  "version": "4.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "lessc ./src/index.less ./dist/index.css && cleancss -d -O2 -o ./dist/index.min.css ./dist/index.css"
+  },
+  "dependencies": {
+    "@opentiny/icons": "catalog:"
+  },
+  "devDependencies": {
+    "clean-css":"catalog:",
+    "clean-css-cli":"catalog:",
+    "less": "catalog:",
+    "vite": "catalog:"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

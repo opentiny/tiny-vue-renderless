@@ -1,0 +1,17 @@
+/** 包含一些特效工具类 */
+
+// 骨架屏的波浪效果
+.su-wave {
+  background: linear-gradient(to right, var(--su-wave-light), var(--su-wave-dark), var(--su-wave-light));
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: var(--su-wave-time) wave-loading ease-in-out infinite;
+}
+
+@keyframes wave-loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+

@@ -1,0 +1,12 @@
+
+@displays: inline, block, inline-block, flex, inline-flex, grid, inline-grid, flow-root;
+
+each(@displays,{
+  .su-@{value} {
+    display: @value;
+  }
+});
+
+.su-hidden{
+    display: none;
+}

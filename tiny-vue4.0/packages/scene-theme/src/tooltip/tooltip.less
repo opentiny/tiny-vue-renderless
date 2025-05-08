@@ -1,0 +1,58 @@
+.sc-tooltip {
+  position: relative;
+  --it-tooltip-box-size: 12px;
+  --it-tooltip-offset-x: 0;
+  --it-tooltip-offset-y: 0;
+  --it-bg: var(--sv-bg-tooltip-light)!important;  // light时，背景是纯白
+
+  &::before {
+    position: absolute;
+    transform: translate(var(--it-tooltip-offset-x), var(--it-tooltip-offset-y)) translate(-50%, -50%) rotate(45deg);
+    display: block;
+    width: var(--it-tooltip-box-size);
+    height: var(--it-tooltip-box-size);
+    z-index: 1;
+    content: ' ';
+
+    border: 1px solid var(--it-bd);
+    background-color: var(--it-bg);
+    border-radius: 2px;
+  }
+  &.st-bottom::before {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    top: 0;
+    left: 50%;
+  }
+
+  &.st-top::before {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    top: 100%;
+    left: 50%;
+  }
+
+  &.st-right::before {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    top: 50%;
+    left: 0;
+  }
+
+  &.st-left::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    top: 50%;
+    left: 100%;
+  }
+
+  // 仅处理了主题色，没处理hov act  disabled等色
+  each(@themeList, {
+    &.st-@{value}::before{
+        border-color:~'var(--it-bd-@{value})';
+        background-color:~'var(--it-bg-@{value})';
+    }
+  });
+
+  &.st-invalid::before,
+  &:invalid::before {
+    border-color: var(--it-bd-invalid);
+    background-color: var(--it-bg-invalid);
+  }
+}

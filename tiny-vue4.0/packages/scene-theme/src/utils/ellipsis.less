@@ -1,0 +1,23 @@
+/**  单行与多行省略号。多行默认生成 su-ellipsis-2  ~ 5, 其它行数，覆盖 --su-es-v 的值即可*/  
+//注： line-clamp 属性事实不存在，所以不再写它  https://developer.mozilla.org/en-US/docs/Web/CSS/line-clamp#browser_compatibility
+.su-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[class*='su-ellipsis-'] {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--su-es-v);
+}
+.loop(@i) when (@i <= 5) {
+  .su-ellipsis-@{i} {
+    --su-es-v: @i;
+  }
+
+  .loop(@i+1);
+}
+
+.loop(2);

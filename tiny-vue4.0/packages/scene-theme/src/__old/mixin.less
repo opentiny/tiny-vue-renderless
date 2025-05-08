@@ -1,0 +1,159 @@
+
+// ! 必须只有变量和函数， 这样混入才不会产生多份类名的生成
+@themeList: dark, brand, success, successless, info, infoless, warn, warnless, error, errorless;
+@sizeList: xs, sm, md, lg;
+@borderStyle: solid, dashed, dotted;
+
+
+
+
+// ! 以下仅做参考， 未来要移除
+.box-mixin() {
+  border: 1px solid @border-color;
+  transition: all 0.3s;
+}
+.unbox-mixin() {
+  border: none;
+  transition: all 0.3s;
+}
+// #region 鼠标手形混入  pointer/default
+.cursor-mixin(@defaultCursor) {
+  cursor: @defaultCursor;
+
+  &.st-disabled,
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+// #endregion
+
+// #region 边线的线型混入 st-solid
+.border-style-mixin(@style) {
+  &.st-@{style} {
+    border-style: @style;
+  }
+}
+// #endregion
+
+// #region 圆角的混入 xs sm md lg round
+.border-radius-mixin(@path, @r) {
+  &.st-br-@{r} {
+    border-radius: e(%(@path, @r));
+  }
+}
+// #endregion
+
+// #region 12主题色的混入 border-c text-c bg-c
+.border-color-mixin(@theme) {
+  &.st-@{theme} {
+    border-color: ~'var(--sv-bd-c-@{theme})';
+  }
+}
+
+.border-color-hover-mixin(@theme) {
+  &.st-@{theme}:hover {
+    border-color: ~'var(--sv-bd-c-@{theme}-hov)';
+  }
+}
+
+.border-color-active-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}:active,
+  &.st-@{theme}.st-@{theme}.active {
+    border-color: ~'var(--sv-bd-c-@{theme}-act)';
+  }
+}
+
+.border-color-disabled-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}.st-@{theme}.st-disabled,
+  &.st-@{theme}.st-@{theme}.st-@{theme}[disabled],
+  &.st-@{theme}.st-@{theme}.st-@{theme}:disabled {
+    border-color: ~'var(--sv-bd-c-@{theme}-dis)';
+  }
+}
+
+.text-color-mixin(@theme) {
+  &.st-@{theme} {
+    color: ~'var(--sv-txt-c-@{theme})';
+  }
+}
+
+.text-color-hover-mixin(@theme) {
+  &.st-@{theme}:hover {
+    color: ~'var(--sv-txt-c-@{theme}-hov)';
+  }
+}
+
+.text-color-active-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}:active,
+  &.st-@{theme}.st-@{theme}.active {
+    color: ~'var(--sv-txt-c-@{theme}-act)';
+  }
+}
+
+.text-color-disabled-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}.st-@{theme}.st-disabled,
+  &.st-@{theme}.st-@{theme}.st-@{theme}[disabled],
+  &.st-@{theme}.st-@{theme}.st-@{theme}:disabled {
+    color: ~'var(--sv-txt-c-@{theme}-dis)';
+  }
+}
+
+.bg-color-mixin(@theme) {
+  &.st-@{theme} {
+    background-color: ~'var(--sv-bg-c-@{theme})';
+  }
+}
+
+.bg-color-hover-mixin(@theme) {
+  &.st-@{theme}:hover {
+    background-color: ~'var(--sv-bg-c-@{theme}-hov)';
+  }
+}
+
+.bg-color-active-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}:active,
+  &.st-@{theme}.st-@{theme}.active {
+    background-color: ~'var(--sv-bg-c-@{theme}-act)';
+  }
+}
+
+.bg-color-disabled-mixin(@theme) {
+  &.st-@{theme}.st-@{theme}.st-@{theme}.st-disabled,
+  &.st-@{theme}.st-@{theme}.st-@{theme}[disabled],
+  &.st-@{theme}.st-@{theme}.st-@{theme}:disabled {
+    background-color: ~'var(--sv-bg-c-@{theme}-dis)';
+  }
+}
+
+// 按钮在聚焦时，显示一个外轮廓， 参见antvue  
+.focus-visible-mixin(@theme) {
+  &:not(.st-disabled, [disabled], :disabled):focus-visible {
+    outline-offset: 1px;
+    transition:
+      outline-offset 0s,
+      outline 0s;
+  }
+  &.st-@{theme}:not(.st-disabled, [disabled], :disabled):focus-visible {
+    outline: ~'2px solid var(--sv-bd-c-@{theme}-focus)';
+  }
+}
+// #endregion
+
+// #region padding 的大小混入 xs sm md lg
+.padding-mixin(@size) {
+  &.st-@{size} {
+    padding: ~'var(--sv-pady-@{size}) var(--sv-padx-@{size})';
+  }
+}
+// #endregion
+
+// #region font 的大小混入 xs sm md lg
+.font-mixin(@size) {
+  &.st-@{size} {
+    font-size: ~'var(--sv-font-@{size})';
+    font-weight: ~'var(--sv-font-weight-@{size})';
+    line-height: ~'var(--sv-line-height-@{size})';
+  }
+}
+// #endregion

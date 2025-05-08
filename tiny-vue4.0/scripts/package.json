@@ -1,0 +1,38 @@
+{
+  "name": "@opentiny/scripts",
+  "version": "4.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "create-cmp": "tsx ./create-cmp/index.ts",
+    "usage-size": "tsx ./usage-size/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "vue": "catalog:",
+    "@vue/shared": "catalog:",
+    "@opentiny/icons": "catalog:"
+  },
+  "devDependencies": {
+    "@opentiny/vue-pc": "workspace:~",
+    "@opentiny/vue-mobile": "workspace:~",
+    "@opentiny/vue-multi": "workspace:~",
+    "@opentiny/vue-directives": "workspace:~",
+    "@opentiny/vue-hooks": "workspace:~",
+    "@opentiny/utils": "workspace:~",
+    "@vitejs/plugin-vue": "catalog:",
+    "inquirer": "catalog:",
+    "@types/shelljs": "catalog:",
+    "shelljs": "catalog:",
+    "tinyglobby": "catalog:",
+    "rolldown": "catalog:",
+    "pretty-bytes": "catalog:",
+    "picocolors": "catalog:",
+    "cross-env": "catalog:",
+    "tsx": "catalog:",
+    "less": "catalog:",
+    "unocss": "catalog:"
+  },
+  "license": "ISC"
+}

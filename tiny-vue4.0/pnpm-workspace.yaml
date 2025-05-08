@@ -1,0 +1,82 @@
+packages:
+  - packages/** # 组件库源码
+  - docs # 开发 & 官网
+  - scripts # 全局公共脚本
+
+  # 统一版本，方便维护
+catalog:
+  # 工具链
+  "@commitlint/config-conventional": latest
+  "@tsconfig/node20": latest
+  "@types/node": latest
+  commitlint: latest
+  npm-run-all2: latest # 批量命令
+  rolldown: latest
+  typescript: latest
+  cross-env: latest # 命令行环境变量
+  tsx: latest # 直接在Node下运行 ts 文件。 代替esno的新工具
+  picocolors: latest # 控制台打印颜色
+  pretty-bytes: latest # 友好字节显示
+  node-modules-inspector: latest # antfu 的小工具: pnpx node-modules-inspector 就执行了
+  inquirer: latest # 询问库
+  "@types/shelljs": latest
+  shelljs: latest # 操作文件，执行命令的库
+  tinyglobby: latest # 代替fast-glob 的一个最新的库
+
+  # 测试
+  "@playwright/test": latest
+  "@vue/test-utils": latest
+  "@types/jsdom": latest
+  "@sinonjs/fake-timers": latest
+  jsdom: latest
+  vitest: latest
+
+  # vue 生态
+  "@vitejs/plugin-vue": latest
+  "@vitejs/plugin-vue-jsx": latest
+  "@vue/tsconfig": latest
+  vite: latest
+  vite-bundle-analyzer: latest # 分析体积
+  vite-plugin-dts: latest # dts
+  vue: latest
+  "@vue/shared": latest
+  vue-tsc: latest 
+
+  # lint
+  "@vitest/eslint-plugin": latest
+  "@vue/eslint-config-prettier": latest
+  "@vue/eslint-config-typescript": latest
+  # "@vue/eslint-config-prettier/skip-formatting": latest # 内源找不到
+  eslint: latest
+  eslint-plugin-oxlint: latest
+  eslint-plugin-playwright: latest
+  eslint-plugin-vue: latest
+  lint-staged: latest
+  oxlint: latest
+  prettier: latest
+
+  # 图标依赖
+  unocss: latest
+  "@unocss/preset-icons": latest
+  "@opentiny/icons": latest
+
+  # theme
+  less: latest
+  clean-css-cli: latest
+  clean-css: latest
+
+  # storybook 开发测试工具
+  "@chromatic-com/storybook": 3.2.5
+  "@storybook/addon-essentials": 8.6.4
+  "@storybook/addon-onboarding": 8.6.4
+  "@storybook/addon-outline": 8.6.4
+  "@storybook/addon-backgrounds": 8.6.4
+  "@storybook/blocks": 8.6.4
+  "@storybook/experimental-addon-test": 8.6.4
+  "@storybook/test": 8.6.4
+  "@storybook/vue3": 8.6.4
+  "@storybook/vue3-vite": 8.6.4
+  storybook: 8.6.4
+
+  # 组件库依赖
+  "@floating-ui/dom": latest

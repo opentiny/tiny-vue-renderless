@@ -1,0 +1,37 @@
+{
+  "name": "@opentiny/storybook-docs",
+  "private": true,
+  "description": "Storybook工具: 实时调试组件/指令/函数等,并充当开发工具",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "vue": "catalog:",
+    "@opentiny/vue-pc": "workspace:*",
+    "@opentiny/vue-hooks": "workspace:*",
+    "@opentiny/vue-directives": "workspace:*",
+    "@opentiny/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "catalog:",
+    "@storybook/addon-essentials": "catalog:",
+    "@storybook/addon-onboarding": "catalog:",
+    "@storybook/addon-outline": "catalog:",
+    "@storybook/addon-backgrounds": "catalog:",
+    "@storybook/blocks": "catalog:",
+    "@storybook/experimental-addon-test": "catalog:",
+    "@storybook/test": "catalog:",
+    "@storybook/vue3": "catalog:",
+    "@storybook/vue3-vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "storybook": "catalog:",
+    "typescript":"catalog:",
+    "vite": "catalog:",
+    "unocss": "catalog:",
+    "@unocss/preset-icons": "catalog:"
+  }
+}

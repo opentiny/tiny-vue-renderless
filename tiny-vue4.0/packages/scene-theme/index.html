@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyVue4.0 场景主题类测试页面</title>
+  <link rel="stylesheet" href="./src/index.less" />
+  <link rel="stylesheet" href="./demo/demo.less" />
+  <script type="module">
+    import "@opentiny/icons/style/base.css"
+  </script>
+</head>
+
+<body>
+  <div class="demo-menu">
+    <ul>
+      <li><a href="#item"> 类</a></li>
+      <li><a href="#utils">utils 工具类</a></li>
+      <li><a href="#button">button</a></li>
+      <li><a href="#tooltip">tooltip</a></li>
+    </ul>
+  </div>
+
+  <article id="item">
+    <h2>item 类</h2>
+    <p>通用项 的原子类,默认就支持以下选择器：
+    <ul>
+      <li>st-xs sm md lg st-round</li>
+      <li>:hover </li>
+      <li> st-active :active</li>
+      <li> st-invalid :invalid</li>
+      <li> st-disabled :disabled [disabled]</li>
+      <li> st-dark brand success info warn error</li>
+      <li> 圆角 st-xs sm md lg st-round st-round</li>
+      <li> 头像 st-icon</li>
+      <li> 阴影 </li>
+    </ul>
+
+    可以简单理解： item就是基本功能的一个盒子项。<br>
+    许多功能是类似于插件一样， 添加上来的功能
+   <ul>
+      <li>sa-bd</li>
+      <li>sa-br</li>
+      <li>noactive</li>
+      <li>noinvalid</li>
+      <li>nodisabled</li>
+      <li>nosize</li>
+      <li>noicon</li>
+      <li>notheme</li>
+      <li>noshadow</li>
+    </ul>
+    </p>
+    <section>
+      <h3> 最基本的盒子 </h3>
+      <div class="flex-row">
+        <div d class="sc-item  w-100 m-10">小清新</div>
+      </div>
+    </section>
+
+
+    <section>
+      <h3>border  & sa-bd</h3>
+      <div class="flex-row">
+        <div d class="sc-item sa-bd w-100 m-10">小清新</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>尺寸 & sa-size sa-br sa-bd</h3>
+      <div class="flex-row">
+        <div d class="sc-item sa-size sa-br w-100 m-10 st-xs">tag场景</div>
+        <div d class="sc-item sa-size sa-br  w-100 m-10 st-sm">tag场景</div>
+        <div d class="sc-item sa-size sa-br  w-100 m-10 st-md">select</div>
+        <div d class="sc-item sa-size sa-br  w-100 m-10 st-lg">card </div>
+      </div>
+      <div class="flex-row">
+        <div d class="sc-item sa-size sa-br sa-bd w-100 m-10 st-xs">tag场景</div>
+        <div d class="sc-item sa-size sa-br sa-bd  w-100 m-10 st-sm">tag场景</div>
+        <div d class="sc-item sa-size sa-br sa-bd  w-100 m-10 st-md">select</div>
+        <div d class="sc-item sa-size sa-br sa-bd  w-100 m-10 st-lg">card </div>
+      </div>
+    </section>
+    <section>
+      <h3>圆角   sa-bd sa-br  st-round</h3>
+      <div class="flex-row">
+        <div d class="sc-item sa-bd sa-br w-100 m-10 st-md">正常圆角</div>
+        <div d class="sc-item sa-bd sa-br  st-round w-100 m-10 st-md st-round">大圆角</div>
+      </div>
+    </section>
+    <section>
+      <h3>阴影</h3>
+      <div class="flex-row">
+        <div d class="sc-item w-100 m-10 st-md">具有阴影</div>
+        <div d noshadow class="sc-item w-100 m-10 st-md">没有阴影</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>hover + active & sa-hov sa-act </h3>
+      <div class="flex-row">
+        <div d class="sc-item sa-hov sa-bd w-100 m-10">有hover</div>
+        <div d class="sc-item sa-hov sa-act sa-bd  w-100 m-10">有active</div>
+        <div d class="sc-item sa-hov sa-act st-active sa-bd  w-100 m-10">activing</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>invalid & sa-invalid ： 校验和disabled权重都高， 不要同时使用</h3>
+      <div class="flex-row">
+        <div d class="sc-item  sa-invalid w-100 m-10 st-invalid">校验失败</div>
+        <div d class="sc-item sa-bd sa-invalid w-100 m-10 st-invalid">校验失败</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>disabled & sa-dis </h3>
+      <div class="flex-row">
+        <div d class="sc-item sa-dis sa-bd w-100 m-10 st-disabled">类名禁用</div>
+        <div d class="sc-item sa-dis sa-bd w-100 m-10" disabled>属性禁用</div>
+      </div>
+    </section>
+    <section>
+      <h3> st-icon & sa-icon sa-bd sa-theme sa-br sa-size</h3>
+      <div class="flex-row">
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-xs"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-sm"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-md"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-warn st-lg"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-successless st-xs st-round"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-warnless st-sm st-round"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br sa-size st-round m-10 st-icon st-infoless st-md st-round"><i class='ci-search'></i></div>
+        <div d noicon class="sc-item sa-icon sa-bd sa-theme sa-br  sa-size st-round m-10 st-icon st-errorless st-lg st-round"><i class='ci-search'></i></div>
+      </div>
+    </section>
+    <section>
+      <h3>主题色 </h3>
+      <div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-dark">dark 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-dark st-disabled">dark 色</div>
+        </div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-brand">brand 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-brand st-disabled">brand 色</div>
+        </div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-success">succ 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-success st-disabled">succ 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-successless">succ 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-successless st-disabled">succ 色</div>
+        </div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-info">info 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-info st-disabled">info 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-infoless">infoless </div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-infoless st-disabled">infoless </div>
+        </div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-warn">warn 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-warn st-disabled">warn 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-warnless">warnless </div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size  w-100 m-10 st-warnless st-disabled">warnless </div>
+        </div>
+        <div class="flex-row">
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-error">error 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-error st-disabled">error 色</div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-errorless">errorless </div>
+          <div d class="sc-item sa-theme sa-bd sa-br sa-hov sa-act sa-dis sa-size w-100 m-10 st-errorless st-disabled">errorless </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  <article id="utils">
+    <h2>utils 工具类</h2>
+    <p>所有组件可用的，通用的，微小的，原子功能的类名。</p>
+    <section>
+      <h3>省略号</h3>
+      <div class="flex-row">
+        <div d class="w-100 m-10 su-ellipsis">绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无?</div>
+        <div d class="w-100 m-10 su-ellipsis-2">绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无?</div>
+        <div d class="w-100 m-10 su-ellipsis-3">绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无?</div>
+      </div>
+    </section>
+    <section>
+      <h3>背景波浪--骨架屏</h3>
+      <div class="flex-row">
+        <div d class="w-300 h-50 m-10 su-wave">正常</div>
+        <div d class="w-300 h-50 m-10 su-wave st-fast">快速</div>
+        <div d class="w-300 h-50 m-10 su-wave" style="--su-wave-dark: #db6c6c">自定义颜色</div>
+      </div>
+    </section>
+    <section>
+      <h3>下划线</h3>
+      <div>
+        <div d class="m-10 su-underline">这是一行文本</div>
+        <div d class="m-10 su-underline-dashed">这是一行文本</div>
+      </div>
+    </section>
+  </article>
+  <article id="button">
+    <h2>Button</h2>
+    <p>具有button样式的元素， 只能用于button标签上。不包含文字按钮和仅图标按钮。</p>
+    <section>
+      <h3>大小 & 圆角</h3>
+      <div>
+        <button d class="sc-button sa-bd sa-br sa-size  st-xs ">xs 按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-size st-sm ">sm 按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-size st-md ">md 按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-size st-lg ">lg 按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-size st-round ">lg 按钮</button>
+      </div>
+      <h3>主题色</h3>
+      <div>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-md ">标准按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme  st-dark st-md ">暗色按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-brand st-md ">品牌按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-success st-md ">成功按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-info st-md ">信息按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-warn st-md ">警告按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme  st-error st-md ">失败按钮</button>
+      </div>
+      <h3>Less主题色</h3>
+      <div>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-successless st-md ">成功按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-infoless st-md ">信息按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-warnless st-md ">警告按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-theme st-errorless st-md ">失败按钮</button>
+      </div>
+ 
+      <h3>禁用</h3>
+      <div>
+        <button d class="sc-button  sa-bd sa-br sa-dis  st-disabled">标准按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-dis st-disabled">暗色按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-dis st-disabled">成功按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-dis st-disabled">信息按钮</button>
+        <button d class="sc-button sa-bd sa-br sa-dis st-disabled">警告按钮</button>
+        <button d class="sc-button  sa-bd sa-br sa-dis st-disabled">失败按钮</button>
+      </div>
+
+      <h3>仅图标</h3>
+      <div>
+        <button d class="sc-button sa-icon  sa-bd sa-br st-icon "><i class='ci-search'></i></button>
+        <button d class="sc-button sa-icon  sa-bd sa-br st-icon st-round"><i class='ci-search'></i></button>
+      </div>
+
+      <h3>光环</h3>
+      <div>
+        <button d class="sc-button su-ring  sa-bd sa-br sa-theme ">标准按钮</button>
+        <button d class="sc-button su-ring  sa-bd sa-br sa-theme ">标准按钮</button>
+      </div>
+    </section>
+  </article>
+   
+
+  <article id="tooltip">
+    <h2>tooltip</h2>
+    <p>具有tooltip样式的元素 。</p>
+    <section>
+      <h3>  </h3>
+      <div class="flex-row">
+        <div class="sc-tooltip sa-bd sa-theme st-top w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-bottom w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-left w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-right w-100 m-10">小清新</div>
+      </div>
+      <div class="flex-row">
+        <div class="sc-tooltip sa-bd sa-theme st-dark st-top w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-success st-bottom w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-error st-left w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-info  st-right w-100 m-10">小清新</div>
+      </div>
+      <div class="flex-row">
+        <div class="sc-tooltip sa-bd sa-theme st-warnless st-top w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-successless st-bottom w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-errorless st-left w-100 m-10">小清新</div>
+        <div class="sc-tooltip sa-bd sa-theme st-infoless  st-right w-100 m-10">小清新</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="sc-tooltip sa-bd sa-invalid st-invalid st-right w-200 m-10">输入的字符超长</div>
+      </div>
+    </section>
+  </article>
+
+</body>
+
+</html>
+
+

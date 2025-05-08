@@ -1,0 +1,61 @@
+// 字体大小， line-height, font-weight, text-align underline
+
+.su-fs-xs{
+    line-height: var(--sv-fs-xs);
+}
+.su-fs-sm{
+    line-height: var(--sv-fs-sm);
+}
+.su-fs-md{
+    line-height: var(--sv-fs-md);
+}
+.su-fs-lg{
+    line-height: var(--sv-fs-lg);
+}
+
+.su-lh-xs{
+    line-height: var(--sv-line-height-xs);
+}
+.su-lh-sm{
+    line-height: var(--sv-line-height-sm);
+}
+.su-lh-md{
+    line-height: var(--sv-line-height-md);
+}
+.su-lh-lg{
+    line-height: var(--sv-line-height-lg);
+}
+
+
+.su-fw-bold{
+    font-weight: var(--sv-fw-bold);
+}
+.su-fw-normal{
+    font-weight: var(--sv-fw-normal);
+}
+.su-fw-thin{
+    font-weight: var(--sv-fw-thin);
+}
+
+.su-text-left{
+    text-align: left;
+}
+.su-text-right{
+    text-align: right;
+}
+.su-text-center{
+    text-align: center;
+}
+
+
+/** 下划线样式，本来想写成mixin函数， 但它会引起代码膨胀，如果写在 utils, 全局共享*/
+[class*='su-underline'] {
+    text-decoration: underline;
+}
+
+@underlineStyles: solid, double, dotted, dashed, wavy;
+each(@underlineStyles,{
+    .su-underline-@{value}{
+        text-decoration-style: @value;
+    }
+})

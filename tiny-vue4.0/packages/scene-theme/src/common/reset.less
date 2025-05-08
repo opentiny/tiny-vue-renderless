@@ -1,0 +1,67 @@
+// https://github.com/csstools/normalize.css  2023.12.29
+// https://github.com/csstools/sanitize.css   2024.9
+// https://meyerweb.com/eric/tools/css/reset/index.html  2011  最精简
+// import '@unocss/reset/tailwind.css'        tailwind    重置的内容比较多
+
+// 2个文章
+// https://www.cnblogs.com/coco1s/p/16143423.html
+// https://www.joshwcomeau.com/css/custom-css-reset/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, 
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* 滚动条标准属性: chrome121+, ff */
+@supports (scrollbar-width: auto) {
+    * {
+        scrollbar-color: var(--sv-scroll-thumb) var(--sv-scroll-track);
+        scrollbar-width: var(--sv-scroll-width);
+    }
+}
+
+/* 历史滚动条 `::-webkit-scrollbar-*`  */
+@supports selector(::-webkit-scrollbar) {
+    ::-webkit-scrollbar-thumb {
+        background: var(--sv-scroll-thumb);
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--sv-scroll-track);
+    }
+    ::-webkit-scrollbar {
+        max-width: var(--sv-scroll-width-legacy);
+        max-height: var(--sv-scroll-width-legacy);
+    }
+}
+
+/** 占位文本色*/
+::placeholder{
+    color: var(--sc-text-placeholder);
+}

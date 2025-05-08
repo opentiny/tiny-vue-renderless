@@ -1,0 +1,27 @@
+.DS_Store
+node_modules
+dist/
+
+vite.config.ts.timestamp*
+vitest.config.ts.timestamp*
+
+# Editor directories and files
+.idea
+.history
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+*.stackdump
+
+tgzs
+*.tgz
+
+pnpm-lock.yaml
+
+# 屏蔽测试用例报告相关文件
+allure-report
+allure-results
+test-results

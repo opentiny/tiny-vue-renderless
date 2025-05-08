@@ -1,0 +1,24 @@
+{
+  "name": "@opentiny/vue-docs",
+  "private": true,
+  "version": "4.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@opentiny/icons":"catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@opentiny/vue-pc": "workspace:~",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:",
+    "unocss": "catalog:"
+  }
+}

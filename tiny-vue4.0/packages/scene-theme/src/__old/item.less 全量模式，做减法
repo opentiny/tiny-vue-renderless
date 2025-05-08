@@ -1,0 +1,230 @@
+// <div class="
+//              [class*='sc-']
+
+//             item-theme
+
+@import './mixin.less';
+
+/** item 抽象类*/
+// 以下为 item 的common变量。 该层目的有2个： 传递--sv变量进来，隔离--sv变量传递给其它元素。
+:root [class*='sc-'] {
+  --it-text: var(--sv-text-color);
+  --it-bg: var(--sv-bg-color);
+
+  --it-bd: var(--sv-border-color);
+  --it-bd-width: var(--sv-border-width);
+  --it-bd-style: solid;
+
+  --it-fs: var(--sv-fs-normal);
+  --it-fw: var(--sv-fw-normal);
+
+  --it-lh-xs: var(--sv-line-height-xs);
+  --it-lh-sm: var(--sv-line-height-sm);
+  --it-lh-md: var(--sv-line-height-md);
+  --it-lh-lg: var(--sv-line-height-lg);
+ 
+
+  --it-pad1: var(--sv-pady-md); // 细分四个值， 是给用户覆盖特殊场景的机会
+  --it-pad2: var(--sv-padx-md);
+  --it-pad3: var(--sv-pady-md);
+  --it-pad4: var(--sv-padx-md);
+
+  --it-shadow: var(--sv-shadow);
+  --it-shadow-hover: var(--sv-shadow-hover);
+
+  --it-br: var(--sv-br-md);
+  --it-br-round: var(--sv-br-round);
+  --it-ani-time: var(--sv-ani-time);
+
+  // size-able
+  each(@sizeList, {
+      --it-pad1-@{value}: ~'var(--sv-pady-@{value})';
+      --it-pad2-@{value}: ~'var(--sv-padx-@{value})';
+      --it-pad3-@{value}: ~'var(--sv-pady-@{value})';
+      --it-pad4-@{value}: ~'var(--sv-padx-@{value})';
+
+      --it-fs-@{value}: ~'var(--sv-fs-@{value})';
+      --it-br-@{value}: ~'var(--sv-br-@{value})';
+
+      --it-circle-@{value}: ~'var(--sv-circle-size-@{value})';
+    }
+  ) 
+  
+  // hover-able
+  --it-bd-hover: var(--sv-border-hover);
+  --it-text-hover: var(--sv-text-primary);
+  --it-bg-hover: var(--sv-bg-hover);
+
+  // active able
+  --it-bd-active: var(--sv-border-active);
+  --it-text-active: var(--sv-text-color);
+  --it-bg-active: var(--sv-bg-active);
+
+  // invalid-able
+  --it-bd-invalid: var(--sv-border-invalid);
+  --it-text-invalid: var(--sv-text-invalid);
+  --it-bg-invalid: var(--sv-bg-invalid);
+
+  // disabled-able
+  --it-bd-disabled: var(--sv-border-disabled);
+  --it-text-disabled: var(--sv-text-disabled);
+  --it-bg-disabled: var(--sv-bg-disabled);
+
+  // theme
+  each(@themeList, {
+      --it-bd-@{value}: ~'var(--sv-border-color-@{value})';
+      --it-text-@{value}: ~'var(--sv-text-color-@{value})';
+      --it-bg-@{value}: ~'var(--sv-bg-color-@{value})';
+
+      --it-bd-@{value}-hover: ~'var(--sv-border-color-@{value}-hover)';
+      --it-text-@{value}-hover: ~'var(--sv-text-color-@{value}-hover)';
+      --it-bg-@{value}-hover: ~'var(--sv-bg-color-@{value}-hover)';
+
+      --it-bd-@{value}-active: ~'var(--sv-border-color-@{value}-active)';
+      --it-text-@{value}-active: ~'var(--sv-text-color-@{value}-active)';
+      --it-bg-@{value}-active: ~'var(--sv-bg-color-@{value}-active)';
+
+      --it-bd-@{value}-disabled: ~'var(--sv-border-color-@{value}-disabled)';
+      --it-text-@{value}-disabled: ~'var(--sv-text-color-@{value}-disabled)';
+      --it-bg-@{value}-disabled: ~'var(--sv-bg-color-@{value}-disabled)';
+    }
+
+  )
+}
+
+// item的基础定义
+:root [class*='sc-'] {
+  &:not([noborder]) {
+    border-width: var(--it-bd-width);
+    border-style: var(--it-bd-style);
+    border-color: var(--it-bd);
+    border-radius: var(--it-br);
+  }
+
+  color: var(--it-text);
+  background-color: var(--it-bg);
+
+  font-size: var(--it-fs);
+  line-height: var(--it-lh-md);
+  font-weight: var(--it-fw);
+
+  padding: var(--it-pad1) var(--it-pad2) var(--it-pad3) var(--it-pad4);
+
+  &:not([noshadow]) {
+    box-shadow: var(--it-shadow);
+  }
+
+  transition: all var(--it-ani-time);
+}
+
+// 尺寸能力
+each(@sizeList, {
+    [class*='sc-'].st-@{value}:not([nosize]) {
+      border-radius: ~'var(--it-br-@{value})';
+      font-size: ~'var(--it-fs-@{value})';
+      line-height:~'var(--it-lh-@{value})';
+      padding-top: ~'var(--it-pad1-@{value})';
+      padding-right: ~'var(--it-pad2-@{value})';
+      padding-bottom: ~'var(--it-pad3-@{value})';
+      padding-left: ~'var(--it-pad4-@{value})';
+    }
+  }
+);
+
+// st-icon 特性 ，此时 line-height:1 , w=h= 基础变量， 有尺寸选择，有主题
+[class*='sc-'].st-icon:not([noicon]) {
+  line-height: 1;
+  padding: 0;
+  font-size: var(--it-fs-md);
+  width: var(--it-circle-md);
+  height: var(--it-circle-md);
+
+  > *:first-child{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+}
+
+each(@sizeList, {
+    [class*='sc-'].st-@{value}.st-icon:not([noicon]) {
+      font-size: ~'var(--it-fs-@{value})';
+      width: ~'var(--it-circle-@{value})';
+      height: ~'var(--it-circle-@{value})';
+    }
+  }
+) 
+
+// 圆角
+[class*='sc-'].st-round.st-round:not([noborder]) {
+  border-radius: var(--it-br-round);
+}
+
+// hover 能力
+[class*='sc-']:not([nohover]):hover {
+  border-color: var(--it-bd-hover);
+  color: var(--it-text-hover);
+  background-color: var(--it-bg-hover);
+
+  &:not([noshadow]) {
+    box-shadow: var(--it-shadow-hover);
+  }
+}
+
+// 激活能力
+[class*='sc-'][class*='sc-']:not([noactive]).st-active,
+[class*='sc-'][class*='sc-']:not([noactive]):active {
+  border-color: var(--it-bd-active);
+  color: var(--it-text-active);
+  background-color: var(--it-bg-active);
+}
+
+// 校验失败
+[class*='sc-'][class*='sc-'][class*='sc-']:not([noinvalid]):invalid,
+[class*='sc-'][class*='sc-'][class*='sc-']:not([noinvalid]).st-invalid {
+  border-color: var(--it-bd-invalid);
+  color: var(--it-text-invalid);
+  background-color: var(--it-bg-invalid);
+}
+
+// 禁用能力
+[class*='sc-'][class*='sc-'][class*='sc-']:not([nodisabled])[disabled],
+[class*='sc-'][class*='sc-'][class*='sc-']:not([nodisabled]):disabled,
+[class*='sc-'][class*='sc-'][class*='sc-']:not([nodisabled]).st-disabled {
+  border-color: var(--it-bd-disabled);
+  color: var(--it-text-disabled);
+  background-color: var(--it-bg-disabled);
+}
+
+// 主题能力
+each(@themeList, {
+    [class*='sc-'].st-@{value}:not([notheme]) {
+      border-color: ~'var(--it-bd-@{value})';
+      color: ~'var(--it-text-@{value})';
+      background-color: ~'var(--it-bg-@{value})';
+    }
+
+    [class*='sc-'].st-@{value}:not([notheme]):hover {
+      border-color: ~'var(--it-bd-@{value}-hover)';
+      color: ~'var(--it-text-@{value}-hover)';
+      background-color: ~'var(--it-bg-@{value}-hover)';
+    }
+
+    [class*='sc-'][class*='sc-'].st-@{value}:not([notheme]).st-active,
+    [class*='sc-'][class*='sc-'].st-@{value}:not([notheme]):active {
+      border-color: ~'var(--it-bd-@{value}-active)';
+      color: ~'var(--it-text-@{value}-active)';
+      background-color: ~'var(--it-bg-@{value}-active)';
+    }
+
+    // 禁用能力
+    [class*='sc-'][class*='sc-'][class*='sc-']:not([notheme]).st-@{value}[disabled],
+    [class*='sc-'][class*='sc-'][class*='sc-']:not([notheme]).st-@{value}:disabled,
+    [class*='sc-'][class*='sc-'][class*='sc-']:not([notheme]).st-@{value}.st-disabled {
+      border-color: ~'var(--it-bd-@{value}-disabled)';
+      color: ~'var(--it-text-@{value}-disabled)';
+      background-color: ~'var(--it-bg-@{value}-disabled)';
+    }
+  }
+
+)

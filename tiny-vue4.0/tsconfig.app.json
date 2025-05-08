@@ -1,0 +1,30 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "./packages/env.d.ts",
+    "./packages/components/**/index.ts",
+    "./packages/components/**/src/*.ts",
+    "./packages/components/**/src/**/*",
+    "./packages/components/**/src/**/*.vue",
+    "./packages/directives/**/*.ts",
+    "./packages/hooks/**/*.ts",
+    "./packages/utils/**/*.ts"
+, "packages/utils/src/useProxyData.test.ts", "packages/utils/src/useProxyData.ts"  ],
+  "exclude": ["./packages/**/__tests__/*", "./packages/**/__e2e__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable"
+      // No `ScriptHost` because Vue 3 dropped support for IE
+    ],
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "types": []
+  }
+}

@@ -1,0 +1,386 @@
+/**
+  抽象的css var 变量。 肯定无法适配每种场景。 比如： button 和 card 的 边距, 圆角肯定不同。
+  需要在落在具体类名上时， 分别覆盖各自的base变量。 
+  .sc-btn{
+    --sv-bd-r-xs: @border-radius-btn-xs;
+    --sv-bd-r-sm: @border-radius-btn-sm;
+    --sv-bd-r-md: @border-radius-btn-md;
+    --sv-bd-r-lg: @border-radius-btn-lg;
+    --sv-bd-r-round: @border-radius-round;
+
+     // 之后再mix....
+     border-radius-mixin(@r)
+  }
+*/
+
+// 这里只是示例， 并不真正的导入到各个场景类中去。
+// 这样能减少体积，以及根结点上的样式
+
+// 正常项目
+:root {
+  /** 边框 */
+  --sv-bd-c: @border;
+  --sv-bd-w: @border-width;
+
+  --sv-bd-r-xs: @border-radius-xs;
+  --sv-bd-r-sm: @border-radius-sm;
+  --sv-bd-r-md: @border-radius-md;
+  --sv-bd-r-lg: @border-radius-lg;
+  --sv-bd-r-round: @border-radius-round;
+
+  /** 内边距 */
+  --sv-padx-xs: 8px;
+  --sv-pady-xs: 0px;
+
+  --sv-padx-sm: 16px;
+  --sv-pady-sm: 0px;
+
+  --sv-padx-md: 24px;
+  --sv-pady-md: 0px;
+
+  --sv-padx-lg: 32px;
+  --sv-pady-lg: 0px;
+
+  /** 字体，行高*/
+  --sv-font-xs: 12px;
+  --sv-font-weight-xs: 400;
+  --sv-line-height-xs: 1.5;
+
+  --sv-font-sm: 12px;
+  --sv-font-weight-sm: 400;
+  --sv-line-height-sm: 1.5;
+
+  --sv-font-md: 14px;
+  --sv-font-weight-md: 400;
+  --sv-line-height-md: 1.5;
+
+  --sv-font-lg: 14px;
+  --sv-font-weight-lg: 400;
+  --sv-line-height-lg: 1.5;
+}
+
+// 11种主题的颜色配置
+:root {
+  // light
+  --sv-bg-c-light: #fff;
+  --sv-bg-c-light-hov: #fff;
+  --sv-bg-c-light-act: #fff;
+  --sv-bg-c-light-dis: #f0f0f0;
+
+  --sv-bd-c-light: #c2c2c2;
+  --sv-bd-c-light-hov: #595959;
+  --sv-bd-c-light-act: #191919;
+  --sv-bd-c-light-dis: #f0f0f0;
+  --sv-bd-c-light-focus: #f0f0f0; // focus时，较淡的外轮廓色
+
+  --sv-txt-c-light: #191919;
+  --sv-txt-c-light-hov: #191919;
+  --sv-txt-c-light-act: #191919;
+  --sv-txt-c-light-dis: #c2c2c2;
+
+  // dark  实体效果：  bg-c是主色调， 字色白， 边框色随着bg色一起变，看起来无边框
+  --sv-bg-c-dark: #191919;
+  --sv-bg-c-dark-hov: lighten(#191919, 20%);
+  --sv-bg-c-dark-act: darken(#191919, 20%);
+  --sv-bg-c-dark-dis: #f0f0f0;
+
+  --sv-bd-c-dark: var(--sv-bg-c-dark);
+  --sv-bd-c-dark-hov: var(--sv-bg-c-dark-hov);
+  --sv-bd-c-dark-act: var(--sv-bg-c-dark-act);
+  --sv-bd-c-dark-dis: var(--sv-bg-c-dark-dis);
+  --sv-bd-c-dark-focus: lighten(#191919, 20%);
+
+  --sv-txt-c-dark: #fff;
+  --sv-txt-c-dark-hov: #fff;
+  --sv-txt-c-dark-act: #fff;
+  --sv-txt-c-dark-dis: #c2c2c2;
+
+  // darkless less-朴素效果： bg-c是主色调变浅， 边框色略深，
+  --sv-bg-c-darkless: #f4f4f4;
+  --sv-bg-c-darkless-hov: lighten(#f4f4f4, 20%);
+  --sv-bg-c-darkless-act: darken(#f4f4f4, 20%);
+  --sv-bg-c-darkless-dis: #f0f0f0;
+
+  --sv-bd-c-darkless: #c2c2c2;
+  --sv-bd-c-darkless-hov: darken(#c2c2c2, 20%);
+  --sv-bd-c-darkless-act: darken(#c2c2c2, 20%);
+  --sv-bd-c-darkless-dis: #f0f0f0;
+  --sv-bd-c-darkless-focus: lighten(#c2c2c2, 20%);
+
+  --sv-txt-c-darkless: #595959;
+  --sv-txt-c-darkless-hov: #191919;
+  --sv-txt-c-darkless-act: #191919;
+  --sv-txt-c-darkless-dis: #c2c2c2;
+
+  // suc
+  --sv-bg-c-suc: #5cb300;
+  --sv-bg-c-suc-hov: lighten(#5cb300, 20%);
+  --sv-bg-c-suc-act: darken(#5cb300, 10%);
+  --sv-bg-c-suc-dis: #f0f0f0;
+
+  --sv-bd-c-suc: var(--sv-bg-c-suc);
+  --sv-bd-c-suc-hov: var(--sv-bg-c-suc-hov);
+  --sv-bd-c-suc-act: var(--sv-bg-c-suc-act);
+  --sv-bd-c-suc-dis: #f0f0f0;
+  --sv-bd-c-suc-focus: lighten(#5cb300, 20%);
+
+  --sv-txt-c-suc: #fff;
+  --sv-txt-c-suc-hov: #fff;
+  --sv-txt-c-suc-act: #fff;
+  --sv-txt-c-suc-dis: #c2c2c2;
+
+  // sucless
+  --sv-bg-c-sucless: #edf7df;
+  --sv-bg-c-sucless-hov: lighten(#5cb300, 20%);
+  --sv-bg-c-sucless-act: darken(#5cb300, 10%);
+  --sv-bg-c-sucless-dis: #f0f0f0;
+
+  --sv-bd-c-sucless: #5cb300;
+  --sv-bd-c-sucless-hov: lighten(#5cb300, 20%);
+  --sv-bd-c-sucless-act: darken(#5cb300, 20%);
+  --sv-bd-c-sucless-dis: #f0f0f0;
+  --sv-bd-c-sucless-focus: lighten(#5cb300, 20%);
+
+  --sv-txt-c-sucless: #5cb300;
+  --sv-txt-c-sucless-hov: #5cb300;
+  --sv-txt-c-sucless-act: #5cb300;
+  --sv-txt-c-sucless-dis: #c2c2c2;
+
+  // info
+  --sv-bg-c-info: xxx;
+  --sv-bg-c-info-hov: xxx;
+  --sv-bg-c-info-act: xxx;
+  --sv-bg-c-info-dis: #f0f0f0;
+
+  --sv-bd-c-info: #1476ff;
+  --sv-bd-c-info-hov: #4191fa;
+  --sv-bd-c-info-act: #4191fa;
+  --sv-bd-c-info-dis: #f0f0f0;
+  --sv-bd-c-info-focus: lighten(#1476ff, 20%);
+
+  --sv-txt-c-info: xxx;
+  --sv-txt-c-info-hov: xxx;
+  --sv-txt-c-info-act: xxx;
+  --sv-txt-c-info-dis: #c2c2c2;
+
+  // infoless
+  --sv-bg-c-infoless: xxx;
+  --sv-bg-c-infoless-hov: xxx;
+  --sv-bg-c-infoless-act: xxx;
+  --sv-bg-c-infoless-dis: #f0f0f0;
+
+  --sv-bd-c-infoless: #1476ff;
+  --sv-bd-c-infoless-hov: #4191fa;
+  --sv-bd-c-infoless-act: #4191fa;
+  --sv-bd-c-infoless-dis: #f0f0f0;
+  --sv-bd-c-infoless-focus: lighten(#1476ff, 20%);
+
+  --sv-txt-c-infoless: xxx;
+  --sv-txt-c-infoless-hov: xxx;
+  --sv-txt-c-infoless-act: xxx;
+  --sv-txt-c-infoless-dis: #c2c2c2;
+
+  // warn
+  --sv-bg-c-warn: xxx;
+  --sv-bg-c-warn-hov: xxx;
+  --sv-bg-c-warn-act: xxx;
+  --sv-bg-c-warn-dis: #f0f0f0;
+
+  --sv-bd-c-warn: #ff8800;
+  --sv-bd-c-warn-hov: #ff9a2e;
+  --sv-bd-c-warn-act: #ff9a2e;
+  --sv-bd-c-warn-dis: #f0f0f0;
+  --sv-bd-c-warn-focus: lighten(#ff8800, 20%);
+
+  --sv-txt-c-warn: xxx;
+  --sv-txt-c-warn-hov: xxx;
+  --sv-txt-c-warn-act: xxx;
+  --sv-txt-c-warn-dis: #c2c2c2;
+
+  // warnless
+  --sv-bg-c-warnless: xxx;
+  --sv-bg-c-warnless-hov: xxx;
+  --sv-bg-c-warnless-act: xxx;
+  --sv-bg-c-warnless-dis: #f0f0f0;
+
+  --sv-bd-c-warnless: #ff8800;
+  --sv-bd-c-warnless-hov: #ff9a2e;
+  --sv-bd-c-warnless-act: #ff9a2e;
+  --sv-bd-c-warnless-dis: #f0f0f0;
+  --sv-bd-c-warnless-focus: lighten(#ff8800, 20%);
+
+  --sv-txt-c-warnless: xxx;
+  --sv-txt-c-warnless-hov: xxx;
+  --sv-txt-c-warnless-act: xxx;
+  --sv-txt-c-warnless-dis: #c2c2c2;
+
+  // err
+  --sv-bg-c-err: xxx;
+  --sv-bg-c-err-hov: xxx;
+  --sv-bg-c-err-act: xxx;
+  --sv-bg-c-err-dis: #f0f0f0;
+
+  --sv-bd-c-err: #f23030;
+  --sv-bd-c-err-hov: #f76360;
+  --sv-bd-c-err-act: #f76360;
+  --sv-bd-c-err-dis: #f0f0f0;
+  --sv-bd-c-err-focus: lighten(#f23030, 20%);
+
+  --sv-txt-c-err: xxx;
+  --sv-txt-c-err-hov: xxx;
+  --sv-txt-c-err-act: xxx;
+  --sv-txt-c-err-dis: #c2c2c2;
+
+  // errless
+  --sv-bg-c-errless: xxx;
+  --sv-bg-c-errless-hov: xxx;
+  --sv-bg-c-errless-act: xxx;
+  --sv-bg-c-errless-dis: #f0f0f0;
+
+  --sv-bd-c-errless: #f23030;
+  --sv-bd-c-errless-hov: #f76360;
+  --sv-bd-c-errless-act: #f76360;
+  --sv-bd-c-errless-dis: #f0f0f0;
+  --sv-bd-c-errless-focus: lighten(#f23030, 20%);
+
+  --sv-txt-c-errless: xxx;
+  --sv-txt-c-errless-hov: xxx;
+  --sv-txt-c-errless-act: xxx;
+  --sv-txt-c-errless-dis: #c2c2c2;
+}
+
+/** 滚动条*/
+:root {
+  --scrollbar-color-thumb: @scroll-thumb;
+  --scrollbar-color-track: @scroll-track;
+
+  --scrollbar-width: @scroll-width; // 浏览器标准12px
+  --scrollbar-width-legacy: @scroll-width-legacy;
+}
+
+
+
+/**
+  * 通用变量， 其它规范只覆盖这些即可！
+ */
+ :root {
+  // #region 文本色
+  --sv-text-color: #191919; // ⭐ 文本_重要色
+  --sv-text-disabled: #c2c2c2; // ⭐ 禁用文字
+  --sv-text-invalid: #f23030; // ⭐ 文本_校验提示色
+  --sv-text-secondary: #595959; // 文本_次要色
+  --sv-text-link: #1476ff; // 文本-链接色
+  --sv-text-highlight: #1476ff; // 文本-搜索高亮色
+  --sv-text-placeholder: #808080; // 占位色
+  // #endregion
+
+  // #region 背景色
+  // 某些场景用 #f2f2f2, 设计师也不统一
+  --sv-bg-color: #f5f5f5; // ⭐ 表头背景， 地区选项背景色，  下拉hover背景色， select中的标签色。  slider轨道色
+  // 某些禁用场景也用 #f2f2f2, 设计师不严格。  ip的禁用， numeric等
+  // 某些禁用场景也用 #e0e0e0, 设计师不严格。  switch的禁用未选中色------ 弃用这2个色，都统一吧
+  --sv-bg-hover: #c2c2c2; // ⭐ 比较重的色， switch关闭的背景色，  slider滑块禁用色（为什么不brand-disabled呢）
+  --sv-bg-active: #c2c2c2; // ⭐ 比较重的色， switch关闭的背景色，  slider滑块禁用色（为什么不brand-disabled呢）
+  --sv-bg-disabled: #f0f0f0; // ⭐ 禁用背景色, select, input禁用色， 按钮禁用
+  --sv-bg-invalid: #feeaea; // ⭐ 校验失败背景色
+
+
+  --sv-bg-primary: #fff;    // 主背景色
+
+  --sv-bg-card: #fafafa; // 卡片背景
+
+  --sv-bg-dlg-head: #fff; // 对话框， 云规范都是白色，不代表其它规范也是
+  --sv-bg-dlg-body: #fff;
+  --sv-bg-dlg-foot: #fff;
+
+  // 某些项本应用 item 色， 但设计师又想用品牌色。 目前仅（switch,日期,slider)有蓝色，设计师偏爱他们了。
+  // 其实这个跟item的作用接近                                  ----------------------------- 因为我们要站在更高的高度来设计，所以统一用item色， 这一块变量不要，组件要通过属性指定某个主题色来代替即可
+  --sv-bg-brand: #1476ff; // 日期组件选中日期，  switch开关， slider的滑块色
+  --sv-bg-brandless: #e6f2ff; // 日期组件的过渡日期
+  --sv-bg-brand-disabled: #89baff; // switch开关选中的禁用色， 亦可slider滑块禁用色
+
+  --sv-bg-mask: rgba(0, 0, 0, 0.3); // 单蒙层 30%
+  --sv-bg-mask2: rgba(0, 0, 0, 0.51); // 双蒙层 51%
+  // #endregion
+
+  // #region 边框/分割线
+  --sv-border-width: 1px; // ⭐
+  --sv-border-color: #c2c2c2; // ⭐ 正常
+  --sv-border-hover: #191919; // ⭐ hover
+  --sv-border-active: #191919; // ⭐ active  云规范没有，其它可以有
+  --sv-border-disabled: #dbdbdb; // ⭐ 禁用
+  --sv-border-invalid: #f23030; // ⭐ 校验色
+
+  --sv-divider: #f0f0f0; // 分割线, 在白背景时
+  --sv-divider-heavy: #dbdbdb; // 分割线， 在表头，卡片内， 二级tab中时，有点背景色的时候
+  // #endregion
+
+  // #region 圆角
+  // 通用
+  --sv-br-xs: 2px; // ⭐  
+  --sv-br-sm: 4px; // ⭐  
+  --sv-br-md: 6px; // ⭐  
+  --sv-br-lg: 8px; // ⭐  
+  --sv-br-round: 9999px; // ⭐  
+
+  --sv-br-dlg: 8px; // dlg 卡片
+  --sv-br-large-card: 16px; // 大场景 首页上的活动卡片等场景
+
+  --sv-br-btn-xs: 4px;
+  --sv-br-btn-sm: 4px;
+  --sv-br-btn-md: 6px;
+  --sv-br-btn-lg: 8px;
+  //#endregion
+
+  // #region 阴影
+  --sv-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08); // ⭐ 正常阴影  下拉面板， 卡片hover
+  --sv-shadow-hover: 0px 4px 16px 0px rgba(0, 0, 0, 0.08); // ⭐ 云规范没有，不代表其它没有
+
+  --sv-shadow-top: 0px 1px 4px 0px rgba(0, 0, 0, 0.08); // 顶部导航
+  --sv-shadow-tip: 0px 2px 12px 0px rgba(0, 0, 0, 0.16); // 小阴影    提示
+  --sv-shadow-dlg: 0px 8px 24px 0px rgba(0, 0, 0, 0.16); // 大阴影    弹窗，抽屉
+  // #endregion
+
+  // #region 内边距  button, select ,tag, input, card, dialog 有不同的padding,
+  //     所以必须选一个中性的距离，比如select, tag 的padding为 item 状态的padding
+  --sv-padx-xs: 6px; // ⭐ 接近于 tag
+  --sv-pady-xs: 0; // ⭐
+  --sv-padx-sm: 12px; // ⭐
+  --sv-pady-sm: 2px; // ⭐
+  --sv-padx-md: 16px; // ⭐ 接近 select
+  --sv-pady-md: 4px; // ⭐
+  --sv-padx-lg: 24px; // ⭐  接近卡片
+  --sv-pady-lg: 24px; // ⭐
+
+  --sv-padx-btn-xs: 0px;
+  --sv-pady-btn-xs: 0px;
+  --sv-padx-btn-sm: 0px;
+  --sv-pady-btn-sm: 0px;
+  --sv-padx-btn-md: 0px;
+  --sv-pady-btn-md: 0px;
+  --sv-padx-btn-lg: 0px;
+  --sv-pady-btn-lg: 0px;
+
+  //#endregion
+
+  // #region 字体/行高/字重
+  --sv-fs-xs: 12px; // ⭐
+  --sv-fs-sm: 12px; // ⭐
+  --sv-fs-md: 14px; // ⭐ 正常文本
+  --sv-fs-lg: 16px; // ⭐
+
+  --sv-fs-dlg-head: 20px; // 弹窗，抽屉标题
+  --sv-fs-card-head: 16px; // 卡片标题
+
+  --sv-line-height: 1.5; // ⭐ 虽然要求 14px时，行高22， 但难实现。
+
+  --sv-fw-normal: normal; // ⭐
+  --sv-fw-bold: bold; // ⭐
+  // #endregion
+
+  // #region 滚动条
+  --sv-scroll-thumb: #dbdbdb; // 滚动条滑块
+  --sv-scroll-track: #fff; // 滚动条轨道
+  --sv-scroll-width: thin;
+  --sv-scroll-width-legacy: 12px;
+  // #endregion
