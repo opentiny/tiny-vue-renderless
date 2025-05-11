@@ -1,0 +1,54 @@
+{
+  "name": "@opentiny/icons",
+  "type": "module",
+  "version": "0.1.3",
+  "description": "Opentiny Design Icons",
+  "author": "",
+  "packageManager": "pnpm@9.8.0",
+  "license": "MIT",
+  "keywords": [
+    "icon",
+    "opentiny icons",
+    "service icons",
+    "iconify",
+    "unocss",
+    "preset-icon"
+  ],
+  "files": [
+    "categorys.ts",
+    "svgs/",
+    "json/",
+    "style/",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "tsx scripts/build.ts",
+    "pub": "pnpm publish --no-git-checks --access=public",
+    "docs:build": "pnpm build && vitepress build docs --base /icons/",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@iconify/tools": "^4.0.5",
+    "@iconify/types": "^2.0.0",
+    "@iconify/utils": "^2.1.32",
+    "@unocss/preset-icons": "latest",
+    "@vue/theme": "2.3.0",
+    "chalk": "4.1.2",
+    "fast-glob": "^3.3.2",
+    "highlight.js": "^11.10.0",
+    "lu2": "2024.9.2",
+    "pnpm": "^9.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.5.3",
+    "unocss": "latest",
+    "vite": "^6.0.0",
+    "vitepress": "^1.6.3",
+    "vitest": "^2.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vitepress@1.6.3": "patches/vitepress@1.6.3.patch"
+    }
+  }
+}

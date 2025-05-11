@@ -1,0 +1,12 @@
+diff --git a/dist/client/index.js b/dist/client/index.js
+index 3aafc6d8deeb97eae6991c81517b3c13840535dc..f38f008096f4d853dca7cf3bfd361e80e8c663ff 100644
+--- a/dist/client/index.js
++++ b/dist/client/index.js
+@@ -4,6 +4,6 @@
+ export { dataSymbol, useData } from './app/data';
+ export { useRoute, useRouter } from './app/router';
+ // utilities
+-export { _escapeHtml, defineClientComponent, getScrollOffset, inBrowser, onContentUpdated, withBase } from './app/utils';
++export {contentUpdatedCallbacks, _escapeHtml, defineClientComponent, getScrollOffset, inBrowser, onContentUpdated, withBase } from './app/utils';
+ // components
+ export { Content } from './app/components/Content';
