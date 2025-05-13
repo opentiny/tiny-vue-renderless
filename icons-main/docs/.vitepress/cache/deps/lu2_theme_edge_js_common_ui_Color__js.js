@@ -735,7 +735,9 @@ var Color = class _Color extends HTMLInputElement {
               .concat(arrCommonColors[0] || '0ff', arrCommonColors[1] || '800180')
               .map(function (color) {
                 const strColor = _Color.funRgbToHex(color).replace('#', '')
-                return `<a href="javascript:" class="${_Color.addClass('lump')}" data-color="${strColor}" aria-label="${strColor}" style="${BG_COLOR}:#${strColor}" role="option"></a>`
+                return `<a href="javascript:" class="${_Color.addClass(
+                  'lump'
+                )}" data-color="${strColor}" aria-label="${strColor}" style="${BG_COLOR}:#${strColor}" role="option"></a>`
               })
               .join('')
           })() +
@@ -746,7 +748,12 @@ var Color = class _Color extends HTMLInputElement {
           (function () {
             let strHtmlRG = ''
             arrBasicColorPreset.forEach((colorItem) => {
-              strHtmlRG += `<a href="javascript:" title="#${colorItem}${isSupportOpacity ? 'ff' : ''}" class="${_Color.addClass('lump', 'preset')}" data-color="${colorItem}${isSupportOpacity ? 'ff' : ''}" style="${BG_COLOR}:#${colorItem}${isSupportOpacity ? 'ff' : ''}" aria-label="${colorItem}${isSupportOpacity ? 'ff' : ''}" role="option"></a>`
+              strHtmlRG += `<a href="javascript:" title="#${colorItem}${isSupportOpacity ? 'ff' : ''}" class="${_Color.addClass(
+                'lump',
+                'preset'
+              )}" data-color="${colorItem}${isSupportOpacity ? 'ff' : ''}" style="${BG_COLOR}:#${colorItem}${
+                isSupportOpacity ? 'ff' : ''
+              }" aria-label="${colorItem}${isSupportOpacity ? 'ff' : ''}" role="option"></a>`
             })
             return strHtmlRG
           })() +
@@ -756,13 +763,17 @@ var Color = class _Color extends HTMLInputElement {
       (function () {
         let html = `<div class="${_Color.addClass('more')} colorMoreX">`
         html += `<div class="${_Color.addClass('more', 'l')}">
-                <a href="javascript:" class="${_Color.addClass('cover', 'white')}" aria-label="色域背景块" role="region"></a><div class="${_Color.addClass('circle')} colorCircle"></div>
+                <a href="javascript:" class="${_Color.addClass('cover', 'white')}" aria-label="色域背景块" role="region"></a><div class="${_Color.addClass(
+          'circle'
+        )} colorCircle"></div>
                 <div class="${_Color.addClass('gradient')}">
                 </div>
                 </div><div class="${_Color.addClass('more', 'r')}">
                     <div class="${_Color.addClass('more', 'fill')} colorFill">
                         <a href="javascript:" class="${_Color.addClass('more', 'cover')}" aria-label="明度控制背景条" role="region"></a>
-                        <div class="${_Color.addClass('gradient')}" style="background: linear-gradient(#ffffff 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, ${_Color.defaultValue} 100%);">
+                        <div class="${_Color.addClass(
+                          'gradient'
+                        )}" style="background: linear-gradient(#ffffff 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, ${_Color.defaultValue} 100%);">
                         </div>
                     </div>
                     <a href="javascript:" class="${_Color.addClass('more', 'arrow')} colorArrow" role="slider" aria-label="明度控制按钮：100%"></a>
@@ -771,7 +782,10 @@ var Color = class _Color extends HTMLInputElement {
       })() +
       (function () {
         if (isSupportOpacity) {
-          let opacityHtml = `<div class="${_Color.addClass('opacity')}">透明度：<input class="${_Color.addClass('opacity', 'range')} colorOpacity"type="range"  value="100" min="0" max="100" step="1" data-tips="\${value}%" is="ui-range"></div>`
+          let opacityHtml = `<div class="${_Color.addClass('opacity')}">透明度：<input class="${_Color.addClass(
+            'opacity',
+            'range'
+          )} colorOpacity"type="range"  value="100" min="0" max="100" step="1" data-tips="\${value}%" is="ui-range"></div>`
           return opacityHtml
         }
         return ''

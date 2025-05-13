@@ -36,7 +36,8 @@ export default defineConfig({
               { text: '云服务扩展图标', link: '/browser-icons-ext' },
               { text: '状态图标', link: '/browser-icons-stat' }
             ]
-          }
+          },
+          { text: '更新日志', link: '/changelog' }
         ]
       }
     ],

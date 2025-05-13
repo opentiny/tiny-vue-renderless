@@ -426,15 +426,12 @@ function throttleFilter(...args) {
     } else if (trailing) {
       lastValue = new Promise((resolve, reject) => {
         lastRejector = rejectOnCancel ? reject : resolve
-        timer = setTimeout(
-          () => {
-            lastExec = Date.now()
-            isLeading = true
-            resolve(invoke2())
-            clear()
-          },
-          Math.max(0, duration - elapsed)
-        )
+        timer = setTimeout(() => {
+          lastExec = Date.now()
+          isLeading = true
+          resolve(invoke2())
+          clear()
+        }, Math.max(0, duration - elapsed))
       })
     }
     if (!leading && !timer) timer = setTimeout(() => (isLeading = true), duration)
@@ -3104,12 +3101,12 @@ var _global =
   typeof globalThis !== 'undefined'
     ? globalThis
     : typeof window !== 'undefined'
-      ? window
-      : typeof global !== 'undefined'
-        ? global
-        : typeof self !== 'undefined'
-          ? self
-          : {}
+    ? window
+    : typeof global !== 'undefined'
+    ? global
+    : typeof self !== 'undefined'
+    ? self
+    : {}
 var globalKey = '__vueuse_ssr_handlers__'
 var handlers = getHandlers()
 function getHandlers() {
@@ -3129,20 +3126,20 @@ function guessSerializerType(rawInit) {
   return rawInit == null
     ? 'any'
     : rawInit instanceof Set
-      ? 'set'
-      : rawInit instanceof Map
-        ? 'map'
-        : rawInit instanceof Date
-          ? 'date'
-          : typeof rawInit === 'boolean'
-            ? 'boolean'
-            : typeof rawInit === 'string'
-              ? 'string'
-              : typeof rawInit === 'object'
-                ? 'object'
-                : !Number.isNaN(rawInit)
-                  ? 'number'
-                  : 'any'
+    ? 'set'
+    : rawInit instanceof Map
+    ? 'map'
+    : rawInit instanceof Date
+    ? 'date'
+    : typeof rawInit === 'boolean'
+    ? 'boolean'
+    : typeof rawInit === 'string'
+    ? 'string'
+    : typeof rawInit === 'object'
+    ? 'object'
+    : !Number.isNaN(rawInit)
+    ? 'number'
+    : 'any'
 }
 var StorageSerializers = {
   boolean: {
@@ -4219,8 +4216,8 @@ function useElementByPoint(options) {
         ? _a
         : []
       : (_b = document2 == null ? void 0 : document2.elementFromPoint(toValue(x), toValue(y))) != null
-        ? _b
-        : null
+      ? _b
+      : null
   }
   const controls = interval === 'requestAnimationFrame' ? useRafFn(cb, { immediate }) : useIntervalFn(cb, interval, { immediate })
   return {

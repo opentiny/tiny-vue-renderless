@@ -96,12 +96,12 @@ var getGlobalThis = () => {
       typeof globalThis !== 'undefined'
         ? globalThis
         : typeof self !== 'undefined'
-          ? self
-          : typeof window !== 'undefined'
-            ? window
-            : typeof global !== 'undefined'
-              ? global
-              : {})
+        ? self
+        : typeof window !== 'undefined'
+        ? window
+        : typeof global !== 'undefined'
+        ? global
+        : {})
   )
 }
 var GLOBALS_ALLOWED =
@@ -280,12 +280,12 @@ var toDisplayString = (val) => {
   return isString(val)
     ? val
     : val == null
-      ? ''
-      : isArray(val) || (isObject(val) && (val.toString === objectToString || !isFunction(val.toString)))
-        ? isRef(val)
-          ? toDisplayString(val.value)
-          : JSON.stringify(val, replacer, 2)
-        : String(val)
+    ? ''
+    : isArray(val) || (isObject(val) && (val.toString === objectToString || !isFunction(val.toString)))
+    ? isRef(val)
+      ? toDisplayString(val.value)
+      : JSON.stringify(val, replacer, 2)
+    : String(val)
 }
 var replacer = (_key, val) => {
   if (isRef(val)) {
@@ -1478,7 +1478,9 @@ function checkIdentityKeys(target, has, key) {
   if (rawKey !== key && has.call(target, rawKey)) {
     const type = toRawType(target)
     warn(
-      `Reactive ${type} contains both the raw and reactive versions of the same object${type === `Map` ? ` as keys` : ``}, which can lead to inconsistencies. Avoid differentiating between the raw and reactive versions of an object and only use the reactive version if possible.`
+      `Reactive ${type} contains both the raw and reactive versions of the same object${
+        type === `Map` ? ` as keys` : ``
+      }, which can lead to inconsistencies. Avoid differentiating between the raw and reactive versions of an object and only use the reactive version if possible.`
     )
   }
 }
@@ -2437,7 +2439,9 @@ function checkRecursiveUpdates(seen, fn) {
     const instance = fn.i
     const componentName = instance && getComponentName(instance.type)
     handleError(
-      `Maximum recursive updates exceeded${componentName ? ` in component <${componentName}>` : ``}. This means you have a reactive effect that is mutating its own dependencies and thus recursively triggering itself. Possible sources include component template, render function, updated hook or watcher source function.`,
+      `Maximum recursive updates exceeded${
+        componentName ? ` in component <${componentName}>` : ``
+      }. This means you have a reactive effect that is mutating its own dependencies and thus recursively triggering itself. Possible sources include component template, render function, updated hook or watcher source function.`,
       null,
       10
     )
@@ -4055,12 +4059,10 @@ function isMismatchAllowed(el, allowedType) {
 }
 var requestIdleCallback = getGlobalThis().requestIdleCallback || ((cb) => setTimeout(cb, 1))
 var cancelIdleCallback = getGlobalThis().cancelIdleCallback || ((id) => clearTimeout(id))
-var hydrateOnIdle =
-  (timeout = 1e4) =>
-  (hydrate2) => {
-    const id = requestIdleCallback(hydrate2, { timeout })
-    return () => cancelIdleCallback(id)
-  }
+var hydrateOnIdle = (timeout = 1e4) => (hydrate2) => {
+  const id = requestIdleCallback(hydrate2, { timeout })
+  return () => cancelIdleCallback(id)
+}
 function elementIsVisibleInViewport(el) {
   const { top, left, bottom, right } = el.getBoundingClientRect()
   const { innerHeight, innerWidth } = window
@@ -4097,33 +4099,31 @@ var hydrateOnMediaQuery = (query) => (hydrate2) => {
     }
   }
 }
-var hydrateOnInteraction =
-  (interactions = []) =>
-  (hydrate2, forEach) => {
-    if (isString(interactions)) interactions = [interactions]
-    let hasHydrated = false
-    const doHydrate = (e) => {
-      if (!hasHydrated) {
-        hasHydrated = true
-        teardown()
-        hydrate2()
-        e.target.dispatchEvent(new e.constructor(e.type, e))
-      }
+var hydrateOnInteraction = (interactions = []) => (hydrate2, forEach) => {
+  if (isString(interactions)) interactions = [interactions]
+  let hasHydrated = false
+  const doHydrate = (e) => {
+    if (!hasHydrated) {
+      hasHydrated = true
+      teardown()
+      hydrate2()
+      e.target.dispatchEvent(new e.constructor(e.type, e))
     }
-    const teardown = () => {
-      forEach((el) => {
-        for (const i of interactions) {
-          el.removeEventListener(i, doHydrate)
-        }
-      })
-    }
+  }
+  const teardown = () => {
     forEach((el) => {
       for (const i of interactions) {
-        el.addEventListener(i, doHydrate, { once: true })
+        el.removeEventListener(i, doHydrate)
       }
     })
-    return teardown
   }
+  forEach((el) => {
+    for (const i of interactions) {
+      el.addEventListener(i, doHydrate, { once: true })
+    }
+  })
+  return teardown
+}
 function forEachElement(node, cb) {
   if (isComment(node) && node.data === '[') {
     let depth = 1
@@ -4175,36 +4175,35 @@ function defineAsyncComponent(source) {
     let thisRequest
     return (
       pendingRequest ||
-      (thisRequest = pendingRequest =
-        loader()
-          .catch((err) => {
-            err = err instanceof Error ? err : new Error(String(err))
-            if (userOnError) {
-              return new Promise((resolve2, reject) => {
-                const userRetry = () => resolve2(retry())
-                const userFail = () => reject(err)
-                userOnError(err, userRetry, userFail, retries + 1)
-              })
-            } else {
-              throw err
-            }
-          })
-          .then((comp) => {
-            if (thisRequest !== pendingRequest && pendingRequest) {
-              return pendingRequest
-            }
-            if (!comp) {
-              warn$1(`Async component loader resolved to undefined. If you are using retry(), make sure to return its return value.`)
-            }
-            if (comp && (comp.__esModule || comp[Symbol.toStringTag] === 'Module')) {
-              comp = comp.default
-            }
-            if (comp && !isObject(comp) && !isFunction(comp)) {
-              throw new Error(`Invalid async component load result: ${comp}`)
-            }
-            resolvedComp = comp
-            return comp
-          }))
+      (thisRequest = pendingRequest = loader()
+        .catch((err) => {
+          err = err instanceof Error ? err : new Error(String(err))
+          if (userOnError) {
+            return new Promise((resolve2, reject) => {
+              const userRetry = () => resolve2(retry())
+              const userFail = () => reject(err)
+              userOnError(err, userRetry, userFail, retries + 1)
+            })
+          } else {
+            throw err
+          }
+        })
+        .then((comp) => {
+          if (thisRequest !== pendingRequest && pendingRequest) {
+            return pendingRequest
+          }
+          if (!comp) {
+            warn$1(`Async component loader resolved to undefined. If you are using retry(), make sure to return its return value.`)
+          }
+          if (comp && (comp.__esModule || comp[Symbol.toStringTag] === 'Module')) {
+            comp = comp.default
+          }
+          if (comp && !isObject(comp) && !isFunction(comp)) {
+            throw new Error(`Invalid async component load result: ${comp}`)
+          }
+          resolvedComp = comp
+          return comp
+        }))
     )
   }
   return defineComponent({
@@ -4582,13 +4581,11 @@ function injectHook(type, hook, target = currentInstance, prepend = false) {
     )
   }
 }
-var createHook =
-  (lifecycle) =>
-  (hook, target = currentInstance) => {
-    if (!isInSSRComponentSetup || lifecycle === 'sp') {
-      injectHook(lifecycle, (...args) => hook(...args), target)
-    }
+var createHook = (lifecycle) => (hook, target = currentInstance) => {
+  if (!isInSSRComponentSetup || lifecycle === 'sp') {
+    injectHook(lifecycle, (...args) => hook(...args), target)
   }
+}
 var onBeforeMount = createHook('bm')
 var onMounted = createHook('m')
 var onBeforeUpdate = createHook('bu')
@@ -5258,10 +5255,10 @@ function applyOptions(instance) {
         !isFunction(opt) && isFunction(opt.set)
           ? opt.set.bind(publicThis)
           : true
-            ? () => {
-                warn$1(`Write operation failed: computed property "${key}" is readonly.`)
-              }
-            : NOOP
+          ? () => {
+              warn$1(`Write operation failed: computed property "${key}" is readonly.`)
+            }
+          : NOOP
       const c = computed2({
         get,
         set
@@ -5728,10 +5725,10 @@ function inject(key, defaultValue, treatDefaultAsFactory = false) {
     const provides = currentApp
       ? currentApp._context.provides
       : instance
-        ? instance.parent == null
-          ? instance.vnode.appContext && instance.vnode.appContext.provides
-          : instance.parent.provides
-        : void 0
+      ? instance.parent == null
+        ? instance.vnode.appContext && instance.vnode.appContext.provides
+        : instance.parent.provides
+      : void 0
     if (provides && key in provides) {
       return provides[key]
     } else if (arguments.length > 1) {
@@ -6007,12 +6004,10 @@ function normalizePropsOptions(comp, appContext, asMixin = false) {
         } else {
           shouldCast = isFunction(propType) && propType.name === 'Boolean'
         }
-        prop[0] =
+        prop[0] = shouldCast
         /* shouldCast */
-          shouldCast
-        prop[1] =
+        prop[1] = shouldCastTrue
         /* shouldCastTrue */
-          shouldCastTrue
         if (shouldCast || hasOwn(prop, 'default')) {
           needCastKeys.push(normalizedKey)
         }
@@ -6287,7 +6282,9 @@ function initFeatureFlags() {
   if (needWarn.length) {
     const multi = needWarn.length > 1
     console.warn(
-      `Feature flag${multi ? `s` : ``} ${needWarn.join(', ')} ${multi ? `are` : `is`} not explicitly defined. You are running the esm-bundler build of Vue, which expects these compile-time feature flags to be globally injected via the bundler config in order to get better tree-shaking in the production bundle.
+      `Feature flag${multi ? `s` : ``} ${needWarn.join(', ')} ${
+        multi ? `are` : `is`
+      } not explicitly defined. You are running the esm-bundler build of Vue, which expects these compile-time feature flags to be globally injected via the bundler config in order to get better tree-shaking in the production bundle.
 
 For more details, see https://link.vuejs.org/feature-flags.`
     )
@@ -7877,12 +7874,16 @@ function renderComponentRoot(instance) {
         }
         if (extraAttrs.length) {
           warn$1(
-            `Extraneous non-props attributes (${extraAttrs.join(', ')}) were passed to component but could not be automatically inherited because component renders fragment or text or teleport root nodes.`
+            `Extraneous non-props attributes (${extraAttrs.join(
+              ', '
+            )}) were passed to component but could not be automatically inherited because component renders fragment or text or teleport root nodes.`
           )
         }
         if (eventAttrs.length) {
           warn$1(
-            `Extraneous non-emits event listeners (${eventAttrs.join(', ')}) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the "emits" option.`
+            `Extraneous non-emits event listeners (${eventAttrs.join(
+              ', '
+            )}) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the "emits" option.`
           )
         }
       }
@@ -9572,10 +9573,10 @@ var nodeOps = {
       namespace === 'svg'
         ? doc.createElementNS(svgNS, tag)
         : namespace === 'mathml'
-          ? doc.createElementNS(mathmlNS, tag)
-          : is
-            ? doc.createElement(tag, { is })
-            : doc.createElement(tag)
+        ? doc.createElementNS(mathmlNS, tag)
+        : is
+        ? doc.createElement(tag, { is })
+        : doc.createElement(tag)
     if (tag === 'select' && props && props.multiple != null) {
       el.setAttribute('multiple', props.multiple)
     }

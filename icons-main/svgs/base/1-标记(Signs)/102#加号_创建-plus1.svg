@@ -3,11 +3,12 @@
 			Created with Pixso.
 	</desc>
 	<defs>
-		<clipPath id="clip2_5">
-			<rect id="102#加号|创建-plus1" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
+		<clipPath id="clip225_1091">
+			<rect id="创建-create-1" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
 		</clipPath>
 	</defs>
-	<g clip-path="url(#clip2_5)">
-		<path id="形状结合" d="M8 2.5C8.27 2.5 8.5 2.72 8.5 3L8.5 7.49L13 7.5C13.27 7.5 13.5 7.72 13.5 8C13.5 8.27 13.27 8.5 13 8.5L8.5 8.49L8.5 13C8.5 13.27 8.27 13.5 8 13.5C7.72 13.5 7.5 13.27 7.5 13L7.5 8.5L3 8.5C2.72 8.5 2.5 8.27 2.5 8C2.5 7.72 2.72 7.5 3 7.5L7.5 7.5L7.5 3C7.5 2.72 7.72 2.5 8 2.5Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+	<rect id="102#加号|创建-plus1" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip225_1091)">
+		<path id="_合并" d="M7.5 8.5L7.5 13.5C7.5 13.78 7.72 14 8 14C8.28 14 8.5 13.78 8.5 13.5L8.5 8.5L13.5 8.5C13.78 8.5 14 8.28 14 8C14 7.71 13.78 7.5 13.5 7.5L8.5 7.5L8.5 2.5C8.5 2.21 8.28 2 8 2C7.72 2 7.5 2.21 7.5 2.5L7.5 7.5L2.5 7.5C2.22 7.5 2 7.71 2 8C2 8.28 2.22 8.5 2.5 8.5L7.5 8.5Z" fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd"/>
 	</g>
 </svg>

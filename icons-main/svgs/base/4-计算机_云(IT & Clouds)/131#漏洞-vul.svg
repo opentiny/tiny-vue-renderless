@@ -1,0 +1,14 @@
+<svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip225_897">
+			<rect id="漏洞-vulnerability" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="131#漏洞-vul" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip225_897)">
+		<path id="_矢量-241" d="M1 8C1 4.13 4.13 1 8 1C11.87 1 15 4.13 15 8C15 11.87 11.86 15 8 15C4.14 15 1 11.86 1 8ZM2 8C2 4.67 4.67 2 8 2C9.47 2 10.82 2.53 11.87 3.41L10.09 5.19C9.5 4.75 8.78 4.5 8 4.5C6.06 4.5 4.5 6.06 4.5 8C4.5 9.93 6.06 11.5 8 11.5C9.93 11.5 11.5 9.92 11.5 8C11.5 7.21 11.24 6.48 10.8 5.89L12.58 4.12C13.46 5.17 14 6.52 14 8C14 11.31 11.31 14 8 14C4.69 14 2 11.31 2 8ZM9.37 5.91L7.64 7.64C7.44 7.84 7.44 8.14 7.64 8.35C7.84 8.55 8.13 8.55 8.35 8.35L10.08 6.62C10.34 7 10.5 7.49 10.5 8C10.5 9.38 9.38 10.5 8 10.5C6.62 10.5 5.5 9.38 5.5 8C5.5 6.62 6.6 5.5 8 5.5C8.5 5.5 8.97 5.64 9.37 5.91Z" fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>
