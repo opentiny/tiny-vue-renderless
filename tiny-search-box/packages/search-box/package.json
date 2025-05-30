@@ -1,0 +1,72 @@
+{
+  "name": "@opentiny/vue-search-box",
+  "version": "0.1.1",
+  "description": "",
+  "homepage": "https://github.com/opentiny/tiny-search-box#readme",
+  "bugs": {
+    "url": "https://github.com/opentiny/tiny-search-box/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentiny/tiny-search-box.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "types/index.d.ts",
+  "style": "src/index.less",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/lib/index.cjs.js",
+    "module": "dist/es/index.es.js",
+    "types": "dist/types/index.d.ts",
+    "style": "dist/index.less"
+  },
+  "files": ["dist"],
+  "keywords": [
+    "search",
+    "comprehensive search",
+    "opentiny"
+  ],
+  "scripts": {
+    "build": "pnpm build:theme && vite build",
+    "build:theme": "vite build --config vite.config.theme.ts",
+    "prepublish": "node scripts/pre-release.cjs"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@opentiny/vue-button": "^3.22.0",
+    "@opentiny/vue-checkbox": "^3.22.0",
+    "@opentiny/vue-checkbox-group": "^3.22.0",
+    "@opentiny/vue-date-picker": "^3.22.0",
+    "@opentiny/vue-dropdown": "^3.22.0",
+    "@opentiny/vue-dropdown-item": "^3.22.0",
+    "@opentiny/vue-dropdown-menu": "^3.22.0",
+    "@opentiny/vue-form": "^3.22.0",
+    "@opentiny/vue-form-item": "^3.22.0",
+    "@opentiny/vue-icon": "^3.22.0",
+    "@opentiny/vue-input": "^3.22.0",
+    "@opentiny/vue-loading": "^3.22.0",
+    "@opentiny/vue-option": "^3.22.0",
+    "@opentiny/vue-popover": "^3.22.0",
+    "@opentiny/vue-select": "^3.22.0",
+    "@opentiny/vue-tag": "^3.22.0",
+    "@opentiny/vue-tooltip": "^3.22.0",
+    "@opentiny/utils": "^3.22.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "commander": "^6.2.0",
+    "glob": "^11.0.0",
+    "vue": "^3.0.0",
+    "less": "^4.2.2",
+    "shelljs": "^0.8.4",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}

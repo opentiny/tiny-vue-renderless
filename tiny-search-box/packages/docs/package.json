@@ -1,0 +1,23 @@
+{
+  "name": "@opentiny/vue-search-box-docs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@opentiny/vue": "^3.22.0",
+    "@opentiny/vue-search-box": "workspace:^",
+    "@opentiny/vue-theme": "^3.22.0",
+    "@vitepress-demo-preview/component": "^2.3.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@types/node": "^22.15.12",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "vitepress": "^1.6.3"
+  }
+}

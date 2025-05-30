@@ -1,0 +1,54 @@
+{
+  "files": [
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "chenxi-20",
+      "name": "chenxi-20",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76168465?v=4",
+      "profile": "https://github.com/chenxi-20",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kagol",
+      "name": "Kagol",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9566362?v=4",
+      "profile": "https://kagol.github.io/blogs",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "zzcr",
+      "name": "ajaxzheng",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18521562?v=4",
+      "profile": "https://github.com/zzcr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "discreted66",
+      "name": "liukun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/190872652?v=4",
+      "profile": "https://github.com/discreted66",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 8,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "tiny-search-box",
+  "projectOwner": "opentiny"
+}

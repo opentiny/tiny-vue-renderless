@@ -1,0 +1,29 @@
+{
+  "name": "root",
+  "description": "",
+  "license": "MIT",
+  "packageManager": "pnpm@9.14.4",
+  "scripts": {
+    "dev": "pnpm -F @opentiny/vue-search-box-docs docs:dev",
+    "build:docs": "pnpm -F @opentiny/vue-search-box-docs docs:build",
+    "build": "pnpm -F @opentiny/vue-search-box build",
+    "pub": "pnpm -F @opentiny/vue-search-box publish --no-git-checks"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "less": "^4.2.2",
+    "vite": "^6.2.2"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node verifyCommit.js"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
