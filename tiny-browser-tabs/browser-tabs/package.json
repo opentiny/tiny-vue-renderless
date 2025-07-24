@@ -1,0 +1,64 @@
+{
+  "name": "@opentiny/vue-browser-tabs",
+  "version": "0.1.0",
+  "description": "",
+  "homepage": "https://github.com/opentiny/mcp/blob/dev/packages/tiny-browser-tabs/README.md",
+  "bugs": {
+    "url": "https://github.com/opentiny/mcp.git/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentiny/mcp.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./index.css": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "tabs",
+    "browser tabs",
+    "vue3",
+    "opentiny",
+    "component"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepublish": "node scripts/pre-release.cjs"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.0.0",
+    "less": "^4.2.2",
+    "@opentiny/vue-popover": "^3.25.0",
+    "@opentiny/vue-icon": "3.25.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "commander": "^6.2.0",
+    "glob": "^11.0.0",
+    "shelljs": "^0.8.4",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}

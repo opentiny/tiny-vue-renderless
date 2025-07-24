@@ -1,0 +1,21 @@
+{
+  "name": "@opentiny/vue-browser-tabs-docs",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@opentiny/vue-browser-tabs": "workspace:^",
+    "@vitepress-demo-preview/component": "^2.3.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@types/node": "^22.15.12",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "vitepress": "^1.6.3"
+  }
+}

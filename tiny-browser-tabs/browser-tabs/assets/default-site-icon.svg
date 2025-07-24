@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none">
+  <script xmlns=""/>
+  <desc>
+			Created with Pixso.
+  </desc>
+  <defs>
+    <clipPath id="clip10_121">
+      <rect id="谷歌 (1)" width="16.000000" height="16.000000" transform="translate(2.000000 2.000000)" fill="white" fill-opacity="0"/>
+    </clipPath>
+    <clipPath id="clip10_119">
+      <rect id="个人" width="20.000000" height="20.000000" transform="matrix(-1 0 0 1 20 0)" fill="white" fill-opacity="0"/>
+    </clipPath>
+  </defs>
+  <rect id="个人" width="20.000000" height="20.000000" transform="matrix(-1 0 0 1 20 0)" fill="#474747" fill-opacity="0"/>
+  <g clip-path="url(#clip10_119)">
+    <g clip-path="url(#clip10_121)">
+      <path id="path" d="M5.33 10.05C5.33 9.53 5.41 9.02 5.57 8.55L2.83 6.48C2.55 7.04 2.35 7.61 2.21 8.22C2.06 8.82 1.99 9.43 2 10.05C2 11.33 2.3 12.54 2.83 13.61L5.57 11.54C5.41 11.06 5.33 10.56 5.33 10.05Z" fill="#FBBC05" fill-opacity="1.000000" fill-rule="nonzero"/>
+      <path id="path" d="M10.14 5.29C10.41 5.29 10.68 5.31 10.95 5.36C11.21 5.4 11.47 5.47 11.73 5.56C11.99 5.65 12.23 5.76 12.47 5.9C12.7 6.03 12.93 6.18 13.14 6.35L15.51 4.01C14.06 2.77 12.21 2 10.14 2C6.92 2 4.15 3.82 2.83 6.48L5.57 8.55C6.2 6.66 8 5.29 10.14 5.29Z" fill="#EA4335" fill-opacity="1.000000" fill-rule="nonzero"/>
+      <path id="path" d="M10.17 14.7C8.03 14.7 6.22 13.35 5.58 11.46L2.83 13.52C4.16 16.17 6.94 17.98 10.17 17.98C12.17 17.98 14.08 17.28 15.51 15.98L12.89 14C12.15 14.46 11.23 14.7 10.17 14.7Z" fill="#34A853" fill-opacity="1.000000" fill-rule="nonzero"/>
+      <path id="path" d="M17.99 9.97C17.99 9.5 17.91 8.99 17.8 8.52L10.17 8.52L10.17 11.61L14.56 11.61C14.34 12.66 13.75 13.48 12.89 14L15.51 15.98C17.01 14.62 17.99 12.58 17.99 9.97Z" fill="#4285F4" fill-opacity="1.000000" fill-rule="nonzero"/>
+    </g>
+  </g>
+  <script xmlns=""/>
+</svg>
