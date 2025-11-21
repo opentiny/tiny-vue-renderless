@@ -1,0 +1,204 @@
+@media screen and (max-width: 815px) {
+  .tech-article {
+    overflow: hidden;
+
+    &-detail {
+      padding: 20px 20px;
+      &-nav {
+        margin-bottom: 24px;
+      }
+      &-container {
+        flex-direction: column;
+        &-markdown-body {
+          > .markdown-body > ul {
+            > li {
+              list-style: none;
+            }
+          }
+        }
+        &-md {
+          width: auto;
+          margin: 0;
+          &-info {
+            margin: 12px 0 28px 0;
+            &-write {
+              margin-right: 12px;
+            }
+            &-desc {
+              margin-right: 8px;
+            }
+            &-date {
+              margin-left: 12px;
+              margin-right: 0;
+            }
+          }
+          &-title {
+            -webkit-line-clamp: 2;
+          }
+          &-page {
+            margin-top: 24px;
+            margin-bottom: 32px;
+          }
+        }
+        &-about {
+          &-desc {
+            display: none;
+          }
+          &-hot {
+            display: none;
+          }
+          &-wx {
+            width: 335px;
+            height: 198px;
+            border-radius: 16px;
+            &-title {
+              margin-top: 16px;
+              margin-bottom: 8px;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 28px;
+            }
+            &-desc {
+              margin-top: 8px;
+            }
+            &-left {
+              padding: 28px 49px 30px 30px;
+            }
+            &-img {
+              margin-top: 58px;
+              margin-bottom: 29px;
+            }
+          }
+        }
+      }
+    }
+    &-info-container {
+      &-title {
+        &-desc {
+          font-size: 16px;
+        }
+      }
+      &-content {
+        &-item {
+          font-size: 12px;
+        }
+      }
+      &-instruct-desc,
+      &-instruct-date {
+        font-size: 12px;
+      }
+    }
+    &-other {
+      &-container {
+        &-content {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 816px) and (max-width: 1500px) {
+  .tech-article {
+    &-info-container {
+      &-title {
+        &-desc {
+          font-size: 16px;
+        }
+      }
+      &-content {
+        &-item {
+          font-size: 12px;
+        }
+      }
+      &-instruct-desc,
+      &-instruct-date {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1020px) {
+  .tech-article {
+    &-info-container {
+      &-title {
+        &-desc {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1236px) and (max-width: 1300px) {
+  .tech-article {
+    &-detail {
+      &-container {
+        &-markdown-body {
+          width: 800px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1136px) and (max-width: 1235px) {
+  .tech-article {
+    &-detail {
+      &-container {
+        &-markdown-body {
+          width: 700px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1036px) and (max-width: 1135px) {
+  .tech-article {
+    &-detail {
+      &-container {
+        &-md-title {
+          font-size: 18px;
+        }
+        &-markdown-body {
+          width: 600px;
+          > .markdown-body h1,
+          .markdown-body h2,
+          .markdown-body h3 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 936px) and (max-width: 1035px) {
+  .tech-article {
+    &-detail {
+      &-container {
+        &-markdown-body {
+          width: 500px;
+          > .markdown-body h1,
+          .markdown-body h2,
+          .markdown-body h3 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 816px) and (max-width: 935px) {
+  .tech-article {
+    &-detail {
+      &-container {
+        &-markdown-body {
+          width: 400px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.tech-banner {
+  width: 100%;
+  height: 522px;
+  background-size: 100% 100%;
+  background-image: url(/src/assets/tech/banner.webp);
+  &-sub {
+    background-image: url(/src/assets/tech/banner-icon.webp);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-size: 1029px 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    object-fit: cover;
+    width: 100%;
+    height: 522px;
+  }
+
+  &-title {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 80px;
+    color: rgb(48, 0, 115);
+    margin-left: 16.74%;
+    margin-top: 7.2%;
+  }
+  &-subtitle {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 48px;
+    color: rgb(51, 0, 124);
+    margin-left: 16.74%;
+    margin-top: 25px;
+  }
+  &-nav {
+    margin-top: auto;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    width: 100%;
+    &-bar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 0 320px;
+    }
+    &-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: rgb(0, 0, 0);
+      }
+      &-subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgb(89, 89, 89);
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.tech-content {
+  padding: 40px 320px 0;
+}

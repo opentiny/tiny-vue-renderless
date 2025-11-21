@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div style="
+        padding-top: 60px;
+        box-sizing: border-box;
+        background-color: #ebebeb;
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100%;
+        overflow: hidden;
+      ">
+      <div id="menu" style="width: 250px; height: calc(100vh - 60px); background: #fff; padding: 50px">menu 区</div>
+      <div class="layout" style="flex: 0 0 calc(100% - 250px); background: #fff">
+        <div style="height: 450px; padding: 50px">内容区</div>
+        <div id="footer"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

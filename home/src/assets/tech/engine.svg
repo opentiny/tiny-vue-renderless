@@ -1,0 +1,22 @@
+<svg width="47.000000" height="48.001831" viewBox="0 0 47 48.0018" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="9.399903" y1="24.000887" x2="32.438515" y2="22.614176" id="paint_linear_25_9699_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF" stop-opacity="0.858824"/>
+			<stop offset="0.251694" stop-color="#FFFFFF" stop-opacity="0.800000"/>
+			<stop offset="1.000000" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<linearGradient x1="20.033791" y1="34.058594" x2="17.545273" y2="25.119255" id="paint_linear_25_9701_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#000000" stop-opacity="0.000000"/>
+			<stop offset="1.000000" stop-color="#000000"/>
+		</linearGradient>
+	</defs>
+	<rect id="矩形备份 5" rx="9.400001" width="47.000000" height="48.001820" fill="#5F5AF8" fill-opacity="1.000000"/>
+	<path id="路径" d="M30.47 9.6C32.46 9.6 34.07 11.21 34.07 13.2C34.07 15.18 32.46 16.8 30.47 16.8L23.65 16.8C19.67 16.8 16.45 20.02 16.45 24C16.45 27.97 19.67 31.2 23.65 31.2L29.89 31.2L30.47 31.2C32.46 31.2 34.07 32.81 34.07 34.8C34.07 36.78 32.46 38.4 30.47 38.4L23.53 38.4C15.72 38.4 9.39 32.07 9.39 24.27L9.39 23.78C9.39 15.95 15.75 9.6 23.58 9.6L30.47 9.6Z" fill="url(#paint_linear_25_9699_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="矩形备份 6" d="M24.67 20.4L26.94 20.4C28.93 20.4 30.54 22.01 30.54 24C30.54 25.98 28.93 27.6 26.94 27.6L24.67 27.6C22.72 27.6 21.14 26.02 21.14 24.07L21.14 23.92C21.14 21.97 22.72 20.4 24.67 20.4Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<g style="mix-blend-mode:soft-light">
+		<path id="路径 42" d="M23.5 16.8C10.07 16.8 8.32 29.09 13.46 34.08C18.6 39.06 22.92 38.36 25.9 38.4C28.88 38.44 27.88 31.2 23.5 31.2C19.11 31.2 16.42 27.2 16.42 24C16.42 20.8 18.94 16.8 23.5 16.8Z" fill="url(#paint_linear_25_9701_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

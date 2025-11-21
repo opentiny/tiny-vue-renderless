@@ -1,0 +1,330 @@
+.tech-homepage {
+  &-info {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    height: 42px;
+    border-radius: 8px;
+    padding: 12px 18px;
+    &-img {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: rgb(20, 118, 255);
+      vertical-align: middle;
+      display: flex;
+      &-mg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &-title {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 18px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+    &-content {
+      margin-left: 18px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: rgb(0, 0, 0);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-separator {
+      color: rgb(219, 219, 219);
+    }
+  }
+
+  &-curriculum {
+    margin-top: 40px;
+    width: 100%;
+
+    &-class {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-container {
+      width: 69%;
+    }
+    &-carousel {
+      height: 486px;
+      border-radius: 12px;
+    }
+    &-carousel-item {
+      height: 486px;
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 29%;
+      height: 474px;
+      border-radius: 8px;
+      background-color: rgb(245, 245, 245);
+      padding: 40px 32px;
+      margin-top: 8px;
+    }
+    &-info-item {
+      width: 100%;
+      line-height: 20px;
+      font-size: 16px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: flex-start;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-info-img {
+      margin-right: 15px;
+    }
+    &-info-desc {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgb(25, 25, 25);
+    }
+  }
+
+  &-project {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 32px;
+    width: 100%;
+
+    &-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-content-item {
+      width: 32%;
+    }
+    &-card {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      height: 400px;
+      background-color: rgb(245, 245, 245);
+      padding: 40px 32px;
+      border-radius: 16px;
+      &-title {
+        margin-top: 24px;
+        margin-bottom: 32px;
+        font-weight: 600;
+        line-height: 28px;
+        font-size: 24px;
+      }
+    }
+    &-card-desc {
+      &-item {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &-info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0 8px 20px 8px;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &-teacher {
+    &-title-mg {
+      margin: 16px 0 32px;
+    }
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    margin-bottom: 32px;
+    gap: 24px;
+
+    &-content {
+      margin-bottom: 24px;
+    }
+    &-container {
+      border-radius: 16px;
+      display: flex;
+      justify-content: flex-start;
+      height: 132px;
+      width: 100%;
+      &-left {
+        position: relative;
+        width: 62px;
+        height: 62px;
+        margin: 30px 20px 40px 32px;
+        img {
+          position: absolute;
+          border-radius: 50%;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &-right {
+        width: 70%;
+        font-size: 16px;
+        color: rgb(25, 25, 25);
+      }
+      &-content {
+        margin-top: 40px;
+      }
+      &-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 10px;
+        &-ml {
+          margin-left: 8px;
+        }
+        &-f14 {
+          color: rgb(87, 93, 108);
+          font-size: 14px;
+        }
+        &-f12 {
+          color: rgb(128, 128, 128);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &-design {
+    display: flex;
+    justify-content: space-between;
+
+    &-source {
+      margin: 8px 0 100px;
+      width: 65%;
+      > hr {
+        margin-top: 30px;
+        border-radius: 56px;
+        border-style: solid;
+        border-color: rgb(219, 219, 219);
+      }
+    }
+    &-content {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &-data {
+      width: 42%;
+      height: 194px;
+      margin-right: 32px;
+      margin-top: 21px;
+      &-container {
+        &-sketch {
+          display: flex;
+          justify-content: flex-start;
+          height: 194px;
+          background-image: url('@/assets/tech/design1.svg');
+        }
+        &-figma {
+          display: flex;
+          justify-content: flex-start;
+          height: 194px;
+          background-image: url('@/assets/tech/design2.svg');
+        }
+        &-left {
+          width: 62px;
+          height: 62px;
+          margin: 30px 20px 40px 32px;
+        }
+        &-right {
+          width: 70%;
+          font-size: 16px;
+          color: rgb(25, 25, 25);
+          margin-top: 40px;
+          &-content {
+            font-size: 24px;
+            color: rgb(0, 0, 0);
+          }
+          &-desc {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgb(87, 93, 108);
+          }
+        }
+        &-info {
+          margin-top: 24px;
+        }
+      }
+    }
+    &-events {
+      margin: 8px 0 100px;
+      width: 30%;
+      &-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      &-desc {
+        font-size: 14px;
+        line-height: 21px;
+        color: rgb(0, 0, 0);
+        margin-top: 24px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      > hr {
+        margin-top: 30px;
+        border-radius: 56px;
+        border-style: solid;
+        border-color: rgb(219, 219, 219);
+      }
+    }
+  }
+
+  &-curriculum-title,
+  &-project-title,
+  &-video-title,
+  &-teacher-title,
+  &-design-title,
+  &-events-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  &-project-more,
+  &-video-more,
+  &-design-events-more {
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(128, 128, 128);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

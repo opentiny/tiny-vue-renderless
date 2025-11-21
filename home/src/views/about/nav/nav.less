@@ -1,0 +1,39 @@
+.section-anchor {
+  position: fixed;
+  top: 15px;
+  right: 0.2rem;
+  padding: 20px 0px;
+  transition: all ease-in-out 0.3s;
+  z-index: 9999;
+  width: 280px;
+
+  .tiny-anchor__wrapper.tiny-anchor__dot,
+  .tiny-anchor {
+    border-radius: 8px;
+    width: auto;
+    padding: 20px 0px 0px 10px;
+  }
+
+  .tiny-anchor {
+    background-color: transparent;
+  }
+
+  .tiny-anchor__dot {
+    & .tiny-anchor-link-title::before {
+      left: 245px;
+    }
+    & .tiny-anchor-link-title::after {
+      left: 247.5px;
+    }
+    & .tiny-anchor-link-title {
+      text-align: right;
+      padding-right: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .section-anchor {
+    display: none;
+  }
+}

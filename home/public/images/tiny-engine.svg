@@ -1,0 +1,22 @@
+<svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="7.999999" y1="19.999996" x2="27.607330" y2="18.844452" id="paint_linear_498_35996_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF" stop-opacity="0.858824"/>
+			<stop offset="0.251694" stop-color="#FFFFFF" stop-opacity="0.800000"/>
+			<stop offset="1.000000" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<linearGradient x1="17.049679" y1="28.381008" x2="14.931797" y2="20.931841" id="paint_linear_498_35998_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#000000" stop-opacity="0.000000"/>
+			<stop offset="1.000000" stop-color="#000000"/>
+		</linearGradient>
+	</defs>
+	<rect id="矩形备份 5" rx="8.000000" width="40.000000" height="40.000000" fill="#1476FF" fill-opacity="1.000000"/>
+	<path id="路径" d="M29 8L29 14L20 14C16.68 14 14 16.68 14 20C14 23.31 16.68 26 20 26L29 26L29 32L20 32C13.37 32 8 26.62 8 20C8 13.37 13.37 8 20 8L29 8Z" fill="url(#paint_linear_498_35996_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="矩形备份 6" d="M21 17L26 17L26 23L21 23C19.34 23 18 21.65 18 20C18 18.34 19.34 17 21 17Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<g style="mix-blend-mode:soft-light">
+		<path id="路径 42" d="M20 14C8.57 14 7.08 24.24 11.45 28.39C15.83 32.55 19.5 31.96 22.04 32C24.58 32.03 23.73 26 20 26C16.26 26 13.97 22.66 13.97 20C13.97 17.33 16.12 14 20 14Z" fill="url(#paint_linear_498_35998_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

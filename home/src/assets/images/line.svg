@@ -1,0 +1,20 @@
+<svg width="1611.900391" height="236.632812" viewBox="0 0 1611.9 236.633" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_551_37123_dd" x="0.000000" y="8.295410" width="1579.000000" height="228.337402" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feGaussianBlur stdDeviation="3.33333" result="effect_layerBlur_1"/>
+		</filter>
+		<linearGradient x1="1607.900391" y1="101.708008" x2="7.400452" y2="199.416016" id="paint_linear_581_35993_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#1476FF"/>
+			<stop offset="1.000000" stop-color="#3E00FF"/>
+		</linearGradient>
+	</defs>
+	<g filter="url(#filter_551_37123_dd)">
+		<path id="矢量 99" d="M16 25.21L264.1 24.29C305.47 24.14 339.1 57.63 339.1 99.01C339.1 140.27 372.55 173.72 413.81 173.72L788.44 173.72C816.64 173.72 839.5 150.86 839.5 122.67C839.5 94.4 862.47 71.51 890.73 71.61L1097.13 72.36C1137.97 72.51 1171 105.66 1171 146.49C1171 187.44 1204.18 220.63 1245.13 220.63L1513 220.63L1563 220.63" stroke="#191919" stroke-opacity="0.100000" stroke-width="12.000000" stroke-linecap="round"/>
+	</g>
+	<path id="矢量 99" d="M7.4 4L244.54 4C285.88 4 319.4 37.51 319.4 78.85C319.4 120.19 352.91 153.7 394.25 153.7L768.75 153.7C797 153.7 819.9 130.8 819.9 102.56C819.9 74.31 842.79 51.41 871.04 51.41L1070.4 51.41C1111.27 51.41 1144.4 84.54 1144.4 125.41C1144.4 166.28 1177.53 199.41 1218.4 199.41L1504.4 199.41L1607.9 199.41" stroke="url(#paint_linear_581_35993_0)" stroke-opacity="0.400000" stroke-width="8.000000" stroke-linecap="round"/>
+</svg>

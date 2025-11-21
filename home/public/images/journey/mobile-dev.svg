@@ -1,0 +1,111 @@
+<svg width="660.000000" height="192.000000" viewBox="0 0 660 192" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="0.000153" y1="0.000000" x2="660.000000" y2="192.000000" id="paint_linear_633_34216_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#E7E6FF"/>
+			<stop offset="1.000000" stop-color="#E6E9FF"/>
+		</linearGradient>
+		<linearGradient x1="0.000153" y1="0.000000" x2="660.000000" y2="192.000000" id="paint_linear_633_34217_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#E1E5FF"/>
+			<stop offset="1.000000" stop-color="#E2E1FF"/>
+		</linearGradient>
+		<radialGradient gradientTransform="translate(330 99.5) rotate(-23.8317) scale(310.604 816.728)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_633_34259_0" gradientUnits="userSpaceOnUse">
+			<stop offset="0.000995" stop-color="#FF722B"/>
+			<stop offset="1.000000" stop-color="#FFCF6F"/>
+		</radialGradient>
+	</defs>
+	<rect id="矩形 746" width="660.000000" height="192.000000" fill="url(#paint_linear_633_34216_0)" fill-opacity="1.000000"/>
+	<mask id="mask633_34217" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="660.000000" height="192.000000">
+		<rect id="矩形 746" width="660.000000" height="192.000000" fill="url(#paint_linear_633_34217_0)" fill-opacity="1.000000"/>
+	</mask>
+	<g mask="url(#mask633_34217)">
+		<g opacity="0.300000">
+			<line id="直线 69" x1="0.000000" y1="24.000000" x2="660.000000" y2="24.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 70" x1="0.000000" y1="48.000000" x2="660.000000" y2="48.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 71" x1="0.000000" y1="72.000000" x2="660.000000" y2="72.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 72" x1="0.000000" y1="96.000000" x2="660.000000" y2="96.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 114" x1="0.000000" y1="120.000000" x2="660.000000" y2="120.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 74" x1="0.000000" y1="144.000000" x2="660.000000" y2="144.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 75" x1="0.000000" y1="168.000000" x2="660.000000" y2="168.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 76" x1="0.000000" y1="200.500000" x2="660.000000" y2="200.500000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 77" x1="0.000000" y1="225.750000" x2="660.000000" y2="225.750000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 78" x1="0.000000" y1="251.000000" x2="660.000000" y2="251.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 79" x1="0.000000" y1="276.250000" x2="660.000000" y2="276.250000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 80" x1="18.000000" y1="-1.000000" x2="18.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 81" x1="42.000000" y1="-1.000000" x2="42.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 82" x1="66.000000" y1="-1.000000" x2="66.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 83" x1="90.000000" y1="-1.000000" x2="90.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 84" x1="114.000000" y1="-1.000000" x2="114.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 85" x1="138.000000" y1="-1.000000" x2="138.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 86" x1="162.000000" y1="-1.000000" x2="162.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 87" x1="186.000000" y1="-1.000000" x2="186.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 88" x1="210.000000" y1="-1.000000" x2="210.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 89" x1="234.000000" y1="-1.000000" x2="234.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 90" x1="258.000000" y1="-1.000000" x2="258.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 91" x1="282.000000" y1="-1.000000" x2="282.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 92" x1="306.000000" y1="-1.000000" x2="306.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 93" x1="330.000000" y1="-1.000000" x2="330.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 94" x1="354.000000" y1="-1.000000" x2="354.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 95" x1="378.000000" y1="-1.000000" x2="378.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 96" x1="402.000000" y1="-1.000000" x2="402.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 97" x1="426.000000" y1="-1.000000" x2="426.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 98" x1="450.000000" y1="-1.000000" x2="450.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 99" x1="474.000000" y1="-1.000000" x2="474.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 100" x1="498.000000" y1="-1.000000" x2="498.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 101" x1="522.000000" y1="-1.000000" x2="522.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 102" x1="546.000000" y1="-1.000000" x2="546.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 103" x1="570.000000" y1="-1.000000" x2="570.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 104" x1="594.000000" y1="-1.000000" x2="594.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 211" x1="618.000000" y1="-1.000000" x2="618.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+			<line id="直线 212" x1="642.000000" y1="-1.000000" x2="642.000000" y2="302.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.300000"/>
+		</g>
+		<g opacity="0.200000" style="mix-blend-mode:normal">
+			<mask id="mask633_34259" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="-26.000000" width="660.000000" height="251.000000">
+				<path id="矩形 746" d="M13.46 -26L646.53 -26C653.96 -26 660 -19.97 660 -12.54L660 225L0 225L0 -12.54C0 -19.97 6.03 -26 13.46 -26Z" fill="url(#paint_radial_633_34259_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+			</mask>
+			<g mask="url(#mask633_34259)">
+				<path id="路径 9" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 9" d="M330 -52L330 251" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.600000"/>
+				<path id="路径 8" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 8" d="M0 96L660 96" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.600000"/>
+				<path id="路径 9" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 9" d="M163.35 -70.65L496.63 262.71" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.600000"/>
+				<path id="路径 8" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 8" d="M163.32 262.67L496.67 -70.62" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.600000"/>
+			</g>
+			<g mask="url(#mask633_34259)">
+				<path id="路径 48" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 48" d="M282 -27.5L282 275.5" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 50" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 50" d="M402 -27.5L402 275.5" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 49" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 49" d="M258 -27.5L258 275.5" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 51" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 51" d="M378 -27.5L378 275.5" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 44" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 44" d="M0 48.25L660 48.25" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-linejoin="round" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 46" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 46" d="M0 168L660 168" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-linejoin="round" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 45" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 45" d="M0 24L660 24" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-linejoin="round" stroke-dasharray="1.68367 1.68367"/>
+				<path id="路径 47" d="" fill="#D8D8D8" fill-opacity="0" fill-rule="nonzero"/>
+				<path id="路径 47" d="M0 144L660 144" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.640000" stroke-linejoin="round" stroke-dasharray="1.68367 1.68367"/>
+			</g>
+			<g mask="url(#mask633_34259)">
+				<rect id="矩形" x="258.000000" y="24.000000" rx="30.400000" width="144.000000" height="144.000000" fill="#FF2956" fill-opacity="0"/>
+				<rect id="矩形" x="258.000000" y="24.000000" rx="30.400000" width="144.000000" height="144.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="1.000000"/>
+				<circle id="椭圆形" cx="330.000000" cy="96.000000" r="48.000000" fill="#D8D8D8" fill-opacity="0"/>
+				<circle id="椭圆形" cx="330.000000" cy="96.000000" r="48.000000" stroke="#4848FF" stroke-opacity="1.000000" stroke-width="0.800000" stroke-linejoin="round" stroke-dasharray="1.13333 1.13333"/>
+			</g>
+		</g>
+		<path id="ic_public_code_2_3-path" d="M346.98 81.34L362.15 96.51C364.16 98.51 364.16 101.76 362.15 103.76L362.15 103.76L346.98 118.93" stroke="#4545F5" stroke-opacity="1.000000" stroke-width="6.400000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="ic_public_code_2_3-path" d="M309.68 81.34L294.5 96.51C292.5 98.51 292.5 101.76 294.5 103.76L294.5 103.76L309.68 118.93" stroke="#4545F5" stroke-opacity="1.000000" stroke-width="6.400000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="ic_public_code_2_5" d="M326.95 124.04L326.96 124.06C326.58 125.81 324.9 126.89 323.15 126.5C321.4 126.12 320.33 124.44 320.71 122.69L320.74 122.67L326.95 124.04ZM330.64 77.55L330.63 77.53C331.01 75.78 332.69 74.71 334.44 75.09C336.19 75.47 337.27 77.15 336.88 78.9L336.85 78.92L330.64 77.55Z" fill="#4848FF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="ic_public_code_2_5" d="M323.84 123.38L333.75 78.22" stroke="#4545F5" stroke-opacity="1.000000" stroke-width="6.400000" stroke-linejoin="round" stroke-linecap="round"/>
+		<ellipse id="椭圆 4" cx="345.128906" cy="52.127075" rx="4.128144" ry="4.127310" fill="#4848FF" fill-opacity="1.000000"/>
+		<ellipse id="椭圆 5" cx="361.640625" cy="52.127075" rx="4.128144" ry="4.127310" fill="#4848FF" fill-opacity="1.000000"/>
+		<ellipse id="椭圆 6" cx="378.152344" cy="52.127075" rx="4.128144" ry="4.127310" fill="#4848FF" fill-opacity="1.000000"/>
+	</g>
+</svg>

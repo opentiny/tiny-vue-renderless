@@ -1,0 +1,27 @@
+<svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="28.460936" y1="28.504272" x2="9.169699" y2="19.607101" id="paint_linear_498_36098_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF" stop-opacity="0.905882"/>
+			<stop offset="0.727615" stop-color="#FFFFFF" stop-opacity="0.800000"/>
+			<stop offset="1.000000" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<linearGradient x1="28.429119" y1="22.591713" x2="17.568529" y2="19.322151" id="paint_linear_498_36169_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF" stop-opacity="0.905882"/>
+			<stop offset="0.708703" stop-color="#FFFFFF" stop-opacity="0.800000"/>
+			<stop offset="1.000000" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<linearGradient x1="20.254774" y1="28.969778" x2="14.752661" y2="27.733393" id="paint_linear_498_36101_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#000000" stop-opacity="0.000000"/>
+			<stop offset="1.000000" stop-color="#000000"/>
+		</linearGradient>
+	</defs>
+	<rect id="矩形备份 11" rx="8.000000" width="40.000000" height="40.000000" fill="#1476FF" fill-opacity="1.000000"/>
+	<path id="路径" d="M12 9L12 26C12 26.55 12.44 27 13 27L32 27L32 31L13 31C10.23 31 8 28.76 8 26L8 9L12 9Z" fill="url(#paint_linear_498_36098_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="矢量 81" d="M30 10.92L30 17.88L26.94 22.23C25.63 24.1 22.79 23.87 21.79 21.82L20.56 19.3C20.23 18.62 19.29 18.54 18.85 19.15L15 24.51L15 17.66L17.56 14.1C18.89 12.26 21.7 12.5 22.69 14.54L23.9 17.02C24.23 17.7 25.18 17.78 25.62 17.15L30 10.92Z" fill="url(#paint_linear_498_36169_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<g style="mix-blend-mode:soft-light">
+		<path id="路径 46" d="M12 26C12 26.64 12.55 27 13 27C13.44 27 18.26 27 19.48 27C20.7 27 22.48 31 19.48 31C16.47 31 20.13 31 16.56 31C13 31 12 27.97 12 26Z" fill="url(#paint_linear_498_36101_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

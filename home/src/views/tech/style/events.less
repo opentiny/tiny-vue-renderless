@@ -1,0 +1,265 @@
+.tech-events {
+  margin-bottom: 220px;
+  &-desc-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 34px;
+  }
+  &-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    &-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      &-desc {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        margin-right: 8px;
+        color: rgb(25, 25, 25);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &-content {
+      margin-bottom: 16px;
+      &-item {
+        font-size: 14px;
+        line-height: 22px;
+        color: rgb(89, 89, 89);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* 限制显示两行 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &-instruct {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      &-write {
+        margin-right: 24px;
+      }
+      &-desc {
+        display: flex;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgb(128, 128, 128);
+        margin-right: 24px;
+      }
+      &-date {
+        font-size: 14px;
+        color: rgb(128, 128, 128);
+        margin-right: 24px;
+      }
+      &-apply {
+        border: 1px solid rgb(128, 128, 128);
+        font-size: 12px;
+        width: 60px;
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        color: rgb(89, 89, 89);
+      }
+    }
+  }
+  &-other-container {
+    &-content {
+      margin-left: 60px;
+      margin-top: 10px;
+      img {
+        width: 216px;
+        height: 128px;
+        border-radius: 16px;
+        background-size: cover;
+      }
+    }
+  }
+  //   文章详情
+  &-detail {
+    padding: 24px 200px 100px;
+    &-nav {
+      margin-bottom: 32px;
+    }
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      &-md {
+        width: 100%;
+        height: 100%;
+        margin-right: 60px;
+        &-content {
+          height: 1215px;
+          overflow: auto;
+        }
+        &-title {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 28px;
+          margin-right: 8px;
+          color: #191919;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &-info {
+          margin-top: 32px;
+          margin: 32px 0 57px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          &-write {
+            margin-right: 24px;
+          }
+          &-desc {
+            display: flex;
+            font-size: 14px;
+            line-height: 20px;
+            color: #808080;
+            margin-right: 24px;
+          }
+          &-date {
+            font-size: 14px;
+            color: #808080;
+            margin-right: 24px;
+          }
+          &-apply {
+            border: 1px solid #808080;
+            font-size: 12px;
+            width: 60px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            color: #595959;
+          }
+        }
+        &-page {
+          margin-bottom: 100px;
+          display: flex;
+          justify-content: space-between;
+          color: rgb(20, 118, 255);
+          cursor: pointer;
+          font-size: 14px;
+          line-height: 22px;
+        }
+        &-up,
+        &-down {
+          width: 100px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+      }
+      &-about {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        &-wx {
+          width: 286px;
+          height: 185px;
+          display: flex;
+          justify-content: flex-start;
+          &-left {
+            padding: 24px 12px 38px 26px;
+          }
+          &-img {
+            margin-top: 50px;
+            width: 111px;
+            height: 111px;
+            border-radius: 16px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          &-title {
+            color: rgb(25, 25, 25);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            margin-top: 6px;
+          }
+          &-desc {
+            margin-top: 6px;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgb(128, 128, 128);
+          }
+        }
+        &-desc {
+          margin-top: 32px;
+          padding: 24px;
+          background-color: rgb(245, 245, 245);
+          border-radius: 16px;
+          width: 286px;
+          height: 398px;
+        }
+        &-title {
+          font-weight: 500;
+          font-size: 18px;
+          color: rgb(0, 0, 0);
+          line-height: 25px;
+          margin-bottom: 16px;
+          &-img {
+            margin-right: 8px;
+          }
+          &-item {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+          }
+          &-info {
+            cursor: pointer;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; /* 限制显示两行 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0 8px 20px 0px;
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+        &-hot {
+          margin-top: 32px;
+          padding: 24px;
+          width: 286px;
+          height: 398px;
+          border-radius: 16px;
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}
+
+a {
+  color: rgb(25, 25, 25);
+  text-decoration: none; /* 移除默认下划线 */
+}
+a:active a:visited a:hover {
+  text-decoration: underline; /* 点击后添加下划线 */
+}
+
+@media (max-width: 1700px) {
+  .tech-events-detail {
+    padding: 24px 50px 100px;
+  }
+}
