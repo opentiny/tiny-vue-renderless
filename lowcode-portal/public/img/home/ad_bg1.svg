@@ -1,0 +1,32 @@
+<svg viewBox="0 0 456 272" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="456.000000" height="272.000000" fill="none">
+	<defs>
+		<filter id="pixso_custom_mask_type_alpha">
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
+		</filter>
+		<g id="pixso_custom_effect_4">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="380" />
+		</g>
+		<filter id="filter_4" width="865.675781" height="874.671875" x="-42.636719" y="-371.873047" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_4)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="126.666664" result="effect_layerBlur_1" />
+		</filter>
+		<linearGradient id="paint_linear_3" x1="390.201721" x2="390.201721" y1="8.12695312" y2="122.798775" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(101,191,5)" offset="0.392405063" stop-opacity="1" />
+			<stop stop-color="rgb(158,219,88)" offset="1" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<mask id="mask_4" width="446.000000" height="262.000000" x="5.000000" y="5.000000" maskUnits="userSpaceOnUse">
+		<g filter="url(#pixso_custom_mask_type_alpha)">
+			<rect id="矩形 6" width="446.000000" height="262.000000" x="5.000000" y="5.000000" rx="20.000000" fill="rgb(255,255,255)" />
+		</g>
+	</mask>
+	<rect id="ad_bg1" width="456.000000" height="272.000000" x="0.000000" y="0.000000" />
+	<rect id="矩形 6" width="446.000000" height="262.000000" x="5.000000" y="5.000000" rx="20.000000" fill="rgb(255,255,255)" />
+	<rect id="矩形 6" width="450.000000" height="266.000000" x="3.000000" y="3.000000" rx="22.000000" stroke="rgb(255,255,255)" stroke-opacity="0" stroke-width="4" />
+	<g id="蒙版" mask="url(#mask_4)">
+		<g filter="url(#filter_4)">
+			<path id="椭圆 104" d="M337.363 65.4629C337.363 33.7971 361.02 8.12696 390.202 8.12696C419.384 8.12696 443.04 33.7971 443.04 65.4629C443.04 97.1286 419.384 122.799 390.202 122.799C375.419 122.799 362.056 116.214 352.466 105.597C343.125 95.2551 337.363 81.0879 337.363 65.4629Z" fill="url(#paint_linear_3)" fill-rule="evenodd" />
+		</g>
+	</g>
+</svg>

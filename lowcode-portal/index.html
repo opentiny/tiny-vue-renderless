@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinyEngine 低代码引擎 —— 使能开发者定制低代码平台</title>
+    <!-- 动态加载设置页面需要预先声明样式及包映射地址 -->
+    <link rel="stylesheet" href="https://registry.npmmirror.com/@opentiny/vue-theme/3.14/files/index.css" />
+  </head>
+  <body>
+    <script>
+      ;(function (k) {
+        window[k] = window[k] || {}
+        window[k].config = {
+          appId: 'C49090620DD44DFD8E3CA5911408CBBE',
+          setting: 'perf,jsTrack,api,uba,longtask,rtti',
+          hashMode: true,
+          smartJsErr: false
+        }
+      })('__fr')
+    </script>
+    <script async src="https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/FurionSdkStatic/3.5.10/furion-cdn.min.js"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

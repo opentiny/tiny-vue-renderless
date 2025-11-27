@@ -1,0 +1,555 @@
+{
+  "data": [
+    {
+      "id": 998,
+      "label": "PortalHeader",
+      "framework": "Vue",
+      "content": {
+        "state": {
+          "menuData": [
+            {
+              "label": "首页",
+              "url": "/home"
+            },
+            {
+              "label": "我的应用",
+              "url": "/home"
+            },
+            {
+              "label": "应用中心",
+              "url": "/home"
+            },
+            {
+              "label": "我的平台",
+              "url": "/home"
+            },
+            {
+              "label": "平台中心",
+              "url": "/home"
+            },
+            {
+              "label": "我的物料",
+              "url": "/home"
+            },
+            {
+              "label": "生态中心",
+              "url": "/home"
+            },
+            {
+              "label": "监控中心",
+              "url": "/home"
+            }
+          ]
+        },
+        "methods": {
+          "handleClick": {
+            "type": "JSFunction",
+            "value": "function handleClick(event) {\n  console.log(1111);\n}"
+          },
+          "test": {
+            "type": "JSFunction",
+            "value": "function test() {\n  return 111;\n}"
+          }
+        },
+        "id": "90259a01",
+        "componentName": "Block",
+        "fileName": "PortalHeader",
+        "css": "",
+        "props": {},
+        "children": [
+          {
+            "componentName": "div",
+            "props": {
+              "style": "display: flex; justify-content: space-between; align-items: center; height: 50px; background-color: #282b33;"
+            },
+            "id": "978b613d",
+            "children": [
+              {
+                "componentName": "div",
+                "props": {
+                  "style": "display: flex; align-items: center;"
+                },
+                "id": "a0e4d2a5",
+                "children": [
+                  {
+                    "componentName": "Img",
+                    "props": {
+                      "src": "https://opentiny.design/image/2022-05-24/bbb35cd0-db30-11ec-a1c4-7b3b3de0a1d8.png",
+                      "style": "display: block; width: 48px; height: auto; margin-left: 10px;"
+                    },
+                    "id": "d86c8394"
+                  },
+                  {
+                    "componentName": "Text",
+                    "props": {
+                      "text": "TinyEngine",
+                      "style": "font-weight: bolder; color: #fafafa;"
+                    },
+                    "id": "0054c9e0"
+                  }
+                ]
+              },
+              {
+                "componentName": "div",
+                "props": {},
+                "id": "6b8a2395",
+                "children": [
+                  {
+                    "componentName": "Text",
+                    "props": {
+                      "text": {
+                        "type": "JSExpression",
+                        "value": "item.label"
+                      },
+                      "key": {
+                        "type": "JSExpression",
+                        "value": "index"
+                      },
+                      "style": "font-size: 16px; margin-left: 10px; margin-right: 10px; color: #adb0b8;"
+                    },
+                    "id": "6b31e678",
+                    "loop": {
+                      "type": "JSExpression",
+                      "value": "this.state.menuData"
+                    },
+                    "loopArgs": [
+                      "item",
+                      "index"
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "div",
+                "props": {
+                  "style": "width: 220px; height: 50px; display: flex; justify-content: space-around; align-items: center; margin-right: 10px;"
+                },
+                "id": "268cf8ec",
+                "children": [
+                  {
+                    "componentName": "Icon",
+                    "props": {
+                      "name": "IconCheckedTrue",
+                      "style": "fill: #fff;"
+                    },
+                    "id": "9340fc32"
+                  },
+                  {
+                    "componentName": "TinyTooltip",
+                    "props": {
+                      "content": "持续建设中...",
+                      "placement": "top",
+                      "manual": true,
+                      "modelValue": true,
+                      "className": "tip-icon",
+                      "style": "fill: #fff;"
+                    },
+                    "children": [
+                      {
+                        "componentName": "div",
+                        "props": {
+                          "placeholder": "触发源"
+                        },
+                        "id": "cf780fb6"
+                      },
+                      {
+                        "componentName": "Icon",
+                        "props": {
+                          "name": "IconHelpQuery",
+                          "style": "color: #ffffff;"
+                        },
+                        "id": "645eace8"
+                      }
+                    ],
+                    "id": "961a8e8a"
+                  },
+                  {
+                    "componentName": "Text",
+                    "props": {
+                      "text": "|",
+                      "className": "split",
+                      "style": "color: #ffffff;"
+                    },
+                    "id": "f803f399"
+                  },
+                  {
+                    "componentName": "Text",
+                    "props": {
+                      "text": "低代码团队",
+                      "style": "color: #fcfcfc;"
+                    },
+                    "id": "a93320d9"
+                  },
+                  {
+                    "componentName": "TinyPopover",
+                    "props": {
+                      "width": 308,
+                      "title": "弹框标题",
+                      "trigger": "click",
+                      "modelValue": true,
+                      "placement": "bottom-end",
+                      "append-to-body": true,
+                      "visible-arrow": false,
+                      "popper-class": "team-list-pop"
+                    },
+                    "children": [
+                      {
+                        "componentName": "Template",
+                        "props": {
+                          "slot": "reference"
+                        },
+                        "children": [
+                          {
+                            "componentName": "div",
+                            "props": {
+                              "placeholder": "触发源"
+                            },
+                            "id": "a2be96dc",
+                            "children": [
+                              {
+                                "componentName": "div",
+                                "props": {
+                                  "className": "toolbars-item",
+                                  "style": "padding-top: 10px;"
+                                },
+                                "id": "a7f80064",
+                                "children": [
+                                  {
+                                    "componentName": "Text",
+                                    "props": {
+                                      "text": {
+                                        "type": "JSExpression",
+                                        "value": "this.props.tenant?.tenant_id || ''"
+                                      }
+                                    },
+                                    "id": "ad088c44"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "Template",
+                        "props": {
+                          "slot": "default"
+                        },
+                        "children": [
+                          {
+                            "componentName": "div",
+                            "props": {
+                              "placeholder": "提示内容"
+                            },
+                            "id": "7d0acbf1"
+                          }
+                        ]
+                      }
+                    ],
+                    "id": "972150fe"
+                  },
+                  {
+                    "componentName": "Img",
+                    "props": {
+                      "style": "width: 40px; height: auto;",
+                      "src": "https://opentiny.design/image/2020-11-03/38512fc0-1d86-11eb-a33e-238c326a4aed.png"
+                    },
+                    "id": "7e6528f2"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "schema": {
+          "properties": [
+            {
+              "label": {
+                "zh_CN": "基础信息"
+              },
+              "description": {
+                "zh_CN": "基础信息"
+              },
+              "collapse": {
+                "number": 6,
+                "text": {
+                  "zh_CN": "显示更多"
+                }
+              },
+              "content": [
+                {
+                  "property": "tenant",
+                  "type": "Object",
+                  "defaultValue": {
+                    "tenant_id": "asd"
+                  },
+                  "label": {
+                    "text": {
+                      "zh_CN": ""
+                    }
+                  },
+                  "cols": 12,
+                  "rules": [],
+                  "handle": {
+                    "getter": "",
+                    "setter": ""
+                  },
+                  "hidden": false,
+                  "required": true,
+                  "readOnly": false,
+                  "disabled": false,
+                  "widget": {
+                    "component": "MetaCodeEditor",
+                    "props": {
+                      "modelValue": "{\r\n  tenant_id: 'asd'\r\n}"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "events": {},
+          "slots": {}
+        },
+        "dataSource": {}
+      },
+      "published_at": "2022-06-21T08:51:52.000Z",
+      "created_at": "2022-06-21T08:51:52.000Z",
+      "updated_at": "2022-07-22T01:53:53.000Z",
+      "platform": null,
+      "assets": {
+        "material": [],
+        "scripts": [
+          "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/block/PortalHeader/0.0.9_1656918235014/js/web-components.es.js",
+          "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/block/PortalHeader/0.0.9_1656918235014/js/web-components.umd.js"
+        ],
+        "styles": []
+      },
+      "createdBy": {
+        "id": 86,
+        "username": "public",
+        "resetPasswordToken": "xxxxxxxx"
+      },
+      "last_build_info": {
+        "result": false,
+        "endTime": "7/5/2022, 9:11:46 AM"
+      },
+      "tenant": null,
+      "description": "Portal头部",
+      "tags": null,
+      "author": null,
+      "current_history": 2881,
+      "screenshot": "",
+      "path": "common",
+      "occupier": {
+        "id": 129,
+        "username": "public",
+        "resetPasswordToken": "xxx"
+      },
+      "histories": [
+        {
+          "id": 2881,
+          "message": "1.0.1",
+          "content": {
+            "state": {},
+            "methods": {},
+            "componentName": "Block",
+            "fileName": "PortalHeader",
+            "css": "",
+            "props": {},
+            "children": [
+              {
+                "componentName": "Img",
+                "props": {
+                  "src": "http://opentiny.design/images/1.jpg",
+                  "style": "width: 200px; height: 200px"
+                },
+                "id": "2a522644"
+              }
+            ],
+            "schema": {
+              "properties": [
+                {
+                  "label": {
+                    "zh_CN": "基础信息"
+                  },
+                  "description": {
+                    "zh_CN": "基础信息"
+                  },
+                  "collapse": {
+                    "number": 6,
+                    "text": {
+                      "zh_CN": "显示更多"
+                    }
+                  },
+                  "content": []
+                }
+              ],
+              "events": {},
+              "slots": {}
+            },
+            "dataSource": {}
+          },
+          "assets": {
+            "material": [],
+            "scripts": [
+              "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/block/PortalHeader/0.0.9_1656918235014/js/web-components.es.js",
+              "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/block/PortalHeader/0.0.9_1656918235014/js/web-components.umd.js"
+            ],
+            "styles": []
+          },
+          "build_info": {
+            "result": true,
+            "versions": ["@huawei/tinybuilder-webcomp-vue-tiny@0.0.10"],
+            "endTime": "9/19/2023, 10:23:22 AM"
+          },
+          "created_at": "2023-09-19T02:23:22.000Z",
+          "updated_at": "2023-09-19T02:23:22.000Z",
+          "screenshot": "",
+          "path": "default",
+          "label": "WTestAi",
+          "description": null,
+          "mode": null,
+          "block_id": 2251,
+          "version": "1.0.1",
+          "npm_name": "@huawei/lowcode-alpha-block-wtestai-2251",
+          "i18n": {
+            "zh_CN": {},
+            "en_US": {}
+          },
+          "created_app": 1802,
+          "content_blocks": null
+        }
+      ],
+      "isOfficial": false,
+      "public": 1,
+      "isDefault": false,
+      "histories_length": 9,
+      "tiny_reserved": false,
+      "public_scope_tenants": []
+    },
+    {
+      "id": 899,
+      "label": "RemoteNgComponent",
+      "framework": "Angular",
+      "content": {
+        "componentName": "Block",
+        "fileName": "RemoteNgComponent",
+        "css": "",
+        "props": {
+          "ref": "remoteTarget"
+        },
+        "children": [],
+        "schema": {
+          "properties": [
+            {
+              "label": {
+                "zh_CN": "基础信息"
+              },
+              "description": {
+                "zh_CN": "基础信息"
+              },
+              "collapse": {
+                "number": 6,
+                "text": {
+                  "zh_CN": "显示更多"
+                }
+              },
+              "content": [
+                {
+                  "property": "moduleDetail",
+                  "type": "Object",
+                  "defaultValue": null,
+                  "label": {
+                    "text": {
+                      "zh_CN": ""
+                    }
+                  },
+                  "cols": 12,
+                  "rules": [],
+                  "handle": {
+                    "getter": "",
+                    "setter": ""
+                  },
+                  "hidden": false,
+                  "required": true,
+                  "readOnly": false,
+                  "disabled": false,
+                  "widget": {
+                    "component": "MetaCodeEditor",
+                    "props": {}
+                  }
+                }
+              ]
+            }
+          ],
+          "events": {}
+        },
+        "state": {
+          "target": null,
+          "moduleDetail": null,
+          "pageName": null
+        },
+        "methods": {
+          "loadRemoteModule": {
+            "type": "JSFunction",
+            "value": "function loadRemoteModule() {\n  const localComponent = props.moduleDetail.localComponent ? this.bridge[props.moduleDetail.localComponent] : null;\n  const localModule = props.moduleDetail.localModule ? this.bridge[props.moduleDetail.localModule] : null;\n  this.state.target = this.$('remoteTarget');\n  this.state.moduleDetail = props.moduleDetail;\n  this.state.pageName = props.moduleDetail.pageName;\n  this.bridge.services[this.state.pageName]?.load(this.state.target, { ...props.moduleDetail,\n    localComponent,\n    localModule\n  });\n}"
+          },
+          "unloadRemoteModule": {
+            "type": "JSFunction",
+            "value": "function unloadRemoteModule() {\n  this.bridge.services[this.state.pageName]?.unload(this.state.moduleDetail);\n}"
+          },
+          "initListener": {
+            "type": "JSFunction",
+            "value": "function initListener() {\n  this.bridge.addEventListener('ngViewInit', loadRemoteModule);\n}"
+          },
+          "removeListener": {
+            "type": "JSFunction",
+            "value": "function removeListener() {\n  this.bridge.removeEventListener('ngViewInit', loadRemoteModule);\n}"
+          }
+        },
+        "dataSource": {},
+        "i18n": {},
+        "lifeCycles": {
+          "setup": {
+            "type": "JSFunction",
+            "value": "function setup ({ props, state, watch, onMounted }) {\r\n  watch(\r\n    () => props.moduleDetail,\r\n    () => {\r\n      if (!props.moduleDetail) return;\r\n      loadRemoteModule();\r\n    }\r\n  );\r\n} "
+          },
+          "onUnmounted": {
+            "type": "JSFunction",
+            "value": "function onUnmounted () {\r\n  unloadRemoteModule();\r\n  removeListener();\r\n} "
+          },
+          "onMounted": {
+            "type": "JSFunction",
+            "value": "function onMounted () {\r\n  loadRemoteModule();\r\n  initListener();\r\n} "
+          }
+        }
+      },
+      "published_at": "2022-05-18T19:39:06.000Z",
+      "created_at": "2022-05-18T19:39:06.000Z",
+      "updated_at": "2022-05-20T03:27:21.000Z",
+      "platform": null,
+      "assets": null,
+      "createdBy": {
+        "id": 129,
+        "username": "public",
+        "resetPasswordToken": "xxx"
+      },
+      "last_build_info": null,
+      "tenant": null,
+      "description": "远程ng组件",
+      "tags": null,
+      "author": null,
+      "current_history": null,
+      "histories_length": 4,
+      "screenshot": null,
+      "path": "common",
+      "occupier": null,
+      "isOfficial": false,
+      "public": 1,
+      "isDefault": false,
+      "tiny_reserved": false,
+      "public_scope_tenants": []
+    }
+  ]
+}

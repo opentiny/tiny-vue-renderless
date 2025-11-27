@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "id": 897,
+      "name": "portal-platform",
+      "theme": 69,
+      "dsl": 16,
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2022-06-07T07:17:08.000Z",
+      "updated_at": "2023-07-25T02:27:37.000Z",
+      "platform_url": "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/lowcode-portal/1.1.36/tiny-engine-editor/index.html",
+      "vscode_url": "",
+      "published": true,
+      "createdBy": 29,
+      "updatedBy": 97,
+      "last_build_info": {
+        "result": true,
+        "platformVersion": "1.0.102_1690251805581",
+        "prevPlatformVersion": "1.0.102_1690191884933",
+        "versions": [
+          "@huawei/tinybuilder-design-core-test@1.0.102"
+        ],
+        "builderVersion": "1.0.1",
+        "endTime": "7/25/2023, 10:27:37 AM"
+      },
+      "tenant": 1,
+      "description": "portal网站专用-勿删",
+      "latest": null,
+      "material_history": 319,
+      "image_url": null,
+      "sort_plugins": null,
+      "plugins": [
+        47,
+        50,
+        57,
+        53,
+        56
+      ],
+      "sort_toolbar": null,
+      "toolbar": [
+        306,
+        310,
+        58
+      ],
+      "is_default": true,
+      "prettier_opts": null,
+      "set_default_by": 169,
+      "app_extend_config": {
+        "route": [
+          {
+            "path": "console",
+            "name": "applicationSettingHConsole",
+            "url": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/card.es.js",
+            "title": "console应用扩展",
+            "label": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/card.es.js"
+          }
+        ],
+        "platform_build_mode": "default",
+        "app_type": "console",
+        "bridge": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/bridge.json",
+        "utils": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/utils.json",
+        "i18n": [
+          {
+            "name": "zh.json",
+            "url": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/i18n/zh.json"
+          },
+          {
+            "name": "en.json",
+            "url": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/i18n/en.json"
+          }
+        ],
+        "datasource": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/lowcode-portal/extension/console/1.0.0/datasource.json"
+      },
+      "data_hash": "5c412052f36dc0de98c7f77fe4f75de1",
+      "business_category": null,
+      "sub_count": 0
+    }
+  ],
+  "locale": "zh-cn"
+}

@@ -1,0 +1,11 @@
+/*.json
+/*.js
+dist
+src
+.eslintrc.js
+.prettierignore
+.stylelintrc.js
+babel.config
+commitlint.config
+md.extend.config
+config/plugin

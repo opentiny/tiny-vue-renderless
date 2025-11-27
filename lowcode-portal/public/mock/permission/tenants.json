@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "tenant_id": "public",
+      "name_cn": "公共组织",
+      "name_en": "Public Tenant",
+      "description": "Default tenant for new user to explore.",
+      "published_at": "2021-12-28T11:39:10.000Z",
+      "created_at": "2021-12-28T11:39:10.000Z",
+      "updated_at": "2021-12-28T11:39:10.000Z",
+      "createdBy": "public",
+      "updatedBy": "public"
+    },
+    {
+      "id": 2,
+      "tenant_id": "tinyStage",
+      "name_cn": "开发工具集",
+      "name_en": "toolkits",
+      "description": null,
+      "published_at": "2022-05-18T07:56:55.000Z",
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2022-05-18T07:56:55.000Z",
+      "updated_at": "2022-05-18T07:56:55.000Z",
+      "createdBy": "tinyStage",
+      "updatedBy": "tinyStage",
+      "extra": []
+    },
+    {
+      "id": 3,
+      "tenant_id": "tinyUI",
+      "name_cn": "UI组件",
+      "name_en": "components",
+      "description": null,
+      "published_at": "2022-05-18T08:29:32.000Z",
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2022-05-18T08:29:32.000Z",
+      "updated_at": "2022-05-18T08:29:33.000Z"
+    },
+    {
+      "id": 4,
+      "tenant_id": "tinyMock",
+      "name_cn": "tinyMock",
+      "name_en": "tinyMock",
+      "description": null,
+      "published_at": "2022-05-23T09:14:06.000Z",
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2022-05-23T09:14:06.000Z",
+      "updated_at": "2022-05-23T09:14:06.000Z",
+      "extra":[]
+    }
+  ]
+}

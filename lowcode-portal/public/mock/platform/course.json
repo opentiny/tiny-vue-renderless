@@ -1,0 +1,813 @@
+{
+  "data": [
+    {
+      "id": 43,
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2023-09-20T09:44:58.000Z",
+      "updated_at": "2023-09-21T01:19:25.000Z",
+      "category": "platformDev",
+      "name": " 集成ChatGPT搭建简单页面能力",
+      "desc": "",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/7dfb081c0d10607f84f28f891f18bf1d_308x180.jpg",
+      "type": "advanced",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 84,
+          "courseId": 43,
+          "title": " 集成ChatGPT搭建简单页面能力",
+          "video": "",
+          "docs": "### 一、创建引入AI插件的设计器\n\nAI生成页面的能力，以可拔插插件的形式，依附在设计器上。同时，AI生成的页面，也将在设计器的画布中渲染出来。\n所以要使用AI生成页面的能力，需要先创建引入了AI插件的设计器，如下图所示。创建设计器参考[此文档](portal-only-prefix/help-center/course-detail/19)\n![](md-only-prefix/img/docimg/addAiPlugin.png)\n\n### 二、打开AI聊天窗口\n\n如果设计器已经引入AI插件，进入设计器后，左下角会有个机器人图标，如下图所示，单击即可打开聊天窗，开始与AI交互。\n![](md-only-prefix/img/docimg/openAiWindow.png)\n\n### 三、通过提问，让AI生成页面\n\n我们知道如ChatGPT之类的大模型，可以依照指令生成代码。在这里AI生成的代码会直接渲染在画布中。\n\n**特别提示**：我们可以让AI直接使用预置的区块\n![](md-only-prefix/img/docimg/useBlock.png)\n\n### 四、通过继续提问，让AI修改生成的页面\n\n![](md-only-prefix/img/docimg/askToModifyPage.png)\n\n",
+          "created_at": "2023-09-20T09:44:58.000Z",
+          "updated_at": "2023-09-21T01:19:25.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 42,
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2023-09-20T08:17:39.000Z",
+      "updated_at": "2023-09-20T08:19:46.000Z",
+      "category": "platformDev",
+      "name": "图元编排设计器",
+      "desc": "",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/f7770a303b163cf8aec54cb033185bb8_308x180.jpg",
+      "type": "practical",
+      "tags": "",
+      "variety": "solution",
+      "videos": [
+        {
+          "id": 83,
+          "courseId": 42,
+          "title": "图元编排设计器",
+          "video": "",
+          "docs": "# 图元编排设计器\n\n‍\n\n​![image](md-only-prefix/img/docimg/image-20230919202709-5khs9h1.png)​\n\n## 背景\n\n图形编排有着广泛的使用场景，如在各类流程图，审批流，部署流水线，架构图中都能看到它的身影。资源编排正是这样一个类似的场景，只是编排的主体变成了云服务资源。\n\n资源编排遵循基础设施即代码（Infrastructure as Code, IaC）的设计理念，区别于之前需要单独管理每一种云服务资源，通过资源编排设计器，用户无需手动创建多个资源，在平台通过设计器拖拽配置即可生成模板，并一键部署多个资源。\n\n因此，对于资源编排服务场景，需要定制一个专用的设计器来满足用户编排的需求。\n\n## 述求与选型\n\n核心诉求围绕拖拽配置与模板生成，因此需要有完备的画布拖拽、绘图核心能力与灵活的配置及自定义能力，并通过人性化的交互，来为用户提供强大的在线设计器，顺利生成资源模板，实现一键部署。\n\n考虑到需要支持大量的云服务资源，同时每一个云服务资源需要配置的属性也是不一样的，因而采用传统开发方式，为每一种云服务资源开发专门的属性设置页面是不可行的。在属性配置上需要能够能力自定义渲染。\n\n同时模板是极为重要的一环，关系到最终资源的部署，模板需要符合特定的标准格式，因此画布和属性面板的输入需要最终体现到最终的模板中。\n\n整理出主要的述求：\n\n* 整体页面需要至少包含：资源列表、画布、属性设置\n* 画布有拖拽、连线等绘图核心能力\n* 属性面板需要能支持自定义配置渲染\n* 支持拓展出其他能力\n\n分析述求后，可以判断使用传统方式工作量极大，实现上不太现实，同时发现，资源编排设计器与低代码设计器有许多的相似性，都涉及到基础的资源、拖拽、配置，只有画布区域有差异：由前端组件搭建的页面变成云服务资源图元组成的自由图形，因此考虑借助低代码设计器能力搭建的思路。\n\n针对低代码设计器场景，TinyEngine通过优秀的整体架构提供了高度自由的定制能力，可以像搭积木一样选择不同的积木搭建一个专属的设计器，同时属性面板全部通过JSON配置文件渲染，无需编写代码，灵活而强大，能够大大减少开发的成本。设计器布局类似VS Code，核心模板与功能区域划分清晰，上手即用。插件化架构也方便了自由拓展业务相关功能。最终决定使用TinyEinge开发图元编排设计器。\n\n## 快速原型\n\n​![image](md-only-prefix/img/docimg/image-20230920083516-hg4vhhs.png)​\n\nTinyEngine基础设计器中分为顶部工具栏、左侧插件栏、右侧属性配置栏、中央画布区四个部分，同时还可以支持自定义主题配置。\n\n因此基于TinyEngine开发资源编排设计器，变成了一件较为简单的事情，只需替换Web专用画布为绘图画布，再添加必要的功能插件即可。\n\n遵循TinyEngine推荐的开发风格，按照以下目录来进行开发，canvas中为画布模块，controller为控制器逻辑，common存放公共逻辑，toolbars/plugins/settings对应上、左、右区域的插件，theme对应主题，addons为当前应用所引入的插件：\n\n```js\n.\n|-- canvas\n|-- controller\n|-- common\n|-- plugins\n|-- settings\n|-- toolbars\n|-- theme\n|-- index.html\n|-- main.js\n|-- App.vue\n|-- addons.js\n`-- vite.config.js\n```\n\n引入TinyEngine相关模块后，对比分析后使用开源的Antv X6开发画布区域，同时按照物料协议与属性面板协议录入一份资源编排所需的物料后，即完成一个简陋但初具雏形的资源编排设计器Demo了。\n\n​![image](md-only-prefix/img/docimg/image-20230920084925-yirmz91.png)​\n\n## 开发插件\n\n### 整体插件架构介绍\n\nTinyEngine整体架构优秀之处在于，提供了一套完备的插件体系，包含了插件开发所有的基础UI库、工具库、插件面板的显示控制、生命周期管理、公共API注册与共享等，因而遵循简单的规范即可快速开发出业务所需的功能插件。\n\nTinyEngine中的插件根据位置，有大致分为三类：toolbars/plugins/settings，分别对应顶部区域、左侧区域、右侧区域，toolbars插件主要偏向于无需UI或者UI较为简单的工具插件，plugins是业务功能插件，显示在左侧(或下方)抽屉页面，可以通过点击进行展开收起或切换。\n\n### 遵循插件规范开发\n\nTinyEngine插件开发需要遵循一定的开发规范，主要是文件规范与导出规范：\n\n* 文件规范，必须包含下面几个文件\n\n```bash\npluginProject\n - src 插件源码\n - index.js 注册插件入口，需要导出约定的数据结构\n - package.json\n```\n\n* 导出规范， index.js 文件需要导出一个对象来声明基础信息\n\n```javascript\nimport component, { api } from './src/Main.vue'\n\nexport default {\n  id: 'pluginId', // 插件id\n  title: 'pluginName', // 插件名\n  icon: 'js', // 插件 icon\n  align: 'top', // 插件位置，左侧插件可选值：'top' | 'bottom'  工具栏可选值：'right' | 'center' | 'left'\n  component, // 插件面板打开时渲染的组件\n  api, // 插件暴露的 api，可以提供给其他插件调用\n}\n```\n\n在此基础上就可以按照业务需要自由开发相关逻辑代码。\n\n最后在addons插件配置文件中引入，就完成一个完整的插件开发了。\n\n```js\nimport Materials from '@xxxx/lowcode-plugin-materials'\n\nexport default {\n  plugins: [\n    Materials,\n    // ...\n  ],\n  toolbars: [\n    // ...\n  ],\n  settings: [\n    // ...\n  ]\n}\n```\n\n如此根据业务需要开发基本工具栏插件、导出插件、主题、属性配置插件、模板转换插件，微调整体设计器样式，就快速的完成了一个资源编排领域的图元编排设计器。\n\n​​![image](md-only-prefix/img/docimg/image-20230920093120-jdzux3h.png)​​\n\n## 总结\n\n在资源编排等图元编排场景，与低代码Web页面编排有很多相似之处，也同样可以借助TinyEngine的基础引擎能力，快速搭建出PoC原型，再此基础上，利用其优秀的插件架构和提供的插件公共能力，添加业务相关插件，快速开发出一个领域定制的专属设计器。",
+          "created_at": "2023-09-20T08:17:39.000Z",
+          "updated_at": "2023-09-20T08:19:46.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 41,
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2023-09-20T07:53:11.000Z",
+      "updated_at": "2023-09-20T07:53:11.000Z",
+      "category": "platformDev",
+      "name": "SMB轻量应用服务",
+      "desc": "",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/3b8369e0395f1a13e13540923446affc_308x180.jpg",
+      "type": "practical",
+      "tags": "",
+      "variety": "solution",
+      "videos": [
+        {
+          "id": 82,
+          "courseId": 41,
+          "title": "SMB轻量应用服务",
+          "video": "",
+          "docs": "\n## 前言\n\nSMB项目立项之初即采取TinyEngine设计器进行开发以及项目管理，其中很多区块以及页面都是在设计器上开发完成的，在积累使用设计器进行应用开发经验的同时也帮助不断完善设计器。下面主要介绍下SMB项目中如何使用设计器进行应用开发。\n\n## 基于TinyEngine设计器开发的SMB项目\n\n在使用TinyEngine设计器开发SMB项目初期，主要是先了解设计器所具备的能力，重点关注点在组件、区块、页面三个模块。\n这里以SMB项目中的首页举例，首先看下SMB项目中使用设计器搭建的首页部分内容\n\n![Alt text](md-only-prefix/img/docimg/smbHome.png)\n\n可以看到这个页面中包含众多信息，比如说资源的搜索栏、资源的概览信息、增量服务、最佳实践、了解更多等等内容，而这些内容都是从设计器最基本的能力开始一步步聚沙成塔，都是由组件与区块之间的嵌合形成。\n<br/>\n\n以其中的轻量应用区块进行详细的开发流程解析\n![Alt text](md-only-prefix/img/docimg/app.png)\n\n### 如何开发区块\n\n区块的主要目的有两点：\n    \n    1. 对多页面中可复用的功能或是逻辑组件化\n    2. 对复杂页面中的功能可以进行多人协作开发并将模块之间解耦开\n\n在开发区块时主要关注点如下图\n\n![Alt text](md-only-prefix/img/docimg/blockSettings.png)\n\n    区块的公开范围会影响到他人使用集成区块\n    区块的暴露属性等同于vue component 中的 props属性\n    区块的事件则是区块emit出去的事件，可以在上层应用区块的页面或区块进行监听捕获\n    同时在这里我们还可以设置区块的生命周期函数，来完成开发中在某一生命周期对应的逻辑，比如说对区块初始化处理\n\n\n开发区块过程中还需要关注搭建区块时使用的组件的属性和事件，利用好这些条件能让区块的开发工作更加顺利，如下图，我们可以通过绑定事件来对交互逻辑进行实现。从图中可以看到，设计器还提供了配置循环数据的能力，示例区块中的4个相同的小区块就是使用这种能力实现的\n\n![Alt text](md-only-prefix/img/docimg/blockProps.png)\n\n### 下载代码到本地\n\n开发完成后，我们可以将区块以及页面代码下载到本地进行高代码开发去完善逻辑，具体操作过程如图所示，之后就可以在本地项目中看到区块对应的代码了\n\n![Alt text](md-only-prefix/img/docimg/download.png)\n\n本地代码生成结果\n\n![Alt text](md-only-prefix/img/docimg/code.png)\n",
+          "created_at": "2023-09-20T07:53:11.000Z",
+          "updated_at": "2023-09-20T07:53:11.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 35,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-30T11:18:35.000Z",
+      "updated_at": "2023-07-26T08:44:00.000Z",
+      "category": "platformDev",
+      "name": "如何开发插件",
+      "desc": "介绍如何开发插件",
+      "type": "advanced",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 74,
+          "courseId": 35,
+          "title": "如何开发插件",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com:443/guide-video/platform-sennior-plugin-develop.mp4",
+          "docs": "# 插件开发\n\n## 插件相关概念\n\n在设计器中，插件的范围包括顶部工具栏、左侧插件栏。\n![插件示意图](md-only-prefix/img/docimg/edit-plugin.png)\n\n官方实现了很多插件，但是可能无法满足部分人的需求，所以，我们提供插件定制功能，通过插件定制和使用我们提供的能力，可以满足绝大部分人的需求。\n\n插件提供的能力：\n\n- 获取 schema 或操作 schema\n- 通过画布暴露的逻辑与画布交互\n- 通过插件面板实现其他自定义逻辑\n\n## 插件从开发到上线使用的完整流程\n\n- 开发插件\n- 联调\n- 发布插件\n- 在生态中心中录入插件（左侧插件则到插件生态中录入，工具栏插件则到工具栏生态中录入）\n- 在编辑设计器页面中选择刚刚发布的插件，重新构建设计器\n- 到应用中查看并使用插件\n\n## 插件模板工程\n\n一个 minimal 的插件模板工程的核心文件或文件夹有以下几个：\n\n```bash\npluginProject\n - src 插件源码\n - index.js 注册插件入口，需要导出约定的数据结构\n - package.json\n```\n\n其中 index.js 文件需要导出一个对象来声明插件的 id、标题、icon、插件位置、插件面板打开时渲染的组件，这样，核心工程里面才能正确注册并渲染插件。同时，还可以暴露出来其他 api，提供给其他插件调用\n\n```javascript\nimport component, { api } from './src/Main.vue'\n\nexport default {\n  id: 'pluginId', // 插件id\n  title: 'pluginName', // 插件名\n  icon: 'js', // 插件 icon\n  align: 'top', // 插件位置，左侧插件可选值：'top' | 'bottom'  工具栏可选值：'right' | 'center' | 'left'\n  component, // 插件面板打开时渲染的组件\n  api, // 插件暴露的 api，可以提供给其他插件调用\n}\n```\n\n## 插件UI\n\n- 对于左侧插件，我们提供了 `PluginPanel` 和 `PluginSetting` 两个组件给用户使用\n  - PluginPanel\n\n  ![pluginPanel示意图](md-only-prefix/img/docimg/edit-plugin2.png)\n\n  `PluginPanel` 用于点击左侧插件后展开的面板，分为 header 区域和 content 区域，其中 Header 区域主要显示插件标题、关闭按钮，具体使用方法请看下一节\n\n  - PluginSetting\n\n  ![pluginSetting 示意图](http://image.opentiny.design/tiny-lts/v1/images/5824b1accad38a59586b9e97e6ccbea5_982x1140--org.png)\n\n  `PluginSetting` 是在插件展开面板之后展开的面板，主要是可以提供更多的空间展示并提供设置更具体的细节，同样分为两部分，一部分是 Header 区域，一部分是 content 内容区域，具体使用方法请看下一节\n\n- 对于工具栏插件，我们建议不要放置复杂的UI到工具栏插件中，顶部工具栏插件应该是一些快捷操作的按钮或者是一些状态的展示\n\n### 插件面板组件\n\n左侧的插件展开组件 `PluginPanel` ，引入方式为：\n\n```javascript\nimport { PluginPanel } from '@opentiny/tiny-engine-common'\n```\n\n使用方式为：\n\n```vue\n<plugin-panel title=\"插件 教程\" isCloseLeft=\"false 关闭图标是否在左侧（挨着标题），默认 false，在右侧\">\n    <template #header>\n      这里是头部插槽\n    </template>\n    <template #content>\n      这里是内容插槽（上面 PluginPanel 示意图中 content 内容区域（蓝色背景））\n    </template>\n</plugin-panel>\n```\n\n头部插槽示意图(天蓝色背景区域)：\n![头部插槽示意图](http://image.opentiny.design/tiny-lts/v1/images/5cfd7794fc3d81af4de61d296bc7b09f_302x248--org.png)\n\n`isCloseLeft: false` 默认关闭按钮在 Header插槽后面\n\n![closeLeft示意图](http://image.opentiny.design/tiny-lts/v1/images/df1f469a51b18218d5989f91d623c1dd_409x165--org.png)\n\n`isCloseLeft: true` 关闭按钮在 title 后面\n\n![closeLeft示意图](http://image.opentiny.design/tiny-lts/v1/images/83e853bea0aec1c1046a81679912253d_340x248--org.png)\n\n如果不使用提供的面板组件，实现自定义的UI（比如 Script 面板），则需要额外定义关闭按钮，并且在关闭按钮点击的时候 emit close 事件，这样，才能将面板关闭。例如\n\n```vue\n<span class=\"icon-wrap\">\n  <icon-close @click=\"$emit('close')\"></icon-close>\n</span>\n```\n\n### 插件设置面板组件\n\n插件设置面板组件 `PluginSetting` 为在插件面板右侧展开的组件\n\n引入方式：\n\n```javascript\n  import { PluginSetting } from '@opentiny/tiny-engine-common'\n```\n\n使用方式：\n\n```vue\n<plugin-setting\n  v-if=\"isOpen\"\n  :title=\"插件设置面板\"\n  :isSecond=\"false\"\n  @cancel=\"关闭设置面板的回调方法\"\n>\n  <template #header>\n    头部插槽\n  </template>\n  <template #content>\n    内容插槽（上图 PluginSetting 中内容区域，即绿色背景区域）\n  </template>\n</plugin-setting>\n```\n\n头部插槽示意图（红框区域）：\n![头部插槽示意图](http://image.opentiny.design/tiny-lts/v1/images/e33e700465a988e0df6dc9124abff92e_633x202--org.png)\n\nprops 说明\n\n- title 设置面板的标题\n- isSecond 是否为二级设置面板（一级设置面板为挨着展开组件 PluginPanel  展开，二级设置面板挨着一级设置面板展开）\n- cancel 点击取消按钮的回调（用户关闭设置面板）\n\n注意：\n\n- 展开关闭需要用 `v-if` 来主动控制\n- 如果需要更改设置面板的宽度，可以声明 css 变量 `--base-collection-panel-width` 如：\n\n```html\n<plugin-setting style=\"--base-collection-panel-width: 50vw\">...</plugin-setting>\n```\n\n## 插件使用其他核心 API\n\n插件本身仅仅是一个暴露给用户的插槽，如果想要实现与画布交互、与 schema 交互，还需要使用我们提供的其他核心能力。\n\n### 获取 Schema\n\nschema （生成页面的 JSON 信息） 基本结构：\n\n```javascript\n{\n  componentName: 'Page', // 当前页面类型，\"Page\" 表示 页面 \"Block\" 表示区块\n  css: '', // 当前页面或者区块的 CSS\n  props: {}, // 当前页面或者区块接收外部传入的 props\n  lifeCycles: {}, // 绑定的生命周期，以 vue 为 例，可以绑定：onMounted setUp onUpdated 等等\n  children: [], // 用户拖拽搭建的组件数据\n  dataSource: { // 数据源\n    list: [] // 数据源列表\n  },\n  methods: {}, // 自定义的 JS 方法\n  bridge: {  // 桥接源\n    imports: [] // 数据源列表\n  },\n  state: {}, // 自定义的状态\n  inputs: [], // 页面接口：输入类型\n  outputs: [] // 页面接口：输出类型\n}\n```\n\nschema 中 children 的结构：\n\n```javascript\ninterface IComponentSchema { // 组件 schema\n  componentName?: string;     // 页面\n  blockName?: string;     // 区块\n  id: string;\n  props?: { // 组件绑定的属性\n      condition?: boolean | IBindProps; // 条件渲染判断值\n      ref?: {  // 定义组件引用 ID\n          name: string; \n          type: string; \n      };\n      style?: string; // 行内样式\n      className?: string; // 绑定的样式类名\n      [prop:string]?: IEventProps | IBindProps | any;\n  };\n  children?: Array< IComponentSchema > | string;\n}\n```\n\n详细的协议规范、数据含义及类型请阅读[低代码协议](https://opentiny.design/lowcode-protocols/)\n\n了解了基本的协议规范之后，我们就可以通过 `useCanvas` 拿到当前页面的许多页面状态信息。比如拿到页面 schema 或者当前选中节点的 schema 了\n\n```javascript\nimport { useCanvas } from '@opentiny/tiny-engine-controller'\nconst schema = useCanvas().getPageSchema() // 获取整个页面的 schema\nconst currentSchema = useCanvas().getCurrentSchema() // 获取当前选中节点的 schema\n```\n\n### 获取页面状态\n\n在设计器中，除了 schema 之外，还有许多表示当前页面的状态，我们先了解一下这些状态有哪些\n\n```javascript\n{\n  currentSchema: null, // 当前选中节点的 schema\n  pageSchema: null, // 页面 schema\n  isSaved: true, // 页面是否已保存\n  isLock: false, // 页面是否上锁\n  isBlock: false, // 当前页面类型是否是区块\n  nodesStatus: {}, // 节点状态是否隐藏（设计态隐藏，即仅仅在画布中隐藏）\n  loading: false // 页面状态，是否在加载中\n}\n```\n\n了解了有哪些页面状态之后，我们看看如何拿到这些状态\n\n```javascript\nimport { useCanvas } from '@opentiny/tiny-engine-controller'\nconst isBlock = useCanvas().isBlock(); // 当前编辑类型是否是区块\nconst isSaved = useCanvas().isSaved(); // 当前保存态，是否已保存\nconst isLoading = useCanvas().isLoading(); // 当前loading状态，是否已完成页面 loading\n// 清空当前画布，将当前 schema 从画布中移除\nuseCanvas().clearCanvas();\n// 重置画布状态\nuseCanvas().resetCanvasState(pageState);\nconst { pageState } = useCanvas(); // 可以拿到全部的 pageState\n```\n\n### 获取全局配置\n\n全局配置可以获取在新增设计器、编辑设计器时候的配置，主要的全局配置有：\n\n```javascript\n{\n  dslMode: 'Vue', // 当前的技术栈 Vue 或者 Angular\n  theme: 'dark', // 设计器的主题，dark 或者 light\n  lifeCyclesOptions: { // 生命周期\n    Vue: ['setup', 'onBeforeMount', 'onMounted', ...],\n    Angular: [...],\n  },\n  platformId: 666, // 当前设计器编辑的应用所属的平台 id\n}\n```\n\n获取全局配置\n\n```javascript\nimport { getGlobalConfig } from '@opentiny/tiny-engine-controller'\nconst lifeCycles = getGlobalConfig()?.lifeCyclesOptions[getGlobalConfig()?.dslMode] // 生命周期\nconst theme = getGlobalConfig()?.theme?.includes('dark') // 设计器的主题\n```\n\n### 插件调用画布核心API\n\n#### 选中组件\n\n```javascript\nimport { selectNode } from '@opentiny/tiny-engine-canvas';\n\nselectNode(node) // node: 节点 id，传入节点 id，选中组件，返回选中组件的 schema\n```\n\n#### 插入组件\n\n```typescript\n// 使用\nimport { insertNode } from '@opentiny/tiny-engine-canvas';\n\ninsertNodde(...参数)\n\ninterface Node {\n  node: NodeSchema; // 父节点的 schema，需要从api中拿到（getCurrent），而不是直接写 schema，如果不传的话，则是插入根节点中\n  data: NodeSchema; // 要插入的新节点的 schema\n}\n// insertNode 接口\nfunction insertNode (\n  node: Node,\n  position: 'top' | 'bottom' | 'left' | 'right' | 'in' | 'forbid', // 插入位置\n  select = true // 插入后是否选中插入组件\n): void;\n```\n\n#### 移除组件\n\n```typescript\ninterface Param {\n  parent: NodeSchema\n  node: NodeSchema\n}\n// 接口描述\nfunction removeNode(param: Param): void;\n\n// 使用例子\nimport { removeNode, getCurrent } from '@opentiny/tiny-engine-canvas';\n\nlet { schema, parent } = getCurrent() // 获取当前选中节点的 schema，当前父节点的 schema\n\nremoveNode({ parent, node: schema }) // 移除当前节点\n\n```\n\n#### 拖拽组件到画布\n\n在物料插件中，我们可以将组件或区块使用拖拽的方式拖拽到画布中，其背后的原理就是：\n\n- 监听拖拽定位\n- 监听拖拽释放，释放后，定位释放的位置对应的 schema，插入 schema\n- 画布响应式更新\n\n假如我们也想实现自己的拖拽组件到画布中，我们提供了 `CanvasDragItem` 帮助用户快速实现这一功能，具体用法是：\n\n```vue\n<template>\n  <canvas-drag-item :data=\"generateNode({ component: 'snippetName' })\">\n    // 这里展示组件示意图之类的UI\n  </canvas-drag-item>\n</template>\n<script>\nimport { useResource } from '@opentiny/tiny-engine-controller'\nimport { CanvasDragItem } from '@opentiny/tiny-engine-canvas'\nexport default {\n  components: {\n    CanvasDragItem,\n  },\n  setup() {\n    const { generateNode } = useResource()\n    return {\n      generateNode\n    }\n  }\n}\n</script>\n```\n",
+          "created_at": "2022-08-30T11:18:35.000Z",
+          "updated_at": "2023-07-26T08:44:00.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 27,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T08:36:47.000Z",
+      "updated_at": "2023-09-16T09:11:32.000Z",
+      "category": "platformDev",
+      "name": "使用插槽",
+      "desc": "使用插槽",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/0055f57e0a38d45ced54e1b2b566cb29_308x180.jpg",
+      "type": "advanced",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 64,
+          "courseId": 27,
+          "title": "声明插槽",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-sennior-slot1.mp4",
+          "docs": "# 声明插槽\n\n我们可以在区块中声明插槽，继而在使用区块时可在插槽中插入内容\n\n## 操作步骤\n\n- 打开区块管理面板，新建区块\n![](img/application.png)\n\n- 编辑区块，在区块中添加Slot组件\n![](http://image.opentiny.design/tiny-lts/v1/images/d482d7160329a27d142a0de35dc30767_1668x676.png)\n\n- 保存、发布区块\n![](http://image.opentiny.design/tiny-lts/v1/images/c9e3a10170cf480c8da79d285cccbe25_1095x1005.png)",
+          "created_at": "2022-08-10T08:36:47.000Z",
+          "updated_at": "2023-09-16T09:11:32.000Z"
+        },
+        {
+          "id": 65,
+          "courseId": 27,
+          "title": "使用插槽",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-sennior-slot2.mp4",
+          "docs": "# 使用插槽\n\n分为两种插槽，一种是区块的插槽，另一种是组件的插槽\n\n## 组件插槽\n\n有一些组件自带插槽属性，比如表格组件(注意，表格组件的插槽下的元素可用\"row\"参数来获取行数据)\n![](http://image.opentiny.design/tiny-lts/v1/images/d1af21702d098d73c2d25cd2c1a58041_1910x916.gif)\n\n## 区块插槽使用\n\n拖动带有插槽的区块带画布中，再拖动想要插入的元素到区块中即可\n![](http://image.opentiny.design/tiny-lts/v1/images/5a2b3f82cc2e84330ce576448c46b041_1885x916.gif)",
+          "created_at": "2022-08-10T08:36:47.000Z",
+          "updated_at": "2023-09-16T09:11:32.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 25,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T08:33:01.000Z",
+      "updated_at": "2023-09-20T10:15:19.000Z",
+      "category": "platformDev",
+      "name": "关于发布预览",
+      "desc": "关于发布预览",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/f7770a303b163cf8aec54cb033185bb8_308x180.jpg",
+      "type": "introductory",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 58,
+          "courseId": 25,
+          "title": "页面/区块预览",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-pagePreview.mp4",
+          "docs": "## 页面/区块预览\n\n### 前言\n\n在一些场景下，设计器的画布并不能使得我们直观的感受到所设计的区块或者页面最终的表现。比如说，当页面上区块和组件应用层次较多，区块之间或者组件之间交互行为较为复杂时，我们在画布上去清晰的感知页面的静态布局以及动态交互很是困难，这时候就需要设计器的**页面/区块预览**能力来为开发提供帮助\n\n### 页面/区块预览入口\n\n![Alt text](md-only-prefix/img/docimg/preview-btn.png)\n\n### 示例\n\n画布上的页面结构\n\n![Alt text](md-only-prefix/img/docimg/preview-pre.png)\n\n预览页的页面效果\n\n![Alt text](md-only-prefix/img/docimg/preview.png)\n\n页面/区块预览界面除了帮助我们直观的看到整体页面结构以及进行交互动作外，还可以提供其他功能验证\n- 切换设备宽度\n- 国际化语言\n- state状态响应式\n- 表单验证提交",
+          "created_at": "2022-08-10T08:33:01.000Z",
+          "updated_at": "2023-09-20T10:15:19.000Z"
+        },
+        {
+          "id": 61,
+          "courseId": 25,
+          "title": "资源管理",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-resourceMana.mp4",
+          "docs": "# 资源管理\n\n> 资源管理是指引入第三方 npm 包 或 引入自定义 function，对于一些频繁使用且使用的函数或功能，如 lodash，我们可以以资源的方式引入，避免在应用中每个页面都重复定义一遍这些高频函数，提高使用效率。\n\n**资源管理是相对于整个应用而言的，引入一遍即可在当前应用下的每个页面都使用**\n\n资源管理的添加有两种方式\n\n- 添加 npm 包\n- 添加 function\n\n### 以 npm 包形式引入资源\n\n![npm包引入资源](http://image.opentiny.design/tiny-lts/v1/images/f7d10bbd628d73d9502ce3ec713b2c68_922x330--org.png)\n\n以上示例就相当于我们的 import 代码\n\n```javascript\nimport { NavMenu } from '@opentiny/vue'\n```\n\n假如选择不解构，则相当于\n\n```javascript\nimport NavMenu from '@opentiny/vue'\n```\n\n### 以 function 方式引入资源\n\n![function 引入资源](http://image.opentiny.design/tiny-lts/v1/images/a74c50547463a4f527499eb2b592d16d_638x316--org.png)\n\n如上图，我们仅需填入 资源名称，以及填入资源代码即可\n\n### 使用添加的资源\n\n使用添加的资源，仅需在 JS 面板中以 `this.utils.资源名` 的方式引用。\n",
+          "created_at": "2022-08-10T08:33:01.000Z",
+          "updated_at": "2023-09-20T10:15:19.000Z"
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "id": 24,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T08:29:50.000Z",
+      "updated_at": "2023-09-20T10:02:17.000Z",
+      "category": "platformDev",
+      "name": "基础功能",
+      "desc": "介绍设计器基础功能",
+      "type": "introductory",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 44,
+          "courseId": 24,
+          "title": "设计器界面模块简介",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com:443/guide-video/app-junior-intro.mp4",
+          "docs": "# 设计器界面模块简介\n\n> 本节主要简单介绍设计器界面模块\n\n### 设计器界面概览\n\n![设计器界面示例图](md-only-prefix/img/docimg/designeroverview.png)\n\n如上图，设计器可以分为顶部工具栏、左侧插件栏、中间画布区、右侧设置面板等几个主要界面模块\n\n### 顶部工具栏\n\n![顶部工具栏示例图](md-only-prefix/img/docimg/toolbaroverview.png)\n\n如上图所示，设计器顶部的工具栏从左到右包括：\n\n- 菜单按钮，点击可以展开菜单，菜单功能包括：前往物料中心、应用预览、应用发布等功能\n- 面包屑（展示当前编辑页面或区块）\n- 多终端工具切换（画布宽度切换）\n- 当前编辑者\n- 画布清除工具（清空当前画布）\n- 保存功能，保存当前页面或区块数据\n- 下载源代码，将当前数据转换并生成代码到本地\n- 预览功能，打开新 Tab 预览当前页面或区块\n- 撤销回退功能，撤销或回退上一步操作\n- 全屏功能，将当前页面全屏（跟网页全屏功能一样）\n- 设置功能，点击可展开左侧页面或区块的设置插件，管理当前页面或者区块\n- 画布中英文切换，点击可切换画布中英文，测试国际化能力\n\n### 左侧插件栏\n\n![插件栏示意图](md-only-prefix/img/docimg/pluginoverview.png)\n\n如上图所示，插件面板主要有物料插件、大纲树插件、页面管理工具插件、区块管理插件、数据源管理插件、资源管理插件、国际化插件、JS 方法插件、状态管理插件\n\n插件点击之后会向右展开对应插件的设置面板\n\n### 中心画布\n\n![中心画布](md-only-prefix/img/docimg/canvasoverview.png)\n\n如上图所示，中心画布位于设计器中央，是可视化设计的核心模块，可以在插件栏中的物料面板往中心画布拖入组件，也可以点击画布选中组件，修改组件的属性、样式、绑定事件等等\n\n### 右侧设置面板\n\n右侧设置面板分为属性设置、样式设置、高级设置等面板\n\n- 属性设置，设置组件的属性，比如按钮组件的 size、文案、按钮类型等等组件提供配置的属性\n![属性设置图示](md-only-prefix/img/docimg/settingPanelOverview.png)\n- 样式设置，设置组件的样式，提供直接配置样式，也可以编写 CSS 代码配置样式\n![样式设置图示](md-only-prefix/img/docimg/stylePanelOverview.png)\n- 高级设置，设置组件是否渲染、绑定点击事件、设置组件是否循环渲染等等\n![高级设置图示](md-only-prefix/img/docimg/eventOverview.png)\n\n### 底部节点树\n\n![底部节点树图示](md-only-prefix/img/docimg/treeselectOverview.png)\n\n底部节点树展示了从 body 到当前选中节点的层级，点击可切换层级\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 45,
+          "courseId": 24,
+          "title": "页面管理",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-page-setting.mp4",
+          "docs": "# 页面管理\n\n> 页面管理插件可以管理该应用下的全部页面，可以新增页面，可以新增文件夹，以及对页面或者文件的增删改操作\n\n## 页面相关概念\n\n假如我们有一个前端工程：\n\n```bash\n- project\n  - views\n    |_ Index.vue\n     - Page2.vue\n    - TodoFolder\n      |_ Todo.vue\n```\n\n我们设计器的页面概念就相当于上述工程中的一个页面或者文件夹，每个页面有对应的路由，用户可以根据路由访问对应的页面\n\n## 基本操作\n\n基本的操作包括页面的增删改\n\n### 新增文件夹\n\n![新增文件夹](md-only-prefix/img/docimg/addFolder.png)\n\n文件夹的概念与操作系统中的文件夹概念一致，只需点击新增文件夹按钮，然后填入文件夹名称、路由，点击保存即可完成新增操作\n\n### 新增页面\n\n![新增页面](md-only-prefix/img/docimg/addPage.png)\n点击新增页面按钮，设置最基本的页面名称、路由，点击保存即可完成新增页面操作\n\n### 删除页面/文件夹、复制页面\n\n在页面列表右侧点击设置按钮，出来编辑面板，可以在右上角的按钮触发删除、复制页面功能\n\n![删除或复制页面](md-only-prefix/img/docimg/pagedelOrCopy.png)\n\n### 页面高级设置\n\n除了基本的页面功能，我们还提供了一些相关的高级功能，比如设置主页、配置生命周期、还原页面到某一历史记录等功能\n\n#### 设置主页\n\n主页就是整个应用的 home 页面，我们可以在页面管理中配置主页（即 path 为 \"/\" 时渲染的页面）\n操作：在主页设置复选框上打钩即可\n![主页设置](md-only-prefix/img/docimg/pageManaIndex.png)\n\n#### 配置页面生命周期\n\n在页面管理中，我们还可以配置页面的生命周期，比如在 Vue3 技术栈中，我们可以配置 onMounted、setUp、onUpdated 等生命周期函数\n\n![声明周期配置](md-only-prefix/img/docimg/lifecycle.gif)\n\n#### 还原页面历史\n\n在历史备份列表中，可以点击右侧的页面按钮进行历史的备份或者还原\n![还原页面历史](md-only-prefix/img/docimg/pageManaHistoryRestore.png)\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 46,
+          "courseId": 24,
+          "title": "区块管理",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-blockmana.mp4",
+          "docs": "# 区块管理\n\n> 区块的概念类似于前端开发中的 Component，我们可以将很多页面中都一样的结构（比如 Header），构建到区块中，发布之后直接在页面中拖入使用，提高开发效率\n\n## 区块相关概念\n\n假设我们有如下前端工程：\n\n```bash\n- project\n  - components\n    |_ Header.vue\n     - Footer.vue\n     - Container.vue\n  - views\n    |_ Index.vue\n     - Page2.vue\n    - TodoFolder\n      |_ Todo.vue\n```\n\n其中，views 文件夹下 views每个页面都有路由一一对应，用户可以根据路由访问。components文件夹下的 Header、Footer、Container则没有对应路由可以访问，但是他们可以被页面1、2、3引用，提高代码复用率，我们的区块则对应 components 下的Header、Footer、Container等组件概念（即可重用的业务组件）。\n\n### 区块发布相关概念\n\n我们对区块编辑好之后，最终还是提供给另一个区块或者页面使用（即被另一个区块或者页面引用），所以我们设计了发布的概念，区块发布之后，会生成一个版本，可以在物料面板添加已经发布的区块，选择版本，然后拖入画布中消费使用\n\n## 区块的基本使用与管理\n\n创建区块可以有创建空白区块和从现有页面中创建区块两种\n\n### 创建空白区块\n\n![创建空白区块](md-only-prefix/img/docimg/createEmptyBlock.png)\n\n如上图，按照步骤可创建空白区块\n\n- 点击左侧区块插件打开区块插件面板\n- 点击右上角新增按钮\n- 在弹窗中输入区块ID与区块名称\n\n相关概念\n\n- 区块ID：区块的唯一ID，对应出码后的区块文件名\n- 区块名称：在区块管理面板和物料消费面板显示的名称\n\n### 从现有页面中选中组件创建区块\n\n![从现有页面中选中组件创建区块](md-only-prefix/img/docimg/createBlockFromPage.gif)\n\n如上图，我们可以从现有页面中，按照步骤创建新区块\n\n- 点击画布选中组件\n- 右键，在弹出的右键菜单中点击新建区块\n- 在弹出的弹窗中输入新区块的ID和名称，点击确认\n- 最终我们得到了有选中组件作为初始内容的区块\n\n## 区块管理&设置\n\n在上述创建空白区块的区块管理插件中，我们还能看到现有的区块，对现有的区块进行修改和删除等管理操作，下面，我们来学习区块的几个管理属性\n\n### 区块基本设置\n\n![区块基本设置](md-only-prefix/img/docimg/blockBaseSetting.png)\n\n如上图，点击区块列表中区块的右上角的设置按钮，即可打开设置面板。区块的基本设置中，我们可以对区块的名称、描述、标签、公开范围进行设置，下面对相关设置项进行讲解\n\n- 区块描述：区块的描述，可以让别人更好的明白该区块的用途以及含义\n- 区块标签：区块的标签，方便消费侧用户搜索\n- 公开范围：区块的公开范围，设置 区块发布之后别的用户是否可以搜索，私有即只有自己可以看到、公开即所有用户都可以看到、半公开可以选择可以搜索到该区块的组织\n\n### 区块暴露属性设置\n\n#### 区块暴露属性的相关概念\n\n假设我们的前端工程中有一个 Header 组件，该组件定义了 title 和 description 两个 props 属性\n\n```vue\n<template>\n  <header>\n    <h1>{{props.title}}</h1>\n    <span>{{props.description}}</span>\n  </header>\n</template>\n\n<script setup>\n\nconst props = defineProps({\n  title: { type: String, default: '' },\n  description: { type: String, default: '' }\n})\n</script>\n```\n\n区块暴露属性的概念即对应 组件中的 props 属性。暴露属性声明了外部组件引用当前组件时，可以定义的相关属性\n\n#### 区块暴露属性的相关设置\n\n区块暴露属性的设置与我们代码 props 的设置相似，只是区块暴露属性多了一个指定属性面板组件和属性的相关配置\n\n![区块暴露属性设置](md-only-prefix/img/docimg/blockExposeAttr.gif)\n\n#### 区块暴露属性的消费\n\n在区块发布之后，我们在物料面板拖出区块到画布中，选中我们拖出的区块，右侧属性面板的属性即是我们定义的暴露属性\n\n![区块暴露属性的消费](md-only-prefix/img/docimg/blockexposeattrusage.gif)\n\n### 区块事件设置\n\n#### 区块事件的概念\n\n既然区块暴露属性等同于 组件 中的 props 属性，类似的，区块的事件即等同于 vue 中的 emit 事件声明\n\n```vue\n<script setup>\n  const emit = defineEmits(['update:modelValue', 'success'])\n</script>\n```\n\n注意的是，这里仅仅是声明我们的区块会抛出什么事件，真正的事件需要引用方（即消费该区块的一方在高级面板进行定义）\n\n### 生命周期设置\n\n同页面生命周期，即可以设置对应技术栈的生命周期函数\n\n### 版本列表\n\n可以预览对应版本的区块\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 47,
+          "courseId": 24,
+          "title": "使用组件",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-useComponent.mp4",
+          "docs": "# 使用组件\n\n> 本节简单介绍使用组件的方法\n\n## 组件相关概念\n\n组件是低代码开发的构建块，就像积木一样。它们是可重复使用的小部件，可以轻松搭建和管理网页。举个例子，按钮、导航栏和表单都可以是组件。这有助于我们快速搭建网站。\n\n## 组件使用\n\n> 下面介绍如何在低代码中使用组件，实现快速搭建页面\n\n### 添加组件\n\n#### 从物料面板拖入组件到画布\n\n我们可以点击左侧的物料插件，然后选择组件或者区块，将其拖拽至中间画布中或者画布某一容器中，快速构建页面\n\n![拖入组件](md-only-prefix/img/docimg/dragComponent.gif)\n\n#### 在画布中直接添加组件\n\n> 对于复杂的页面，我们的嵌套层级可能很深，直接拖拽并不能很好的拖入到我们想要的层级中，所以，我们提供在画布中右键精准添加组件的能力。\n\n我们可以在画布中选中组件，然后鼠标右键，选择插入，可以向前、向后、向中间位置进行插入（相对于当前选中组件而言）\n\n![画布中插入组件](md-only-prefix/img/docimg/insertComponent.gif)\n\n### 选中组件\n\n添加了组件之后，我们可以选中组件，对组件进行修改、删除、移动等操作，下面介绍选中组件的相关方法\n\n- 从画布中直接点击组件选中组件，画布中可以直观地看到我们的组件，可以直接用鼠标单击选中\n- 在左侧大纲树插件中，以树的形式展示了当前页面中所有的组件，我们可以点击树节点选中画布中的组件\n- 底部节点树展示了从根节点到当前选中组件的层级节点，我们也可以直接点击底部的节点树的某一个节点，选中父组件\n\n![选中组件](md-only-prefix/img/docimg/selectComponent.gif)\n\n### 编辑组件\n\n选中了组件之后，我们还可以设置组件的属性、样式、以及绑定事件；或者对组件进行删除等等操作\n下面简单演示相关能力：\n\n![编辑组件](md-only-prefix/img/docimg/editComponent.gif)\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 48,
+          "courseId": 24,
+          "title": "高级面板设置",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-loop.mp4",
+          "docs": "# 高级面板设置\n\n> 选中组件之后，我们可以在高级面板对组件进行事件的绑定、以及循环渲染、条件渲染等高级设置\n\n## 条件渲染\n\n在页面开发中，我们可能需要根据某些条件来动态显示或隐藏页面中的内容，举个例子：我们希望当用户已经登录的时候，显示欢迎登录的文字，未登录的时候，显示请登录的文字。\n那么，我们可以在组件上面绑定条件渲染，点击绑定变量，选择变量 state.isLogin，那么，我们的组件就会根据变量 state.isLogin 的真假值来进行渲染。\n\n![条件渲染示例](md-only-prefix/img/docimg/conditionRender.gif)\n\n## 循环渲染\n\n我们的页面可能有若干份重复的、动态生成的内容，比如商品列表页，比如表格数据。这时候，我们就需要用到循环渲染\n\n我们可以在高级面板中指定循环数据绑定的变量、迭代的变量名、索引变量名、以及唯一的 key。\n举例：假如我们的状态变量中有一个镜像列表，我们希望渲染出来镜像的 icon、镜像名称以及镜像版本，那么我们可以使用循环渲染来实现：\n\n![循环渲染](md-only-prefix/img/docimg/useLoop.gif)\n\n相关概念关联：\n\n- 循环数据，即需要循环渲染的数组，在这里是 state.imageList\n- 迭代变量名，在循环渲染子项对应的变量名，默认为 item\n- 索引变量名，循环渲染的索引变量名，默认为 index\n- key，标识唯一的 key，默认为 index\n\n最终出码：\n\n```vue\n<template>\n  <div v-for=\"(item, index) in state.imageList\" :key=\"index\">\n    <span>{{ item.title }}</span>\n  <!---列表细节--->\n  </div>\n</template>\n```\n\n## 事件绑定\n\n我们可以给选中的组件进行事件的绑定：\n\n- 在绑定事件下拉按钮中选中需要绑定的事件\n- 随后在事件绑定弹窗中指定方法名称\n- 指定拓展参数\n- 点击确定，在随后弹出的JS面板中进行绑定方法的具体逻辑实现\n\n![事件绑定演示](md-only-prefix/img/docimg/bindEvent.gif)\n\n### 拓展参数相关说明\n\n在某些点击事件中，我们不仅仅希望得知事件是否被点击，我们还希望在点击事件中获得一些额外的参数，这时候，我们就可以用拓展参数，下面举例说明：\n我们希望为镜像列表中的列表项绑定点击事件，然后将镜像的 id 和版本传入到事件处理函数中。那么，我们就可以使用拓展参数进行传入。\n\n```bash\n# 循环渲染项迭代变量名 item\n# 拓展参数设置：\n[\"item.imageId\", \"item.imageVersion\"]\n```\n\n最终出码：\n\n```vue\n<template>\n  <div v-for=\"(item, index) in state.imageList\" @click=\"(e) => handleClick(e, item.imageId, item.imageVersion)\">\n  <!---列表细节--->\n  </div>\n</template>\n```\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 49,
+          "courseId": 24,
+          "title": "样式设置",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-styleSetting.mp4",
+          "docs": "# 样式设置\n\n> 在页面开发过程中，为了给用户友好的体验和交互能力，提供样式自定义是不可或缺的能力。因此，我们提供了样式面板提供用户修改样式的能力\n\n## 通过样式面板配置样式\n\n选中组件之后，我们可以打开样式面板，直接对选中组件设置相关样式，直接通过样式面板配置样式时，等效以下的 直接配置 style 的方式。\n\n```vue3\n<div style=\"display: block;...other styles\">\n</div\n```\n\n![通过样式面板配置样式](md-only-prefix/img/docimg/editstyleDirect.gif)\n\n### 直接编写样式代码\n\n样式面板提供的直接配置的样式满足了大部分的基础样式需求，但是，如果还是不能满足我们的需求，我们还提供了直接编写样式代码的方式来配置样式。\n\n直接编写样式代码的方式包括\n\n- 编写行内样式：等效于通过样式面板配置样式的效果\n- 编写全局样式两种：需要配合属性配置中的样式类将样式效果放置到组件中\n\n![通过编写代码设置样式](md-only-prefix/img/docimg/setStyleByEditStyle.gif)\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 50,
+          "courseId": 24,
+          "title": "撤销重做",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-redo.mp4",
+          "docs": "# 撤销重做\n\n## 撤销\n\n用户可以回退至上一步操作\n![revoke](http://image.opentiny.design/tiny-lts/v1/images/af4485047bc71b34aae0ca1a39c14be4_944x513.png)\n\n## 清除屏幕\n\n可以清除当前画布的全部内容\n![redo](http://image.opentiny.design/tiny-lts/v1/images/c993ec282069a03330af3f072ecea457_687x422.png)\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 51,
+          "courseId": 24,
+          "title": "数据源和Collection—远程字段",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-source_remote.mp4",
+          "docs": "# 数据源获取远程字段\n\n我们可以通过已有的远程Http接口，快速地生成数据源的字段\n\n## 操作步骤\n\n- 打开数据源面板，新建数据源。点击获取远程数据\n- 设置请求地址、请求方式、请求参数、请求结果回调\n![](http://image.opentiny.design/tiny-lts/v1/images/6767e0d00e54a07779d86ec7dfb0860d_1685x866.png)\n- 请求成功后获取到接口字段信息，填写字段明后，保存后即可生成数据源字段信息\n![](http://image.opentiny.design/tiny-lts/v1/images/cd3cb6310552ad8de8c98e494eba54eb_1664x1049.png)\n![](http://image.opentiny.design/tiny-lts/v1/images/fe93afc59e12e7ed2316a25deaca3583_1618x698.png)\n![](http://image.opentiny.design/tiny-lts/v1/images/346641785cfe734111b9a1ba208bb9ae_971x761.png)\n\n\n## 请求完成回调函数示例\n- 解析对象数组\n```javascript\nfunction dataHandler(data) { \n return data.map(v => {\n  return {\n    name: v.aa.ss,\n    status: v.status\n  }\n })\n}\n```\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 52,
+          "courseId": 24,
+          "title": "11使用状态管理和变量绑定123",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-state.mp4",
+          "docs": "# 使用状态管理和变量绑定\n\nstate 是响应式的数据，状态管理面板对 state 的响应式变量进行系统管理，包含添加、变删除、搜索、编辑 state\n\n- 在状态管理面板添加 state 变量。\n\n![添加Sate变量](http://image.opentiny.design/tiny-lts/v1/images/138bc2b5ef32143f09cc2bcbf503fca5_1203x1033.gif)\n\n- 使用添加的 state 变量\n  - 在画布中选中需要绑定 state的组件。\n  - 在右侧设置面板属性栏中点击代码 icon，选择需要绑定的 state。\n\n![使用state](http://image.opentiny.design/tiny-lts/v1/images/8e63ba072719051e1bb0b8d0b2351619_1818x1033.gif)\n\n- 改变state\n\n我们添加的 state 通常是一个可以随不同状态有不同值的变量，如果想要改变 state，可以在 JS 面板中通过 `this.state.xxx` 获取到 state并且改变之。\n\n![改变state](http://image.opentiny.design/tiny-lts/v1/images/51925726f1d4a3ac0c9dd54abdfaca85_950x530.png)",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 53,
+          "courseId": 24,
+          "title": "使用js面板和事件绑定",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-jsevent.mp4",
+          "docs": "# 页面JS\n> 1 在常规代码开发中，我们需要为某个区块或者某个元素添加一些事件，比如点击事件，同一个页面或者区块的事件会统一保存到对应的页面JS中  \n> 2 很多时候我们需要自定义一些方法去复用一些逻辑，也需要用到页面js\n> 3 需要注意的是当前的页面js只能使用声明函数，不能使用函数表达式声明函数，也不能在页面js中定义其他的变量\n> 4 页面js中可以通过 **this** 访问当前页面的 **state**，全局的 **stores**， 以及**t**函数(获取国际化词条)\n\n## 页面JS基本使用与管理\n下面将通过两个示例分别展示如何使用\n### 为图片添加点击事件\n![为图片添加点击事件](md-only-prefix/img/docimg/pageJs.png)  \n- 选中区块或者画布中元素\n- 右侧面板高级选项中点击添加 onClick事件出现弹框\n- 修改方法名，如果需要参数则打开开关\n- 点击保存\n\n![修改事件代码](md-only-prefix/img/docimg/pageJsContent.png)  \n- 代码保存之后点击左侧js面板，可以发现刚刚创建的getLink就在这里\n- 现在只需要在这里写对应的逻辑即可\n\n\n### 创建普通方法在生命周期中使用\n![创建普通方法在生命周期中使用](md-only-prefix/img/docimg/pageJsMethod.png)  \n1. 在js页面中添加getA方法\n2. 点击页面\n3. 点击当前页面设置\n4. 点击添加生命周期\n5. 选中setup出现setup弹框\n6. 会自动创建一个setup函数，在里面使用getA()即可\n7. 也可以在这个弹框里面直接跳转到其他生命周期函数中调用，然后点击保存\n\n### 出码结果\n通过上述的一些简单操作，我们可以通过TinyEngine提供的 “将代码生成本地Vue”的功能，将上述操作过后的代码生成到本地查看\n```vue\n<template>\n  <div>\n    <span>{{ state.testValue }}</span>\n    <img\n      src=\"/images/1.jpg\" \n      style=\"width: 200px; height: 200px\"\n      @click=\"(...eventArgs) => getA(eventArgs, 12)\"\n    />\n  </div>\n</template>\n\n<script setup>\nimport * as vue from 'vue'\nimport { defineProps, defineEmits } from 'vue'\nimport { I18nInjectionKey } from 'vue-i18n'\n\nconst props = defineProps({})\nconst emit = defineEmits([])\n\nconst { t, lowcodeWrap, stores } = vue.inject(I18nInjectionKey).lowcode()\nconst wrap = lowcodeWrap(props, { emit }, t)\n\nconst state = vue.reactive({\n  testValue: {}\n})\n\nconst getA = wrap(function (eventArgs, args0) {\n  const testData = {\n    name: 'rico',\n    age: 18\n  }\n  return testData\n})\n\nwrap({\n  stores,\n  state,\n  getA\n})\n\nconst setup = wrap(function setup({ props, state, watch, onMounted }) {\n  state.testValue = getA()\n})\nsetup({ props, context: { emit }, state, ...vue })\n</script>\n```\n如上代码所示：在TinyEngine中编辑的方法，为图片添加的点击事件等都有生成，并且会默认暴露出 **t**函数(国际化，具体可参考国际化教程如何使用) 和全局stores(pinia)状态\n\n## 页面JS高级功能\n\n### 使用JSX\n\n部分组件需要使用到JSX代码来自定义渲染逻辑，可以在JS面板中定义好JSX渲染函数，然后绑定到组件的属性上。比如 TinyVue 中的 Tree 树形组件，此组件的 `render-content` 属性可以传递一个渲染函数，示例如下\n\n> 函数类型或签名需参考组件的文档\n\n1. 首先在页面JS中定义渲染函数，这里的函数参数的定义来自于 TinyVue 的文档\n\n![在页面JS中定义渲染函数](md-only-prefix/img/docimg/pageJsJsxFunc.png)\n\n2. 然后选中 Tree 树形组件，在属性面板中找到 `render-content` 属性，点击右侧变量绑定按钮，变量绑定弹窗打开后，绑定自定义处理函数\n\n![绑定JSX函数](md-only-prefix/img/docimg/parseJxBindingJsxFunc.png)\n\n3. 绑定成功后效果如下\n\n![绑定JSX函数效果](md-only-prefix/img/docimg/parseJxBindingJsxFuncResult.png)\n\n## 总结\n页面js能够很方便的为元素或区块添加事件，通过可视化的优势快速定位到某个元素。同时也很方便的提供一些状态获取方法，国际化词条获取方法等。",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 54,
+          "courseId": 24,
+          "title": "数据源和Collection—mock数据",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-source_mock.mp4",
+          "docs": "# 数据源Mock数据\n\n目前数据源在编辑态时只能使用Mock数据，所以我们可能需要给数据源添加Mock数据\n\n## 操作步骤\n\n- 打开数据源面板，选中数据源\n- 点击新增数据，添加数据并保存\n![](http://image.opentiny.design/tiny-lts/v1/images/f81ccde39312340dcdf54c774246c30b_1627x706.png)\n\n## 使用数据源Mock数据\n\n- 拖动一个Collection组件到画布中，在Collection组件属性面板上选择数据源\n- 拖动格组件到Collection中，表格组件将自动生成数据源中的字段\n![](http://image.opentiny.design/tiny-lts/v1/images/542c923e724bcc6922d7fc9fbdac750d_1856x758.gif)\n\n## 更新数据源到画布\n\n添加完Mock数据后，画布上绑定的数据源不会同步改变，需要手动更新，操作如下：\n选中画布中的数据源，打开属性面板，点击更新数据源\n![](http://image.opentiny.design/tiny-lts/v1/images/afc82f4c215e6ca7429ecc81c136b2c8_1834x519.png)",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 55,
+          "courseId": 24,
+          "title": "数据源和Collection—使用数据源",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-source_use.mp4",
+          "docs": "## 数据源\n\n### 前言\n设计器提供数据源来配合画布上的组件/区块渲染，数据源的配置既可以采取在设计器中静态配置的方式，也可以采取远程Api请求JSON数据动态获取的方式\n\n> 目前**数据源**主要应用于表格组件的表格列\n\n### 创建数据源\n\n创建数据源步骤：\n\n1. 选择左边操作栏 - 数据源\n2. 点击左上操作区 - 新建数据源\n\n    ![Alt text](md-only-prefix/img/docimg/data-source-2.png)\n3. 配置数据源类型（可选对象数组、树结构），配置数据源名称以及数据源字段\n4. 保存数据源\n\n    ![Alt text](md-only-prefix/img/docimg/data-source-1.png)\n\n\n### 表格组件中的应用\n\n数据源主要载体为**Collection组件**，因此在使用数据源之前需要先在画布中拖放入**Collection组件**，然后在属性面板中选择需要绑定的数据源\n\n![Alt text](md-only-prefix/img/docimg/data-source-3.png)\n\n然后需要在Collection组件中放入Grid表格组件，根据提示引入配置数据，就会自动解析出表格列数据\n\n![Alt text](md-only-prefix/img/docimg/data-source-4.png)",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 56,
+          "courseId": 24,
+          "title": "国际化",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-i18n.mp4",
+          "docs": "# 国际化资源管理\n> 考虑到对于同一个项目，可能需要同时支持多个语言，TinyEngine目前提供了中英文切换，在TineEngine能够一键切换多语言，提升开发效率与开发体验。\n> 国际化是应用级别的，在任何一个页面或者区块都可以访问。\n> 需要注意的是国际化只针对画布中的项目，不针对TinyEngine本身\n> \n\n## 国际化词条主要操作用与使用\n### 添加国际化词条与使用\n在TineEngine左侧面板中找到国际化插件，点击新增词条，可以编辑 key，中文和英文\n\n![为图片添加点击事件](md-only-prefix/img/docimg/langAdd.png)\n### 国际化正确的使用方式\n1. 选中button，找到国际化词条，可以搜索自己刚刚创建的词条，也可以在这里新增词条并绑定当前button\n\n![使用方式](md-only-prefix/img/docimg/langUse.gif)\n![使用方式](md-only-prefix/img/docimg/langUse1.png)\n2.  通过代码绑定变量的方式，首先选中某个文案， 点击右侧的编辑，弹框书写t('cloud'), cloud为词条key值\n\n![使用方式](md-only-prefix/img/docimg/langUse2.png)\n### 一键切换国际化多语言\n只需要点击上方的多语言切换按钮，一键切换项目国际化词条多语言\n\n![使用方式](md-only-prefix/img/docimg/langSwitch.png)\n### 国际化词条其他操作\n国际化支持模糊搜索功能，编辑词条，删除词条，以及导入功能(有导入模版)等功能\n\n![其他](md-only-prefix/img/docimg/langOthers.png)\n",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 57,
+          "courseId": 24,
+          "title": "弹性布局",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/app-junior-flex.mp4",
+          "docs": "# 弹性布局\n\n支持对元素使用弹性布局\n\n## 操作步骤\n\n在样式面板display选择flex布局，接下来可以调整flex布局的属性",
+          "created_at": "2022-08-10T08:29:50.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        },
+        {
+          "id": 75,
+          "courseId": 24,
+          "title": "使用工具类方法 utils",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com:443/guide-video/app-junior-loading.mp4",
+          "docs": "",
+          "created_at": "2022-11-18T07:24:31.000Z",
+          "updated_at": "2023-09-20T10:02:17.000Z"
+        }
+      ],
+      "progress": 100
+    },
+    {
+      "id": 22,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T07:58:26.000Z",
+      "updated_at": "2023-09-20T08:37:10.000Z",
+      "category": "platformDev",
+      "name": "生态中心",
+      "desc": "生态中心",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/7dfb081c0d10607f84f28f891f18bf1d_308x180.jpg",
+      "type": "advanced",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 38,
+          "courseId": 22,
+          "title": "介绍",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-sennior-ecology1.mp4",
+          "docs": "## 生态中心概述\n\n生态中心包含了创建可视化设计器的重要组成部分，包括物料生态、插件生态、工具栏生态、主题生态和 DSL 生态，如下图所示：\n\n<img src=\"http://image.opentiny.design/tiny-lts/v1/images/d5201424f6ef891f760bf580a321fb55_1914x966.png\"  width=\"1400\"/>\n\n物料是可视化页面搭建的原料，按照粒度可分为组件和区块，物料包时组件与区块的集合。\n\n工具栏与插件是在可视化搭建时用到的功能，例如撤销、恢复、保存等工具，数据源、国际化等插件。\n\n主题决定了设计器的 UI 风格。\n\nDSL 是页面 Schema 生成源代码的能力。\n\n官方提供核心的组件、区块、物料包、主题、插件、工具、DSL 供用户使用，未来将支持接入第三方组件库以及支持用户自己开发生态。\n",
+          "created_at": "2022-08-10T07:58:26.000Z",
+          "updated_at": "2023-09-20T08:37:10.000Z"
+        },
+        {
+          "id": 39,
+          "courseId": 22,
+          "title": "如何导入组件库",
+          "video": "",
+          "docs": "# 如何导入组件库\n\n## 介绍\n组件是页面搭建最小的可复用单元，组件库是一系列已经封装好的可复用组件的集合。通过导入第三方组件库，可以利用已经开发好的功能，无需从头开始编写，大大节省了开发时间。同时，这些组件通常经过优化，具有较高的性能和可扩展性。\n\n## 导入组件库\n\n### 录入组件库基本信息\n![组件库信息](md-only-prefix/img/docimg/componentLibInfo.png)\n\n| 字段名称 | 描述 |  \n| --- | --- |  \n| 组件库名称 | 填写组件库名称，用于列表展示和搜索。 |  \n| npm包名 | 发布到npm仓库中的组件库包名，可在package.json文件中查看name字段的值。 |  \n| 版本号 | 已发布的版本号。符合软件版本号规范。 |\n| 技术栈 | 组件库依赖的JavaScript框架。 |\n| JS文件CDN | 必填，[ESModule格式](https://tc39.es/ecma262/#sec-modules)的JS文件CDN地址，如果地址错误或文件不可用将导致画布无法渲染组件。 |\n| CSS文件CDN | 样式文件CDN地址。 |\n| 组件库描述 | 关于组件库的描述信息，会在组件列表中展示。 |\n| 缩略图地址 | 组件库列表中展示的图片。 |\n| 公开范围 | 可选择的权限范围。私有，只能用户自己使用和编辑；公开，所有用户都可以使用；半公开，仅勾选的组织内成员可以使用。 |\n| 标识官方物料 | 管理员可选，组件库列表中该物料会携带“官方”标识 |\n| 标识默认物料 | 管理员可选，在构建物料包时，会默认勾选该组件库。 |\n\n### 组件配置\n为了充分使用组件的功能，需要根据组件协议填写每个字段，以 TinyInput 为例：\n\n#### 基本信息\n![基本信息](md-only-prefix/img/docimg/componentConfigBase.png)\n| 字段名称 | 描述 |  \n| --- | --- |  \n| 组件ID | 决定组件的使用方式<tiny-input></tiny-input> | \n| 组件名称 | 设计器物料面板中组件显示的名称 | \n| 图标 | 设计器物料面板中组件显示的图标 | \n| schema片段 | [决定组件在画布上的显示效果](md-only-prefix/img/docimg/componentConfigSchema.png) | \n| 组件属性 | 包含属性、事件、插槽，对应设计器中右侧属性面板可配置的属性、插槽及高级面板中的事件配置 | \n\n\n#### 高级属性\n![高级属性](md-only-prefix/img/docimg/componentConfigTec.png)\n| 字段名称 | 描述 | \n| --- | --- |  \n| 导出组件名 | 该组件从组件库中导出时的命名，如TinyInput导出时命名为Input |  \n| 研发模式 | 组件研发模式，proCode/lowcode。保留字段，暂未用到。 | \n| 关键词 | 保留字段，暂未用到。 | \n| 是否循环 | 设计器高级配置中是否打开循环渲染。 | \n| 是否显示 | 设计器高级配置中是否打开是否渲染。 | \n| 样式 | 是否显示样式面板 | \n| 是否为容器 | 组件是否为容器组件，如布局组件为容器组件 | \n| 是否带弹出层 | 组件是否带有弹出层，如TinyDialogBox组件带有弹出层 | \n| 是否带悬浮层 | 组件是否带浮层，如TinyTooltip组件带有悬浮层 | \n| 子节点类型白名单 | 一些组件需要组合使用，如TinyForm组件的子节点只能时TinyFormItem | \n| 父节点类型白名单 | 一些组件需要组合使用，如TinyForm组件的子节点只能时TinyFormItem | \n| 后裔节点类型黑名单 | 保留字段，暂未用到。 | \n| 祖父节点类型白名单 | 保留字段，暂未用到。 | \n| 根节点 | 保留字段，暂未用到。 | \n| 布局 | 保留字段，暂未用到。 | \n| 选择器 | 如.tiny-input | \n| 使用原生组件 | 保留字段，暂未用到。 | \n| 画布丢弃的属性 | 画布上不生效的属性，只在生成源代码时生效 | \n| 禁用点击事件 | 设计器右侧高级面板中绑定事件时不可绑定点击事件 | \n| 分组 | 决定设计器物料面板中该组件所在组件库分类下的分组 | \n| 排序 | 所在分组的排序权重，数值越大越靠前 | \n| 快捷面板属性 | 设计器画布中右键该组件弹出的右键菜单中可快捷配置的属性 | \n| 菜单项 | 设计器画布中右键该组件弹出的右键菜单列表 | \n| 禁用菜单 | 右键菜单禁用项 | \n\n### 完成\n完成基本信息填写和组件配置后，可以在构建物料资产包时将该组件库添加到资产包中，在设计器中就可以正常使用该组件库下的组件搭建页面了。",
+          "created_at": "2022-08-10T07:58:26.000Z",
+          "updated_at": "2023-09-20T08:37:10.000Z"
+        },
+        {
+          "id": 40,
+          "courseId": 22,
+          "title": "如何发布区块",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-sennior-ecology3.mp4",
+          "docs": "## 如何发布区块\n\n区块录入需要根据 [区块协议](portal-only-prefix/protocol/app) 填写 content 字段\n\n因为区块可以简单理解为组件的组合，content 内每个属性的含义也可以参考课程 如何发布组件，在那个课程里详细介绍了每个属性的含义。\n\n需要注意的是：区块录入之后，需要在设计器中发布区块之后，才能够加入物料包中使用，用户可以参考应用开发者-区块管理课程。\n\n也就是说，区块录入只是替代了在设计器里新建和搭建区块的步骤。\n\n<img src=\"http://image.opentiny.design/tiny-lts/v1/images/ee0331f449192ebfcc5d8c8adbb24fcd_1892x894.png\"  width=\"1400\"/>\n",
+          "created_at": "2022-08-10T07:58:26.000Z",
+          "updated_at": "2023-09-20T08:37:10.000Z"
+        },
+        {
+          "id": 41,
+          "courseId": 22,
+          "title": "发布其他生态",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-sennior-ecology4.mp4",
+          "docs": "## 如何发布其他生态\n\n主题、插件、工具、DSL 的发布相似，这里以插件为例：\n\n<img src=\"http://image.opentiny.design/tiny-lts/v1/images/1a631f4feeddd222c0fbece0a2f8401d_1884x900.png\"  width=\"1400\"/>\n\n插件仓库地址为插件 npm 包所在的仓库地址\n\n版本号决定了安装哪一个版本的 npm 包\n\n被标识为官方的插件会显示“官方”字样\n\n被标识为默认的插件会在创建设计器时默认被选中\n\n公开决定了插件的可见范围，私有代表仅自己可见，公开代表所有用户可见，半公开只对选中组织内的用户可见\n\n说明：这里只说明了如何把已开发好的插件录入插件生态，具体如何开发一个插件会在后期推出新的课程，敬请期待\n",
+          "created_at": "2022-08-10T07:58:26.000Z",
+          "updated_at": "2023-09-20T08:37:10.000Z"
+        }
+      ],
+      "progress": 100
+    },
+    {
+      "id": 21,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T07:47:10.000Z",
+      "updated_at": "2023-09-20T08:20:44.000Z",
+      "category": "platformDev",
+      "name": "关于应用",
+      "desc": "关于应用",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/3b8369e0395f1a13e13540923446affc_308x180.jpg",
+      "type": "introductory",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 35,
+          "courseId": 21,
+          "title": "创建应用（创建空白应用、从模板创建应用）",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-app2.mp4",
+          "docs": "# 关于应用\n\n## 如何创建应用\n设计器定制完成后，用户可以在 [我的设计器](portal-only-prefix/my-platform) 中创建应用。选择对应的设计器，在设计器右下方点击“创建应用”。\n创建应用有两种方式：\n\n1.创建空白应用 &rarr; 填写必要的字段 &rarr; 保存。\n\n![创建应用方式一]( md-only-prefix/img/docimg/appCreateOne.png)\n\n2.从模板创建应用&rarr; 选择应用模板 &rarr; 填写必要的字段 &rarr; 保存。\n\n![创建应用方式二]( md-only-prefix/img/docimg/appCreateTwo.png)",
+          "created_at": "2022-08-10T07:47:10.000Z",
+          "updated_at": "2023-09-20T08:20:44.000Z"
+        },
+        {
+          "id": 37,
+          "courseId": 21,
+          "title": "开发应用",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com:443/guide-video/platform-junior-app3.mp4",
+          "docs": "# 关于应用\n\n## 如何去开发应用\n\n应用创建完成后，即可在 **我的应用** 中看到这个应用，点击 **开发应用** 即可前往可视化设计器进行可视化地搭建该应用下的 *页面* 和 *区块*。\n\n![view-app1]( md-only-prefix/img/docimg/appDevOne.png)\n\n**可视化设计器**\n\n![view-app2]( md-only-prefix/img/docimg/appDevTwo.png)",
+          "created_at": "2022-08-10T07:47:10.000Z",
+          "updated_at": "2023-09-20T08:20:44.000Z"
+        }
+      ],
+      "progress": 100
+    },
+    {
+      "id": 20,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T07:43:18.000Z",
+      "updated_at": "2023-09-20T09:59:59.000Z",
+      "category": "platformDev",
+      "name": "关于物料",
+      "desc": "关于物料",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/77de89d9d73ca6c0e6bcd73cf6b79b01_308x180.jpg",
+      "type": "introductory",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 31,
+          "courseId": 20,
+          "title": "介绍",
+          "video": "",
+          "docs": "# 关于物料资产包\n\n## 什么是物料\n\n物料是可视化页面搭建的原料，按照粒度可分为组件库和区块\n\n1. **组件库**：组件库一般是按照组件的性质进行组织。组件是页面搭建最小的可复用单元，其只对外暴露配置项，用户无需感知其内部实现。组件库在设计器定制完成后 **不能再次添加与删除** 。\n2. **区块**：区块可以包含一个或多个组件也可以包含其他区块，带有一定的业务逻辑，能够实现更丰富的功能与表现。区块分为**消费侧**和**管理侧**，在区块管理侧，用户可以向设计器中拖入一个区块后可以编辑其内部的组件和区块配置，暴露区块的属性和事件供消费区块的时候使用，最后发布区块，消费侧区块就会更新为最新的区块内容。区块在设计器定制完成后仍能添加与删除。\n\n设计器中的物料需要进行一定的配置和处理，才能让用户在设计器使用起来。这个过程中，需要一份配置文件，也就是物料资产包。物料资产包文件中，针对每个物料定义了它们在设计器中的使用描述。\n\n## 什么是物料资产包\n\n在设计器中，我们可以看到，组件与区块面板不只提供一个组件或区块，它们是以集合的形式提供给设计器的，而物料资产包正是这些组件与区块构成的集合。\n\n![view-material](md-only-prefix/img/docimg/materialPanel.png)",
+          "created_at": "2022-08-10T07:43:18.000Z",
+          "updated_at": "2023-09-20T09:59:59.000Z"
+        },
+        {
+          "id": 32,
+          "courseId": 20,
+          "title": "创建物料资产包",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-material2.mp4",
+          "docs": "# 创建物料资产包\n\n## 如何创建物料资产包\n\n用户可以在生态中心创建物料资产包，*新建物料资产包* &rarr; *填写必要的字段* &rarr; *保存。*\n当前支持Vue和Angular两种技术栈，用户可以任意选择。当用户选择了Vue技术栈时，则只能添加Vue的组件与区块，不能添加Angular的组件库与区块。\n\n物料资产包版本是用户自定义的，用户可以将物料资产包回退到任一版本。\n\n![构建物料资产包](md-only-prefix/img/docimg/createMaterial.gif)",
+          "created_at": "2022-08-10T07:43:18.000Z",
+          "updated_at": "2023-09-20T09:59:59.000Z"
+        },
+        {
+          "id": 33,
+          "courseId": 20,
+          "title": " 添加组件库/区块",
+          "video": "",
+          "docs": "# 添加组件库/区块\n\n## 如何添加组件库与区块\n\n可视化设计器已为您提供官方组件库与一些区块，物料资产包创建完成后会自动打开编辑页面，用户可以在这里添加组件库与区块，如下图：\n\n* **添加组件库:** 选中未选择的组件库\n![添加组件库](md-only-prefix/img/docimg/createMaterialLib.png)\n\n* **添加区块：** 选中未选择的区块\n![添加区块](md-only-prefix/img/docimg/createMaterialBlock.png)\n\n* **移除组件库：** 取消选中已经选择的组件库，并且确认\n![移除组件库](md-only-prefix/img/docimg/createMaterialLibCancel.png)\n  \n* **移除区块：** 取消选中已经选择的区块，并且确认\n![移除区块](md-only-prefix/img/docimg/createMaterialBlockCancel.png)\n\n* 用户也可以在生态中心录入自己的组件库与区块。",
+          "created_at": "2022-08-10T07:43:18.000Z",
+          "updated_at": "2023-09-20T09:59:59.000Z"
+        },
+        {
+          "id": 34,
+          "courseId": 20,
+          "title": "构建物料资产包",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-material4.mp4",
+          "docs": "# 构建物料资产包\n\n## 如何构建物料资产包\n\n添加完组件库与区块后，点击底部 **构建物料资产包** 按钮，即可完成物料资产包的构建。构建完成后即可看到发布地址。\n![构建物料资产包](md-only-prefix/img/docimg/createMaterial.gif)",
+          "created_at": "2022-08-10T07:43:18.000Z",
+          "updated_at": "2023-09-20T09:59:59.000Z"
+        }
+      ],
+      "progress": 100
+    },
+    {
+      "id": 19,
+      "createdBy": {
+        "id": 169,
+        "username": "public",
+        "email": "opentiny@huawei.com",
+        "resetPasswordToken": "xxx",
+        "blocked": null,
+        "created_at": "2022-07-04T07:25:53.000Z",
+        "updated_at": "2022-09-27T11:48:34.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": true
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2022-08-10T07:39:25.000Z",
+      "updated_at": "2023-09-20T08:24:01.000Z",
+      "category": "platformDev",
+      "name": "关于设计器",
+      "desc": "关于设计器",
+      "poster": "http://image.opentiny.design/tiny-lts/v1/images/4288860ed74459749e4c489b46347ca6_308x180.jpg",
+      "type": "introductory",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 26,
+          "courseId": 19,
+          "title": "介绍",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-platform1.mp4",
+          "docs": "# 构建自定义设计器\n\n## 什么是定制扩展能力\n\n什么是扩展能力呢，一方面我们可以快速拥有一个官方标准的设计器，另外一方面如果用户有独特的业务功能需要，我们可以不用看它的源码、不用关心其实现，用户可以使用 API、插件等方式快速开发自己的工具，插件，DSL等的npm包，用于构建用户自定义的设计器。而设计器引擎对于设计器的扩展能力支持基本上覆盖了设计器的所有功能点。\n![expend]( md-only-prefix/img/docimg/platformExpend.png)",
+          "created_at": "2022-08-10T07:39:26.000Z",
+          "updated_at": "2023-09-20T08:24:01.000Z"
+        },
+        {
+          "id": 27,
+          "courseId": 19,
+          "title": "创建设计器",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-platform2.mp4",
+          "docs": "# 关于设计器\n\n## 如何创建一个设计器\n\n用户可以在 [我的设计器](portal-only-prefix/my-platform) 中创建设计器，创建设计器 &rarr; 填写必要的字段 &rarr; 确定\n![create-platform]( md-only-prefix/img/docimg/createPlatform.png)\n",
+          "created_at": "2022-08-10T07:39:26.000Z",
+          "updated_at": "2023-09-20T08:24:01.000Z"
+        },
+        {
+          "id": 28,
+          "courseId": 19,
+          "title": "定制物料资产包、主题、DSL、工具栏和插件栏",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-platform3.mp4",
+          "docs": "# 关于设计器\n\n## 如何定制物料资产包、主题、DSL、工具栏和插件栏\n\n设计器创建完成后会自动打开编辑页面，用户可以在这里定制设计器的*物料资产包*、*主题*、*工具*、*插件*和*DSL*，如下图：\n\n1. **定制物料资产包：** 物料资产包  **必选且唯一**  , **不允许删除** 物料资产包，可以添加其他物料资产包来替换当前的。\n![define-material]( md-only-prefix/img/docimg/defineMaterial.png)\n\n1. **定制主题：** 主题 **必选且唯一** ，**不允许删除** 主题，可以添加其他主题来替换当前的\n![define-theme]( md-only-prefix/img/docimg/defineTheme.png)\n\n1. **定制DSL：** DSL为 **单选**。DSL是将物料的Schema 解析成不同技术栈源码的转换工具，所以DSL的必须和选择的物料在技术栈保持一致。\n![define-DSL]( md-only-prefix/img/docimg/defineDsl.png)\n\n1. **定制工具：** 可以将工具拖入上方位置栏，规划定制的设计器里工具的位置。工具可以多选，也可以删除。\n![define-tools]( md-only-prefix/img/docimg/defineTools.png)\n\n1. **定制插件：** 可以将插件拖入中间位置栏，规划定制的设计器里插件的位置。插件可以多选，也可以删除。\n![define-plugs]( md-only-prefix/img/docimg/definePlugs.png)",
+          "created_at": "2022-08-10T07:39:26.000Z",
+          "updated_at": "2023-09-20T08:24:01.000Z"
+        },
+        {
+          "id": 30,
+          "courseId": 19,
+          "title": "定制设计器",
+          "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/platform-junior-platform4.mp4",
+          "docs": "# 关于设计器\n\n## 如何定制一个设计器\n\n物料资产包、主题、工具、插件和DSL定制完成后，有两种方式可以构建设计器。\n方式一：可视化构建\n![build-platform1]( md-only-prefix/img/docimg/buildPlatform1.png)\n方式二：由源码构建\n![build-platform2]( md-only-prefix/img/docimg/buildPlatform2.png)",
+          "created_at": "2022-08-10T07:39:26.000Z",
+          "updated_at": "2023-09-20T08:24:01.000Z"
+        }
+      ],
+      "progress": 100
+    },
+    {
+      "id": 46,
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "updatedBy": {
+        "id": 86,
+        "username": "开发者",
+        "email": "developer@lowcode.com",
+        "resetPasswordToken": "developer",
+        "blocked": null,
+        "created_at": "2022-05-27T16:50:44.000Z",
+        "updated_at": "2022-05-27T16:50:44.000Z",
+        "block": null,
+        "is_admin": true,
+        "is_public": null
+      },
+      "created_at": "2023-10-17T02:50:19.000Z",
+      "updated_at": "2023-10-17T08:14:27.000Z",
+      "category": "appDev",
+      "name": "如何在设计器中引入第三方组件库",
+      "desc": "在设计器中使用第三方组件库，如element-plus",
+      "poster": "https://opentiny-assets.obs.cn-north-4.myhuaweicloud.com/lowcode-portal/1.1.41/img/courses/course1.jpg",
+      "type": "advanced",
+      "tags": "",
+      "variety": "manual",
+      "videos": [
+        {
+          "id": 89,
+          "courseId": 46,
+          "title": "如何在设计器中引入第三方组件库",
+          "video": "",
+          "docs": "# 如何在设计器中引入第三方组件库\n\n## 1. 修改物料资产包\n- 打开物料资产包文件：packages\\design-core\\public\\mock\\bundle.json\n- 参考[物料资产包协议](portal-only-prefix/protocol/material)，以ElInput为例添加组件。\n```json\n{\n  \"data\": {\n    \"framework\": \"Vue\",\n    \"materials\": {\n      \"components\": [\n        {\n          \"id\": 456,\n          \"version\": \"2.3.8\",\n          \"name\": {\n            \"zh_CN\": \"ElInput\"\n          },\n          \"component\": \"ElInput\",\n          \"icon\": \"input\",\n          \"description\": \"常用的操作按钮，提供包括默认按钮、图标按钮、图片按钮、下拉按钮等类型\",\n          \"doc_url\": \"\",\n          \"screenshot\": \"/img/logo.png\",\n          \"tags\": \"\",\n          \"keywords\": \"\",\n          \"dev_mode\": \"proCode\",\n          \"npm\": {\n            \"package\": \"element-plus\",\n            \"version\": \"2.3.8\",\n            \"script\": \"https://unpkg.com/element-plus@2.3.8/dist/index.full.mjs\",\n            \"css\": \"https://unpkg.com/element-plus@2.3.8/dist/index.css\", \n            \"dependencies\": null,\n            \"exportName\": \"ElInput\"\n          },\n          \"group\": \"表单组件\",\n          \"category\": \"element-plus\",\n          \"configure\": {\n            \"loop\": true,\n            \"condition\": true,\n            \"styles\": true,\n            \"isContainer\": false,\n            \"isModal\": false,\n            \"isPopper\": false,\n            \"nestingRule\": {\n              \"childWhitelist\": \"\",\n              \"parentWhitelist\": \"\",\n              \"descendantBlacklist\": \"\",\n              \"ancestorWhitelist\": \"\"\n            },\n            \"isNullNode\": false,\n            \"isLayout\": false,\n            \"rootSelector\": \"\",\n            \"shortcuts\": {\n              \"properties\": [\"text\", \"size\"]\n            },\n            \"contextMenu\": {\n              \"actions\": [\"copy\", \"remove\", \"insert\", \"updateAttr\", \"bindEevent\", \"createBlock\"],\n              \"disable\": []\n            },\n            \"invalidity\": [\"\"],\n            \"clickCapture\": true,\n            \"framework\": \"Vue\"\n          },\n          \"createdBy\": 86,\n          \"created_at\": \"2023-08-29T07:45:28.000Z\",\n          \"updated_at\": \"2023-09-11T09:52:11.000Z\",\n          \"public\": 1,\n          \"framework\": \"Vue\",\n          \"isOfficial\": false,\n          \"isDefault\": false,\n          \"tiny_reserved\": false,\n          \"tenant\": null,\n          \"component_metadata\": {\n            \"events\": [],\n            \"attrs\": [\n              {\n                \"property\": \"placeholder\",\n                \"type\": \"string\",\n                \"defaultValue\": null,\n                \"enumerateValue\": null,\n                \"title\": null,\n                \"_RID\": \"row_1\"\n              },\n              {\n                \"property\": \"size\",\n                \"type\": \"string\",\n                \"defaultValue\": null,\n                \"enumerateValue\": null,\n                \"title\": null,\n                \"_RID\": \"row_2\"\n              }\n            ],\n            \"slots\": []\n          },\n          \"library\": 1,\n          \"schema\": {\n            \"properties\": [\n              {\n                \"name\": \"0\",\n                \"label\": {\n                  \"zh_CN\": \"分组1\"\n                },\n                \"content\": [\n                  {\n                    \"property\": \"size\",\n                    \"label\": {\n                      \"text\": {\n                        \"zh_CN\": \"size\"\n                      }\n                    },\n                    \"required\": true,\n                    \"readOnly\": false,\n                    \"disabled\": false,\n                    \"cols\": 12,\n                    \"labelPosition\": \"left\",\n                    \"type\": \"string\",\n                    \"widget\": {\n                      \"component\": \"MetaInput\",\n                      \"props\": {}\n                    }\n                  },\n                  {\n                    \"property\": \"placeholder\",\n                    \"label\": {\n                      \"text\": {\n                        \"zh_CN\": \"placeholder\"\n                      }\n                    },\n                    \"required\": true,\n                    \"readOnly\": false,\n                    \"disabled\": false,\n                    \"cols\": 12,\n                    \"labelPosition\": \"left\",\n                    \"type\": \"string\",\n                    \"widget\": {\n                      \"component\": \"MetaBindI18n\",\n                      \"props\": {}\n                    },\n                    \"description\": {\n                      \"zh_CN\": \"\"\n                    },\n                    \"device\": []\n                  }\n                ],\n                \"description\": {\n                  \"zh_CN\": \"\"\n                }\n              }\n            ],\n            \"events\": []\n          }\n        }\n      ],\n      \"snippets\": [\n        {\n          \"group\": \"element-plus\",\n          \"children\": [\n            {\n              \"name\": {\n                \"zh_CN\": \"ElInput\"\n              },\n              \"icon\": \"button\",\n              \"screenshot\": \"/img/logo.png\",\n              \"snippetName\": \"ElInput\",\n              \"schema\": {}\n            }\n          ]\n        }\n      ],\n      \"blocks\": []\n    }\n  }\n}\n\n```\n\n注：npm.script字段的值是ESModule格式的JS文件CDN地址\n\n## 2. 修改mockServer数据源\n修改mockServer生成源码时需要的mock数据\n- 打开应用数据文件：mockServer\\src\\services\\appinfo.json\n- 将组件数据（bundle.json中的data.material.components）拷贝到appinfo.materialHistory.components\n\n## 3. 编排页面\n刷新页面，打开物料插件面板，拖拽引入的第三方组件搭建页面。",
+          "created_at": "2023-10-17T02:50:19.000Z",
+          "updated_at": "2023-10-17T08:14:27.000Z"
+        }
+      ],
+      "progress": 0
+    }
+  ],
+  "locale": "zh-cn"
+}

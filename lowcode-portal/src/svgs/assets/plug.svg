@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<path fill="#D9E5FF" d="M49.2,44.1H25.2c-3.5,0-6.3-2.8-6.3-6.3V13.9c0-3.5,2.8-6.3,6.3-6.3h23.9c3.5,0,6.3,2.8,6.3,6.3v23.9
+	C55.5,41.3,52.7,44.1,49.2,44.1z"/>
+<path fill="none" stroke="#2E323C" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M49.2,56H15.1c-3.8,0-6.9-3.1-6.9-6.9V15.1c0-3.8,3.1-6.9,6.9-6.9h34.1c3.8,0,6.9,3.1,6.9,6.9v34.1
+	C56,52.9,52.9,56,49.2,56z"/>
+<g>
+	<g>
+		<line fill="none" stroke="#5E7CE0" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="23.5" y1="17.3" x2="23.5" y2="46.9"/>
+		<circle fill="#FFFFFF" stroke="#5E7CE0" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" cx="23.3" cy="27.8" r="5.6"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#2E323C" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="41.2" y1="17.3" x2="41.2" y2="46.9"/>
+		<circle fill="#FFFFFF" stroke="#2E323C" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" cx="40.9" cy="36.9" r="4.2"/>
+	</g>
+</g>
+</svg>

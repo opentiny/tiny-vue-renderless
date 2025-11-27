@@ -1,0 +1,213 @@
+import "../chunk-G2ADBYYC.js";
+const getOrderedPanes = (parent, panes) => {
+  const slotDefault = parent.$slots.default;
+  let orders;
+  if (typeof slotDefault === "function") {
+    orders = [];
+    const tabVnodes = slotDefault();
+    const handler = ({ type, componentOptions, props }) => {
+      let componentName = type && type.componentName;
+      if (!componentName)
+        componentName = componentOptions && componentOptions.Ctor.extendOptions.componentName;
+      if (componentName === "TabItem") {
+        const paneName = props && props.name || componentOptions && componentOptions.propsData.name;
+        orders.push(paneName);
+      }
+    };
+    tabVnodes.forEach(({ type, componentOptions, props, children }) => {
+      if (type && (type.toString() === "Symbol(Fragment)" || // vue@3.3之前的开发模式
+      type.toString() === "Symbol(v-fgt)" || //   vue@3.3.1 的变更
+      type.toString() === "Symbol()")) {
+        Array.isArray(children) && children.forEach(({ type: type2, componentOptions: componentOptions2, props: props2 }) => handler({ type: type2, componentOptions: componentOptions2, props: props2 }));
+      } else {
+        handler({ type, componentOptions, props });
+      }
+    });
+  }
+  if (orders.length > 0) {
+    let tmpPanes = [];
+    orders.forEach((paneName) => {
+      let pane = panes.find((pane2) => pane2.name === paneName);
+      if (pane)
+        tmpPanes.push(pane);
+    });
+    panes = tmpPanes;
+  }
+  return panes;
+};
+const calcPaneInstances = ({
+  constants,
+  parent,
+  state,
+  childrenHandler
+}) => (isForceUpdate = false) => {
+  const tabItemVNodes = parent.$slots.default;
+  if (tabItemVNodes) {
+    const orderPanes = [];
+    tabItemVNodes().forEach((vnode) => {
+      var _a;
+      if (Array.isArray(vnode.children)) {
+        vnode.children.forEach((child) => {
+          var _a2;
+          const name = (_a2 = child.props) == null ? void 0 : _a2.name;
+          name && orderPanes.push(name);
+        });
+      } else {
+        const name = (_a = vnode.props) == null ? void 0 : _a.name;
+        name && orderPanes.push(name);
+      }
+    });
+    const currentPanes = [];
+    childrenHandler(({ vm, isLevel1 }) => {
+      if (isLevel1 && vm.$options.componentName === constants.TAB_ITEM) {
+        const index = orderPanes.findIndex((name) => name === vm.name);
+        index > -1 ? currentPanes[index] = vm : currentPanes.push(vm);
+      }
+    });
+    const newPanes = getOrderedPanes(parent, currentPanes);
+    const panesChanged = !(newPanes.length === state.panes.length && newPanes.every((pane, index) => pane.state === state.panes[index].state));
+    if (isForceUpdate || panesChanged) {
+      state.panes = newPanes;
+    }
+  } else if (state.panes.length !== 0) {
+    state.panes = [];
+  }
+};
+const calcMorePanes = ({ parent, props, state, refs }) => () => {
+  if (!props.showMoreTabs) {
+    return;
+  }
+  const el = parent.$el;
+  const tabs = el.querySelectorAll(".tiny-tabs__item");
+  const tabNavRefs = refs.nav.$refs;
+  if (props.moreShowAll) {
+    state.showPanesCount = 0;
+    return;
+  }
+  if (tabs && tabs.length) {
+    let tabsAllWidth = 0;
+    if (state.currentIndex === -1) {
+      state.currentIndex = state.panes.findIndex((item) => item.state.paneName === state.currentName);
+    }
+    const currentIndex = state.currentIndex < 0 ? 0 : state.currentIndex;
+    const tabsHeaderWidth = tabNavRefs.navScroll.offsetWidth;
+    for (let i = 0; i < tabs.length; i++) {
+      const tabItem = tabs[i];
+      tabsAllWidth = tabItem.offsetLeft + tabItem.offsetWidth / 2;
+      if (tabsAllWidth > tabsHeaderWidth && currentIndex >= 0) {
+        if (currentIndex >= i + 1) {
+          state.showPanesCount = currentIndex;
+        } else {
+          state.showPanesCount = i;
+        }
+        break;
+      }
+    }
+  }
+};
+const calcExpandPanes = ({ parent, props, state }) => () => {
+  if (!props.showExpandTabs) {
+    return;
+  }
+  const el = parent.$el;
+  const tabsHeader = el.querySelector(".tiny-mobile-tabs__header");
+  if (tabsHeader) {
+    state.expandPanesWidth = tabsHeader.clientWidth;
+  }
+};
+const handleTabClick = ({ api, emit, props, refs }) => (pane, tabName, event) => {
+  if (pane.disabled) {
+    return;
+  }
+  api.setCurrentName(tabName);
+  emit("click", pane, event);
+  if (props.showExpandTabs) {
+    refs.nav && refs.nav.expandTabHide();
+  }
+};
+const handleTabRemove = ({ emit, props }) => (pane, event) => {
+  if (pane.disabled) {
+    return;
+  }
+  event.stopPropagation();
+  const emitEvent = () => {
+    emit("edit", pane.name, "remove");
+    emit("close", pane.name);
+  };
+  if (typeof props.beforeClose === "function") {
+    const beforeCloseResult = props.beforeClose(pane.name);
+    if (beforeCloseResult && beforeCloseResult.then) {
+      beforeCloseResult.then((res) => res && emitEvent());
+    } else {
+      beforeCloseResult && emitEvent();
+    }
+  } else {
+    emitEvent();
+  }
+};
+const handleTabAdd = (emit) => () => {
+  emit("edit", null, "add");
+  emit("add");
+};
+const setCurrentName = ({ api, props, refs, state }) => (value) => {
+  api.changeDirection(state.currentName);
+  if (state.currentName !== value && props.beforeLeave) {
+    const before = props.beforeLeave(value, state.currentName);
+    if (before && before.then) {
+      before.then(() => {
+        api.changeCurrentName(value);
+        refs.nav && refs.nav.removeFocus(value);
+      }).catch(() => null);
+    } else if (before !== false) {
+      api.changeCurrentName(value);
+    }
+  } else {
+    api.changeCurrentName(value);
+  }
+};
+const changeCurrentName = ({ emit, state }) => (value) => {
+  state.currentName = value;
+  emit("update:modelValue", value);
+};
+const created = ({ api, parent, state }) => () => {
+  api.changeDirection(state.currentName);
+  parent.$on("tab-nav-update", api.calcPaneInstances.bind(null, true));
+};
+const changeDirection = ({ props, state }) => (currentName) => {
+  const panes = state.panes;
+  panes.forEach((item, index) => {
+    if (item.state.paneName === currentName && state.currentIndex !== index) {
+      const isTopOrBottom = ~["top", "bottom"].indexOf(props.position);
+      const isPrev = state.currentIndex < index;
+      state.direction = isTopOrBottom ? isPrev ? "right" : "left" : isPrev ? "bottom" : "top";
+      state.currentIndex = index;
+    }
+  });
+};
+const handleTabDragStart = ({ emit }) => (event) => {
+  emit("tab-drag-start", event);
+};
+const handleTabDragOver = ({ emit }) => (event) => {
+  emit("tab-drag-over", event);
+};
+const handleTabDragEnd = ({ state, emit }) => (event) => {
+  const { oldDraggableIndex, newDraggableIndex } = event;
+  const panel = state.panes.splice(oldDraggableIndex, 1)[0];
+  state.panes.splice(newDraggableIndex, 0, panel);
+  emit("tab-drag-end", event);
+};
+export {
+  calcExpandPanes,
+  calcMorePanes,
+  calcPaneInstances,
+  changeCurrentName,
+  changeDirection,
+  created,
+  handleTabAdd,
+  handleTabClick,
+  handleTabDragEnd,
+  handleTabDragOver,
+  handleTabDragStart,
+  handleTabRemove,
+  setCurrentName
+};

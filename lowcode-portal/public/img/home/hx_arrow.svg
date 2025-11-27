@@ -1,0 +1,11 @@
+<svg viewBox="0 0 121 66" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121.000000" height="66.000000" fill="none">
+	<defs>
+		<linearGradient id="paint_linear_34" x1="132.279678" x2="-63" y1="15.6813889" y2="15.6814432" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(210,224,255)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(255,255,255)" offset="1" stop-opacity="0" />
+		</linearGradient>
+	</defs>
+	<rect id="hx_箭头" width="121.000000" height="66.000000" x="0.000000" y="0.000000" />
+	<path id="矢量 650" d="M81.7665 6.0264L81.7665 22.3116C81.7665 22.3116 54.6904 21.9806 38.4988 17.6658C22.3072 13.3511 0 0 0 0L0 66C0 66 22.3091 49.1719 38.5007 44.6165C54.6924 40.0612 81.7665 40.7328 81.7665 40.7328L81.7665 57.8233L121 30.9166L81.7665 6.0264Z" fill="url(#paint_linear_34)" fill-rule="evenodd" />
+	<path id="矢量 650" d="M81.7665 6.0264L121 30.9166L81.7665 57.8233L81.7665 40.7328C81.7665 40.7328 54.6924 40.0612 38.5007 44.6165C22.3091 49.1719 0 66 0 66L0 0C0 0 22.3072 13.3511 38.4988 17.6658C54.6904 21.9806 81.7665 22.3116 81.7665 22.3116L81.7665 6.0264Z" fill-rule="evenodd" stroke="rgb(0,0,0)" stroke-opacity="0" stroke-width="1" />
+</svg>

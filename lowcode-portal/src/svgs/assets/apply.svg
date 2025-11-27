@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="图层_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+  <style type="text/css">
+	.st0{fill:#E9EDFA;}
+	.st1{opacity:0.93;}
+	.st2{fill:#5E7CE0;}
+	.st3{fill:#BECCFA;}
+  </style>
+  <rect x="0" class="st0" width="64" height="64"/>
+  <g>
+    <g class="st1">
+      <circle class="st2" cx="26.2" cy="24.2" r="5.3"/>
+      <path class="st2" d="M26.5,30.8h-0.3c-5.9,0-10.7,4.8-10.7,10.7v2.6c0,0.6,0.5,1.1,1.1,1.1H36c0.6,0,1.1-0.5,1.1-1.1v-2.6
+			C37.2,35.6,32.4,30.8,26.5,30.8z"/>
+    </g>
+    <g>
+      <g>
+        <circle class="st3" cx="39.3" cy="24.4" r="4.4"/>
+        <path class="st3" d="M39.6,30h-0.3c-2,0-3.8,0.7-5.3,1.8c2.6,1.9,4.3,4.9,4.3,8.4v1.9h9.2c0.5,0,1-0.4,1-1v-2.2
+				C48.5,34,44.5,30,39.6,30z"/>
+      </g>
+    </g>
+  </g>
+</svg>

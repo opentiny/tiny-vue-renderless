@@ -1,0 +1,10 @@
+<svg viewBox="0 0 864 544" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="864.000000" height="544.000000" fill="none">
+	<defs>
+		<linearGradient id="paint_linear_15" x1="31.9822998" x2="835.88623" y1="-6.10351562e-05" y2="582.781006" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(235,233,255)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(222,210,255)" offset="0.995780587" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<rect id="case_bg" width="864.000000" height="544.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" />
+	<rect id="矩形 9" width="864.000000" height="544.000000" x="0.000000" y="0.000000" fill="url(#paint_linear_15)" />
+</svg>

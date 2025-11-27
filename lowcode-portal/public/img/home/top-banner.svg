@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1920 1181" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920.000000" height="1181.000000" fill="none">
+	<defs>
+		<linearGradient id="paint_linear_0" x1="927.499878" x2="1689.16431" y1="113.328491" y2="1309.21924" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="0" />
+			<stop stop-color="rgb(222,234,255)" offset="1" stop-opacity="1" />
+		</linearGradient>
+		<g id="pixso_custom_effect_0">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="438" />
+		</g>
+		<filter id="filter_0" width="2453.019531" height="2223.867188" x="-568.726562" y="-283.205933" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="146" result="effect_layerBlur_1" />
+		</filter>
+		<linearGradient id="paint_linear_1" x1="524.598022" x2="1642.66663" y1="-157.173645" y2="1186.93164" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(224,241,253)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(224,234,253)" offset="0.473417521" stop-opacity="1" />
+			<stop stop-color="rgb(224,234,253)" offset="1" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<rect id="banner_bg1" width="1920.000000" height="1181.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" />
+	<g id="组合 5472">
+		<rect id="矩形 2" width="1920.000000" height="1418.000000" x="0.000000" y="61.000000" fill="url(#paint_linear_0)" />
+		<g filter="url(#filter_0)">
+			<path id="矢量 646" d="M1650.91 1221.37C1655.87 1118.21 1598.5 911.894 1329.26 911.894C1175.73 911.894 943.838 854.116 738.715 685.868C584.121 559.065 456.182 347.449 324.193 174.345C25.3133 -328.869 -233.704 364.704 346.844 895.636C927.391 1426.57 1650.91 1221.37 1650.91 1221.37Z" opacity="0.850000024" fill="url(#paint_linear_1)" fill-rule="evenodd" transform="matrix(0.997345,0.0728275,-0.0728275,0.997345,-113.211,146)" />
+		</g>
+		<g id="组合 5575" opacity="0">
+			<g id="一一一一">
+				<line id="直线 7" x1="-0.9921875" x2="1919.00769" y1="240" y2="240" stroke="rgb(232,240,255)" stroke-width="1" />
+				<line id="直线 8" x1="-0.9921875" x2="1919.00769" y1="440" y2="440" stroke="rgb(232,240,255)" stroke-width="1" />
+				<line id="直线 9" x1="-0.9921875" x2="1919.00769" y1="640" y2="640" stroke="rgb(232,240,255)" stroke-width="1" />
+				<line id="直线 10" x1="-0.9921875" x2="1919.00769" y1="840" y2="840" stroke="rgb(232,240,255)" stroke-width="1" />
+				<line id="直线 11" x1="-0.9921875" x2="1919.00769" y1="1040" y2="1040" stroke="rgb(232,240,255)" stroke-width="1" />
+				<line id="直线 12" x1="-0.9921875" x2="1919.00769" y1="1240" y2="1240" stroke="rgb(232,240,255)" stroke-width="1" />
+			</g>
+			<g id="||||||||||||">
+				<line id="直线 7" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,1316,62)" />
+				<line id="直线 14" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,1516,62)" />
+				<line id="直线 15" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,1716,62)" />
+				<line id="直线 8" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,1116,62)" />
+				<line id="直线 9" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,916.004,62)" />
+				<line id="直线 10" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,716.004,62)" />
+				<line id="直线 11" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,516.004,62)" />
+				<line id="直线 12" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="2" transform="matrix(0,1,-1,0,316.004,62)" />
+				<line id="直线 13" x1="0" x2="1353" y1="0" y2="0" stroke="rgb(232,240,255)" stroke-width="1" transform="matrix(0,1,-1,0,116.004,62)" />
+			</g>
+			<g id="○○○" opacity="0">
+				<circle id="椭圆 53" cx="1716" cy="1040" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 58" cx="1716" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 59" cx="1516" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 60" cx="1316" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 61" cx="1116" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 62" cx="916" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 63" cx="716" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 64" cx="517" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 65" cx="316" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 66" cx="116" cy="1240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 67" cx="116" cy="1040" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 68" cx="116" cy="840" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 69" cx="116" cy="640" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 70" cx="116" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 78" cx="116" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 79" cx="316" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 80" cx="516" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 54" cx="1716" cy="840" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 55" cx="1716" cy="640" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 56" cx="1716" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 71" cx="1516" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 72" cx="1316" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 73" cx="1116" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 74" cx="916" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 75" cx="716" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 76" cx="516" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 77" cx="316" cy="440" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 57" cx="1716" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 81" cx="1516" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 82" cx="1316" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 83" cx="1117" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 84" cx="916" cy="240" r="6" fill="rgb(226,237,255)" />
+				<circle id="椭圆 85" cx="716" cy="240" r="6" fill="rgb(226,237,255)" />
+			</g>
+		</g>
+	</g>
+</svg>

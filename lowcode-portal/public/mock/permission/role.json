@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": 5,
+            "name": "Tinybuilder_Admin",
+            "description": "超级管理员",
+            "type": "tinybuilder_admin",
+            "created_by": null,
+            "updated_by": null
+        },
+        {
+            "id": 6,
+            "name": "Tinybuilder_Tenant_Admin",
+            "description": "组织管理员",
+            "type": "tinybuilder_tenant_admin",
+            "created_by": null,
+            "updated_by": null
+        },
+        {
+            "id": 7,
+            "name": "Tinybuilder_Platform_Admin",
+            "description": "设计器管理员",
+            "type": "tinybuilder_platform_admin",
+            "created_by": null,
+            "updated_by": null
+        },
+        {
+            "id": 8,
+            "name": "Tinybuilder_App_Admin",
+            "description": "应用管理员",
+            "type": "tinybuilder_app_admin",
+            "created_by": null,
+            "updated_by": null
+        },
+        {
+            "id": 9,
+            "name": "Tinybuilder_App_Developer",
+            "description": "应用开发者",
+            "type": "tinybuilder_app_developer",
+            "created_by": null,
+            "updated_by": null
+        }
+    ]
+}

@@ -1,0 +1,515 @@
+{
+  "100101001": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 1,
+        "title": "申请加入组织",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "docs/design-core.md",
+        "duration": "1:44"
+      },
+      {
+        "id": 2,
+        "title": "申请创建组织",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "docs/design-core.md",
+        "duration": "1:41"
+      }
+    ]
+  },
+  "100101002": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 3,
+        "title": "添加/移除组件",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 4,
+        "title": "添加/移除区块",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 5,
+        "title": "构建物料资产包",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "100101003": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 6,
+        "title": "定制物料资产包",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 7,
+        "title": "定制主题",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 8,
+        "title": "定制DSL",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 9,
+        "title": "定制工具栏",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 10,
+        "title": "定制插件栏",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 11,
+        "title": "构建平台",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "100101004": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 12,
+        "title": "创建应用",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 13,
+        "title": "开发应用",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 14,
+        "title": "访问应用",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "100102001": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 15,
+        "title": "发布组件/区块",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 16,
+        "title": "发布主题",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 17,
+        "title": "发布DSL",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 18,
+        "title": "发布工具栏",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 19,
+        "title": "发布插件栏",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "100102002": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 20,
+        "title": "添加组织管理员",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 21,
+        "title": "添加平台管理员",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 22,
+        "title": "添加应用管理员",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 23,
+        "title": "添加应用开发员",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200101001": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 25,
+        "title": "创建页面",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 26,
+        "title": "画布操作和元素属性设置",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 27,
+        "title": "样式设置",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 28,
+        "title": "撤销重做",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 29,
+        "title": "使用状态管理和变量绑定",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 30,
+        "title": "使用JS面板和事件绑定",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 31,
+        "title": "大纲树总览页面结构",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200101002": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 32,
+        "title": "创建区块",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 33,
+        "title": "消费区块",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 34,
+        "title": "使用循环",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200101003": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 35,
+        "title": "mock数据",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 36,
+        "title": "远程数据",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 37,
+        "title": "更多其他组件使用数据源",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102001": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 38,
+        "title": "创建国际化词条",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 39,
+        "title": "使用国际化词条",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102002": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 40,
+        "title": "创建弹性布局",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 41,
+        "title": "使用弹性布局属性",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102003": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 42,
+        "title": "页面预览",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 43,
+        "title": "区块预览",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102004": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 44,
+        "title": "应用保存",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 45,
+        "title": "应用预览",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102005": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 46,
+        "title": "多终端开发",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 47,
+        "title": "多终端预览",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200102006": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 48,
+        "title": "应用生成代码提交Git库",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200103001": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 49,
+        "title": "构建插件",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 50,
+        "title": "安装插件",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 51,
+        "title": "在插件上开发",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 52,
+        "title": "生成本地代码",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200103002": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 53,
+        "title": "桥接源概念讲解",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 54,
+        "title": "桥接源基本使用",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200103003": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 55,
+        "title": "桥接源概念讲解",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 56,
+        "title": "桥接源基本使用",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  },
+  "200103004": {
+    "title": "如何加入组织",
+    "type": "platformDevCourses",
+    "list": [
+      {
+        "id": 57,
+        "title": "声明插槽",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      },
+      {
+        "id": 58,
+        "title": "使用插槽",
+        "video": "https://tiny-editor.obs.cn-north-5.myhuaweicloud.com/guide-video/tiny-engine.mp4",
+        "docs": "",
+        "duration": "1:44"
+      }
+    ]
+  }
+}

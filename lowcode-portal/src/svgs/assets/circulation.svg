@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.circulation-st0{fill:#668EFF;}
+	.circulation-st1{fill:#3C4154;}
+</style>
+<path class="circulation-st0" d="M4.9,24.6v32.5h54.3V24.6H4.9z M47.8,46.6H21.1l3,2.1l-1.7,2.5l-8.9-6l8.9-6l1.7,2.5l-3,2.1h26.7V46.6z
+	 M41.5,42l-1.7-2.5l3-2.1H16.2v-3h26.7l-3-2.1l1.7-2.5l8.9,6L41.5,42z"/>
+<path class="circulation-st1" d="M61.2,59.1H2.9V22.6h58.3V59.1z M6.9,55.1h50.3V26.6H6.9V55.1z"/>
+<path class="circulation-st1" d="M59.1,18.7H5c-0.8,0-1.6-0.5-1.9-1.2l0,0c-0.3-0.8-0.2-1.6,0.4-2.2l0,0L13.8,5.1h36.5l0.6,0.6l9.6,9.5
+	c0.6,0.6,0.8,1.5,0.5,2.2l0,0C60.6,18.1,59.9,18.7,59.1,18.7L59.1,18.7z M9.8,14.7h44.5l-5.7-5.5H15.4L9.8,14.7z"/>
+</svg>

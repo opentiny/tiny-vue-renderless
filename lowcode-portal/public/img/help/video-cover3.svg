@@ -1,0 +1,59 @@
+<svg width="450.000000" height="260.000000" viewBox="0 0 450 260" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="204.999664" y1="-25.999983" x2="224.999603" y2="259.999939" id="paint_linear_205_6442_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#76D0FF"/>
+			<stop offset="1.000000" stop-color="#25B5FF"/>
+		</linearGradient>
+		<linearGradient x1="28.252472" y1="11.457108" x2="103.040794" y2="279.521088" id="paint_linear_205_6444_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#2FB8FF"/>
+			<stop offset="1.000000" stop-color="#8DD8FF" stop-opacity="0.588235"/>
+		</linearGradient>
+		<linearGradient x1="10.855362" y1="-7.042675" x2="90.763535" y2="171.598480" id="paint_linear_205_6445_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#28B6FF"/>
+			<stop offset="0.941985" stop-color="#A2DFFF" stop-opacity="0.588235"/>
+		</linearGradient>
+		<linearGradient x1="369.000519" y1="-53.499886" x2="310.999725" y2="123.000008" id="paint_linear_205_6446_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#28B6FF"/>
+			<stop offset="0.941985" stop-color="#B0E4FF" stop-opacity="0.000000"/>
+		</linearGradient>
+		<linearGradient x1="319.000366" y1="309.500122" x2="395.695374" y2="-18.782700" id="paint_linear_205_6447_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#29B6FF"/>
+			<stop offset="1.000000" stop-color="#D6F1FF" stop-opacity="0.000000"/>
+		</linearGradient>
+		<linearGradient x1="463.500122" y1="262.500122" x2="418.000061" y2="120.500130" id="paint_linear_205_6448_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#2CB7FF"/>
+			<stop offset="1.000000" stop-color="#E2F5FF" stop-opacity="0.000000"/>
+		</linearGradient>
+	</defs>
+	<mask id="mask205_6442" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="450.000000" height="260.000000">
+		<rect id="矩形 49" width="450.000000" height="260.000000" fill="url(#paint_linear_205_6442_0)" fill-opacity="1.000000"/>
+	</mask>
+	<rect id="矩形 49" width="450.000000" height="260.000000" fill="url(#paint_linear_205_6442_0)" fill-opacity="1.000000"/>
+	<g mask="url(#mask205_6442)">
+		<g opacity="0.770000">
+			<g opacity="0.940000">
+				<path id="矢量 21" d="M309.87 -44C264.44 -40.01 140.95 0.15 58.86 259.5C-23.23 518.84 -72.61 89.46 -12.13 -44L309.87 -44Z" fill="url(#paint_linear_205_6444_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+				<path id="矢量 21" d="M58.86 259.5C-23.23 518.84 -72.61 89.46 -12.13 -44L309.87 -44C264.44 -40.01 140.95 0.15 58.86 259.5Z" stroke="#000000" stroke-opacity="0" stroke-width="1.000000"/>
+			</g>
+			<g opacity="0.940000">
+				<path id="矢量 21" d="M311.75 -44C274.48 -40.35 95.54 -8 -6.96 157C-109.46 322 -43.56 79.51 6.06 -42.63L311.75 -44Z" fill="url(#paint_linear_205_6445_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+				<path id="矢量 21" d="M-6.96 157C-109.46 322 -43.56 79.51 6.06 -42.63L311.75 -44C274.48 -40.35 95.54 -8 -6.96 157Z" stroke="#000000" stroke-opacity="0" stroke-width="1.000000"/>
+			</g>
+			<g opacity="0.910000">
+				<path id="矢量 22" d="M69.99 -16.05C187.96 4.12 423.91 78.45 423.91 214.4C423.91 296.3 470.42 311.69 480 273C486.31 247.46 455.21 183.4 460 152.71L460 -37L69.99 -16.05Z" fill="url(#paint_linear_205_6446_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+				<path id="矢量 22" d="M423.91 214.4C423.91 296.3 470.42 311.69 480 273C486.31 247.46 455.21 183.4 460 152.71L460 -37L69.99 -16.05C187.96 4.12 423.91 78.45 423.91 214.4Z" stroke="#000000" stroke-opacity="0" stroke-width="1.000000"/>
+			</g>
+			<g opacity="0.910000">
+				<path id="矢量 23" d="M416.04 -40.75C407.04 57.5 317.67 227.69 149.18 272.16C-19.3 316.62 304.19 301.64 480.04 279L466.12 -55.16L416.04 -40.75Z" fill="url(#paint_linear_205_6447_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+				<path id="矢量 23" d="M149.18 272.16C-19.3 316.62 304.19 301.64 480.04 279L466.12 -55.16L416.04 -40.75C407.04 57.5 317.67 227.69 149.18 272.16Z" stroke="#000000" stroke-opacity="0" stroke-width="1.000000"/>
+			</g>
+			<g opacity="0.910000">
+				<path id="矢量 24" d="M459.93 105.98C449.41 133.88 396.5 217.5 264.1 256.26C131.71 295.02 355.08 285.68 476.5 263.5L459.93 105.98Z" fill="url(#paint_linear_205_6448_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+				<path id="矢量 24" d="M264.1 256.26C131.71 295.02 355.08 285.68 476.5 263.5L459.93 105.98C449.41 133.88 396.5 217.5 264.1 256.26Z" stroke="#000000" stroke-opacity="0" stroke-width="1.000000"/>
+			</g>
+		</g>
+	</g>
+</svg>

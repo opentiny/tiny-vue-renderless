@@ -1,0 +1,284 @@
+{
+  "guide": [
+    {
+      "title": "基础入门",
+      "img": "img/help/basic.svg",
+      "children": [
+        {
+          "title": "TinyEngine简介",
+          "type": "engine",
+          "name": "introduction.md"
+        },
+        {
+          "title": "初识设计器",
+          "type": "engine",
+          "name": "intro-to-designer.md"
+        },
+        {
+          "title": "设计器前端应用流程",
+          "type": "engine",
+          "name": "frontend-application-flow.md"
+        },
+        {
+          "title": "快速上手",
+          "type": "engine",
+          "name": "quick-start.md"
+        },
+        {
+          "title": "从0搭建一个页面",
+          "type": "engine",
+          "name": "build-a-page-from-scratch.md"
+        }
+      ]
+    },
+    {
+      "title": "深入了解",
+      "img": "img/help/depth.svg",
+      "children": [
+        {
+          "title": "页面管理",
+          "type": "engine",
+          "name": "page-management.md"
+        },
+        {
+          "title": "使用组件",
+          "type": "engine",
+          "name": "using-components.md"
+        },
+        {
+          "title": "使用状态管理与变量绑定",
+          "type": "engine",
+          "name": "state-management-and-variable-binding.md"
+        },
+        {
+          "title": "样式设置",
+          "type": "engine",
+          "name": "style-settings.md"
+        },
+        {
+          "title": "行内样式绑定状态变量",
+          "type": "engine",
+          "name": "inline-style-variable-binding.md"
+        }
+      ]
+    },
+    {
+      "title": "基础架构与设计思路",
+      "img": "img/help/infrastructure-design.svg",
+      "children": [
+        {
+          "title": "新架构介绍",
+          "type": "dev",
+          "name": "new-architecture.md"
+        },
+        {
+          "title": "注册表",
+          "type": "dev",
+          "name": "registry.md"
+        },
+        {
+          "title": "元服务/元应用",
+          "type": "dev",
+          "name": "meta-services-and-meta-apps.md"
+        }
+      ]
+    },
+    {
+      "title": "定制能力与开发功能",
+      "img": "img/help/customization.svg",
+      "children": [
+        {
+          "title": "设计器中如何引用第三方组件库",
+          "type": "dev",
+          "name": "third-party-library-in-designer.md"
+        },
+        {
+          "title": "物料同步方案",
+          "type": "dev",
+          "name": "material-sync-solution.md"
+        },
+        {
+          "title": "开发插件",
+          "type": "dev",
+          "name": "how-to-develop-plugins.md"
+        },
+        {
+          "title": "定制插件UI",
+          "type": "dev",
+          "name": "customize-plugin-ui.md"
+        },
+        {
+          "title": "定制元服务逻辑",
+          "type": "dev",
+          "name": "customize-meta-service-logic.md"
+        }
+      ]
+    },
+    {
+      "title": "平台后端部署",
+      "img": "img/help/deployment.svg",
+      "children": [
+        {
+          "title": "Java服务端部署方案",
+          "type": "dev",
+          "name": "server-deployment-solution-java.md"
+        },
+        {
+          "title": "Node.js服务端部署",
+          "type": "dev",
+          "name": "server-deployment-solution.md"
+        },
+        {
+          "title": "区块发布方案(Node.js服务端)",
+          "type": "dev",
+          "name": "block-release-solution.md"
+        }
+      ]
+    },
+    {
+      "title": "插件模块与API",
+      "img": "img/help/api.svg",
+      "children": [
+        {
+          "title": "物料",
+          "type": "dev",
+          "name": "material-api.md"
+        },
+        {
+          "title": "页面管理",
+          "type": "dev",
+          "name": "page-management-api.md"
+        },
+        {
+          "title": "区块管理",
+          "type": "dev",
+          "name": "block-management-api.md"
+        },
+        {
+          "title": "DSL代码生成",
+          "type": "dev",
+          "name": "dsl-code-generation.md"
+        },
+        {
+          "title": "数据源",
+          "type": "dev",
+          "name": "data-source-management.md"
+        }
+      ]
+    },
+    {
+      "title": "官网能力",
+      "img": "img/help/capability.svg",
+      "children": [
+        {
+          "title": "生态中心介绍",
+          "type": "portal",
+          "name": "ecosystem-intro.md"
+        },
+        {
+          "title": "关于应用",
+          "type": "portal",
+          "name": "create-application-blank-or-template.md"
+        },
+        {
+          "title": "关于物料资产包",
+          "type": "portal",
+          "name": "materials-intro.md"
+        },
+        {
+          "title": "关于设计器",
+          "type": "portal",
+          "name": "designer-intro.md"
+        }
+      ]
+    }
+  ],
+  "video": [
+    {
+      "title": "从0到1搭建一个页面",
+      "url": "https://tinyengine-assets.obs.myhuaweicloud.com/files/videos/tiny-engine-course_usage.mp4",
+      "img": "img/help/video-cover1.svg",
+      "type": "基础入门",
+      "videoTitle": "TinyEngine设计器从0搭建一个页面",
+      "time": "21:40"
+    },
+    {
+      "title": "本地前后端联调",
+      "url": "https://tinyengine-assets.obs.myhuaweicloud.com/files/videos/tiny-engine-course_startup.mp4",
+      "img": "img/help/video-cover2.svg",
+      "type": "基础入门",
+      "videoTitle": "TinyEngine设计器本地前后端联调",
+      "time": "9:39"
+    },
+    {
+      "title": "引入自定义组件",
+      "url": "https://tinyengine-assets.obs.myhuaweicloud.com/files/videos/tiny-engine-course_import-components.mp4",
+      "img": "img/help/video-cover3.svg",
+      "type": "项目实践",
+      "videoTitle": "TinyEngine设计器引入自定义组件全流程",
+      "time": "12:19"
+    }
+  ],
+  "more": [
+    {
+      "title": "常见问题",
+      "children": [
+        {
+          "title": "如何使用第三方组件库？",
+          "type": "dev",
+          "name": "third-party-library-in-designer.md"
+        },
+        {
+          "title": "如何使用插槽？",
+          "type": "engine",
+          "name": "how-to-use-slots.md"
+        },
+        {
+          "title": "如何自定义出码？",
+          "type": "dev",
+          "name": "how-to-customize-code-output.md"
+        },
+        {
+          "title": "如何开发插件？",
+          "type": "dev",
+          "name": "how-to-develop-plugins.md"
+        },
+        {
+          "title": "TinyEngine前端如何对接Java版本后端",
+          "type": "dev",
+          "name": "debugging-of-java-backend.md"
+        }
+      ]
+    },
+    {
+      "title": "最近更新",
+      "children": [
+        {
+          "title": "定制插件 UI 功能",
+          "type": "dev",
+          "name": "customize-plugin-ui.md"
+        },
+        {
+          "title": "物料同步方案",
+          "type": "dev",
+          "name": "material-sync-solution.md"
+        },
+        {
+          "title": "开发设置器组件",
+          "type": "dev",
+          "name": "develop-configurator-components.md"
+        },
+        {
+          "title": "AI插件使用前配置",
+          "type": "dev",
+          "name": "ai-plugin-configuration.md"
+        },
+        {
+          "title": "自定义页面出码插件",
+          "type": "dev",
+          "name": "custom-page-code-output-plugin.md"
+        }
+      ]
+    }
+  ]
+}

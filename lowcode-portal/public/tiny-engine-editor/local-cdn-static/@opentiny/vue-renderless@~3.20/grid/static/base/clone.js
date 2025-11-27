@@ -1,0 +1,10 @@
+import "../../../chunk-G2ADBYYC.js";
+import isPlainObject from './isPlainObject.js';
+import objectMap from './../object/objectMap.js';
+import map from './../array/map.js';
+let deepClone;
+const startClone = (func, obj, deep) => func(obj, deep ? val => deepClone(val, deep) : val => val);
+deepClone = (val, deep) => isPlainObject(val) ? startClone(objectMap, val, deep) : Array.isArray(val) ? startClone(map, val, deep) : val;
+const clone = (obj, deep) => obj ? deepClone(obj, deep) : obj;
+var clone_default = clone;
+export { clone_default as default };

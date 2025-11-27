@@ -1,0 +1,93 @@
+{
+  "name": "@opentiny/vue-theme",
+  "type": "module",
+  "version": "3.20.2",
+  "description": "An enterprise-class UI component library, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.",
+  "author": "OpenTiny Team",
+  "license": "MIT",
+  "homepage": "https://opentiny.design/tiny-vue",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:opentiny/tiny-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opentiny/tiny-vue/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "frontend",
+    "component-library",
+    "components",
+    "vue-components",
+    "opentiny",
+    "renderless-components",
+    "headless-components"
+  ],
+  "main": "index.css",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "fast-glob": "^3.2.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "2.6.1",
+    "gulp-less": "^5.0.0",
+    "gulp-svg-inline": "^1.0.1",
+    "gulp-transform": "3.0.5",
+    "rimraf": "^2.6.2",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0",
+    "svgo": "3.2.0"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.less"
+        ],
+        "customSyntax": "postcss-less"
+      }
+    ],
+    "rules": {
+      "selector-pseudo-element-colon-notation": "single",
+      "import-notation": null,
+      "custom-property-pattern": null,
+      "custom-property-empty-line-before": null,
+      "selector-class-pattern": null,
+      "alpha-value-notation": null,
+      "color-hex-length": null,
+      "string-quotes": "single",
+      "color-function-notation": null,
+      "declaration-empty-line-before": null,
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "apply",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:theme": "gulp build --gulpfile build/gulp-dist.js",
+    "build": "npm run clean && npm run build:theme",
+    "build:fast": "npm run build && npm run release",
+    "release": "node build/release.js",
+    "build:copy-remote": "npm run build:theme && cp-cli dist ../tiny-vue/node_modules/@opentiny/vue-theme",
+    "publishTgz": "node .cloudbuild/publish-tgzs.js",
+    "postversion": "pnpm build",
+    "stylelint": "stylelint \"**/*.less\" --fix"
+  }
+}

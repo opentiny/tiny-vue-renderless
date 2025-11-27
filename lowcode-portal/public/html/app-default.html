@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app示例应用</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        height: 98vh;
+    }
+    .left {
+        flex: 1 1 1073px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .left .left-imgbg{
+      width: 740px;
+      height: 496px;
+      background-image: url(http://image.opentiny.design/tiny-lts/v1/images/3a734a9def78829fced1df1c2d4d9d25_844x567--org.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .right{
+        flex: 1 1 847px;
+        background-color: #F5F7FC;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .right .top {
+        text-align: center;
+    }
+    .top .top-logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+    .bottom .try-now{
+        width: 160px;
+        height: 36px;
+        background-color: #5E7CE0;
+        color: #fff;
+        border-radius: 18px;
+        border: none;
+        cursor: pointer;
+    }
+    .link{
+        color: #526ECC;
+        text-decoration: none;
+    }
+    .center{
+      position: absolute;
+      display: flex;
+      width: 100%;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .c {
+      padding-top: 100px;
+      text-align: center;
+    }
+    .d {
+      padding: 5px;
+      font-size: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="left-imgbg"></div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <img class="top-logo" src="http://image.opentiny.design/tiny-lts/v1/images/aaeb72e8f0b11368716ad42b134da6d4_380x380--org.png" alt="">
+                <h1 class="top-title">TinyEngine</h1>
+                <p class="top-desc">应用还在建设中...</p>
+                <p class="top-desc">欢迎一起来解锁~~</p>
+            </div>
+            <div class="bottom">
+                <button class="try-now">立即体验</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

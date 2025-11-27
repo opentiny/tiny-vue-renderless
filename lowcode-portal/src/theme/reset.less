@@ -1,0 +1,106 @@
+html {
+  font-size: 14px;
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, -apple-system, Arial, 'Lucida Grande', system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  height: 100%;
+}
+#app {
+  height: 100%;
+}
+.app {
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: var(--scrollbar-width, 8px);
+  height: var(--scrollbar-height, 8px);
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-width, 8px);
+  height: var(--scrollbar-height, 8px);
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bgcolor, #dbdbdb);
+  border-radius: var(--scrollbar-thumb-radius, 4px);
+  &:hover {
+    background-color: var(--scrollbar-thumb-bgcolor, #c2c2c2);
+  }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body * {
+    scrollbar-color: #dbdbdb transparent;
+    scrollbar-width: thin;
+  }
+}
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: #ffffff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  background-image: none;
+  text-decoration: none;
+  outline: none;
+  color: currentColor;
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+.common-loading {
+  .tiny-loading__spinner {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    .tiny-loading__text {
+      font-size: 16px;
+      color: #595959;
+      margin-top: 12px;
+    }
+  }
+}
+
+.tiny-grid .tiny-grid__body-wrapper {
+  overflow: hidden;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--ellipsis-line, 2);
+  -webkit-box-orient: vertical;
+}

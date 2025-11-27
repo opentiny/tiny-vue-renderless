@@ -1,0 +1,161 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "code": "common",
+            "name": "普通开发",
+            "created_at": "2023-02-06T01:40:08.000Z",
+            "updated_at": "2023-02-06T01:40:09.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations": []
+        },
+        {
+            "id": 2,
+            "code": "console",
+            "name": "console开发",
+            "created_at": "2023-02-06T01:41:25.000Z",
+            "updated_at": "2023-02-06T01:41:25.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations":[]
+        },
+        {
+            "id": 3,
+            "code": "bigScreen",
+            "name": "大屏开发",
+            "created_at": "2023-02-06T01:41:46.000Z",
+            "updated_at": "2023-02-06T01:41:46.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations": []
+        },
+        {
+            "id": 4,
+            "code": "priceCalculator",
+            "name": "价格计算器开发",
+            "created_at": "2023-02-06T01:42:06.000Z",
+            "updated_at": "2023-02-06T01:42:06.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations": []
+        },
+        {
+            "id": 5,
+            "code": "taihu",
+            "name": "图元开发",
+            "created_at": "2023-02-06T01:42:22.000Z",
+            "updated_at": "2023-02-06T01:42:23.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations": []
+        },
+        {
+            "id": 6,
+            "code": "mobile",
+            "name": "移动端开发",
+            "created_at": "2023-02-06T01:42:38.000Z",
+            "updated_at": "2023-02-06T01:42:38.000Z",
+            "createdBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "updatedBy": {
+                "id": 108,
+                "blocked": null,
+                "created_at": "2022-06-22T08:20:55.000Z",
+                "updated_at": "2022-12-08T07:29:41.000Z",
+                "block": null,
+                "is_admin": false,
+                "is_public": null
+            },
+            "material_category_relations": []
+        }
+    ],
+    "locale": "zh-cn"
+}

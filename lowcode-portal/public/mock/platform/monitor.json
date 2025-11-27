@@ -1,0 +1,136 @@
+{
+  "data": {
+    "apps": {
+      "count": 107,
+      "rise_rate": "-0.67"
+    },
+    "platforms": {
+      "count": 109,
+      "rise_rate": "0.00"
+    },
+    "user": {
+      "count": 2380,
+      "rise_rate": "-0.50"
+    },
+    "tenants": {
+      "count": 79,
+      "rise_rate": -1
+    },
+    "materials": {
+      "count": 66,
+      "rise_rate": -1
+    },
+    "plugin": {
+      "count": 12,
+      "rise_rate": 0
+    },
+    "theme": {
+      "count": 2,
+      "rise_rate": 0
+    },
+    "dsl": {
+      "count": 2,
+      "rise_rate": 0
+    },
+    "user_activity": [
+      {
+        "date": "2022-08-11",
+        "count": 94
+      },
+      {
+        "date": "2022-08-12",
+        "count": 32
+      },
+      {
+        "date": "2022-08-13",
+        "count": 7
+      },
+      {
+        "date": "2022-08-14",
+        "count": 2
+      },
+      {
+        "date": "2022-08-15",
+        "count": 24
+      },
+      {
+        "date": "2022-08-16",
+        "count": 25
+      },
+      {
+        "date": "2022-08-17",
+        "count": 28
+      },
+      {
+        "date": "2022-08-18",
+        "count": 15
+      },
+      {
+        "date": "2022-08-19",
+        "count": 15
+      },
+      {
+        "date": "2022-08-20",
+        "count": 3
+      },
+      {
+        "date": "2022-08-21",
+        "count": 3
+      },
+      {
+        "date": "2022-08-22",
+        "count": 18
+      }
+    ],
+    "event_open_canvas": [
+      {
+        "date": "2022-08-11",
+        "count": 6
+      },
+      {
+        "date": "2022-08-12",
+        "count": 5
+      },
+      {
+        "date": "2022-08-13",
+        "count": 0
+      },
+      {
+        "date": "2022-08-14",
+        "count": 0
+      },
+      {
+        "date": "2022-08-15",
+        "count": 4
+      },
+      {
+        "date": "2022-08-16",
+        "count": 2
+      },
+      {
+        "date": "2022-08-17",
+        "count": 1
+      },
+      {
+        "date": "2022-08-18",
+        "count": 5
+      },
+      {
+        "date": "2022-08-19",
+        "count": 0
+      },
+      {
+        "date": "2022-08-20",
+        "count": 0
+      },
+      {
+        "date": "2022-08-21",
+        "count": 0
+      },
+      {
+        "date": "2022-08-22",
+        "count": 0
+      }
+    ]
+  }
+}

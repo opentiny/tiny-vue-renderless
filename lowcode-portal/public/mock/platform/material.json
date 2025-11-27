@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "id": 576,
+      "name": "组件库物料包",
+      "framework": "Angular",
+      "created_at": "2021-11-02T11:32:22.000Z",
+      "updated_at": "2022-05-09T07:47:36.000Z",
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "resetPasswordToken": "developer"
+      },
+      "latest": 318,
+      "version": null,
+      "description": null,
+      "image_url": null,
+      "public": null,
+      "isOfficial": null,
+      "isDefault": null,
+      "tiny_reserved": null,
+      "name_cn": "组件库物料包",
+      "blocks": [],
+      "componentLibrary": [],
+      "public_scope_tenants": [],
+      "material_category_relations": []
+    },
+    {
+      "id": 986,
+      "name": "第三方组件库导入物料包",
+      "framework": "Vue",
+      "created_at": "2022-05-09T03:15:12.000Z",
+      "updated_at": "2022-09-21T03:26:59.000Z",
+      "blocks": [],
+      "componentLibrary": [],
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "resetPasswordToken": "developer"
+      },
+      "latest": 319,
+      "version": "1.0",
+      "description": null,
+      "image_url": null,
+      "public": null,
+      "isOfficial": null,
+      "isDefault": null,
+      "tiny_reserved": null,
+      "name_cn": "第三方组件库导入物料包",
+      "public_scope_tenants": [],
+      "material_category_relations": [
+        {
+          "id": 519,
+          "category": 1,
+          "material": 986,
+          "category_code": "common",
+          "relation_type": "material",
+          "created_at": "2023-09-20T04:07:26.000Z",
+          "updated_at": "2023-09-20T04:07:26.000Z",
+          "category_name": "普通开发"
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "name": "轻量应用物料包",
+      "framework": "Angular",
+      "created_at": "2022-05-16T07:40:09.000Z",
+      "updated_at": "2022-05-16T08:40:26.000Z",
+      "createdBy": {
+        "id": 86,
+        "username": "开发者",
+        "resetPasswordToken": "developer"
+      },
+      "latest": 43,
+      "version": "1.0",
+      "description": null,
+      "image_url": null,
+      "public": null,
+      "isOfficial": null,
+      "isDefault": null,
+      "tiny_reserved": null,
+      "name_cn": "轻量应用物料包",
+      "public_scope_tenants": [],
+      "material_category_relations": []
+    }
+  ]
+}

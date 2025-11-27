@@ -1,0 +1,42 @@
+<svg width="450.000000" height="260.000000" viewBox="0 0 450 260" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient x1="121.499962" y1="-8.999962" x2="224.999832" y2="260.000031" id="paint_linear_205_6436_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#8FBEFF"/>
+			<stop offset="1.000000" stop-color="#529AFF"/>
+		</linearGradient>
+		<linearGradient x1="200.688660" y1="-66.675690" x2="194.681366" y2="548.065857" id="paint_linear_205_6437_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#96C0FC" stop-opacity="0.341176"/>
+			<stop offset="1.000000" stop-color="#2983FF"/>
+		</linearGradient>
+		<linearGradient x1="384.945068" y1="-40.325134" x2="378.595978" y2="289.638458" id="paint_linear_205_6438_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#AACDFF" stop-opacity="0.776471"/>
+			<stop offset="1.000000" stop-color="#1F7DFF"/>
+		</linearGradient>
+		<linearGradient x1="-128.963776" y1="416.568695" x2="30.629166" y2="30.847670" id="paint_linear_205_6439_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#AACDFF" stop-opacity="0.164706"/>
+			<stop offset="1.000000" stop-color="#3D8EFF"/>
+		</linearGradient>
+	</defs>
+	<mask id="mask205_6436" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="450.000000" height="260.000000">
+		<rect id="矩形 49" width="450.000000" height="260.000000" fill="url(#paint_linear_205_6436_0)" fill-opacity="1.000000"/>
+	</mask>
+	<rect id="矩形 49" width="450.000000" height="260.000000" fill="url(#paint_linear_205_6436_0)" fill-opacity="1.000000"/>
+	<g mask="url(#mask205_6436)">
+		<g opacity="0.720000">
+			<rect id="矩形 875" x="92.307617" y="-18.573486" width="147.000000" height="451.000000" transform="rotate(-40.4783 92.307617 -18.573486)" fill="url(#paint_linear_205_6437_0)" fill-opacity="1.000000"/>
+		</g>
+	</g>
+	<g mask="url(#mask205_6436)">
+		<g opacity="0.720000">
+			<rect id="矩形 877" x="290.001953" y="-13.211426" width="128.809570" height="254.212891" transform="rotate(-40.4783 290.001953 -13.211426)" fill="url(#paint_linear_205_6438_0)" fill-opacity="1.000000"/>
+		</g>
+	</g>
+	<g mask="url(#mask205_6436)">
+		<g opacity="0.720000">
+			<rect id="矩形 876" x="-84.607178" y="-0.659180" width="147.000000" height="524.343262" transform="rotate(-40.4783 -84.607178 -0.659180)" fill="url(#paint_linear_205_6439_0)" fill-opacity="1.000000"/>
+		</g>
+	</g>
+</svg>
