@@ -69,7 +69,7 @@ export default {
     const videoRef = ref(null)
     const treeMenuRef = ref(null)
     const TYPE_MAP = {
-      engine: 'engine',
+      engine: 'guide',
       portal: 'portal',
       case: 'case',
       video: 'video',
@@ -80,7 +80,7 @@ export default {
       data: null,
       expandedKeys: [],
       expandeArr: [],
-      currentId: '',
+      courseId: '',
       courseType: TYPE_MAP.engine,
       groupData: [
         {

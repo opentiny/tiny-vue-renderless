@@ -2,6 +2,7 @@
   <div class="home-core-scenarios">
     <div class="home-core-scenarios-main">
       <p class="title">{{ state.title }}</p>
+      <div class="sub-title">{{ state.subTitle }}</div>
       <div class="list-bg">
         <ul class="list">
           <li v-for="(item, index) in state.list" :key="index" class="list-item">
@@ -21,7 +22,6 @@
               <img v-for="rate in item.rate" :key="rate" class="icon-star-active" :src="state.starUrl" />
             </span>
             <img v-if="index < state.list.length - 1" class="flow-arrow" :src="state.arrowUrl" />
-            <img v-if="index < state.list.length - 1" class="flow-arrow-mobile" :src="state.arrowMobileUrl" />
           </li>
         </ul>
       </div>
@@ -36,6 +36,7 @@ export default {
   setup() {
     const state = reactive({
       title: '三大核心场景',
+      subTitle: '层层递进，支撑客户构建自主可控的低代码能力',
       list: [
         {
           title: '低代码引擎',
@@ -77,29 +78,35 @@ export default {
 
 <style lang="less" scoped>
 .home-core-scenarios {
-  width: 100%;
   &-main {
     width: 100%;
-    max-width: 1360px;
     box-sizing: border-box;
-    padding: 100px 0;
+    padding-top: 120px;
     margin: 0 auto;
     font-family: Microsoft YaHei, Microsoft YaHei-Bold;
     .title {
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 16px;
+      margin-top: 0;
       font-size: 40px;
       color: #191919;
       font-weight: 600;
       line-height: 40px;
     }
+    .sub-title {
+      margin-bottom: 60px;
+      color: #808080;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: center;
+    }
     .list-bg {
       padding: 6px;
-      background: #e4ecff;
+      background: #deecff;
       border-radius: 40px;
     }
     .list-bg:hover {
-      background-image: linear-gradient(to right, #bfe1ff, #9983ff);
+      box-shadow: 0 4px 60px 0 #e5e8f1;
     }
     .list {
       display: grid;
@@ -188,42 +195,76 @@ export default {
   .home-core-scenarios {
     height: auto;
     .home-core-scenarios-main {
-      padding: 32px 0;
+      padding: 30px 0 0;
       .title {
-        margin-bottom: 32px;
-        font-size: 20px;
-        line-height: 26px;
+        margin-bottom: 8px;
+        font-size: 22px;
+        line-height: 29px;
+      }
+      .sub-title {
+        margin-bottom: 30px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .list-bg {
+        padding: 3px;
+        border-radius: 12px;
+      }
+      .list-bg:hover {
+        box-shadow: none;
       }
       .list {
-        margin: 0 23px;
+        margin: 0;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+        border-radius: 12px;
 
         .list-item {
           height: auto;
-          padding: 32px;
-          margin-bottom: 60px;
+          padding: 30px;
+          .item-user {
+            margin-top: 14px;
+            .item-use {
+              font-size: 12px;
+              height: 32px;
+              line-height: 32px;
+            }
+          }
           .item-img {
-            width: 240px;
-            height: 180px;
+            width: 52px;
+            height: 52px;
+            margin-bottom: 16px;
           }
           .item-title {
             font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 12px;
           }
           .item-des {
             font-size: 14px;
           }
+          .item-difficulty {
+            margin-top: 12px;
+          }
+          .item-difficulty-text {
+            font-size: 12.8px;
+            margin-right: 9px;
+          }
+          .icon-star-active {
+            width: 16px;
+            height: 16px;
+          }
         }
       }
       .flow-arrow {
-        display: none;
-      }
-      .flow-arrow-mobile {
-        position: absolute;
-        right: 44%;
-        bottom: -45px;
-        width: 28px;
-        height: 28px;
+        position: relative;
+        margin: 0 auto;
+        top: 30px;
+        right: 0;
+        transform: rotate(90deg);
+        width: 64px;
+        height: 52px;
       }
     }
   }

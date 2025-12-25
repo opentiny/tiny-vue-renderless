@@ -10,11 +10,6 @@
           "name": "introduction.md"
         },
         {
-          "title": "初识设计器",
-          "type": "engine",
-          "name": "intro-to-designer.md"
-        },
-        {
           "title": "设计器前端应用流程",
           "type": "engine",
           "name": "frontend-application-flow.md"
@@ -23,11 +18,6 @@
           "title": "快速上手",
           "type": "engine",
           "name": "quick-start.md"
-        },
-        {
-          "title": "从0搭建一个页面",
-          "type": "engine",
-          "name": "build-a-page-from-scratch.md"
         }
       ]
     },

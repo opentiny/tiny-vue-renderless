@@ -12,9 +12,7 @@
     <home-use-us></home-use-us>
     <home-about-us></home-about-us>
     <div class="copyright">
-      <span class="text"
-        >Copyright © Huawei Technologies Co., Ltd. 华为云Web能力中心 {{ year }}. All rights reserved.</span
-      >
+      <span class="text">Copyright © Huawei Technologies Co., Ltd. 2023-{{ year }}. All rights reserved.</span>
     </div>
   </div>
 </template>
@@ -52,9 +50,12 @@ export default {
 
 <style lang="less" scoped>
 .home {
-  --max-width: 1620px;
+  --max-width: 1440px;
+  --top-max-width: 1580px;
   --padding-big: 60px;
   --padding-small: 40px;
+  --padding-mobile: 20px;
+  --mobile-width: calc(100% - 40px);
   height: 100%;
   overflow: auto;
   .home-content {
@@ -70,14 +71,14 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    background: #f5f5f5;
+    background: #fafafa;
     border-top: 1px solid#dbdbdb;
     .text {
       font-size: 14px;
       width: 1360px;
       display: inline-block;
       text-align: center;
-      color: #191919;
+      color: #666;
     }
   }
   :deep(.page-layout) {
@@ -91,7 +92,7 @@ export default {
   .home {
     :deep(.home-top) {
       .home-top-banner {
-        max-width: var(--max-width);
+        max-width: var(--top-max-width);
       }
     }
     :deep(.home-advantages) {
@@ -100,9 +101,9 @@ export default {
     :deep(.home-ecology) {
       max-width: var(--max-width);
     }
-    :deep(.home-multi-scenario) {
+    :deep(.home-multi-scenario-main) {
+      max-width: var(--max-width);
       .home-multi-scenario-main {
-        max-width: var(--max-width);
         .home-multi-scenario-banner-right {
           margin-top: 280px;
         }
@@ -129,44 +130,87 @@ export default {
     :deep(.home-top) {
       box-sizing: border-box;
       padding: 0px 60px;
+      padding-left: 180px;
       .home-top-banner {
-        max-width: var(--max-width);
-        height: 700px;
+        max-width: var(--top-max-width);
       }
     }
     :deep(.home-advantages) {
       box-sizing: border-box;
-      padding-left: var(--padding-big);
-      padding-right: var(--padding-big);
+      max-width: var(--max-width);
       .item-title {
         font-size: 22px;
       }
     }
-    :deep(.home-multi-scenario) {
+    :deep(.home-multi-scenario-main) {
       box-sizing: border-box;
-      padding-left: var(--padding-big);
-      padding-right: var(--padding-big);
+      max-width: var(--max-width);
     }
     :deep(.home-ecology) {
+      max-width: var(--max-width);
       .tab-item img {
         height: 390px;
       }
     }
     :deep(.home-core-scenarios) {
       box-sizing: border-box;
-      padding: 0px var(--padding-small);
+      .home-core-scenarios-main {
+        max-width: var(--max-width);
+      }
+    }
+    :deep(.home-usage) {
+      max-width: var(--max-width);
     }
     :deep(.home-about-us) {
       box-sizing: border-box;
+      .list {
+        max-width: var(--max-width);
+      }
       padding-left: var(--padding-big);
       padding-right: var(--padding-big);
     }
   }
 }
-@media screen and (max-width: 1023px) {
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
   .home {
+    :deep(.home-top) {
+      .home-top-banner {
+        max-width: var(--mobile-width);
+      }
+    }
+    :deep(.home-advantages) {
+      max-width: var(--mobile-width);
+    }
+    :deep(.home-multi-scenario-main) {
+      box-sizing: border-box;
+      max-width: var(--mobile-width);
+    }
+    :deep(.home-ecology) {
+      max-width: var(--mobile-width);
+    }
+    :deep(.home-core-scenarios) {
+      box-sizing: border-box;
+      .home-core-scenarios-main {
+        max-width: var(--mobile-width);
+      }
+    }
+    :deep(.home-usage) {
+      max-width: var(--mobile-width);
+    }
+    :deep(.home-about-us) {
+      box-sizing: border-box;
+      .mobile {
+        max-width: var(--mobile-width);
+      }
+    }
     .copyright {
-      padding: 17px 34px;
+      max-width: var(--mobile-width);
+      padding-left: var(--padding-mobile);
+      padding-right: var(--padding-mobile);
     }
   }
 }

@@ -1,8 +1,15 @@
 <template>
   <div class="home-about-us">
     <ul class="list">
+      <div class="qrcode-container">
+        <div class="qrcode">
+          <img :src="state.qrcode" />
+        </div>
+        <div class="label">联系我们</div>
+        <div class="text">扫码加入OpenTiny用户群</div>
+      </div>
       <li v-for="item in state.list" :key="item.label" class="list-item">
-        <div class="item-label"><svg-icon class="label-icon" :name="item.icon"></svg-icon>{{ item.label }}</div>
+        <div class="item-label">{{ item.label }}</div>
         <a
           v-for="content in item.children"
           :key="content.label || content.iconName"
@@ -16,16 +23,25 @@
         </a>
       </li>
     </ul>
-    <tiny-tree-menu :data="state.list" class="list-mobile" @node-click="handleNodeClick">
-      <template #default="slotScope">
-        <div>
-          <svg-icon v-if="slotScope.data.icon" class="label-icon" :name="slotScope.data.icon"></svg-icon>
-          <a :class="slotScope.data.class">
-            {{ slotScope.data.label }}
-          </a>
+    <div class="mobile">
+      <div class="qrcode-container">
+        <div class="qrcode">
+          <img :src="state.qrcode" />
         </div>
-      </template>
-    </tiny-tree-menu>
+        <div class="label">联系我们</div>
+        <div class="text">扫码加入OpenTiny用户群</div>
+      </div>
+      <tiny-tree-menu :data="state.list" class="list-mobile" @node-click="handleNodeClick">
+        <template #default="slotScope">
+          <div>
+            <svg-icon v-if="slotScope.data.icon" class="label-icon" :name="slotScope.data.icon"></svg-icon>
+            <a :class="slotScope.data.class">
+              {{ slotScope.data.label }}
+            </a>
+          </div>
+        </template>
+      </tiny-tree-menu>
+    </div>
   </div>
 </template>
 
@@ -58,63 +74,44 @@ export default {
               label: '更新日志',
               routerName: 'changelog'
             }
-          ],
-          icon: 'home-guide'
+          ]
         },
         {
-          label: '社区',
+          label: '开发者社区',
           children: [
             {
-              label: '讨论区',
-              link: 'https://github.com/opentiny/tiny-engine/issues'
+              label: '掘金-OpenTiny社区',
+              link: 'https://juejin.cn/user/3808325101432983'
             },
             {
-              label: 'OpenTiny公众号',
-              link: 'https://mp.weixin.qq.com/s/4dFmslwTKSvlyZG4wPsR9Q'
+              label: '知乎-OpenTiny社区',
+              link: 'https://www.zhihu.com/people/opentiny'
+            },
+            {
+              label: 'B站-OpenTiny社区',
+              link: 'https://space.bilibili.com/15284299'
             }
-          ],
-          icon: 'home-community'
+          ]
         },
         {
-          label: '资源',
+          label: '相关链接',
           children: [
+            {
+              label: 'GitHub',
+              link: 'https://github.com/opentiny/tiny-engine'
+            },
             {
               label: 'OpenTiny-设计体系',
               link: getStaticUrl('resourceDesign')
             },
             {
-              label: 'Tiny UI3.0',
-              link: getStaticUrl('resourceUI')
-            },
-            {
               label: 'Tiny Vue',
               link: getStaticUrl('resourceVue')
             }
-          ],
-          icon: 'home-resource'
-        },
-        {
-          label: '关于我们',
-          children: [
-            {
-              label: 'github',
-              iconName: 'git-hub',
-              link: 'https://github.com/opentiny/tiny-engine'
-            },
-            {
-              label: '掘金',
-              iconName: 'nuggets',
-              link: 'https://juejin.cn/user/3808325101432983'
-            },
-            {
-              label: '知乎',
-              iconName: 'zhihu',
-              link: 'https://www.zhihu.com/people/opentiny/posts'
-            }
-          ],
-          icon: 'home-user'
+          ]
         }
-      ]
+      ],
+      qrcode: `${import.meta.env.BASE_URL}img/home/qrcode.png`
     })
 
     const linkClick = (item) => {
@@ -152,22 +149,23 @@ export default {
 .home-about-us {
   box-sizing: border-box;
   width: 100%;
-  height: 276px;
-  background: #f5f5f5;
-  padding: 84px 80px 0 80px;
+  background: #fafafa;
+  padding: 44px 30px 30px;
   font-family: Microsoft YaHei, Microsoft YaHei-Bold;
   .list {
     width: 100%;
-    max-width: 1360px;
+    // max-width: 1360px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .list-item {
       flex: 1;
       .item-label {
-        font-size: 18px;
-        color: #191919;
-        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 30px;
+        color: #000;
+        margin-bottom: 20px;
         font-weight: 600;
         display: flex;
         .label-icon {
@@ -177,10 +175,11 @@ export default {
       }
       .link {
         display: block;
-        width: 120px;
-        font-size: 13px;
-        color: #191919;
-        margin-bottom: 20px;
+        width: 130px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        margin-bottom: 16px;
       }
       .svg-link {
         display: inline-block;
@@ -192,11 +191,40 @@ export default {
         stroke: #191919;
       }
     }
+    .qrcode-container {
+      flex: 2;
+      .qrcode {
+        width: 152px;
+        height: 152px;
+        background: #eef4fd;
+        img {
+          width: 132px;
+          height: 132px;
+          margin: 10px;
+        }
+      }
+      .label {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        color: #000;
+        width: 152px;
+        text-align: center;
+        margin-top: 4px;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 22px;
+        color: #808080;
+        width: 164px;
+        text-align: center;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .list-mobile {
+  .mobile {
     display: none;
   }
   .svg-link .link-text {
@@ -206,10 +234,48 @@ export default {
 
 @media screen and (max-width: 1023px) {
   .home-about-us {
-    padding: 24px;
+    padding: 0;
     height: auto;
     .list {
       display: none;
+    }
+    .mobile {
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 0;
+      .qrcode-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        .qrcode {
+          width: 150px;
+          height: 150px;
+          background: #eef4fd;
+          img {
+            width: 132px;
+            height: 132px;
+            margin: 8px;
+          }
+        }
+        .label {
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 30px;
+          color: #000;
+          width: 152px;
+          text-align: center;
+          margin-top: 4px;
+        }
+        .text {
+          font-size: 12px;
+          line-height: 22px;
+          color: #808080;
+          width: 164px;
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -225,6 +291,16 @@ export default {
       height: 20px;
       margin-right: 8px;
     }
+  }
+  .tiny-tree .tiny-tree-node .tiny-tree-node__content {
+    background: #fafafa;
+  }
+  .tiny-tree .tiny-tree-node.is-current > .tiny-tree-node__content {
+    background: #fafafa;
+  }
+  .tiny-tree-node.is-current:not(.show-checkbox) > .tiny-tree-node__content .tiny-tree-node__content-box,
+  .tiny-tree-node.is-current:not(.show-checkbox) > .tiny-tree-node__content .tiny-tree-node__content-right {
+    background: #fafafa;
   }
 }
 :deep(.tiny-tree-menu:before) {

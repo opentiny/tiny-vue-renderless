@@ -1,6 +1,7 @@
 <template>
   <div class="home-ecology">
     <p class="home-ecology-title">{{ state.title }}</p>
+    <div class="home-ecology-sub-title">{{ state.subTitle }}</div>
     <div class="home-ecology-pc">
       <div class="home-ecology-pc-left">
         <div
@@ -8,7 +9,7 @@
           :key="item.name"
           :class="['home-ecology-pc-left-item', { active: state.currentIndex === idx }]"
           @mouseenter="pauseAutoSwitch(idx)"
-          @mouseleave="resumeAutoSwitch"
+          @mouseleave="startAutoSwitch"
         >
           <div class="home-ecology-pc-left-item-title">
             <img :src="item.icon" />
@@ -20,21 +21,41 @@
       <div class="home-ecology-pc-right">
         <img
           :class="['home-ecology-pc-right-img', { 'zoom-in': state.showZoomEffect }]"
-          :src="state.list[state.currentIndex].imgUrl"
-          @animationend="showZoomEffect = false"
+          :src="currentImg"
+          @animationend="state.showZoomEffect = false"
         />
+      </div>
+    </div>
+    <div class="home-ecology-mobile">
+      <div class="home-ecology-mobile-container">
+        <div
+          v-for="(item, idx) in state.list"
+          :key="item.name"
+          class="home-ecology-mobile-item"
+          @click="pauseAutoSwitch(idx)"
+        >
+          <div class="home-ecology-mobile-item-title">
+            <img :src="item.icon" />
+            <div class="title">{{ item.text }}</div>
+          </div>
+          <div class="home-ecology-mobile-item-des">{{ item.des }}</div>
+          <div :class="['home-ecology-mobile-img', { active: state.currentIndex === idx }]">
+            <img :src="item.imgUrl" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { reactive, onMounted, onUnmounted } from 'vue'
+import { reactive, onMounted, onUnmounted, computed } from 'vue'
 
 export default {
   setup() {
     const state = reactive({
       title: '灵活丰富的低代码生态',
+      subTitle: '开放融合、多元共建、广泛赋能',
       list: [
         {
           name: 'material',
@@ -61,25 +82,25 @@ export default {
           mobileImgUrl: `${import.meta.env.BASE_URL}img/home/home-ecology-mobile3.png`
         }
       ],
-      imgUrl: `${import.meta.env.BASE_URL}img/home/ec_1.svg`,
       currentIndex: 0,
       autoSwitchEnabled: true,
       switchInterval: null,
       showZoomEffect: true
     })
+    const currentImg = computed(() => state.list[state.currentIndex].imgUrl)
 
     const nextItem = () => {
-      state.showZoomEffect = true
       if (state.currentIndex === 2) {
         state.currentIndex = 0
       } else {
         state.currentIndex++
       }
+      state.showZoomEffect = true
     }
 
     const startAutoSwitch = () => {
       if (state.switchInterval) clearInterval(state.switchInterval)
-      state.switchInterval = setInterval(nextItem, 2000)
+      state.switchInterval = setInterval(nextItem, 4000)
     }
 
     const stopAutoSwitch = () => {
@@ -91,14 +112,9 @@ export default {
 
     const pauseAutoSwitch = (idx) => {
       state.currentIndex = idx
+      state.showZoomEffect = true
       state.autoSwitchEnabled = false
       stopAutoSwitch()
-    }
-
-    const resumeAutoSwitch = () => {
-      state.autoSwitchEnabled = true
-      state.currentIndex++
-      startAutoSwitch()
     }
 
     onMounted(() => {
@@ -111,8 +127,9 @@ export default {
 
     return {
       state,
+      currentImg,
       pauseAutoSwitch,
-      resumeAutoSwitch
+      startAutoSwitch
     }
   }
 }
@@ -120,19 +137,24 @@ export default {
 
 <style lang="less" scoped>
 .home-ecology {
-  height: 740px;
-  max-width: 1360px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 120px;
   font-family: Microsoft YaHei, Microsoft YaHei-Bold;
   .home-ecology-title {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 80px;
+    margin-bottom: 16px;
     font-size: 40px;
     color: #191919;
     font-weight: 700;
     line-height: 54px;
+  }
+  .home-ecology-sub-title {
+    margin-bottom: 60px;
+    color: #808080;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
   }
   .home-ecology-pc {
     display: flex;
@@ -143,7 +165,7 @@ export default {
         width: 100%;
         height: 144px;
         border-radius: 20px;
-        background: #f8f8f8;
+        background: #fff;
         margin-bottom: 36px;
         padding: 38px 34px;
         .home-ecology-pc-left-item-title {
@@ -169,8 +191,7 @@ export default {
       }
       .home-ecology-pc-left-item:hover,
       .active {
-        background: #fff;
-        box-shadow: 0px 4px 25px 0px #d4e5f6;
+        background: #f6f6f6;
       }
     }
     .home-ecology-pc-right {
@@ -181,22 +202,22 @@ export default {
       display: flex;
       justify-content: center;
       .home-ecology-pc-right-img {
-        width: 80%;
+        width: 95%;
         transition: transform 0.5s ease;
       }
 
-      .home-ecology-pc-right-img.zoom-in {
-        animation: zoomIn 0.8s ease-out forwards;
+      .zoom-in {
+        animation: slideIn 0.8s ease forwards;
       }
 
-      @keyframes zoomIn {
+      @keyframes slideIn {
         from {
-          transform: scale(0.8);
           opacity: 0;
+          transform: translateY(10px);
         }
         to {
-          transform: scale(1);
           opacity: 1;
+          transform: translateY(0);
         }
       }
     }
@@ -207,48 +228,68 @@ export default {
       display: none;
     }
   }
-}
-
-@media screen and (max-width: 1023px) {
-  .home-ecology-pc {
-    display: none;
-  }
-  .home-ecology {
+  @media screen and (max-width: 1023px) {
+    margin-top: 30px;
     height: auto;
-    padding: 32px 24px;
+    .home-ecology-pc {
+      display: none;
+    }
     .home-ecology-title {
-      font-size: 20px;
-      margin-bottom: 32px;
+      font-size: 22px;
+      margin-bottom: 8px;
       line-height: 26px;
     }
-    .tab-item-mobile {
-      background: #f5f5f5;
-      padding: 32px 0px;
-      margin-bottom: 12px;
-      text-align: center;
-      img {
+    .home-ecology-sub-title {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .home-ecology-mobile {
+      .home-ecology-mobile-container {
         width: 100%;
-      }
-      .tab-item-title,
-      .tab-item-text,
-      .tab-item-des {
-        padding: 0px 23px;
-        text-align: left;
-      }
-      .tab-item-title {
-        font-size: 18px;
-        color: #191919;
-        line-height: 20px;
-      }
-      .tab-item-text {
-        margin-top: 16px;
-        font-size: 16px;
-      }
-      .tab-item-des {
-        margin-bottom: 16px;
-        padding-right: 81px;
-        font-size: 12px;
-        line-height: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        .home-ecology-mobile-item {
+          padding: 20px;
+          background: #f8f8f8;
+          border-radius: 10px;
+          width: 100%;
+          .home-ecology-mobile-item-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+              width: 21px;
+              height: 21px;
+            }
+            .title {
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+        }
+        .home-ecology-mobile-item-des {
+          color: #808080;
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 10px;
+        }
+        .home-ecology-mobile-img {
+          display: none;
+          margin-top: 20px;
+          background-image: url(/img/home/ec_bg.svg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          padding: 10px;
+          border-radius: 8px;
+          img {
+            width: 100%;
+          }
+        }
+        .active {
+          display: block;
+        }
       }
     }
   }

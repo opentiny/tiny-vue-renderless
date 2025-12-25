@@ -99,6 +99,7 @@
         </template>
         <section class="pop-up">
           <div class="popItem" @click="toPersonalCenter">个人中心</div>
+          <hr />
           <a v-if="isInternalEnv()" class="popItem" href="javascript:void(0);" @click="logout">退出</a>
         </section>
       </tiny-popover>
@@ -119,6 +120,7 @@
         </template>
         <section class="pop-up">
           <div class="popItem" @click="toPersonalCenter">个人中心</div>
+          <hr />
           <a v-if="isInternalEnv()" class="popItem" href="javascript:void(0);" @click="logout">退出</a>
         </section>
       </tiny-popover>
@@ -137,9 +139,12 @@
           <icon-editor-list class="icon-editor-list" @click="state.showMenuCenterPop = true" />
         </template>
         <section class="pop-up">
-          <div v-for="item in menuData" :key="item.title" class="popItem">
-            <div @click="toMenu(item)">{{ item.title }}</div>
-          </div>
+          <template v-for="item in menuData" :key="item.title">
+            <hr v-if="item.divider" />
+            <div class="popItem">
+              <div @click="toMenu(item)">{{ item.title }}</div>
+            </div>
+          </template>
         </section>
       </tiny-popover>
     </div>
@@ -175,7 +180,8 @@ export default {
     const otherData = [
       {
         title: '加入组织',
-        link: '/home/Apply'
+        link: '/home/Apply',
+        divider: true
       },
       {
         title: '设置中心',
@@ -230,7 +236,7 @@ export default {
     if (isInternalEnv()) {
       state.userAvatar = `https://opentiny.design/${user.current?.w3?.sn}/120`
     } else {
-      state.userAvatar = import.meta.env.BASE_URL + 'img/default-user-avatar.jpg'
+      state.userAvatar = import.meta.env.BASE_URL + 'img/default-user-avatar.svg'
     }
 
     const openPermission = () => {
@@ -344,10 +350,10 @@ export default {
       font-size: 40px;
     }
     .open-logo-svg {
-      height: 26px;
-      width: 36px;
+      height: 28px;
+      width: 28px;
       margin-top: 3px;
-      margin-right: 14px;
+      margin-right: 8px;
     }
   }
 
@@ -388,8 +394,8 @@ export default {
         color: #878f95;
       }
       .git-hub {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 26px;
         padding-bottom: 4px;
       }
     }
@@ -580,8 +586,8 @@ export default {
 }
 
 .user-avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   margin-left: 12px;
   cursor: pointer;
@@ -609,21 +615,34 @@ export default {
   flex-direction: column;
 }
 .popItem {
-  padding: 10px;
+  padding: 7px 16px;
   cursor: pointer;
+  color: #191919;
 }
 
 .popItemClass {
   padding: 0;
   .popItem {
     &:hover {
-      background: #f2f5fc;
-      color: #526ecc;
+      background: #f5f5f5;
     }
+  }
+  hr {
+    width: calc(100% - 20px);
+    height: 1px;
+    background: #dbdbdb;
+    border: none;
+    margin: 0 auto;
   }
 }
 
 .tiny-popover.tiny-popper {
   padding: 10px 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .tiny-popover.tiny-popper {
+    border-radius: 4px;
+  }
 }
 </style>

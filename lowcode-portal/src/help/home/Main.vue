@@ -63,13 +63,12 @@
     <div class="help-center-footer">
       <home-about-us></home-about-us>
       <div class="copyright">
-        <span class="text"
-          >Copyright © Huawei Technologies Co., Ltd. 华为云Web能力中心 {{ year }}. All rights reserved.</span
-        >
+        <span class="text">Copyright © Huawei Technologies Co., Ltd. 2023-{{ year }}. All rights reserved.</span>
       </div>
     </div>
     <!-- 视频播放弹窗 -->
     <video-dialog
+      v-if="state.videoVisibility"
       :videoVisibility="state.videoVisibility"
       :videoData="state.videoData"
       @cancel="state.videoVisibility = false"
@@ -93,6 +92,7 @@ export default {
   setup() {
     const list = allData
     const router = useRouter()
+    const year = new Date().getFullYear()
 
     const TYPE_MAP = {
       guide: 'guide',
@@ -149,7 +149,9 @@ export default {
 
     const navItemClick = (item) => {
       if (item.type && item.name) {
-        router.push(`/help-center/course/${item.type}/${item.name.replace(/\.md$/, '')}`)
+        const data = docsTimeData.find((i) => i.subName === item.name.replace(/\.md$/, ''))
+
+        router.push(`/help-center/course/${data.type}/${data.subName.replace(/\.md$/, '')}`)
       }
     }
 
@@ -165,6 +167,7 @@ export default {
     return {
       list,
       state,
+      year,
       navItemClick,
       goMore,
       videoItemClick
@@ -363,6 +366,11 @@ export default {
   }
   .help-center-footer {
     background: #f5f5f5;
+    :deep(.home-about-us) {
+      .list {
+        max-width: 1440px;
+      }
+    }
     .copyright {
       display: flex;
       justify-content: center;

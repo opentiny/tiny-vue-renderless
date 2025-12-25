@@ -17,6 +17,7 @@ const getFileName =  async(catalog) => {
             list.push({
               type: chapter.type,
               name: `docs/${section.name}/${article.name}/${subarticle.name}`,
+              path: `${article.name}/${subarticle.name.replace(/\.md$/, '')}`,
               subName: subarticle.name.replace(/\.md$/, ''),
               title: subarticle.title
             })
@@ -25,6 +26,7 @@ const getFileName =  async(catalog) => {
           list.push({
             type: chapter.type,
             name: `docs/${section.name}/${article.name}`,
+            path: article.name.replace(/\.md$/, ''),
             subName: article.name.replace(/\.md$/, ''),
             title: article.title
           })

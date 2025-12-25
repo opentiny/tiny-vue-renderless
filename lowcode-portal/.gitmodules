@@ -1,0 +1,4 @@
+[submodule "tiny-engine"]
+	path = tiny-engine
+	url = git@github.com:opentiny/tiny-engine.git
+	branch = github/develop
